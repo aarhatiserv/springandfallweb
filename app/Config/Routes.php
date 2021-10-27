@@ -55,6 +55,8 @@ $routes->group("api", function ($routes) {
 	$routes->post("login", "User::login");
 	$routes->get("profile", "User::details");
 	$routes->get("logout", "User::logout");
+
+	$routes->get("college", "CollegeController::getColleges");
 });
 
 // main work

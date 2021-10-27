@@ -59,6 +59,7 @@
 </div>
 </div>
 <!--End of Footer-->
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -381,6 +382,28 @@ $(document).ready(() => {
             })
         }
     });
+
+//     getCollege();
+
+//  function getCollege(){
+//     $.ajax({
+//                 url: "/api/college",
+//                 method: "GET",
+//                 success: function(data) {
+                    
+//                     var res = JSON.parse(data);
+//                     if (res.status === 200) {
+//                         swal("Thank you!", res.message, "success");
+//                         window.location.reload();
+//                     } else if (res.status === 2) {
+//                         swal("Opps.!!", res.message, "error");
+//                     } else {
+//                         swal("Opps.!!", "Something went wrong.!!", "error");
+//                     }
+//                 }
+//             })
+//        }
+
 });
 </script>
 </body>

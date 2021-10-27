@@ -224,7 +224,7 @@ $session = session();
                             CONSULTATION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="consultation" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
+                            <a class="dropdown-item" href="consultation" id="consul" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
                             <a class="dropdown-item" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
                             <a class="dropdown-item" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
                             <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>

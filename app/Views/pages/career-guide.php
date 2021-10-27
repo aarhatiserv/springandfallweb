@@ -1,7 +1,23 @@
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+ $( document ).ready(function(){
+            //Perform Ajax request.
+            $.ajax({
+                url: '/api/college',
+                type: 'get',
+                success: function(data){
+                    alert(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                    alert(errorMsg);
+                  }
+            });
+        });
+</script>
 <section id="getstartdSection">
     <div class="container">
         <div class="row">
@@ -17,7 +33,8 @@
                 <button class="btn get-started flot-right" id="getStarted" role="button">Get Started</button>
             </div>
             <div class="col-sm-6 p-5">
-                <img class="img-fluid" src="./assets/images/caree-guide/career-guide-image.png"  alt="career-guide-image" width="640" height="360" title="career-guide-image">
+                <img class="img-fluid" src="./assets/images/caree-guide/career-guide-image.png" alt="career-guide-image"
+                    width="640" height="360" title="career-guide-image">
             </div>
         </div>
     </div>
@@ -190,8 +207,7 @@
                         <label class="form-check-label" for="inlineRadio1">Certification</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Diploma" id="Diploma"
-                            value="option1">
+                        <input class="form-check-input" type="radio" name="Diploma" id="Diploma" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Diploma</label>
                     </div>
                     <div class="form-group">
@@ -214,23 +230,19 @@
                         <label class="form-check-label " for="inlineRadio1">Engineering</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Management" id="Management"
-                            value="option1">
+                        <input class="form-check-input" type="radio" name="Management" id="Management" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Management</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Medical" id="Medical"
-                            value="option1">
+                        <input class="form-check-input" type="radio" name="Medical" id="Medical" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Medical</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Design" id="Design"
-                            value="option1">
+                        <input class="form-check-input" type="radio" name="Design" id="Design" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Design</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Other" id="Other"
-                            value="option1">
+                        <input class="form-check-input" type="radio" name="Other" id="Other" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Other</label>
                     </div>
                 </div>
@@ -250,27 +262,28 @@
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0 active" id="pills-countries-tab"
                                         data-toggle="pill" href="#pills-countries" role="tab" aria-label="Countries"
-                                        aria-controls="pills-countries" aria-selected="true" rel="noopener">COUNTRIES</a>
+                                        aria-controls="pills-countries" aria-selected="true"
+                                        rel="noopener">COUNTRIES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0" id="pills-courses-tab" data-toggle="pill"
-                                        href="#pills-courses" role="tab" aria-controls="pills-courses" aria-label="Courses"
-                                        aria-selected="false" rel="noopener">COURSES</a>
+                                        href="#pills-courses" role="tab" aria-controls="pills-courses"
+                                        aria-label="Courses" aria-selected="false" rel="noopener">COURSES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0" id="pills-colleges-tab" data-toggle="pill"
-                                        href="#pills-colleges" role="tab" aria-controls="pills-colleges" aria-label="Colleges"
-                                        aria-selected="false">COLLEGES</a>
+                                        href="#pills-colleges" role="tab" aria-controls="pills-colleges"
+                                        aria-label="Colleges" aria-selected="false">COLLEGES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0" id="pills-university-tab" data-toggle="pill"
-                                        href="#pills-university" role="tab" aria-controls="pills-university" aria-label="University"
-                                        aria-selected="false" rel="noopener">UNIVERSITY</a>
+                                        href="#pills-university" role="tab" aria-controls="pills-university"
+                                        aria-label="University" aria-selected="false" rel="noopener">UNIVERSITY</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0" id="pills-careers-tab" data-toggle="pill"
-                                        href="#pills-careers" role="tab" aria-controls="pills-careers" aria-label="careers"
-                                        aria-selected="false">CAREERS</a>
+                                        href="#pills-careers" role="tab" aria-controls="pills-careers"
+                                        aria-label="careers" aria-selected="false">CAREERS</a>
                                 </li>
 
 
@@ -279,7 +292,8 @@
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0 dropdown-toggle" id="$filter"
                                         data-toggle="collapse" href="#collapseContries" role="button"
-                                        aria-expanded="false" aria-controls="collapseContries" aria-label="Filter by" rel="noopener">FILTER BY</a>
+                                        aria-expanded="false" aria-controls="collapseContries" aria-label="Filter by"
+                                        rel="noopener">FILTER BY</a>
                                 </li>
                             </ul>
 
@@ -287,15 +301,19 @@
                                 <div class="card card-body">
                                     <div class="row">
                                         <span class="badge badge-light border m-1"> <img
-                                                src="https://flagcdn.com/16x12/us.png" alt="za" title="za"  /> USA</span>
+                                                src="https://flagcdn.com/16x12/us.png" alt="za" title="za" /> USA</span>
                                         <span class="badge badge-light border m-1"> <img
-                                                src="https://flagcdn.com/16x12/ca.png"  alt="za" title="za" /> CANADA</span>
+                                                src="https://flagcdn.com/16x12/ca.png" alt="za" title="za" />
+                                            CANADA</span>
                                         <span class="badge badge-light border m-1"> <img
-                                                src="https://flagcdn.com/16x12/de.png" alt="za" title="za"  /> GERMANY</span>
+                                                src="https://flagcdn.com/16x12/de.png" alt="za" title="za" />
+                                            GERMANY</span>
                                         <span class="badge badge-light border m-1"> <img
-                                                src="https://flagcdn.com/16x12/fr.png" alt="za" title="za"  /> FRANCE</span>
+                                                src="https://flagcdn.com/16x12/fr.png" alt="za" title="za" />
+                                            FRANCE</span>
                                         <span class="badge badge-light border m-1"> <img
-                                                src="https://flagcdn.com/16x12/gb.png" alt="za" title="za"  /> UNITED KINGDOM</span>
+                                                src="https://flagcdn.com/16x12/gb.png" alt="za" title="za" /> UNITED
+                                            KINGDOM</span>
                                     </div>
                                 </div>
                             </div>
@@ -425,7 +443,7 @@
                                         </li>
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">
@@ -453,7 +471,7 @@
                                         </li>
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">
@@ -514,7 +532,7 @@
                                         </li>
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">
@@ -542,7 +560,7 @@
                                         </li>
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">
@@ -575,96 +593,7 @@
                                     <ul class="list-unstyled">
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="pills-careers" role="tabpanel"
-                                    aria-labelledby="pills-careers-tab">
-                                    <ul class="list-unstyled">
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">
@@ -720,7 +649,96 @@
                                         </li>
                                         <li class="media my-4 bg-light">
                                             <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="..." title="..."  width="" height="">
+                                                class="mr-3" alt="..." title="..." width="" height="">
+                                            <div class="media-body py-3">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
+                                                            Indian
+                                                            Sub-Continent
+                                                            Regional
+                                                            Undergraduate Scholarship 2021-22</h5>
+                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
+                                                            Tonight,
+                                                            tonight,
+                                                            tonight,
+                                                            I'm walking on air. Slowly swallowing down my fear, yeah
+                                                            yeah. </p>
+                                                    </div>
+                                                    <div
+                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
+                                                        <div class="apply px-5">
+                                                            <h5>5 Days to go</h5>
+                                                            <button class="btn btn-primary">Apply now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="pills-careers" role="tabpanel"
+                                    aria-labelledby="pills-careers-tab">
+                                    <ul class="list-unstyled">
+                                        <li class="media my-4 bg-light">
+                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
+                                                class="mr-3" alt="..." title="..." width="" height="">
+                                            <div class="media-body py-3">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
+                                                            Indian
+                                                            Sub-Continent
+                                                            Regional
+                                                            Undergraduate Scholarship 2021-22</h5>
+                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
+                                                            Tonight,
+                                                            tonight,
+                                                            tonight,
+                                                            I'm walking on air. Slowly swallowing down my fear, yeah
+                                                            yeah. </p>
+                                                    </div>
+                                                    <div
+                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
+                                                        <div class="apply px-5">
+                                                            <h5>5 Days to go</h5>
+                                                            <button class="btn btn-primary">Apply now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media my-4 bg-light">
+                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
+                                                class="mr-3" alt="..." title="..." width="" height="">
+                                            <div class="media-body py-3">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
+                                                            Indian
+                                                            Sub-Continent
+                                                            Regional
+                                                            Undergraduate Scholarship 2021-22</h5>
+                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
+                                                            Tonight,
+                                                            tonight,
+                                                            tonight,
+                                                            I'm walking on air. Slowly swallowing down my fear, yeah
+                                                            yeah. </p>
+                                                    </div>
+                                                    <div
+                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
+                                                        <div class="apply px-5">
+                                                            <h5>5 Days to go</h5>
+                                                            <button class="btn btn-primary">Apply now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media my-4 bg-light">
+                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
+                                                class="mr-3" alt="..." title="..." width="" height="">
                                             <div class="media-body py-3">
                                                 <div class="row">
                                                     <div class="col-md-8">

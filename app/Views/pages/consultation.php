@@ -1,3 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+ $( document ).ready(function(){
+            //Perform Ajax request.
+            $.ajax({
+                url: '/api/college',
+                type: 'GET',
+                success: function(data){
+                     console.log(data.collegeData);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                    // alert(errorMsg);
+                    console.log(errorMsg);
+                  }
+            });
+        });
+
+        
+</script>
 <section id="hero">
     <div class="container mb-4 admin " id="hero-banner">
         <div class="container" style="background-color:  rgba(150, 242, 242, 0.6);">
@@ -86,7 +106,7 @@
                             aria-selected="false">UNIVERSITY</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link mr-1 rounded-0 " id="pills-careers-tab" data-toggle="pill"
+                        <a class="nav-link mr-1 rounded-0 margin " id="pills-careers-tab" data-toggle="pill"
                             href="#pills-careers" role="tab" aria-controls="pills-careers"
                             aria-selected="false">CAREERS</a>
                     </li>
@@ -122,9 +142,30 @@
                     <div class="tab-pane fade show active" id="pills-countries" role="tabpanel"
                         aria-labelledby="pills-countries-tab">
 
-
                         <ul class="list-unstyled">
+                        <?php  
+                                    //    foreach($collegeData as $list) {
+                        ?>
                             <li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
+                                    title="..." width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">arfeargevge</p>
+                                            <p>avaevbevdfv</p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                       <?php //} ?>
+                            <!-- <li class="media my-4 bg-light">
                                 <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
                                     title="..." width="" height="" />
                                 <div class="media-body py-3">
@@ -171,31 +212,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="media my-4 bg-light">
-                                <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
-                                    title="..." width="" height="" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
-                                                Sub-Continent
-                                                Regional
-                                                Undergraduate Scholarship 2021-22</p>
-                                            <p>All my girls vintage Chanel baby. So you can have your cake. Tonight,
-                                                tonight,
-                                                tonight,
-                                                I'm walking on air. Slowly swallowing down my fear, yeah yeah. </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="tab-pane fade" id="pills-courses" role="tabpanel" aria-labelledby="pills-courses-tab">
