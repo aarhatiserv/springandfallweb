@@ -1,25 +1,52 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript">
- $( document ).ready(function(){
-            //Perform Ajax request.
-            $.ajax({
-                url: '/api/college',
-                type: 'GET',
-                success: function(res){
-                    let collageData = JSON.parse(res);
-            if (collageData.status !== undefined) {
-                console.log(collageData.data);
-            }
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                    // alert(errorMsg);
-                    console.log(errorMsg);
-                  }
-            });
-        });
+$(document).ready(function() {
+    //Perform Ajax request.
+    // getCollege();
+});
 
-        
+function getCollege() {
+    $.ajax({
+        url: '/api/college',
+        type: 'GET',
+        success: function(res) {
+            let collegeData = JSON.parse(res);
+            let dt = [];
+            if (collegeData.status !== undefined) {
+                collegeData.data.map((item) => (
+                    // console.log(collageData.data);
+                    dt.push(
+                        `<li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                    title="hrl" width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                            <p>` + item.country + ` </p>
+                                            <p>` + item.offers + ` </p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                    )
+                ));
+                $("#listCollege").html(dt);
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            // alert(errorMsg);
+            console.log(errorMsg);
+        }
+    });
+}
 </script>
 <section id="hero">
     <div class="container mb-4 admin " id="hero-banner">
@@ -90,23 +117,23 @@
                 <ul class="nav nav-pills  mb-3">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link mr-1 rounded-0 margin active" id="pills-countries-tab" data-toggle="pill"
-                            href="#pills-countries" role="tab" aria-controls="pills-countries"
-                            aria-selected="true">COUNTRIES</a>
+                            href="#pills-countries" role="tab" aria-controls="pills-countries" aria-selected="true"
+                            onclick="getCollege()">COUNTRIES</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link mr-1 rounded-0 margin " id="pills-courses-tab" data-toggle="pill"
                             href="#pills-courses" role="tab" aria-controls="pills-courses"
                             aria-selected="false">COURSES</a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="nav-link mr-1 rounded-0 margin " id="pills-colleges-tab" data-toggle="pill"
                             href="#pills-colleges" role="tab" aria-controls="pills-colleges"
                             aria-selected="false">COLLEGES</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" role="presentation">
                         <a class="nav-link mr-1 rounded-0 margin" id="pills-university-tab" data-toggle="pill"
                             href="#pills-university" role="tab" aria-controls="pills-university"
-                            aria-selected="false">UNIVERSITY</a>
+                            aria-selected="false"></a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link mr-1 rounded-0 margin " id="pills-careers-tab" data-toggle="pill"
@@ -127,16 +154,100 @@
                 <div class="collapse" id="collapseContries">
                     <div class="card card-body">
                         <div class="row">
-                            <span class="badge badge-light border m-1"> <img src="https://flagcdn.com/16x12/us.png"
-                                    alt="za" title="za" width="" height="" /> USA</span>
-                            <span class="badge badge-light border m-1"> <img src="https://flagcdn.com/16x12/ca.png"
-                                    alt="za" title="za" width="" height="" /> CANADA</span>
-                            <span class="badge badge-light border m-1"> <img src="https://flagcdn.com/16x12/de.png"
-                                    alt="za" title="za" width="" height="" /> GERMANY</span>
-                            <span class="badge badge-light border m-1"> <img src="https://flagcdn.com/16x12/fr.png"
-                                    alt="za" title="za" width="" height="" /> FRANCE</span>
-                            <span class="badge badge-light border m-1"> <img src="https://flagcdn.com/16x12/gb.png"
-                                    alt="za" title="za" width="" height="" /> UNITED KINGDOM</span>
+
+                            <div class="form-check form-check-inline text-left d-flex justify-content-between">
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="country" id="country"
+                                        value="USA">
+                                    <label class="form-check-label " for="country"><img
+                                            src="https://flagcdn.com/16x12/us.png" alt="za" title="za" width=""
+                                            height="" />USA</label>
+                                </div>
+                                &emsp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="country" id="country" value="UK">
+                                    <label class="form-check-label" for="country"><img
+                                            src="https://flagcdn.com/16x12/gb.png" alt="za" title="za" width=""
+                                            height="" />UK</label>
+                                </div>
+                                &emsp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="country" id="country"
+                                        value="Canada">
+                                    <label class="form-check-label" for="country"><img
+                                            src="https://flagcdn.com/16x12/ca.png" alt="za" title="za" width=""
+                                            height="" />Canada</label>
+                                </div>
+                                &emsp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="country" id="country"
+                                        value="Germany">
+                                    <label class="form-check-label" for="country"><img
+                                            src="https://flagcdn.com/16x12/de.png" alt="za" title="za" width=""
+                                            height="" />Germany</label>
+                                </div>
+
+                                &emsp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="country" id="country"
+                                        value="France">
+                                    <label class="form-check-label" for="country"><img
+                                            src="https://flagcdn.com/16x12/fr.png" alt="za" title="za" width=""
+                                            height="" />France</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div clss="row">
+
+
+                            <div class="form-check form-check-inline text-left d-flex justify-content-between">
+
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="study" id="study"
+                                        value="Engineering">
+                                    <label class="form-check-label " for="study">Engineering</label>
+                                </div>
+                                &ensp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="study" id="study"
+                                        value="Management">
+                                    <label class="form-check-label" for="study">Management</label>
+                                </div>
+                                &ensp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="study" id="study"
+                                        value="Medical">
+                                    <label class="form-check-label" for="study">Medical</label>
+                                </div>
+                                &ensp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="study" id="study" value="Design">
+                                    <label class="form-check-label" for="study">Design</label>
+                                </div>
+                                &ensp;
+                                <div class="form-group">
+                                    <input class="form-check-input" type="radio" name="study" id="study" value="Other">
+                                    <label class="form-check-label" for="study">Other</label>
+                                </div>
+                            </div>
+
+
+                            <!-- <select name="filterNazim">
+                            <option class="badge badge-light border m-1" value="usa"> <img src="https://flagcdn.com/16x12/us.png"
+                                    alt="za" title="za" width="" height="" /> USA</option>
+                                    <option class="badge badge-light border m-1" value="canada"> <img src="https://flagcdn.com/16x12/ca.png"
+                                    alt="za" title="za" width="" height="" /> CANADA</option>
+                                    <option class="badge badge-light border m-1" value="germany"> <img src="https://flagcdn.com/16x12/de.png"
+                                    alt="za" title="za" width="" height="" /> GERMANY</option>
+                                    <option class="badge badge-light border m-1" value="france"> <img src="https://flagcdn.com/16x12/fr.png"
+                                    alt="za" title="za" width="" height="" /> FRANCE</option>
+                                    <option class="badge badge-light border m-1" value="uk"> <img src="https://flagcdn.com/16x12/gb.png"
+                                    alt="za" title="za" width="" height="" /> UNITED KINGDOM</option>
+                                    <select> -->
+
+
                         </div>
                     </div>
                 </div>
@@ -145,11 +256,12 @@
                     <div class="tab-pane fade show active" id="pills-countries" role="tabpanel"
                         aria-labelledby="pills-countries-tab">
 
-                        <ul class="list-unstyled">
-                        <?php  
+                        <ul class="list-unstyled" id="listCollege">
+
+                            <?php  
                                     //    foreach($collegeData as $list) {
                         ?>
-                            <li class="media my-4 bg-light">
+                            <!-- <li class="media my-4 bg-light">
                                 <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
                                     title="..." width="" height="" />
                                 <div class="media-body py-3">
@@ -166,8 +278,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                       <?php //} ?>
+                            </li> -->
+                            <?php //} ?>
                             <!-- <li class="media my-4 bg-light">
                                 <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
                                     title="..." width="" height="" />
@@ -226,7 +338,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -250,7 +363,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -274,7 +388,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -302,7 +417,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -326,7 +442,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -350,7 +467,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -379,7 +497,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -403,7 +522,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -427,7 +547,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -455,7 +576,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -479,7 +601,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
@@ -503,7 +626,8 @@
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex Indian
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
+                                                Indian
                                                 Sub-Continent
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>

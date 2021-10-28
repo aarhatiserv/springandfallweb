@@ -14,7 +14,7 @@ class CollegeController extends BaseController
 
 	public function getColleges(){
        $model = new CollegeModel();
-       $data['collegeData'] = $model->find();
+       $data = $model->find();
 	//    echo view('pages/consultation', $data);
     //    return redirect()->to('consultation');
 	//    return view('pages/career-guide', $data);

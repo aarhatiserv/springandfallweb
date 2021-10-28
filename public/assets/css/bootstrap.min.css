@@ -917,7 +917,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .card>.list-group:first-child{border-top-width:0;border-top-left-radius:calc(.25rem - 1px);border-top-right-radius:calc(.25rem - 1px)}
 .card>.list-group:last-child{border-bottom-width:0;border-bottom-right-radius:calc(.25rem - 1px);border-bottom-left-radius:calc(.25rem - 1px)}
 .card>.card-header+.list-group,.card>.list-group+.card-footer{border-top:0}
-.card-body{-ms-flex:1 1 auto;flex:1 1 auto;min-height:1px;padding:1.25rem}
+.card-body{-ms-flex:1 1 auto;flex:1 1 auto;min-height:1px;    padding: 2.25rem;}
 .card-title{margin-bottom:.75rem}
 .card-subtitle{margin-top:-.375rem;margin-bottom:0}
 .card-text:last-child{margin-bottom:0}
@@ -1326,7 +1326,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover{backgr
 .border-right-0{border-right:0!important}
 .border-bottom-0{border-bottom:0!important}
 .border-left-0{border-left:0!important}
-.border-primary{border-color:#007bff!important}
+.border-primary{border-color:#007bff!important;width: 100%;}
 .border-secondary{border-color:#6c757d!important}
 .border-success{border-color:#28a745!important}
 .border-info{border-color:#17a2b8!important}

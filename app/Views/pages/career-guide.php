@@ -1,7 +1,7 @@
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript">
  $( document ).ready(function(){
             //Perform Ajax request.
@@ -17,7 +17,7 @@
                   }
             });
         });
-</script>
+</script> -->
 <section id="getstartdSection">
     <div class="container">
         <div class="row">
@@ -150,36 +150,36 @@
             <div class="col-lg-10">
                 <div class="form-check form-check-inline text-left d-flex justify-content-between">
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="USA" id="USA" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="USA">
                         <label class="form-check-label " for="country">USA</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="UK" id="UK" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="UK">
                         <label class="form-check-label" for="country">UK</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Canada" id="Canada" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="Canada">
                         <label class="form-check-label" for="country">Canada</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Germany" id="Germany" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="Germany">
                         <label class="form-check-label" for="country">Germany</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Ireland" id="Ireland" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="Ireland">
                         <label class="form-check-label" for="country">Ireland</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="NZ" id="NZ" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="NZ">
                         <label class="form-check-label" for="country">NZ</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Australia" id="Australia" value="option1">
+                        <input class="form-check-input" type="radio" name="country" id="country" value="Australia">
                         <label class="form-check-label" for="country">Australia</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Schengen" id="Schengen" value="option1">
-                        <label class="form-check-label" for="country">Schengen Countries</label>
+                        <input class="form-check-input" type="radio" name="country" id="country" value="Schengen">
+                        <label class="form-check-label" for="country">Schengen</label>
                     </div>
                 </div>
 
@@ -192,28 +192,28 @@
             <div class="col-lg-10">
                 <div class="form-check form-check-inline text-left d-flex justify-content-between">
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Undergraduate" id="Undergraduate"
-                            value="option1">
-                        <label class="form-check-label " for="inlineRadio1">Undergraduate</label>
+                        <input class="form-check-input" type="radio" name="level" id="level"
+                            value="Undergraduate">
+                        <label class="form-check-label " for="level">Undergraduate</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="PostGraduate" id="PostGraduate"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">PostGraduate</label>
+                        <input class="form-check-input" type="radio" name="level" id="level"
+                            value="PostGraduate">
+                        <label class="form-check-label" for="level">PostGraduate</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Certification" id="Certification"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Certification</label>
+                        <input class="form-check-input" type="radio" name="level" id="level"
+                            value="Certification">
+                        <label class="form-check-label" for="level">Certification</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Diploma" id="Diploma" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Diploma</label>
+                        <input class="form-check-input" type="radio" name="level" id="level" value="Diploma">
+                        <label class="form-check-label" for="level">Diploma</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="ExecutiveCourse" id="ExecutiveCourse"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">ExecutiveCourse</label>
+                        <input class="form-check-input" type="radio" name="level" id="level"
+                            value="ExecutiveCourse">
+                        <label class="form-check-label" for="level">ExecutiveCourse</label>
                     </div>
                 </div>
             </div>
@@ -225,25 +225,25 @@
             <div class="col-lg-10">
                 <div class="form-check form-check-inline text-left d-flex justify-content-between">
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Engineering" id="Engineering"
-                            value="option1">
-                        <label class="form-check-label " for="inlineRadio1">Engineering</label>
+                        <input class="form-check-input" type="radio" name="study" id="study"
+                            value="Engineering">
+                        <label class="form-check-label " for="study">Engineering</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Management" id="Management" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Management</label>
+                        <input class="form-check-input" type="radio" name="study" id="study" value="Management">
+                        <label class="form-check-label" for="study">Management</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Medical" id="Medical" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Medical</label>
+                        <input class="form-check-input" type="radio" name="study" id="study" value="Medical">
+                        <label class="form-check-label" for="study">Medical</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Design" id="Design" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Design</label>
+                        <input class="form-check-input" type="radio" name="study" id="study" value="Design">
+                        <label class="form-check-label" for="study">Design</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="Other" id="Other" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Other</label>
+                        <input class="form-check-input" type="radio" name="study" id="study" value="Other">
+                        <label class="form-check-label" for="study">Other</label>
                     </div>
                 </div>
 
