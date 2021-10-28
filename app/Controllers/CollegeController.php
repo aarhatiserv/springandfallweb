@@ -19,6 +19,7 @@ class CollegeController extends BaseController
     //    return redirect()->to('consultation');
 	//    return view('pages/career-guide', $data);
 	// return redirect()->to('consultation');
-	return $this->response->setJSON($data);
+	// return $this->response->setJSON($data);
+	echo json_encode(["status" => 1, "data" => $data]);
 	}
 }

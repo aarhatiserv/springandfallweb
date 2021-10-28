@@ -6,8 +6,8 @@
  $( document ).ready(function(){
             //Perform Ajax request.
             $.ajax({
-                url: '/api/college',
-                type: 'get',
+                // url: '/api/college',
+                // type: 'get',
                 success: function(data){
                     alert(data);
                 },

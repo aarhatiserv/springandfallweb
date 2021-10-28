@@ -5,8 +5,11 @@
             $.ajax({
                 url: '/api/college',
                 type: 'GET',
-                success: function(data){
-                     console.log(data.collegeData);
+                success: function(res){
+                    let collageData = JSON.parse(res);
+            if (collageData.status !== undefined) {
+                console.log(collageData.data);
+            }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
