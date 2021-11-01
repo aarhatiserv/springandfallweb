@@ -17,11 +17,6 @@ class CollegeController extends BaseController
 		log_message('debug',print_r($country,TRUE));
        $model = new CollegeModel();
        $data = $model->where('country', $country)->findAll();
-	//    echo view('pages/consultation', $data);
-    //    return redirect()->to('consultation');
-	//    return view('pages/career-guide', $data);
-	// return redirect()->to('consultation');
-	// return $this->response->setJSON($data);
 	echo json_encode(["status" => 1, "data" => $data]);
 	}
 }
