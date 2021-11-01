@@ -18,7 +18,6 @@
                         title="facebook"></i></a>
 
                 <!-- <a href="https://www.instagram.com/_springandfall_/" target="_blank">
-
                     <i class="fa fa-instagram ml-4 mt-2 fa-2x"  title="instagram"></i></a><br> -->
                     <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i class="fa fa-instagram ml-4 mt-2 fa-2x"  title="instagram"></i></a><br/>
                 <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"  title="twitter"></i></a>
@@ -27,17 +26,16 @@
             </div>
         </div>
         <div class="col-sm-12 col-lg-3  colMargins colText">
-            <a href="about" rel="noopener">ABOUT US</a><br />
-            <a href="career-guide" rel="noopener">CAREER GUIDE</a><br />
-            <a href="financial-aid" rel="noopener">FINANICAIL AID</a><br />
-            <a href="visa-consultation" rel="noopener">CONSULTATION</a><br />
+            <a href="about" rel="noopener" class="anchor">ABOUT US</a><br />
+            <a href="career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
+            <a href="financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
+            <a href="visa-consultation" rel="noopener" class="anchor">CONSULTATION</a><br />
             <!-- <a href="">EVENTS</a> -->
         </div>
         <div class="col-sm-12 col-lg-3  colMargins colText2">
-            <a href="blog" rel="noopener">BLOG</a><br />
-            <a href="terms-and-condtion" rel="noopener">TERMS & CONDTION</a><br />
+            <a href="blog" rel="noopener" class="anchor">BLOG</a><br />
+            <a href="terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a><br />
             <!-- <a href="#" onclick="comingSoon()">VIDEO</a><br />
-
                <a href="#" onclick="comingSoon()">CAREER</a><br />
                <a href="#" onclick="comingSoon()">AFFILIATE PROGRAM</a> -->
         </div>

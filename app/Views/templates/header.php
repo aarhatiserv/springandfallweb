@@ -29,8 +29,8 @@ $session = session();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif+Caption&display=swap" rel="stylesheet" /> -->
         <!-- Font Awesome CDN -->
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" /> -->
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css"/> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css"/>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 
     
@@ -203,30 +203,30 @@ $session = session();
             <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item mr-2">
-                        <a class="nav-link" href="about" rel="noopener">ABOUT US</a>
+                        <a class="nav-link anchor" href="about" rel="noopener">ABOUT US</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link" href="career-guide" rel="noopener">Career Guide</a>
+                        <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
                     </li>
                     <li class="nav-item dropdown mr-2">
-                        <a class="nav-link dropdown-toggle" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                             FINANCIAL AID
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
-                            <a class="dropdown-item" href="scholarship" rel="noopener">SCHOLARSHIP</a>
+                        <div class="dropdown-menu anchor" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                            <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown mr-2">
-                        <a class="nav-link dropdown-toggle" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                             CONSULTATION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="consultation" id="consul" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
-                            <a class="dropdown-item" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
-                            <a class="dropdown-item" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                            <a class="dropdown-item anchor" href="consultation" id="consul" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
+                            <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
+                            <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
                             <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                             <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                             <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->
@@ -260,30 +260,30 @@ $session = session();
                 <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="about" rel="noopener">ABOUT US</a>
+                            <a class="nav-link anchor" href="about" rel="noopener">ABOUT US</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="career-guide" rel="noopener">Career Guide</a>
+                            <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
                         </li>
                         <li class="nav-item dropdown mr-2">
-                            <a class="nav-link dropdown-toggle" href="#"  role="button"
+                            <a class="nav-link dropdown-toggle anchor" href="#"  role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                                 FINANCIAL AID
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
-                                <a class="dropdown-item" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
+                                <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                                <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-2">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link dropdown-toggle anchor" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                                 CONSULTATION
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="consultation" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
-                                <a class="dropdown-item" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
-                                <a class="dropdown-item" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                                <a class="dropdown-item anchor" href="consultation" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
+                                <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
+                                <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
                                 <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                                 <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                                 <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->

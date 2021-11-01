@@ -20,3 +20,47 @@
     width: 100%;
     height: 25px;
 }
+
+.rr{
+    font-size: 20px !important;
+    border: none !important;
+    background-color: #fff;
+}
+.rr1{
+    font-size: 16px !important;
+    border: none !important;
+    background-color: #fff;
+}
+.course{
+    color: #114694 !important;
+}
+.course:active{
+    color:#fff !important;background-color:#114694!important;padding:6px!important;border-radius:5px!important
+}
+.course:hover{
+    text-decoration: none !important;
+}
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+ }
+ 
+ #loading-content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   text-align: center;
+   z-index: 100;
+ }
+ 
+ .hide{
+   display: none;
+ }

@@ -12,9 +12,11 @@ class CollegeController extends BaseController
 		//
 	}
 
-	public function getColleges(){
+	public function getColleges($country){
+		// echo $country;
+		log_message('debug',print_r($country,TRUE));
        $model = new CollegeModel();
-       $data = $model->find();
+       $data = $model->where('country', $country)->findAll();
 	//    echo view('pages/consultation', $data);
     //    return redirect()->to('consultation');
 	//    return view('pages/career-guide', $data);

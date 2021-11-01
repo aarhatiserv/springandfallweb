@@ -1,1 +1,4 @@
-.nav-item .active{text-decoration:underline;color:#114694!important}#scholarships .nav-item{font-family:"Poppins";font-weight:600;font-size:20px}#scholarships .nav-item:hover{text-decoration:underline;color:#114694!important}.media-heading{color:#114694!important;text-transform:uppercase}.sch{color:#114694;text-decoration:none!important}.applyNow{color:#fff;background-color:#114694;color:#fff!important;padding-bottom:8px}.nav-item:hover{text-decoration:none!important}.nav-link.active{color:#bd5b00!important}
+.sch:hover{
+    text-decoration: none !important;
+}
+.nav-item .active{text-decoration:underline;color:#114694!important}#scholarships .nav-item{font-family:"Poppins";font-weight:600;font-size:20px}#scholarships .nav-item:hover{text-decoration:underline;color:#114694!important}.media-heading{color:#114694!important;text-transform:uppercase}.sch{color:#114694 !important;text-decoration:none !important}.applyNow{color:#fff;background-color:#114694;color:#fff!important;padding-bottom:8px}.nav-item:hover{text-decoration:none!important}.nav-link.active{color:#bd5b00!important}
