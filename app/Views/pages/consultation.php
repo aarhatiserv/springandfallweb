@@ -243,31 +243,7 @@ function getCollege(country) {
                             </div>
                         </div>
                     </ul>
-                    <!-- <li class="media my-4 bg-light">
-                        <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
-                            title="..." width="" height="" />
-                        <div class="media-body py-3">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
-                                        Indian
-                                        Sub-Continent
-                                        Regional
-                                        Undergraduate Scholarship 2021-22 USA</p>
-                                    <p>All my girls vintage Chanel baby. So you can have your cake. Tonight,
-                                        tonight,
-                                        tonight,
-                                        I'm walking on air. Slowly swallowing down my fear, yeah yeah. </p>
-                                </div>
-                                <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                    <div class="apply px-5">
-                                        <p class="h5_2_P_Days">5 Days to go</p>
-                                        <button class="btn applyNow">Apply now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
+                    
                 </div>
                 <div class="tab-pane fade" id="pills-uk" role="tabpanel" aria-labelledby="pills-uk-tab">
                     <ul class="list-unstyled" id="listColleges">
