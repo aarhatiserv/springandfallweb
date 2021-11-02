@@ -1,1 +1,7 @@
 #getstartdSection,#personalDetails,#areaOfInterest{min-height:90vh;height:auto}
+.tab{
+    color: #114694!important;
+}
+.tab:hover{
+text-decoration: none !important;
+}

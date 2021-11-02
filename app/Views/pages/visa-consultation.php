@@ -46,8 +46,14 @@
             <form action="">
                 <select name="mode" id="Mode" class="option" >
                     <option value="">Select Country</option>
-                    <option value="offline">INDIA</option>
-                    <option value="online">USA</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">CANADA</option>
+                    <option value="Germany">GERMANY</option>
+                    <option value="Ireland">IRELAND</option>
+                    <option value="NZ">NZ</option>
+                    <option value="Australia">AUSTRALIA</option>
+                    <option value="Schengen">SCHENGEN</option>
                 </select>
             </form>
         </div>

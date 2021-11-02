@@ -67,14 +67,85 @@ function getCollege(country) {
     });
 }
 
+var country = "";
+var courses = "";
 function getCollegeWithCourse(country) {
-
-    getCollegeWithCourse1(country);
+    if(country != ""){
+        this.country = country;
+    }else {
+        console.log("Select 1 tab");
+    }
 }
-function getCollegeWithCourse1(course) {
 
-console.log('course',course);
+function getCollegeWithCourse1(courses) {
+    if(courses != ""){
+        this.courses = courses;
+        ff();
+    }else {
+        console.log("Select 1 tab");
+    }
+
 }
+
+function ff(){
+    console.log('courses and country', courses, country);
+    $('.college').html("Please wait...");
+    $('.college').prop("disabled", true);
+
+    $.ajax({
+        url: '/api2/college/' + country + '/'+ courses,
+        type: 'GET',
+        success: function(res) {
+            let collegeData = JSON.parse(res);
+            let dt = [];
+            console.log('res', collegeData);
+            if (collegeData.status !== undefined) {
+
+                if (collegeData.data.length == 0) {
+                    $('.college').html("No Record Found");
+                    $('.college').prop("disabled", false);
+                } else {
+                    collegeData.data.map((item) => (
+                        dt.push(
+                            ` <li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                    title="hrl" width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                            <p>` + item.country + ` </p>
+                                            <p>` + item.courses + ` </p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('.college').html(dt);
+                    $('.college').prop("disabled", false);
+                }
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                if (err) {
+                    swal("Oh noes!", "The AJAX request failed!", "error");
+                }
+        }
+    });
+}
+
 </script>
 <section id="hero">
     <div class="container mb-4 admin " id="hero-banner">
@@ -142,17 +213,18 @@ console.log('course',course);
     <div class="container">
         <div class="col-md-12">
             <div class="row">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> -->
+                <ul class="nav nav-pills mb-3 text-center" id="pills-tab">
                     <li class="nav-item">
-                        <button class="nav-link rr" id="pills-countries-tab" data-toggle="pill" href="#pills-countries"
+                        <button class="nav-link rr mx-2 " id="pills-countries-tab" data-toggle="pill" href="#pills-countries"
                             role="tab" aria-controls="pills-countries" aria-selected="false">COUNTRIES</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link rr" id="pills-courses-tab" data-toggle="pill" href="#pills-courses"
+                        <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill" href="#pills-courses"
                             role="tab" aria-controls="pills-courses" aria-selected="false">COURSES</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link rr" id="pills-careers-tab" data-toggle="pill" href="#pills-careers"
+                        <button class="nav-link rr mx-2 " id="pills-careers-tab" data-toggle="pill" href="#pills-careers"
                             role="tab" aria-controls="pills-careers" aria-selected="false">CAREERS</button>
                     </li>
                 </ul>
@@ -187,27 +259,27 @@ console.log('course',course);
 
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-USA-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
                                 onclick="getCollege('USA')">USA</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-UK-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-UK-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
                                 onclick="getCollege('UK')">UK</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-Canada-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-Canada-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
                                 aria-selected="false" onclick="getCollege('Canada')">Canada</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-Germany-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-Germany-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
                                 aria-selected="false" onclick="getCollege('Germany')">Germany</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-France-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-France-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
                                 aria-selected="false" onclick="getCollege('France')">France</button>
                         </li>
@@ -220,27 +292,27 @@ console.log('course',course);
                 <!-- -------------------------------------------------------------------------------------------- -->
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-USA-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-USA1-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
                               onclick="getCollegeWithCourse('USA')">USA</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-UK-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-UK1-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
                                 onclick="getCollegeWithCourse('UK')">UK</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-Canada-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-Canada1-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
                                 aria-selected="false" onclick="getCollegeWithCourse('Canada')">Canada</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-Germany-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-Germany1-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
                                 aria-selected="false" onclick="getCollegeWithCourse('Germany')">Germany</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-France-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-France1-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
                                 aria-selected="false" onclick="getCollegeWithCourse('France')">France</button>
                         </li>
@@ -248,25 +320,25 @@ console.log('course',course);
                 <!-- -------------------------------------------------------------------------------------------- -->
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-engineering-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-engineering-tab" data-toggle="pill"
                                 href="#pills-engineering" role="tab" aria-controls="pills-engineering"
                                 aria-selected="false" onclick="getCollegeWithCourse1('Engineering')">Engineering</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-management-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-management-tab" data-toggle="pill"
                                 href="#pills-management" role="tab" aria-controls="pills-management"
                                 aria-selected="false" onclick="getCollegeWithCourse1('Management')">Management</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-medical-tab" data-toggle="pill" href="#pills-medical"
+                            <button class="nav-link rr1 mx-2" id="pills-medical-tab" data-toggle="pill" href="#pills-medical"
                                 role="tab" aria-controls="pills-medical" aria-selected="false" onclick="getCollegeWithCourse1('Medical')">Medical</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-design-tab" data-toggle="pill" href="#pills-design"
+                            <button class="nav-link rr1 mx-2" id="pills-design-tab" data-toggle="pill" href="#pills-design"
                                 role="tab" aria-controls="pills-design" aria-selected="false" onclick="getCollegeWithCourse1('Design')">Design</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rr1" id="pills-other-tab" data-toggle="pill" href="#pills-other"
+                            <button class="nav-link rr1 mx-2" id="pills-other-tab" data-toggle="pill" href="#pills-other"
                                 role="tab" aria-controls="pills-other" aria-selected="false" onclick="getCollegeWithCourse1('Other')">Other</button>
                         </li>
                     </ul>
@@ -292,66 +364,56 @@ console.log('course',course);
                             </div>
                         </div> -->
                     </ul>
-
                 </div>
-                <div class="tab-pane fade" id="pills-uk" role="tabpanel" aria-labelledby="pills-uk-tab">
-                    <ul class="list-unstyled" id="listColleges">
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="pills-canada" role="tabpanel" aria-labelledby="pills-canada-tab">
-                    <ul class="list-unstyled" id="listColleges">
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="pills-germany" role="tabpanel" aria-labelledby="pills-germany-tab">
-                    <ul class="list-unstyled" id="listColleges">
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="pills-france" role="tabpanel" aria-labelledby="pills-france-tab">
-                    <ul class="list-unstyled college" id="listColleges">
-                    </ul>
-                </div>
+                
 
                 <!-- ---------------------------------END COUNTRIES TAB---------------------------------- -->
                 <!-- -----------------------------Start Courses Tab--------------------------------------------- -->
 
                 <div class="tab-pane fade" id="pills-engineering" role="tabpanel"
-                    aria-labelledby="pills-engineering-tab">
-                    <li class="media my-4 bg-light">
-                        <img class="p-3 img-fluid" src="https://via.placeholder.com/100" class="mr-3" alt="..."
-                            title="..." width="" height="" />
-                        <div class="media-body py-3">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">University Of Essex
-                                        Indian
-                                        Sub-Continent
-                                        Regional
-                                        Undergraduate Scholarship 2021-22 engineering</p>
-                                    <p>All my girls vintage Chanel baby. So you can have your cake. Tonight,
-                                        tonight,
-                                        tonight,
-                                        I'm walking on air. Slowly swallowing down my fear, yeah yeah. </p>
-                                </div>
-                                <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                    <div class="apply px-5">
-                                        <p class="h5_2_P_Days">5 Days to go</p>
-                                        <button class="btn applyNow">Apply now</button>
-                                    </div>
-                                </div>
+                    aria-labelledby="pills-engineering-tab"> 
+                    <ul class="list-unstyled college" id="listColleges">
+                        <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
                             </div>
-                        </div>
-                    </li>
+                        </div> -->
+                    </ul>
                 </div>
-                <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
-                    management
-                </div>
-                <div class="tab-pane fade" id="pills-medical" role="tabpanel" aria-labelledby="pills-medical-tab">
-                    medical
-                </div>
-                <div class="tab-pane fade" id="pills-design" role="tabpanel" aria-labelledby="pills-design-tab">
-                    design</div>
-                <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">other
-                </div>
+                <!-- <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
+                <ul class="list-unstyled college" id="listColleges"> -->
+                        <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
+                            </div>
+                        </div> -->
+                    <!-- </ul>
+                </div> -->
+                <!-- <div class="tab-pane fade" id="pills-medical" role="tabpanel" aria-labelledby="pills-medical-tab">
+                <ul class="list-unstyled college" id="listColleges"> -->
+                        <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
+                            </div>
+                        </div> -->
+                    <!-- </ul>
+                </div> -->
+                <!-- <div class="tab-pane fade" id="pills-design" role="tabpanel" aria-labelledby="pills-design-tab">
+                <ul class="list-unstyled college" id="listColleges"> -->
+                        <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
+                            </div>
+                        </div> -->
+                    <!-- </ul></div> -->
+                <!-- <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab"> <ul class="list-unstyled college" id="listColleges"> -->
+                        <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
+                            </div>
+                        </div> -->
+                    <!-- </ul>
+                </div> -->
                 <!-- -----------------------------END Courses Tab--------------------------------------------- -->
 
                 <!-- ----------------------------------Start Careers Tab---------------------------------- -->

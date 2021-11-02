@@ -260,28 +260,28 @@
                         <div class="row">
                             <ul class="nav nav-pills  mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0 active" id="pills-countries-tab"
+                                    <a class="nav-link mr-1 rounded-0 active tab" id="pills-countries-tab"
                                         data-toggle="pill" href="#pills-countries" role="tab" aria-label="Countries"
                                         aria-controls="pills-countries" aria-selected="true"
                                         rel="noopener">COUNTRIES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0" id="pills-courses-tab" data-toggle="pill"
+                                    <a class="nav-link mr-1 rounded-0 tab" id="pills-courses-tab" data-toggle="pill"
                                         href="#pills-courses" role="tab" aria-controls="pills-courses"
                                         aria-label="Courses" aria-selected="false" rel="noopener">COURSES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0" id="pills-colleges-tab" data-toggle="pill"
+                                    <a class="nav-link mr-1 rounded-0 tab" id="pills-colleges-tab" data-toggle="pill"
                                         href="#pills-colleges" role="tab" aria-controls="pills-colleges"
                                         aria-label="Colleges" aria-selected="false">COLLEGES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0" id="pills-university-tab" data-toggle="pill"
+                                    <a class="nav-link mr-1 rounded-0 tab" id="pills-university-tab" data-toggle="pill"
                                         href="#pills-university" role="tab" aria-controls="pills-university"
                                         aria-label="University" aria-selected="false" rel="noopener">UNIVERSITY</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0" id="pills-careers-tab" data-toggle="pill"
+                                    <a class="nav-link mr-1 rounded-0 tab" id="pills-careers-tab" data-toggle="pill"
                                         href="#pills-careers" role="tab" aria-controls="pills-careers"
                                         aria-label="careers" aria-selected="false">CAREERS</a>
                                 </li>
@@ -290,7 +290,7 @@
                             </ul>
                             <ul class=" nav ml-auto">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mr-1 rounded-0 dropdown-toggle" id="$filter"
+                                    <a class="nav-link mr-1 rounded-0 dropdown-toggle tab" id="$filter"
                                         data-toggle="collapse" href="#collapseContries" role="button"
                                         aria-expanded="false" aria-controls="collapseContries" aria-label="Filter by"
                                         rel="noopener">FILTER BY</a>
