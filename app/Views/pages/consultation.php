@@ -9,12 +9,9 @@ $(document).ready(function() {
 
 
 function getCollege(country) {
-    
-    $(document).ajaxStart(function() {
-    $("#loading").removeClass('hide');
-}).ajaxStop(function() {
-    $("#loading").addClass('hide');
-});
+
+    $('.college').html("Please wait...");
+    $('.college').prop("disabled", true);
 
     $.ajax({
         url: '/api/college/' + country,
@@ -24,10 +21,14 @@ function getCollege(country) {
             let dt = [];
             console.log('res', collegeData);
             if (collegeData.status !== undefined) {
-                collegeData.data.map((item) => (
-                    // console.log(collageData.data);
-                    dt.push(
-                        ` <li class="media my-4 bg-light">
+
+                if (collegeData.data.length == 0) {
+                    $('.college').html("No Record Found");
+                    $('.college').prop("disabled", false);
+                } else {
+                    collegeData.data.map((item) => (
+                        dt.push(
+                            ` <li class="media my-4 bg-light">
                                 <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
@@ -46,17 +47,33 @@ function getCollege(country) {
                                     </div>
                                 </div>
                             </li>`
-                    )
-                ));
-                $("#listColleges").html(dt);
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('.college').html(dt);
+                    $('.college').prop("disabled", false);
+                }
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {
             var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-            // alert(errorMsg);
-            console.log(errorMsg);
+            console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                if (err) {
+                    swal("Oh noes!", "The AJAX request failed!", "error");
+                }
         }
     });
+}
+
+function getCollegeWithCourse(country) {
+
+    getCollegeWithCourse1(country);
+}
+function getCollegeWithCourse1(course) {
+
+console.log('course',course);
 }
 </script>
 <section id="hero">
@@ -196,29 +213,61 @@ function getCollege(country) {
                         </li>
                     </ul>
                 </div>
+
+                
                 <div class="tab-pane fade" id="pills-courses" role="tabpanel" aria-labelledby="pills-courses-tab">
+
+                <!-- -------------------------------------------------------------------------------------------- -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link rr1" id="pills-USA-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
+                              onclick="getCollegeWithCourse('USA')">USA</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rr1" id="pills-UK-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
+                                onclick="getCollegeWithCourse('UK')">UK</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rr1" id="pills-Canada-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
+                                aria-selected="false" onclick="getCollegeWithCourse('Canada')">Canada</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rr1" id="pills-Germany-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
+                                aria-selected="false" onclick="getCollegeWithCourse('Germany')">Germany</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rr1" id="pills-France-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-France"
+                                aria-selected="false" onclick="getCollegeWithCourse('France')">France</button>
+                        </li>
+                    </ul>
+                <!-- -------------------------------------------------------------------------------------------- -->
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-engineering-tab" data-toggle="pill"
                                 href="#pills-engineering" role="tab" aria-controls="pills-engineering"
-                                aria-selected="false">Engineering</button>
+                                aria-selected="false" onclick="getCollegeWithCourse1('Engineering')">Engineering</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-management-tab" data-toggle="pill"
                                 href="#pills-management" role="tab" aria-controls="pills-management"
-                                aria-selected="false">Management</button>
+                                aria-selected="false" onclick="getCollegeWithCourse1('Management')">Management</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-medical-tab" data-toggle="pill" href="#pills-medical"
-                                role="tab" aria-controls="pills-medical" aria-selected="false">Medical</button>
+                                role="tab" aria-controls="pills-medical" aria-selected="false" onclick="getCollegeWithCourse1('Medical')">Medical</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-design-tab" data-toggle="pill" href="#pills-design"
-                                role="tab" aria-controls="pills-design" aria-selected="false">Design</button>
+                                role="tab" aria-controls="pills-design" aria-selected="false" onclick="getCollegeWithCourse1('Design')">Design</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-other-tab" data-toggle="pill" href="#pills-other"
-                                role="tab" aria-controls="pills-other" aria-selected="false">Other</button>
+                                role="tab" aria-controls="pills-other" aria-selected="false" onclick="getCollegeWithCourse1('Other')">Other</button>
                         </li>
                     </ul>
                 </div>
@@ -236,14 +285,14 @@ function getCollege(country) {
                 <!-- -------------------------------------START COUNTRIES TAB---------------------------- -->
 
                 <div class="tab-pane fade" id="pills-All-Countries" role="tabpanel" aria-labelledby="pills-USA-tab">
-                    <ul class="list-unstyled" id="listColleges">
-                        <div id="loading" class="hide">
+                    <ul class="list-unstyled college" id="listColleges">
+                        <!-- <div id="loading" class="hide">
                             <div id="loading-content">
                                 <img src="assets/images/Spinner.gif" alt="Loading"/>
                             </div>
-                        </div>
+                        </div> -->
                     </ul>
-                    
+
                 </div>
                 <div class="tab-pane fade" id="pills-uk" role="tabpanel" aria-labelledby="pills-uk-tab">
                     <ul class="list-unstyled" id="listColleges">
@@ -258,7 +307,7 @@ function getCollege(country) {
                     </ul>
                 </div>
                 <div class="tab-pane fade" id="pills-france" role="tabpanel" aria-labelledby="pills-france-tab">
-                    <ul class="list-unstyled" id="listColleges">
+                    <ul class="list-unstyled college" id="listColleges">
                     </ul>
                 </div>
 

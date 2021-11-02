@@ -72,7 +72,7 @@
 <!-- owl js -->
 <script type="text/javascript" src="assets/plugins/dist/owl.carousel.js"></script>
 <!-- owl js -->
-<!-- <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+<script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- relax -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 <!-- relax ends-->
