@@ -36,7 +36,7 @@ function getCollege(country) {
                                         <div class="col-md-8">
                                             <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
                                             <p>` + item.country + ` </p>
-                                            <p>` + item.offers + ` </p>
+                                            <p>` + item.courses + ` </p>
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
@@ -72,6 +72,7 @@ var courses = "";
 function getCollegeWithCourse(country) {
     if(country != ""){
         this.country = country;
+        ff();
     }else {
         console.log("Select 1 tab");
     }
@@ -88,6 +89,14 @@ function getCollegeWithCourse1(courses) {
 }
 
 function ff(){
+  
+    if (country === "" || courses === "") {
+        console.log('courses and country', courses, country);
+    $('.college').html("Country and Courses must be filled");
+    $('.college').prop("disabled", true);
+    } else {
+        
+    
     console.log('courses and country', courses, country);
     $('.college').html("Please wait...");
     $('.college').prop("disabled", true);
@@ -143,7 +152,8 @@ function ff(){
                     swal("Oh noes!", "The AJAX request failed!", "error");
                 }
         }
-    });
+    })
+    }
 }
 
 </script>
