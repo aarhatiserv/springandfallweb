@@ -5,35 +5,567 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script language="JavaScript" type="text/javascript">
- $(document).ready(function() {
+$(document).ready(function() {
+
+    // ------------------------------------Country--------------------
     $('input:radio[name=country]').change(function() {
         if (this.value == 'USA') {
-            alert(this.value+" Clicked");
+            getCollege(this.value);
+        } else if (this.value == 'UK') {
+            getCollege(this.value);
+        } else if (this.value == 'Canada') {
+            getCollege(this.value);
+        } else if (this.value == 'Germany') {
+            getCollege(this.value);
+        } else if (this.value == 'Ireland') {
+            getCollege(this.value);
+        } else if (this.value == 'NZ') {
+            getCollege(this.value);
+        } else if (this.value == 'Australia') {
+            getCollege(this.value);
+        } else if (this.value == 'Schengen') {
+            getCollege(this.value);
         }
-        else if (this.value == 'UK') {
-            alert(this.value+" Clicked");
+
+    });
+
+    // ------------------------Study---------------------------
+
+    $('input:radio[name=study]').change(function() {
+        if (this.value == 'Engineering') {
+            getCourses(this.value);
+        } else if (this.value == 'Management') {
+            getCourses(this.value);
+        } else if (this.value == 'Medical') {
+            getCourses(this.value);
+        } else if (this.value == 'Design') {
+            getCourses(this.value);
+        } else if (this.value == 'Other') {
+            getCourses(this.value);
         }
-        else if (this.value == 'Canada') {
-            alert(this.value+" Clicked");
-        }
-        else if (this.value == 'Germany') {
-            alert(this.value+" Clicked");
-        }
-        else if (this.value == 'Ireland') {
-            alert(this.value+" Clicked");
-        }
-        else if (this.value == 'NZ') {
-            alert(this.value+" Clicked");
-        }
-        else if (this.value == 'Australia') {
-            alert(this.value+" Clicked");
-        }
-        else if (this.value == 'Schengen') {
-            alert(this.value+" Clicked");
+
+    });
+    // --------------------------------Level---------------------
+    $('input:radio[name=level]').change(function() {
+        if (this.value == 'Undergraduate') {
+            getLevel(this.value);
+        } else if (this.value == 'PostGraduate') {
+            getLevel(this.value);
+        } else if (this.value == 'Certification') {
+            getLevel(this.value);
+        } else if (this.value == 'Diploma') {
+            getLevel(this.value);
+        } else if (this.value == 'ExecutiveCourse') {
+            getLevel(this.value);
         }
 
     });
 });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+var country = "";
+var courses = "";
+var levels = "";
+
+function getCollege(country) {
+
+
+    if (courses != "") {
+
+        if (levels != "") {
+            this.country = country;
+            countryAndCourseAndLevels();
+            // alert(country + " " + courses + " " + levels)
+            // call level and country and course api
+        }else{
+        this.country = country;
+        getCourses(courses);
+        // call country and course api
+        }
+    } else if (levels != "") {
+        if (courses != "") {
+            this.country = country;
+            countryAndCourseAndLevels();
+            // alert(country + " " + courses + " " + levels)
+            // call level and country and course api
+        }else{
+        this.country = country;
+        levelAndCountry();
+        //call country and levels api
+        }
+    } else {
+        // call single country api
+        this.country = country;
+        $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api/college/' + country,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                    title="hrl" width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                            <p>` + item.country + ` </p>
+                                            <p>` + item.courses + ` </p>
+                                            <p>` + item.levels + ` </p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        })
+    }
+}
+// ---------------------------------------------------------------
+function getCourses(course) {
+
+    if (levels != "") {
+        if(country != ""){
+            this.courses = course;
+            countryAndCourseAndLevels();
+            // alert(country+" "+courses+" "+levels);
+            // call level and country and course api
+        }else{
+        this.courses = course;
+        courseAndLevels();
+        // alert(levels +" "+ course);
+         // call course and level api
+        }
+       
+    } else if (country != "") {
+
+        if(levels != ""){
+            this.courses = course;
+            countryAndCourseAndLevels();
+            // alert(country+" "+courses+" "+levels);
+            // call level and country and course api
+        }else{
+         // call country and course api
+        this.courses = course;
+        $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api2/college/' + country + '/' + courses,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                            <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                title="hrl" width="" height="" />
+                            <div class="media-body py-3">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                        <p>` + item.country + ` </p>
+                                        <p>` + item.courses + ` </p>
+                                        <p>` + item.levels + ` </p>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                        <div class="apply px-5">
+                                            <p class="h5_2_P_Days">5 Days to go</p>
+                                            <button class="btn applyNow">Apply now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        });
+    }
+    }  else {
+        /// call course api
+        this.courses = course;
+        $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api/course/' + courses,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                    title="hrl" width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                            <p>` + item.country + ` </p>
+                                            <p>` + item.courses + ` </p>
+                                            <p>` + item.levels + ` </p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        })
+    }
+}
+// ---------------------------------------------Level--------------------------
+function getLevel(level) {
+
+    if (country != "") {
+        if(courses != ""){
+            this.levels = level;
+            countryAndCourseAndLevels();
+            // alert(country+" "+courses+" "+levels)
+            // call 3 api
+        }else{
+            this.levels = level;
+            levelAndCountry();
+            // call country and course api
+        }
+        
+    } else if (courses != "") {
+       if(country != ""){
+        this.levels = level;
+        countryAndCourseAndLevels();
+            // alert(country+" "+courses+" "+levels)
+            // call 3 api
+       }else{
+        this.levels = level;
+        courseAndLevels();
+        // alert(levels + " " + courses);
+        // call courses and levels api
+       }
+        
+    } else {
+        // single parameter pass only level
+        this.levels = level;
+        $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api/level/' + levels,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                    title="hrl" width="" height="" />
+                                <div class="media-body py-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                            <p>` + item.country + ` </p>
+                                            <p>` + item.courses + ` </p>
+                                            <p>` + item.levels + ` </p>
+                                        </div>
+                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                            <div class="apply px-5">
+                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                <button class="btn applyNow">Apply now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        })
+    }
+}
+
+
+function levelAndCountry(){
+    $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api2/countryAndLevels/' + country + '/' + levels,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                            <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                title="hrl" width="" height="" />
+                            <div class="media-body py-3">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                        <p>` + item.country + ` </p>
+                                        <p>` + item.courses + ` </p>
+                                        <p>` + item.levels + ` </p>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                        <div class="apply px-5">
+                                            <p class="h5_2_P_Days">5 Days to go</p>
+                                            <button class="btn applyNow">Apply now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        });
+}
+
+function courseAndLevels(){
+    $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api2/courseAndLevel/' + courses + '/' + levels,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                            <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                title="hrl" width="" height="" />
+                            <div class="media-body py-3">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                        <p>` + item.country + ` </p>
+                                        <p>` + item.courses + ` </p>
+                                        <p>` + item.levels + ` </p>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                        <div class="apply px-5">
+                                            <p class="h5_2_P_Days">5 Days to go</p>
+                                            <button class="btn applyNow">Apply now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        });
+}
+
+function countryAndCourseAndLevels(){
+    $('.college').html("Please wait...");
+        $('.college').prop("disabled", true);
+
+        $.ajax({
+            url: '/api2/countryAndCourseAndLevel/' + country + '/' + courses+ '/' + levels,
+            type: 'GET',
+            success: function(res) {
+                let collegeData = JSON.parse(res);
+                let dt = [];
+                console.log('res', collegeData);
+                if (collegeData.status !== undefined) {
+
+                    if (collegeData.data.length == 0) {
+                        $('.college').html("No Record Found");
+                        $('.college').prop("disabled", false);
+                    } else {
+                        collegeData.data.map((item) => (
+                            dt.push(
+                                ` <li class="media my-4 bg-light">
+                            <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                title="hrl" width="" height="" />
+                            <div class="media-body py-3">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
+                                        <p>` + item.country + ` </p>
+                                        <p>` + item.courses + ` </p>
+                                        <p>` + item.levels + ` </p>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                                        <div class="apply px-5">
+                                            <p class="h5_2_P_Days">5 Days to go</p>
+                                            <button class="btn applyNow">Apply now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('.college').html(dt);
+                        $('.college').prop("disabled", false);
+                    }
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                // console.log(`error`, err);
+                $('.ajaxError').html("Countries");
+                $('.ajaxError').prop("disabled", false);
+                // if (err) {
+                //     swal("Oh noes!", "The AJAX request failed!", "error");
+                // }
+            }
+        });
+}
 </script>
 <section id="getstartdSection">
     <div class="container">
@@ -209,18 +741,15 @@
             <div class="col-lg-10">
                 <div class="form-check form-check-inline text-left d-flex justify-content-between">
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="level" id="level"
-                            value="Undergraduate">
+                        <input class="form-check-input" type="radio" name="level" id="level" value="Undergraduate">
                         <label class="form-check-label " for="level">Under Graduate</label>
                     </div>
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="level" id="level"
-                            value="PostGraduate">
+                        <input class="form-check-input" type="radio" name="level" id="level" value="PostGraduate">
                         <label class="form-check-label" for="level">Post Graduate</label>
                     </div>
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="level" id="level"
-                            value="Certification">
+                        <input class="form-check-input" type="radio" name="level" id="level" value="Certification">
                         <label class="form-check-label" for="level">Certification</label>
                     </div>
                     <div class="form-group mx-2">
@@ -228,8 +757,7 @@
                         <label class="form-check-label" for="level">Diploma</label>
                     </div>
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="level" id="level"
-                            value="ExecutiveCourse">
+                        <input class="form-check-input" type="radio" name="level" id="level" value="ExecutiveCourse">
                         <label class="form-check-label" for="level">Executive Course</label>
                     </div>
                 </div>
@@ -242,8 +770,7 @@
             <div class="col-lg-10">
                 <div class="form-check form-check-inline text-left d-flex justify-content-between">
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="study" id="study"
-                            value="Engineering">
+                        <input class="form-check-input" type="radio" name="study" id="study" value="Engineering">
                         <label class="form-check-label " for="study">Engineering</label>
                     </div>
                     <div class="form-group mx-2">
@@ -267,15 +794,18 @@
             </div>
         </div>
 
-        <div class="row ml-5 my-md-3 p-1">
-            <h4>Your Opportunity </h4>
-        </div>
-        <div class="row ml-5">
-            <section id="universityFilter">
-                <div class="container">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <ul class="nav nav-pills  mb-3" id="pills-tab" role="tablist">
+
+        <!-- <div class="row ml-5"> -->
+        <section id="universityFilter">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <!-- <div class="row ml-5 my-md-3 p-1"> -->
+                        <div class="row my-md-3 p-1">
+                            <h4>Your Opportunity </h4>
+                        </div>
+
+                        <!-- <ul class="nav nav-pills  mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-countries-tab"
                                         data-toggle="pill" href="#pills-countries" role="tab" aria-label="Countries"
@@ -283,11 +813,12 @@
                                         rel="noopener">COUNTRIES</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-courses-tab" data-toggle="pill"
-                                        href="#pills-courses" role="tab" aria-controls="pills-courses"
-                                        aria-label="Courses" aria-selected="false" rel="noopener">COURSES</a>
-                                </li>
-                                <!-- <li class="nav-item" role="presentation">
+                                    <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-courses-tab"
+                                        data-toggle="pill" href="#pills-courses" role="tab"
+                                        aria-controls="pills-courses" aria-label="Courses" aria-selected="false"
+                                        rel="noopener">COURSES</a>
+                                </li> -->
+                        <!-- <li class="nav-item" role="presentation">
                                     <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-colleges-tab" data-toggle="pill"
                                         href="#pills-colleges" role="tab" aria-controls="pills-colleges"
                                         aria-label="Colleges" aria-selected="false">COLLEGES</a>
@@ -297,15 +828,16 @@
                                         href="#pills-university" role="tab" aria-controls="pills-university"
                                         aria-label="University" aria-selected="false" rel="noopener">UNIVERSITY</a>
                                 </li> -->
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-careers-tab" data-toggle="pill"
-                                        href="#pills-careers" role="tab" aria-controls="pills-careers"
-                                        aria-label="careers" aria-selected="false">CAREERS</a>
+                        <!-- <li class="nav-item" role="presentation">
+                                    <a class="nav-link mx-2 rounded-0 tab mb-3" id="pills-careers-tab"
+                                        data-toggle="pill" href="#pills-careers" role="tab"
+                                        aria-controls="pills-careers" aria-label="careers"
+                                        aria-selected="false">CAREERS</a>
                                 </li>
 
 
-                            </ul>
-                            <!-- <ul class=" nav ml-auto">
+                            </ul> -->
+                        <!-- <ul class=" nav ml-auto">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link mr-1 rounded-0 dropdown-toggle tab" id="$filter"
                                         data-toggle="collapse" href="#collapseContries" role="button"
@@ -314,7 +846,7 @@
                                 </li>
                             </ul> -->
 
-                            <div class="collapse" id="collapseContries">
+                        <!-- <div class="collapse" id="collapseContries">
                                 <div class="card card-body">
                                     <div class="row">
                                         <span class="badge badge-light border m-1"> <img
@@ -333,101 +865,22 @@
                                             KINGDOM</span>
                                     </div>
                                 </div>
+                            </div> -->
+                        <div class="tab-content border-top border-primary" id="pills-tabContent">
+
+                            <!-- <div class="tab-pane fade show active" id="pills-countries" role="tabpanel"
+                                    aria-labelledby="pills-countries-tab"> -->
+
+
+                            <ul class="list-unstyled brd college" id="listColleges">
+                                <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
                             </div>
-                            <div class="tab-content border-top border-primary" id="pills-tabContent">
-
-                                <div class="tab-pane fade show active" id="pills-countries" role="tabpanel"
-                                    aria-labelledby="pills-countries-tab">
-
-
-                                    <ul class="list-unstyled">
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="...">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="...">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media my-4 bg-light">
-                                            <img class="p-3 img-fluid" src="https://via.placeholder.com/100"
-                                                class="mr-3" alt="...">
-                                            <div class="media-body py-3">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <h5 class="mt-0 mb-1 media-heading pb-2">University Of Essex
-                                                            Indian
-                                                            Sub-Continent
-                                                            Regional
-                                                            Undergraduate Scholarship 2021-22</h5>
-                                                        <p>All my girls vintage Chanel baby. So you can have your cake.
-                                                            Tonight,
-                                                            tonight,
-                                                            tonight,
-                                                            I'm walking on air. Slowly swallowing down my fear, yeah
-                                                            yeah. </p>
-                                                    </div>
-                                                    <div
-                                                        class="col-md-4 d-flex justify-content-end align-items-center ">
-                                                        <div class="apply px-5">
-                                                            <h5>5 Days to go</h5>
-                                                            <button class="btn btn-primary">Apply now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="pills-courses" role="tabpanel"
+                        </div> -->
+                            </ul>
+                            <!-- </div> -->
+                            <!-- <div class="tab-pane fade" id="pills-courses" role="tabpanel"
                                     aria-labelledby="pills-courses-tab">
                                     <ul class="list-unstyled">
                                         <li class="media my-4 bg-light">
@@ -515,8 +968,8 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="pills-colleges" role="tabpanel"
+                                </div> -->
+                            <!-- <div class="tab-pane fade" id="pills-colleges" role="tabpanel"
                                     aria-labelledby="pills-colleges-tab">
                                     <ul class="list-unstyled">
                                         <li class="media my-4 bg-light">
@@ -604,8 +1057,8 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="pills-university" role="tabpanel"
+                                </div> -->
+                            <!-- <div class="tab-pane fade" id="pills-university" role="tabpanel"
                                     aria-labelledby="pills-university-tab">
                                     <ul class="list-unstyled">
                                         <li class="media my-4 bg-light">
@@ -693,8 +1146,8 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="pills-careers" role="tabpanel"
+                                </div> -->
+                            <!-- <div class="tab-pane fade" id="pills-careers" role="tabpanel"
                                     aria-labelledby="pills-careers-tab">
                                     <ul class="list-unstyled">
                                         <li class="media my-4 bg-light">
@@ -782,13 +1235,13 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
+                                </div> -->
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        <!-- </div> -->
         <!-- added by debanjan | 30-jul-2021 -->
     </div>
 </section>

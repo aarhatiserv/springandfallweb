@@ -57,9 +57,14 @@ $routes->group("api", function ($routes) {
 	$routes->get("logout", "User::logout");
 
 	$routes->get("college/(:any)", "CollegeController::getColleges/$1");
+	$routes->get("course/(:any)", "CollegeController::getCourse/$1");
+	$routes->get("level/(:any)", "CollegeController::getLevel/$1");
 	
 });
 $routes->get("api2/college/(:any)/(:any)", "CollegeController::getCollegesWithCourses/$1/$2");
+$routes->get("api2/countryAndLevels/(:any)/(:any)", "CollegeController::getCountryAndLevels/$1/$2");
+$routes->get("api2/courseAndLevel/(:any)/(:any)", "CollegeController::getCourseAndLevel/$1/$2");
+$routes->get("api2/countryAndCourseAndLevel/(:any)/(:any)/(:any)", "CollegeController::getCountryAndCourseAndLevel/$1/$2/$3");
 
 // main work
 $routes->get('(:any)', 'Pages::view/$1');

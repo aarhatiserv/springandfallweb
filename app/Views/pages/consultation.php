@@ -374,11 +374,6 @@ function ff() {
             <!-- -------------------------------------START COUNTRIES TAB---------------------------- -->
             <div class="tab-pane fade" id="pills-All-Countries" role="tabpanel" aria-labelledby="pills-USA-tab">
                 <ul class="list-unstyled college" id="listColleges">
-                    <!-- <div id="loading" class="hide">
-                            <div id="loading-content">
-                                <img src="assets/images/Spinner.gif" alt="Loading"/>
-                            </div>
-                        </div> -->
                 </ul>
             </div>
             <!-- ---------------------------------END COUNTRIES TAB---------------------------------- -->
