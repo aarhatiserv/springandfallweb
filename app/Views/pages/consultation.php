@@ -147,14 +147,19 @@ function ff() {
     // }
 }
 </script>
+<?php 
+
+for( $i = 0; $i < count($sectionData); $i++){
+    if($sectionData[$i]['section_name'] === 'consultation_banner'){
+    ?>
 <section id="hero">
     <div class="container mb-4 admin " id="hero-banner">
         <div class="container" style="background-color:  rgba(150, 242, 242, 0.6);">
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
-                    <h3 class="banner-h3">Admissions Open</h3>
-                    <p>Interested in studying abroad?</p>
+                    <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
+                    <p><?= $sectionData[$i]['discription']?></p>
                     <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
@@ -171,7 +176,7 @@ function ff() {
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                    <img class="img-fluid text-center" src="assets/images/jumbotronimg.png" alt="jumbotronimg"
+                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>" alt="jumbotronimg"
                         title="jumbotronimg" width="640" height="360" />
                 </div>
             </div>
@@ -179,8 +184,8 @@ function ff() {
         <div class="container" style="background-color:  rgba(150, 242, 242, 0.6);">
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
-                    <h3 class="animate__animated animate__fadeInDown ">Admissions Open</h3>
-                    <p>Interested in studying abroad?</p>
+                    <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
+                    <p><?= $sectionData[$i]['discription']?></p>
                     <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
@@ -196,7 +201,7 @@ function ff() {
                 </div>
 
                 <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                    <img class="img-fluid text-center" src="assets/images/jumbotronimg.png" alt="jumbotronimg"
+                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>" alt="jumbotronimg"
                         title="jumbotronimg" width="640" height="360" />
                 </div>
             </div>
@@ -206,7 +211,7 @@ function ff() {
     </ul>
     </div>
 </section>
-
+<?php }} ?>
 <section id="universityFilter">
     <div class="container">
         <div class="col-md-12">

@@ -6,6 +6,7 @@ use App\Models\ContactNowModel;
 use CodeIgniter\Controller;
 use App\Models\PagesModel;
 use App\Models\SectionsModel;
+use App\Models\ReviewModel;
 
 class Pages extends Controller
 {
@@ -15,6 +16,7 @@ class Pages extends Controller
         $data['title'] = 'Home';
 
         $page = "home";
+
         $pagesModel = new PagesModel();
         $pages_data = $pagesModel->where('name', $page)->findAll();
         // print_r($pages_data[0]['id']);
@@ -22,6 +24,9 @@ class Pages extends Controller
         $sectionModel = new SectionsModel();
         $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
         
+        $reviewModel = new ReviewModel();
+        $data['review'] = $reviewModel->findAll();
+
         echo view('templates/header', $data);
         echo view('pages/home');
         echo view('templates/footer', $data);
@@ -56,7 +61,13 @@ class Pages extends Controller
         if($pages_data){
         $sectionModel = new SectionsModel();
         $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
+        }else{
+            print_r("No Record Found");
         }
+
+        $reviewModel = new ReviewModel();
+        $data['review'] = $reviewModel->findAll();
+       
         // for( $i = 0; $i<count($sectionModel); $i++){
         //     print_r($sectionModel[$i]['section_name']." ");
         // }

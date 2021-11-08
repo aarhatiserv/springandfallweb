@@ -27,7 +27,7 @@ for( $i = 0; $i < count($sectionData); $i++){
             </div>
             <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
                 <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>"
-                    alt="jumbotronimg" width="640" height="360" title="jumbotronimg">
+                    alt="jumbotronimg" width="640" height="360" title="jumbotronimg" />
             </div>
         </div>
     </div>
@@ -59,28 +59,30 @@ for( $i = 0; $i < count($sectionData); $i++){
     </div>
 </div>
 </div>
-<?php }} ?>
+<?php 
+    }
+        elseif($sectionData[$i]['section_name'] === 'make_your_career_world_best'){
+?>
 <!--Make your Career Best-->
 <section class="my-5">
     <div class="container makeCareer">
         <div class="row">
             <div class="col-sm-12 col-lg-5 text-center">
-                <img src="assets/images/graduate.png" alt="graduate" width="600" height="400" title="graduate">
+                <img src="assets/images/<?php echo $sectionData[$i]['image'] ?>" alt="graduate" width="600" height="400"
+                    title="graduate">
             </div>
             <div class="col-lg-7">
                 <div class="card mb-3 careerCol">
                     <div class="card-body shadow ">
-                        <h1>Make Your Career<br>World Best</h1>
-                        <p class="card-text graduate">Education is the passport to the future,
-                            For tomorrow belongs to those who prepare for it today.
-                            – Malcolm X</p>
+                        <h1><?php echo $sectionData[$i]['title'] ?></h1>
+                        <p class="card-text graduate"><?php echo $sectionData[$i]['discription'] ?></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+<?php }}?>
 
 <!--We are best in-->
 <!--We are best in-->
