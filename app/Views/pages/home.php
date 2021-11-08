@@ -6,7 +6,7 @@
 
                 <h3 class="banner-h3">Admissions Open</h3>
                 <p>Interested in studying abroad?</p>
-                <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <button class=" btn mr-3 contact-now text-uppercase test" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <?php $session = session();
@@ -32,7 +32,7 @@
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
                 <h3 class="animate__animated animate__fadeInDown ">Admissions Open</h3>
                 <p>Interested in studying abroad?</p>
-                <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <button class=" btn mr-3 contact-now text-uppercase test" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;

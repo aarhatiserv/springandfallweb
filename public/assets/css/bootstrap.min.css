@@ -513,7 +513,7 @@ textarea.form-control{height:auto}
 .btn.disabled,.btn:disabled{opacity:.65}
 .btn:not(:disabled):not(.disabled){cursor:pointer}
 a.btn.disabled,fieldset:disabled a.btn{pointer-events:none}
-.btn-primary{color:#fff;background-color:#114694;border-color:#007bff}
+.btn-primary{color:#fff;background-color:#114694;border-color:#114694}
 .btn-primary:hover{color:#fff;background-color:#0069d9;border-color:#0062cc}
 .btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#0069d9;border-color:#0062cc;box-shadow:0 0 0 .2rem rgba(38,143,255,.5)}
 .btn-primary.disabled,.btn-primary:disabled{color:#fff;background-color:#007bff;border-color:#007bff}
@@ -2199,5 +2199,12 @@ body{min-width:992px!important}
 .underLine{
     text-decoration: none;
 }
+}
+.btn-primary:hover{
+    background-color: #114694 !important;
+    color: white !important;
+}
 
+a:hover{
+    text-decoration: none !important;
 }
