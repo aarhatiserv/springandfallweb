@@ -1,11 +1,16 @@
 <!--Start of Jumbotron-->
+<?php 
+
+for( $i = 0; $i < count($sectionData); $i++){
+    if($sectionData[$i]['section_name'] === 'hero_banner'){
+    ?>
 <div class="container mb-4 admin " id="hero-banner">
     <div class="container" style="background-color:  rgba(150, 242, 242, 0.6);">
         <div class="row">
             <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
-                <h3 class="banner-h3">Admissions Open</h3>
-                <p>Interested in studying abroad?</p>
+                <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
+                <p><?= $sectionData[$i]['discription']?></p>
                 <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
@@ -21,7 +26,8 @@
                 <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                <img class="img-fluid text-center" src="assets/images/jumbotronimg.webp" alt="jumbotronimg" width="640" height="360" title="jumbotronimg">
+                <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>"
+                    alt="jumbotronimg" width="640" height="360" title="jumbotronimg">
             </div>
         </div>
     </div>
@@ -30,8 +36,8 @@
 
 
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
-                <h3 class="animate__animated animate__fadeInDown ">Admissions Open</h3>
-                <p>Interested in studying abroad?</p>
+                <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
+                <p><?= $sectionData[$i]['discription']?></p>
                 <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
@@ -46,13 +52,14 @@
             </div>
 
             <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                <img class="img-fluid text-center" src="assets/images/jumbotronimg.png" alt="jumbotronimg" width="640" height="360" title="jumbotronimg">
+                <img class="img-fluid text-center" src="assets/images/<?php echo $sectionData[$i]['image'] ?>"
+                    alt="jumbotronimg" width="640" height="360" title="jumbotronimg">
             </div>
         </div>
     </div>
 </div>
 </div>
-
+<?php }} ?>
 <!--Make your Career Best-->
 <section class="my-5">
     <div class="container makeCareer">
@@ -90,7 +97,7 @@
                     <a class="text-decoration-none" href="financial-aid">
                         <div class="card-body text-center">
                             <img class="img" src="assets/images/cards/edu.png" class="card-img-top"
-                                alt="education_spring"  width="640" height="360" title="education_spring">
+                                alt="education_spring" width="640" height="360" title="education_spring">
                             <p class="card-title">EDUCATION <br>
                                 CONSULTATION</p>
                             <p class="card-text">University/ College Selection</p>
@@ -121,7 +128,8 @@
                 <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-gyroscope="false">
                     <a class="text-decoration-none" href="visa-consultation">
                         <div class="card-body text-center">
-                            <img class="img" src="assets/images/cards/plane.png" class="card-img-top" alt="visa_spring" width="640" height="360" title="visa_spring">
+                            <img class="img" src="assets/images/cards/plane.png" class="card-img-top" alt="visa_spring"
+                                width="640" height="360" title="visa_spring">
                             <p class="card-title">VISA<br>
                                 CONULTATION</p>
                             <p class="card-text">Preparation<br>Application</p>

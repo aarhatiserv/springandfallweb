@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\ContactNowModel;
 use CodeIgniter\Controller;
+use App\Models\PagesModel;
+use App\Models\SectionsModel;
 
 class Pages extends Controller
 {
@@ -11,6 +13,15 @@ class Pages extends Controller
     {
 
         $data['title'] = 'Home';
+        
+        $page = "home";
+        $pagesModel = new PagesModel();
+        $pages_data = $pagesModel->where('name', $page)->findAll();
+        // print_r($pages_data[0]['id']);
+
+        $sectionModel = new SectionsModel();
+        $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
+
         echo view('templates/header', $data);
         echo view('pages/home');
         echo view('templates/footer', $data);
@@ -38,6 +49,18 @@ class Pages extends Controller
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
+
+        $pagesModel = new PagesModel();
+        $pages_data = $pagesModel->where('name', $page)->findAll();
+        // print_r($pages_data[0]['id']);
+
+        $sectionModel = new SectionsModel();
+        $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
+        
+        // for( $i = 0; $i<count($sectionModel); $i++){
+        //     print_r($sectionModel[$i]['section_name']." ");
+        // }
+        
 
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
