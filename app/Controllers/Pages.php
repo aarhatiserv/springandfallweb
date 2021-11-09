@@ -61,10 +61,8 @@ class Pages extends Controller
         if($pages_data){
         $sectionModel = new SectionsModel();
         $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
-        }else{
-            print_r("No Record Found");
         }
-
+        
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
        
