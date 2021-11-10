@@ -58,6 +58,10 @@ $session = session();
     <link rel="stylesheet" href="assets/slick/slick.css" />
     <link rel="stylesheet" href="assets/slick/slick-theme.css" />
 
+    <!-- EMI CALCULATOR CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/emicalculator/css/widget.css" />
+    <!-- EMI CALCULATOR CSS -->
+
     <!-- uikit ends -->
     <title><?= esc($title) ?> | Spring and Fall</title>
 

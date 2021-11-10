@@ -113,10 +113,10 @@
 
                 <div id="accordion">
                     <div class="card cardLoan">
-                       <div class="card-header">
-                        <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne">
+                        <div class="card-header">
+                            <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne">
                                 Easy to apply
-</button>
+                            </button>
                         </div>
                         <div id="collapseOne" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
@@ -127,9 +127,10 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseTwo">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseTwo">
                                 Less time
-</button>
+                            </button>
                         </div>
                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
                             <div class="card-body">
@@ -140,9 +141,10 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseThree">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseThree">
                                 No need to visit banks
-</button>
+                            </button>
                         </div>
                         <div id="collapseThree" class="collapse" data-parent="#accordion">
                             <div class="card-body">
@@ -176,9 +178,9 @@
                 <div id="accordion">
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne1">
+                            <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne1">
                                 Easy to apply
-</button>
+                            </button>
                         </div>
                         <div id="collapseOne1" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
@@ -189,9 +191,10 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseTwo1">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseTwo1">
                                 Less time
-</button>
+                            </button>
                         </div>
                         <div id="collapseTwo1" class="collapse" data-parent="#accordion">
                             <div class="card-body">
@@ -202,9 +205,10 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseThree1">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseThree1">
                                 No need to visit banks
-</button>
+                            </button>
                         </div>
                         <div id="collapseThree1" class="collapse" data-parent="#accordion">
                             <div class="card-body">
@@ -226,9 +230,9 @@
                 <div id="accordion">
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne2">
+                            <button type="button" class="card-link easy" data-toggle="collapse" href="#collapseOne2">
                                 Easy to apply
-</button>
+                            </button>
                         </div>
                         <div id="collapseOne2" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
@@ -239,9 +243,10 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                        <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseTwo2">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseTwo2">
                                 Less time
-</button>
+                            </button>
                         </div>
                         <div id="collapseTwo2" class="collapse" data-parent="#accordion">
                             <div class="card-body">
@@ -252,7 +257,8 @@
                     </div>
                     <div class="card cardLoan">
                         <div class="card-header">
-                            <button type="button" class="collapsed card-link easy" data-toggle="collapse" href="#collapseThree2">
+                            <button type="button" class="collapsed card-link easy" data-toggle="collapse"
+                                href="#collapseThree2">
                                 No need to visit banks
                             </button>
                         </div>
@@ -280,9 +286,11 @@
     <div class="row  row-cols-sm-1 row-cols-md-3">
         <div class="col">
             <br><br>
-            <div class="card" style="background: #E9E8FF; height:200px; width:200px; margin-right: 0%;">
+            <div class="btn card" data-toggle="modal" data-target="#EMI"
+                style="background: #E9E8FF; height:200px; width:200px; margin-right: 0%;">
                 <div class="card-body text-center">
-                    <img src="assets/images/EMI 1.png" alt="EMI" title="EMI" width="" height="">
+                    <img class="emi1" src="assets/images/EMI 1.png" alt="EMI" title="EMI" width="" height="">
+                    <p class="emi">EMI CALCULATOR</p>
                 </div>
             </div>
         </div>
@@ -349,4 +357,12 @@
     </div>
 </div>
 
+
 <script src="assets/js/creative-steps.js"></script>
+
+<!-- ----------------------------------------------EMI Calculator------------------------------- -->
+<div class="modal fade modalEmi" data-backdrop="false" id="EMI" aria-hidden="true" tab-index="-1">
+    <div id="ecww-widget-iframeinner" style="display:flex"></div>
+    <button type="button" class="btn btn-secondary closeButton" data-dismiss="modal">Close</button>
+</div>
+<!-- ----------------------------------------------EMI Calculator------------------------------- -->

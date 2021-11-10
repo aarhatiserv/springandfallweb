@@ -1,10 +1,10 @@
+
 <!--Start of Jumbotron-->
 <?php 
 
 for( $i = 0; $i < count($sectionData); $i++){
     if($sectionData[$i]['section_name'] === 'banner'){
     ?>
-
 <div id="banner">
     <div id="bannertext">
         <h1 class="text-center"><?= $sectionData[$i]['title']?></h1>
@@ -36,11 +36,11 @@ for( $i = 0; $i < count($sectionData); $i++){
     </div>
 </div>
 
-
 <!-- mission and vision end -->
 <?php 
-    }
-        elseif($sectionData[$i]['section_name'] === 'mission'){
+    }}
+    for( $i = 0; $i < count($sectionData); $i++){
+        if($sectionData[$i]['section_name'] === 'mission'){
 ?>
 <!-- mission -->
 <section id="mission">
@@ -61,8 +61,9 @@ for( $i = 0; $i < count($sectionData); $i++){
     </div>
 </section>
 <?php 
-        } 
-        elseif($sectionData[$i]['section_name'] === 'vission'){
+        } }
+        for( $i = 0; $i < count($sectionData); $i++){
+       if($sectionData[$i]['section_name'] === 'vission'){
 ?>
 <!-- vission -->
 <section id="vission">
@@ -81,8 +82,9 @@ for( $i = 0; $i < count($sectionData); $i++){
     </div>
 </section>
 <?php 
-        } 
-        elseif($sectionData[$i]['section_name'] === 'values'){
+        } }
+        for( $i = 0; $i < count($sectionData); $i++){
+        if($sectionData[$i]['section_name'] === 'values'){
 ?>
 <!-- values -->
 <section id="values">

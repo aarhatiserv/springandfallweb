@@ -56,25 +56,20 @@ class Pages extends Controller
         $data['title'] = ucfirst($page); // Capitalize the first letter
 
         $pagesModel = new PagesModel();
-        $pages_data = $pagesModel->where('name', $page)->findAll();
-        // print_r($pages_data[0]['id']);
+        $pages_data = $pagesModel->where('name', $page)->find();
+
         if($pages_data){
         $sectionModel = new SectionsModel();
         $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
         }
-        
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
-       
-        // for( $i = 0; $i<count($sectionModel); $i++){
-        //     print_r($sectionModel[$i]['section_name']." ");
-        // }
-        
 
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
         echo view('templates/footer', $data);
-    }
+    
+}
 
     public function testdata()
     {
