@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::index');
+// $routes->get('/admin', 'AdminController::index');
 // $routes->get('(:any)', 'Pages::view/$1');
 
 // news routes
@@ -41,11 +42,25 @@ $routes->match(['post'], '/home/callback', 'Pages::callback');
 $routes->match(['get'], '/home/test', 'Pages::testdata');
 $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
-$routes->get('admin', 'Admin::index');
+// $routes->get('admin', 'Admin/AdminController::index');
 $routes->get('email', 'User::email');
 $routes->get('verify/(:num)/(:any)', 'User::verify/$1/$2');
 $routes->get('tmp', 'User::temp');
 
+// Admin routes
+$routes->group("admin", function ($routes) {
+    $routes->get('/', 'Admin/AdminController::index');
+	$routes->get('dashboard', 'Admin/AdminController::dashboard');
+	// $routes->post("register", "User::register");
+	// $routes->post("login", "User::login");
+	// $routes->get("profile", "User::details");
+	// $routes->get("logout", "User::logout");
+
+	// $routes->get("college/(:any)", "CollegeController::getColleges/$1");
+	// $routes->get("course/(:any)", "CollegeController::getCourse/$1");
+	// $routes->get("level/(:any)", "CollegeController::getLevel/$1");
+	
+});
 
 
 // auth routes
