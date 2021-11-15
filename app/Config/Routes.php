@@ -42,7 +42,6 @@ $routes->match(['post'], '/home/callback', 'Pages::callback');
 $routes->match(['get'], '/home/test', 'Pages::testdata');
 $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
-// $routes->get('admin', 'Admin/AdminController::index');
 $routes->get('email', 'User::email');
 $routes->get('verify/(:num)/(:any)', 'User::verify/$1/$2');
 $routes->get('tmp', 'User::temp');
@@ -52,15 +51,9 @@ $routes->group("admin", function ($routes) {
     $routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
-	$routes->get('colleges', 'Admin/AdminController::colleges');
-	// $routes->post("register", "User::register");
-	// $routes->post("login", "User::login");
-	// $routes->get("profile", "User::details");
-	// $routes->get("logout", "User::logout");
-
-	// $routes->get("college/(:any)", "CollegeController::getColleges/$1");
-	// $routes->get("course/(:any)", "CollegeController::getCourse/$1");
-	// $routes->get("level/(:any)", "CollegeController::getLevel/$1");
+	$routes->get('colleges', 'Admin/Colleges/CollegeController::colleges');
+	$routes->get('addColleges', 'Admin/Colleges/CollegeController::addColleges');
+	$routes->post('addColleges', 'Admin/Colleges/CollegeController::addCollegesPost');
 	
 });
 

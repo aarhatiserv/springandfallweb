@@ -21,3 +21,4 @@
 
     <!-- Custom Theme Style -->
     <link href="../assets/backend/build/css/custom.min.css" rel="stylesheet">
+    <link href="../assets/backend/build/css/addColleges.css" rel="stylesheet">

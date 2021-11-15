@@ -38,11 +38,4 @@ class AdminController extends Controller
 		echo view('admin/layout/script');
 	}
 
-	public function colleges()
-	{
-		echo view('admin/layout/stylesheet');
-		echo view('admin/colleges');
-		echo view('admin/layout/script');
-	}
-
 }
