@@ -49,8 +49,10 @@ $routes->get('tmp', 'User::temp');
 
 // Admin routes
 $routes->group("admin", function ($routes) {
-    $routes->get('/', 'Admin/AdminController::index');
-	$routes->get('dashboard', 'Admin/AdminController::dashboard');
+    $routes->get('home', 'Admin/AdminController::home');
+	$routes->get('home2', 'Admin/AdminController::home2');
+	$routes->get('home3', 'Admin/AdminController::home3');
+	$routes->get('colleges', 'Admin/AdminController::colleges');
 	// $routes->post("register", "User::register");
 	// $routes->post("login", "User::login");
 	// $routes->get("profile", "User::details");
