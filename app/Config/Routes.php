@@ -51,7 +51,7 @@ $routes->group("admin", function ($routes) {
     $routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
-	$routes->get('colleges', 'Admin/Colleges/CollegeController::colleges');
+	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/Colleges/CollegeController::addColleges');
 	$routes->post('addColleges', 'Admin/Colleges/CollegeController::addCollegesPost');
 	
