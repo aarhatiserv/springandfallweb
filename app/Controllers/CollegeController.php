@@ -61,4 +61,5 @@ class CollegeController extends BaseController
 		$data = $model->where("country = '$country'AND courses = '$course' AND levels ='$level'")->findAll();
 	 echo json_encode(["status" => 1, "data" => $data]);
 	 }
+
 }

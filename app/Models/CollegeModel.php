@@ -14,7 +14,7 @@ class CollegeModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['names', 'country', 'country_rank', 'global_rank', 'address', 'website', 'email', 'about', 'offers','image','courses', 'levels', 'active'];
+	protected $allowedFields        = ['id', 'names', 'country', 'country_rank', 'global_rank', 'address', 'website', 'email', 'about', 'offers','image','courses', 'levels', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;

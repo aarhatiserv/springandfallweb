@@ -86,13 +86,13 @@
                                                 <td><?= $cd['global_rank']?></td>
                                                 <td><?= $cd['address']?></td>
                                                 <td><?= $cd['email']?></td>
-                                                <td><?= $cd['website']?></td>
+                                                <td><a href="<?= $cd['website']?>" target="_blank"><?= $cd['website']?></a></td>
                                                 <td><?= $cd['about']?></td>
                                                 <td><?= $cd['offers']?></td>
                                                 <td><?= $cd['courses']?></td>
                                                 <td><?= $cd['levels']?></td>
                                                 <td><a href="../uploads/<?= $cd['image']?>"target="_blank"><img src="../uploads/<?= $cd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
-                                                <td><a href="#"><i class="fa fa-edit"></i></a> | <a href="#"><i class="fa fa-trash"></i></a></td>
+                                                <td><a href="/admin/editCollege/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a href="#"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
                                                }

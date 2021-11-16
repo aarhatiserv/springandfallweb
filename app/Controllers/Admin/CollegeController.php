@@ -80,23 +80,23 @@ class CollegeController extends Controller
 			"level" => [
 				"required" => "Level is required"
 			],
-			// 'file' => [
-            //     'uploaded[file]',
-            //     'mime_in[file, image/png, image/jpg,image/jpeg, image/gif]',
-            //     'max_size[file, 4096]',
-            // ],
+			'file' => [
+                'uploaded[file]',
+                'mime_in[file, image/png, image/jpg,image/jpeg, image/gif]',
+                'max_size[file, 4096]',
+            ],
 		];
 
-		// if (!$this->validate($rules, $messages)) {
+		if (!$this->validate($rules, $messages)) {
 
-		// 	$response = [
-		// 		'status' => 500,
-		// 		'error' => true,
-		// 		'message' => $this->validator->getErrors(),
-		// 		'data' => []
-		// 	];
-        //     print_r('validate error');
-		// } else {
+			$response = [
+				'status' => 500,
+				'error' => true,
+				'message' => $this->validator->getErrors(),
+				'data' => []
+			];
+            print_r('validate error');
+		} else {
             $destinationPath = 'uploads/';
             $file = $this->request->getFile('file');
             $file_name = $file->getClientName();
@@ -152,8 +152,128 @@ class CollegeController extends Controller
 					];
 				}
 			}
+			}
 		}
-       
-	// }
+		
+		public function editCollege($id)
+     	{
+			 $model = new CollegeModel();
+			 $data['collegeDatabyId'] = $model->where('id = ',$id)->findAll();
+			echo view('admin/Colleges/EditColleges', $data);
+     	}
+
+		public function editCollegePost()
+     	{
+			$rules = [
+				"collegeName" => "required",
+				"url" => "required",
+				"email" => "required|min_length[6]",
+				"country" => "required",
+				"countryRank" => "required",
+				"globalRank" => "required",
+				"address" => "required",
+				"about" => "required",
+				"offers" => "required",
+				"course" => "required",
+				"level" => "required",
+				// "file" => "required",
+			];
+	
+			$messages = [
+				"collegeName" => [
+					"required" => "college/University Name is required"
+				],
+				"url" => [
+					"required" => "url is required"
+				],
+				"email" => [
+					"required" => "Email required",
+					"valid_email" => "Email address is not in format"
+				],
+				"country" => [
+					"required" => "Country is required"
+				],
+				"countryRank" => [
+					"required" => "Country Rank is required"
+				],
+				"globalRank" => [
+					"required" => "Global Rank is required"
+				],
+				"address" => [
+					"required" => "Address is required"
+				],
+				"about" => [
+					"required" => "About is required"
+				],
+				"offers" => [
+					"required" => "Offers is required"
+				],
+				"course" => [
+					"required" => "Course is required"
+				],
+				"level" => [
+					"required" => "Level is required"
+				],
+				'file' => [
+				    'uploaded[file]',
+				    'mime_in[file, image/png, image/jpg,image/jpeg, image/gif]',
+				    'max_size[file, 4096]',
+				],
+			];
+			if (!$this->validate($rules, $messages)) {
+
+				$response = [
+					'status' => 500,
+					'error' => true,
+					'message' => $this->validator->getErrors(),
+					'data' => []
+				];
+				print_r('validate error');
+			} else {
+			$destinationPath = 'uploads/';
+            $file = $this->request->getFile('file');
+            $file_name = $file->getClientName();
+            $file->move($destinationPath, $file_name);
+
+			$model = new CollegeModel();
+
+			$id = $this->request->getVar("id");
+			$data = [
+				"names" => $this->request->getVar("collegeName"),
+				"country" => $this->request->getVar("country"),
+				"country_rank" => $this->request->getVar("countryRank"),
+				"global_rank" => $this->request->getVar("globalRank"),
+				"address" => $this->request->getVar("address"),
+				"website" => $this->request->getVar("url"),
+				"email" => $this->request->getVar("email"),
+				"about" => $this->request->getVar("about"),
+				"offers" => $this->request->getVar("offers"),
+                "image" => $file_name,
+				"courses" => $this->request->getVar("course"),
+				"levels" => $this->request->getVar("level"),
+               "active" =>1
+			];
+            
+			
+				if ($model->update($id,$data)) {
+					$response = [
+						'status' => 200,
+						'messages' => 'Successfully college Added',
+						'data' => []
+					];
+
+					// return redirect()->to('/admin/colleges');
+					return redirect()->to('https://springandfall.in/admin/colleges');
+				} else {
+
+					$response = [
+						'status' => 500,
+						"error" => true,
+						'messages' => 'Failed to add college',
+						'data' => []
+					];
+				}
+			}
+		}
 
 }

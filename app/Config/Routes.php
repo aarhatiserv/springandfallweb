@@ -22,7 +22,6 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
-
 /*
  * --------------------------------------------------------------------
  * Route Definitions
@@ -48,15 +47,17 @@ $routes->get('tmp', 'User::temp');
 
 // Admin routes
 $routes->group("admin", function ($routes) {
+
     $routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
-	$routes->get('addColleges', 'Admin/Colleges/CollegeController::addColleges');
-	$routes->post('addColleges', 'Admin/Colleges/CollegeController::addCollegesPost');
-	
-});
+	$routes->get('addColleges', 'Admin/CollegeController::addColleges');
+	$routes->post('addColleges', 'Admin/CollegeController::addCollegesPost');
+	$routes->get("editCollege/(:any)", "Admin\CollegeController::editCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editCollege', 'Admin/CollegeController::editCollegePost');
 
+});
 
 // auth routes
 
