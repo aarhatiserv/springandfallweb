@@ -8,7 +8,7 @@
 ?>
 
             <div>
-                <div class="card text-center"><img class="card-img-top" src="<?php echo $r['image']?>" alt="img"
+                <div class="card text-center"><img class="card-img-top" src="uploads/ReviewsImage/<?php echo $r['image']?>" alt="img"
                         width="640" height="360" title="img">
                     <div class="card-body">
                         <p class="testimonials"><?= $r['name']?> <br />

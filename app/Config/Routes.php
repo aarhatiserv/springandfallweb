@@ -48,14 +48,26 @@ $routes->get('tmp', 'User::temp');
 // Admin routes
 $routes->group("admin", function ($routes) {
 
+	//Admin Dshboard Routes
     $routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
+
+	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/CollegeController::addColleges');
 	$routes->post('addColleges', 'Admin/CollegeController::addCollegesPost');
 	$routes->get("editCollege/(:any)", "Admin\CollegeController::editCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('editCollege', 'Admin/CollegeController::editCollegePost');
+	$routes->get("deleteCollege/(:any)", "Admin\CollegeController::deleteCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+
+	//Admin Review Routes
+	$routes->get('reviews', 'Admin/ReviewController::review');
+	$routes->get('addReviews', 'Admin/ReviewController::addReview');
+	$routes->post('addReviews', 'Admin/ReviewController::addReviewPost');
+	$routes->get("editReviews/(:any)", "Admin\ReviewController::editReview/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editReviews', 'Admin/ReviewController::editReviewPost');
+	$routes->get("deleteReviews/(:any)", "Admin\ReviewController::deleteReview/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
 });
 

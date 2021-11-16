@@ -38,7 +38,7 @@
                             <li><a href="/admin/colleges">Colleges</a></li>
                             <li><a href="#">Pages</a></li>
                             <li><a href="#">Sections</a></li>
-                            <li><a href="#">Reviews</a></li>
+                            <li><a href="/admin/reviews">Reviews</a></li>
                         </ul>
                     </li>
                     <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>

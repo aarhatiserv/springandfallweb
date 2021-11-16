@@ -21,7 +21,7 @@ function getCollege(country) {
                     collegeData.data.map((item) => (
                         dt.push(
                             ` <li class="media my-4 bg-light">
-                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -108,8 +108,7 @@ function ff() {
                     collegeData.data.map((item) => (
                         dt.push(
                             ` <li class="media my-4 bg-light">
-                                <img class="p-3 img-fluid" src="assets/images/flags/` + item.image + `" class="mr-3" alt="..."
-                                    title="hrl" width="" height="" />
+                                <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" height="" width="" alt="..." title="hrl" />
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">

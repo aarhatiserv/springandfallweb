@@ -5,3 +5,8 @@
 .tab:hover{
 text-decoration: none !important;
 }
+
+.image{
+    max-width: 20%;
+    height: 167px;
+ }

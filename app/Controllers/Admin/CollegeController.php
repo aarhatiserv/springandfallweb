@@ -17,7 +17,7 @@ class CollegeController extends Controller
         $model = new CollegeModel();
         $data['collegeData'] = $model->find();
 		echo view('admin/layout/stylesheet');
-		echo view('admin/Colleges/colleges', $data);
+		echo view('admin/Colleges/Colleges', $data);
 		echo view('admin/layout/script');
 	}
 
@@ -97,7 +97,7 @@ class CollegeController extends Controller
 			];
             print_r('validate error');
 		} else {
-            $destinationPath = 'uploads/';
+            $destinationPath = 'uploads/CollegesImage/';
             $file = $this->request->getFile('file');
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
@@ -138,9 +138,8 @@ class CollegeController extends Controller
 						'data' => []
 					];
 
-                    echo view('admin/layout/stylesheet');
-                    echo view('admin/Colleges/AddColleges');
-                    echo view('admin/layout/script');
+					return redirect()->to('https://https://springandfall.in/admin/colleges');
+					// return redirect()->to('http://localhost:8080/admin/colleges');
 
 				} else {
 
@@ -230,7 +229,7 @@ class CollegeController extends Controller
 				];
 				print_r('validate error');
 			} else {
-			$destinationPath = 'uploads/';
+			$destinationPath = 'uploads/CollegesImage/';
             $file = $this->request->getFile('file');
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
@@ -263,7 +262,8 @@ class CollegeController extends Controller
 					];
 
 					// return redirect()->to('/admin/colleges');
-					return redirect()->to('https://springandfall.in/admin/colleges');
+					return redirect()->to('https://https://springandfall.in/admin/colleges');
+					// return redirect()->to('http://localhost:8080/admin/colleges');
 				} else {
 
 					$response = [
@@ -275,5 +275,14 @@ class CollegeController extends Controller
 				}
 			}
 		}
+
+		public function deleteCollege($id)
+		{
+			$model = new CollegeModel();
+			$model->where('id = ',$id)->delete();
+			return redirect()->to('https://https://springandfall.in/admin/colleges');
+			// return redirect()->to('http://localhost:8080/admin/colleges');
+		}
+		//
 
 }
