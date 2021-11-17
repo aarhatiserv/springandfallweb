@@ -69,6 +69,22 @@ $routes->group("admin", function ($routes) {
 	$routes->post('editReviews', 'Admin/ReviewController::editReviewPost');
 	$routes->get("deleteReviews/(:any)", "Admin\ReviewController::deleteReview/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
+	//Admin Pages Routes
+	$routes->get('pages', 'Admin/PagesController::pages');
+	$routes->get('addPages', 'Admin/PagesController::addPages');
+	$routes->post('addPages', 'Admin/PagesController::addPagesPost');
+	$routes->get("editPages/(:any)", "Admin\PagesController::editPages/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editPages', 'Admin/PagesController::editPagesPost');
+	$routes->get("deletePages/(:any)", "Admin\PagesController::deletePages/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	
+	//Admin Sections Routes
+	$routes->get('sections', 'Admin/SectionsController::sections');
+	$routes->get('allPagesInEdit', 'Admin/SectionsController::allPagesInEdit');
+	$routes->get('addSections', 'Admin/SectionsController::addSections');
+	$routes->post('addSections', 'Admin/SectionsController::addSectionsPost');
+	$routes->get("editSections/(:any)", "Admin\SectionsController::editSections/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editSections', 'Admin/SectionsController::editSectionsPost');
+	$routes->get("deleteSections/(:any)", "Admin\SectionsController::deleteSections/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 });
 
 // auth routes

@@ -76,7 +76,7 @@
                                                 <td><?= $rd['title']?></td>
                                                 <td><?= $rd['discription']?></td>                                              
                                                 <td><a href="../uploads/ReviewsImage/<?= $rd['image']?>"target="_blank"><img src="../uploads/ReviewsImage/<?= $rd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
-                                                <td><a href="/admin/editReviews/<?= $rd['id']?>"><i class="fa fa-edit"></i></a> | <a href="/admin/deleteReviews/<?= $rd['id']?>"><i class="fa fa-trash"></i></a></td>
+                                                <td><a href="/admin/editReviews/<?= $rd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $rd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
                                                }
@@ -101,4 +101,12 @@
 
 
 </body>
+<script type="text/javascript">
+      function ConfirmDelete(id)
+      {
+        var conf = confirm('Are you sure want to delete this record?');
+            if (conf)
+                 location.href='/admin/deleteReviews/'+id;
+      }
+  </script>
 </html>

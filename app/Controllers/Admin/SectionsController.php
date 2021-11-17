@@ -2,36 +2,56 @@
 
 namespace App\Controllers\Admin;
 
-use App\Models\ReviewModel;
 use CodeIgniter\Controller;
+use App\Models\PagesModel;
+use App\Models\SectionsModel;
 
-class ReviewController extends Controller
+class SectionsController extends Controller
 {
+
+    public function __construct()
+    {
+        $db = \Config\Database::connect();
+    }
+
     public function index()
     {
         //
     }
-    public function review()
+    public function sections()
     {
-        $model = new ReviewModel();
-        $data['reviewData'] = $model->findAll();
+        $db = \Config\Database::connect();
+        $query = $db->query('SELECT sections.id, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id');
+        $data['sectionsData'] = $query->getResult();
+
         echo view('admin/layout/stylesheet');
-        echo view('admin/Reviews/Review', $data);
+        echo view('admin/Sections/Sections', $data);
         echo view('admin/layout/script');
     }
-    public function addReview()
+    public function allPagesInEdit()
     {
+        $model = new PagesModel();
+        $data = $model->findAll();
+        echo json_encode(["status" => 1, "data" => $data]);
+    }
+
+    public function addSections()
+    {
+        $model = new PagesModel();
+        $data['pageData'] = $model->findAll();
+
         echo view('admin/layout/stylesheet');
-        echo view('admin/Reviews/AddReview');
+        echo view('admin/Sections/AddSections', $data);
         echo view('admin/layout/script');
     }
 
-    public function addReviewPost()
+    public function addSectionsPost()
     {
         $rules = [
             "name" => "required",
             "title" => "required",
             "discription" => "required",
+            "pages_id" => "required",
             // "file" => "required",
         ];
 
@@ -44,6 +64,9 @@ class ReviewController extends Controller
             ],
             "discription" => [
                 "required" => "discription is required",
+            ],
+            "pages_id" => [
+                "required" => "Pages is required",
             ],
             'file' => [
                 'uploaded[file]',
@@ -62,16 +85,17 @@ class ReviewController extends Controller
             ];
             print_r('validate error');
         } else {
-            $destinationPath = 'uploads/ReviewsImage/';
+            $destinationPath = 'uploads/SectionsImage/';
             $file = $this->request->getFile('file');
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
 
-            $model = new ReviewModel();
+            $model = new SectionsModel();
             $data = [
-                "name" => $this->request->getVar("name"),
+                "section_name" => $this->request->getVar("name"),
                 "title" => $this->request->getVar("title"),
                 "discription" => $this->request->getVar("discription"),
+                "pages_id" => $this->request->getVar("pages_id"),
                 "image" => $file_name,
                 "active" => 1,
             ];
@@ -79,19 +103,19 @@ class ReviewController extends Controller
             if ($model->insert($data)) {
                 $response = [
                     'status' => 200,
-                    'messages' => 'Successfully Review Added',
+                    'messages' => 'Successfully Sections Added',
                     'data' => [],
                 ];
 
                 // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/reviews');
+                return redirect()->to('http://localhost:8080/admin/sections');
 
             } else {
 
                 $response = [
                     'status' => 500,
                     "error" => true,
-                    'messages' => 'Failed to add Review',
+                    'messages' => 'Failed to add Sections',
                     'data' => [],
                 ];
             }
@@ -99,19 +123,27 @@ class ReviewController extends Controller
         }
     }
 
-    public function editReview($id)
+    public function editSections($id)
     {
-        $model = new ReviewModel();
-        $data['reviewDatabyId'] = $model->where('id = ', $id)->findAll();
-        echo view('admin/Reviews/EditReview', $data);
+        $db = \Config\Database::connect();
+
+        $model = new SectionsModel();
+        $data = $model->where('id = ', $id)->findAll();
+        $page_id = $data[0]['pages_id'];
+       
+        $query = $db->query("SELECT sections.id as sid, pages.id as pid, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id WHERE sections.pages_id = '$page_id' AND sections.id = '$id'");
+        $data['sectionsData'] = $query->getResult();
+
+        echo view('admin/Sections/EditSections', $data);
     }
 
-    public function editReviewPost()
+    public function editSectionsPost()
     {
         $rules = [
             "name" => "required",
             "title" => "required",
             "discription" => "required",
+            "pages_id" => "required",
             // "file" => "required",
         ];
 
@@ -124,6 +156,9 @@ class ReviewController extends Controller
             ],
             "discription" => [
                 "required" => "discription is required",
+            ],
+            "pages_id" => [
+                "required" => "Pages is required",
             ],
             'file' => [
                 'uploaded[file]',
@@ -142,17 +177,18 @@ class ReviewController extends Controller
             ];
             print_r('validate error');
         } else {
-            $destinationPath = 'uploads/ReviewsImage/';
+            $destinationPath = 'uploads/SectionsImage/';
             $file = $this->request->getFile('file');
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
 
-            $model = new ReviewModel();
+            $model = new SectionsModel();
             $id = $this->request->getVar("id");
             $data = [
-                "name" => $this->request->getVar("name"),
+                "section_name" => $this->request->getVar("name"),
                 "title" => $this->request->getVar("title"),
                 "discription" => $this->request->getVar("discription"),
+                "pages_id" => $this->request->getVar("pages_id"),
                 "image" => $file_name,
                 "active" => 1,
             ];
@@ -160,31 +196,32 @@ class ReviewController extends Controller
             if ($model->update($id, $data)) {
                 $response = [
                     'status' => 200,
-                    'messages' => 'Successfully Review Added',
+                    'messages' => 'Successfully Sections Updated',
                     'data' => [],
                 ];
 
-                // return redirect()->to('/admin/colleges');
                 // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/reviews');
+                return redirect()->to('http://localhost:8080/admin/sections');
+
             } else {
 
                 $response = [
                     'status' => 500,
                     "error" => true,
-                    'messages' => 'Failed to add college',
+                    'messages' => 'Failed to Update Sections',
                     'data' => [],
                 ];
             }
+
         }
     }
 
-    public function deleteReview($id)
+    public function deleteSections($id)
     {
-        $model = new ReviewModel();
+        $model = new SectionsModel();
         $model->where('id = ', $id)->delete();
         // return redirect()->to('https://https://springandfall.in/admin/reviews');
-        return redirect()->to('http://localhost:8080/admin/reviews');
+        return redirect()->to('http://localhost:8080/admin/sections');
     }
 
 }

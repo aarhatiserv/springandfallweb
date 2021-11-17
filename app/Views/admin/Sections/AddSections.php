@@ -30,7 +30,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Review
+                            <h3>Sections
                             </h3>
                         </div>
                     </div>
@@ -41,31 +41,49 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Add Review
+                                    <h2>Add Section
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/addReviews" method="POST" enctype="multipart/form-data">
+                                    <form action="/admin/addSections" method="POST" enctype="multipart/form-data">
                                         <div>
 
-                                            <label for="name" style="margin-right:252px">Name</label>
+                                            <label for="name" style="margin-right:205px">Section Name</label>
                                             <label for="title" style="margin-right:267px">Title</label>
-                                            <label for="discription">Discription</label>
+                                            <label for="pages">Pages</label>
                                             <br>
 
-                                            <input type="text" id="name" name="name"
-                                                placeholder="Name..." style="margin-right:50px"
-                                                required />
+                                            <input type="text" id="name" name="name" placeholder="Name..."
+                                                style="margin-right:50px" required />
 
                                             <input type="text" id="title" name="title" placeholder="Title..."
                                                 style="margin-right:50px" required />
 
+                                            <select id="pages_id" name="pages_id" style="margin-right:50px" required>
+                                                <option value="">Select Page</option>
+                                                <?php 
+                                                foreach($pageData as $pd){
+                                                    ?>
+                                                <option value="<?= $pd['id']?>"><?= strtoupper($pd['name'])?></option>
+                                                <?php
+                                                }
+                                                ?>
+
+                                            </select>
+
+
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <label for="discription">Discription</label>
+                                            <br>
                                             <textarea name="discription" id="discription" rows="6" cols="70"
                                                 placeholder="Enter discription Here..." required>
 </textarea>
                                         </div>
+                                        <br>
 
                                         <div class="file-input">
                                             <input type="file" id="file" name="file" class="file" required />
@@ -76,10 +94,12 @@
                                                 </div>
 
                                             </label>
+
                                         </div>
+
                                         <br>
 
-                                        <button class="back"><a href="/admin/reviews" class="back">Back</a>
+                                        <button class="back"><a href="/admin/sections" class="back">Back</a>
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>

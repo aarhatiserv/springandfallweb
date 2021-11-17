@@ -36,8 +36,8 @@
                     <li><a><i class="fa fa-edit"></i> Masters <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="/admin/colleges">Colleges</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Sections</a></li>
+                            <li><a href="/admin/pages">Pages</a></li>
+                            <li><a href="/admin/sections">Sections</a></li>
                             <li><a href="/admin/reviews">Reviews</a></li>
                         </ul>
                     </li>

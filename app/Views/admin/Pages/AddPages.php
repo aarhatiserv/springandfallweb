@@ -30,7 +30,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Review
+                            <h3>Pages
                             </h3>
                         </div>
                     </div>
@@ -41,45 +41,26 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Add Review
+                                    <h2>Add Pages
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/addReviews" method="POST" enctype="multipart/form-data">
+                                    <form action="/admin/addPages" method="POST">
                                         <div>
 
-                                            <label for="name" style="margin-right:252px">Name</label>
-                                            <label for="title" style="margin-right:267px">Title</label>
-                                            <label for="discription">Discription</label>
+                                            <label for="name">Pages Name</label>
+                                           
                                             <br>
 
                                             <input type="text" id="name" name="name"
-                                                placeholder="Name..." style="margin-right:50px"
+                                                placeholder="Name..."
                                                 required />
-
-                                            <input type="text" id="title" name="title" placeholder="Title..."
-                                                style="margin-right:50px" required />
-
-                                            <textarea name="discription" id="discription" rows="6" cols="70"
-                                                placeholder="Enter discription Here..." required>
-</textarea>
-                                        </div>
-
-                                        <div class="file-input">
-                                            <input type="file" id="file" name="file" class="file" required />
-                                            <label for="file">
-                                                <i class="fa fa-upload"></i>&ensp;Select file
-                                                <div class="file-name">
-
-                                                </div>
-
-                                            </label>
                                         </div>
                                         <br>
 
-                                        <button class="back"><a href="/admin/reviews" class="back">Back</a>
+                                        <button class="back"><a href="/admin/pages" class="back">Back</a>
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>
@@ -100,24 +81,4 @@
 
 
 </body>
-<script>
-const file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    // Get the selected file
-    const [file] = e.target.files;
-    // Get the file name and size
-    const {
-        name: fileName,
-        size
-    } = file;
-    // Convert size in bytes to kilo bytes
-    const fileSize = (size / 1000).toFixed(2);
-    // Set the text content
-    const fileNameAndSize = `${fileName} - ${fileSize}KB`;
-    const fileName2 = `${fileName}`;
-    document.querySelector('.file-name').textContent = fileNameAndSize;
-    // document.getElementById("image").value = fileName2;
-});
-</script>
-
 </html>
