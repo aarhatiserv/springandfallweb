@@ -13,17 +13,36 @@ class PagesController extends Controller
     }
     public function pages()
     {
-        $model = new PagesModel();
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new PagesModel();
         $data['pagesData'] = $model->findAll();
         echo view('admin/layout/stylesheet');
         echo view('admin/Pages/Pages', $data);
         echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+       
     }
     public function addPages()
     {
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Pages/AddPages');
-        echo view('admin/layout/script');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Pages/AddPages');
+            echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+      
     }
 
     public function addPagesPost()
@@ -61,8 +80,8 @@ class PagesController extends Controller
                     'data' => [],
                 ];
 
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/pages');
+                return redirect()->to('https://springandfall.in/admin/pages');
+                // return redirect()->to('http://localhost:8080/admin/pages');
 
             } else {
 
@@ -79,9 +98,18 @@ class PagesController extends Controller
 
     public function editPages($id)
     {
-        $model = new PagesModel();
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new PagesModel();
         $data['pagesDatabyId'] = $model->where('id = ', $id)->findAll();
         echo view('admin/Pages/EditPages', $data);
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
     }
 
     public function editPagesPost()
@@ -121,8 +149,8 @@ class PagesController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/pages');
+                return redirect()->to('https://springandfall.in/admin/pages');
+                // return redirect()->to('http://localhost:8080/admin/pages');
             } else {
 
                 $response = [
@@ -137,10 +165,19 @@ class PagesController extends Controller
 
     public function deletePages($id)
     {
-        $model = new PagesModel();
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new PagesModel();
         $model->where('id = ', $id)->delete();
-        // return redirect()->to('https://https://springandfall.in/admin/reviews');
-        return redirect()->to('http://localhost:8080/admin/pages');
+        return redirect()->to('https://springandfall.in/admin/pages');
+        // return redirect()->to('http://localhost:8080/admin/pages');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
     }
 
 }

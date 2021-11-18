@@ -14,18 +14,35 @@ class CollegeController extends Controller
 
     public function colleges()
     {
-        $model = new CollegeModel();
-        $data['collegeData'] = $model->find();
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Colleges/Colleges', $data);
-        echo view('admin/layout/script');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new CollegeModel();
+            $data['collegeData'] = $model->find();
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Colleges/Colleges', $data);
+            echo view('admin/layout/script');
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
     }
 
     public function addColleges()
     {
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Colleges/AddColleges');
-        echo view('admin/layout/script');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Colleges/AddColleges');
+            echo view('admin/layout/script');
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+       
     }
 
     public function addCollegesPost()
@@ -138,8 +155,8 @@ class CollegeController extends Controller
                         'data' => [],
                     ];
 
-                    // return redirect()->to('https://https://springandfall.in/admin/colleges');
-                    return redirect()->to('http://localhost:8080/admin/colleges');
+                    return redirect()->to('https://springandfall.in/admin/colleges');
+                    // return redirect()->to('http://localhost:8080/admin/colleges');
 
                 } else {
 
@@ -156,9 +173,18 @@ class CollegeController extends Controller
 
     public function editCollege($id)
     {
-        $model = new CollegeModel();
-        $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
-        echo view('admin/Colleges/EditColleges', $data);
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new CollegeModel();
+            $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
+            echo view('admin/Colleges/EditColleges', $data);
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+        
     }
 
     public function editCollegePost()
@@ -261,8 +287,8 @@ class CollegeController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                // return redirect()->to('https://https://springandfall.in/admin/colleges');
-                return redirect()->to('http://localhost:8080/admin/colleges');
+                return redirect()->to('https://springandfall.in/admin/colleges');
+                // return redirect()->to('http://localhost:8080/admin/colleges');
             } else {
 
                 $response = [
@@ -277,10 +303,20 @@ class CollegeController extends Controller
 
     public function deleteCollege($id)
     {
-        $model = new CollegeModel();
-        $model->where('id = ', $id)->delete();
-        // return redirect()->to('https://https://springandfall.in/admin/colleges');
-        return redirect()->to('http://localhost:8080/admin/colleges');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new CollegeModel();
+            $model->where('id = ', $id)->delete();
+            return redirect()->to('https://springandfall.in/admin/colleges');
+            // return redirect()->to('http://localhost:8080/admin/colleges');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+        
     }
     //
 

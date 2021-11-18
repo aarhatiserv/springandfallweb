@@ -20,16 +20,26 @@ class SectionsController extends Controller
     }
     public function sections()
     {
-        $db = \Config\Database::connect();
-        $query = $db->query('SELECT sections.id, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id');
-        $data['sectionsData'] = $query->getResult();
+        $session = session();
+		if(!empty($session->get('username'))){
 
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Sections/Sections', $data);
-        echo view('admin/layout/script');
+            $db = \Config\Database::connect();
+            $query = $db->query('SELECT sections.id, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id');
+            $data['sectionsData'] = $query->getResult();
+    
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Sections/Sections', $data);
+            echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
     }
     public function allPagesInEdit()
     {
+        
         $model = new PagesModel();
         $data = $model->findAll();
         echo json_encode(["status" => 1, "data" => $data]);
@@ -37,12 +47,20 @@ class SectionsController extends Controller
 
     public function addSections()
     {
-        $model = new PagesModel();
-        $data['pageData'] = $model->findAll();
+        $session = session();
+		if(!empty($session->get('username'))){
+            $model = new PagesModel();
+            $data['pageData'] = $model->findAll();
+    
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Sections/AddSections', $data);
+            echo view('admin/layout/script');
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
 
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Sections/AddSections', $data);
-        echo view('admin/layout/script');
+       
     }
 
     public function addSectionsPost()
@@ -107,8 +125,8 @@ class SectionsController extends Controller
                     'data' => [],
                 ];
 
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/sections');
+                return redirect()->to('https://springandfall.in/admin/sections');
+                // return redirect()->to('http://localhost:8080/admin/sections');
 
             } else {
 
@@ -125,16 +143,26 @@ class SectionsController extends Controller
 
     public function editSections($id)
     {
-        $db = \Config\Database::connect();
+        $session = session();
+		if(!empty($session->get('username'))){
 
-        $model = new SectionsModel();
-        $data = $model->where('id = ', $id)->findAll();
-        $page_id = $data[0]['pages_id'];
-       
-        $query = $db->query("SELECT sections.id as sid, pages.id as pid, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id WHERE sections.pages_id = '$page_id' AND sections.id = '$id'");
-        $data['sectionsData'] = $query->getResult();
+            $db = \Config\Database::connect();
 
-        echo view('admin/Sections/EditSections', $data);
+            $model = new SectionsModel();
+            $data = $model->where('id = ', $id)->findAll();
+            $page_id = $data[0]['pages_id'];
+           
+            $query = $db->query("SELECT sections.id as sid, pages.id as pid, sections.section_name, sections.title, sections.discription, sections.image, pages.name FROM sections INNER JOIN pages ON sections.pages_id = pages.id WHERE sections.pages_id = '$page_id' AND sections.id = '$id'");
+            $data['sectionsData'] = $query->getResult();
+    
+            echo view('admin/Sections/EditSections', $data);
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+        
     }
 
     public function editSectionsPost()
@@ -200,8 +228,8 @@ class SectionsController extends Controller
                     'data' => [],
                 ];
 
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/sections');
+                return redirect()->to('https://springandfall.in/admin/sections');
+                // return redirect()->to('http://localhost:8080/admin/sections');
 
             } else {
 
@@ -218,10 +246,19 @@ class SectionsController extends Controller
 
     public function deleteSections($id)
     {
-        $model = new SectionsModel();
-        $model->where('id = ', $id)->delete();
-        // return redirect()->to('https://https://springandfall.in/admin/reviews');
-        return redirect()->to('http://localhost:8080/admin/sections');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new SectionsModel();
+            $model->where('id = ', $id)->delete();
+            return redirect()->to('https://springandfall.in/admin/sections');
+            // return redirect()->to('http://localhost:8080/admin/sections');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
     }
 
 }

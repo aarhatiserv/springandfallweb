@@ -2208,3 +2208,8 @@ body{min-width:992px!important}
 a:hover{
     text-decoration: none !important;
 }
+
+.image{
+    max-width: 20%;
+    height: 167px;
+ }

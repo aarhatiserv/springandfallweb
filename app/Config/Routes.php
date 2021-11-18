@@ -49,9 +49,15 @@ $routes->get('tmp', 'User::temp');
 $routes->group("admin", function ($routes) {
 
 	//Admin Dshboard Routes
+    $routes->get('/', 'Admin/AdminController::login');
+    $routes->get('login', 'Admin/AdminController::login');
+    $routes->post('login', 'Admin/AdminController::loginPost');
+	$routes->get('logout', 'Admin/AdminController::logout');
     $routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
+	$routes->get('addAdmin', 'Admin/AdminController::admin');
+	$routes->post('addAdmin', 'Admin/AdminController::addAdminPost');
 
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');

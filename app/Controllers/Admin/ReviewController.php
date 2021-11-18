@@ -13,17 +13,34 @@ class ReviewController extends Controller
     }
     public function review()
     {
-        $model = new ReviewModel();
-        $data['reviewData'] = $model->findAll();
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Reviews/Review', $data);
-        echo view('admin/layout/script');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new ReviewModel();
+            $data['reviewData'] = $model->findAll();
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Reviews/Review', $data);
+            echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
     }
     public function addReview()
     {
-        echo view('admin/layout/stylesheet');
-        echo view('admin/Reviews/AddReview');
-        echo view('admin/layout/script');
+        $session = session();
+		if(!empty($session->get('username'))){
+            echo view('admin/layout/stylesheet');
+            echo view('admin/Reviews/AddReview');
+            echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
     }
 
     public function addReviewPost()
@@ -83,8 +100,8 @@ class ReviewController extends Controller
                     'data' => [],
                 ];
 
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/reviews');
+                return redirect()->to('https://springandfall.in/admin/reviews');
+                // return redirect()->to('http://localhost:8080/admin/reviews');
 
             } else {
 
@@ -101,9 +118,17 @@ class ReviewController extends Controller
 
     public function editReview($id)
     {
-        $model = new ReviewModel();
-        $data['reviewDatabyId'] = $model->where('id = ', $id)->findAll();
-        echo view('admin/Reviews/EditReview', $data);
+        $session = session();
+		if(!empty($session->get('username'))){
+            $model = new ReviewModel();
+            $data['reviewDatabyId'] = $model->where('id = ', $id)->findAll();
+            echo view('admin/Reviews/EditReview', $data);
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
     }
 
     public function editReviewPost()
@@ -165,8 +190,8 @@ class ReviewController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                // return redirect()->to('https://https://springandfall.in/admin/reviews');
-                return redirect()->to('http://localhost:8080/admin/reviews');
+                return redirect()->to('https://springandfall.in/admin/reviews');
+                // return redirect()->to('http://localhost:8080/admin/reviews');
             } else {
 
                 $response = [
@@ -181,10 +206,19 @@ class ReviewController extends Controller
 
     public function deleteReview($id)
     {
-        $model = new ReviewModel();
-        $model->where('id = ', $id)->delete();
-        // return redirect()->to('https://https://springandfall.in/admin/reviews');
-        return redirect()->to('http://localhost:8080/admin/reviews');
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new ReviewModel();
+            $model->where('id = ', $id)->delete();
+            return redirect()->to('https://springandfall.in/admin/reviews');
+            // return redirect()->to('http://localhost:8080/admin/reviews');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+        
     }
 
 }

@@ -116,7 +116,7 @@ function getCollege(country) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -200,7 +200,7 @@ function getCourses(course) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                            <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -260,7 +260,7 @@ function getCourses(course) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -349,7 +349,7 @@ function getLevel(level) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -410,7 +410,7 @@ function levelAndCountry(){
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                            <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -469,7 +469,7 @@ function courseAndLevels(){
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                            <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -528,7 +528,7 @@ function countryAndCourseAndLevels(){
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                            <img class="p-3 image" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -599,10 +599,12 @@ function countryAndCourseAndLevels(){
             <div class="col-lg-12">
                 <form>
                     <div class="form-row">
-                        <div class="col-md-6 mb-3 mx-2">
+                        <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                        <div class="col mb-3 mx-2">
                             <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
                         </div>
-                        <div class="col-md-6 mb-3 mx-2">
+                        <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                        <div class="col mb-3 mx-2">
                             <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
                         </div>
                     </div>
@@ -644,11 +646,13 @@ function countryAndCourseAndLevels(){
                     <div class="col-lg-12">
                         <form>
                             <div class="form-row">
-                                <div class="col-md-6 mb-3 mx-2">
+                                <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                                <div class="col mb-3 mx-2">
                                     <input type="text" class="form-control" name="qualification" id="qualification"
                                         placeholder="Highest Qualification">
                                 </div>
-                                <div class="col-md-6 mb-3 mx-2">
+                                <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                                <div class="col mb-3 mx-2">
                                     <input type="text" class="form-control" name="passingYear" id="passingYear"
                                         placeholder="Year of Passing">
                                 </div>

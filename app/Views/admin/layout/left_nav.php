@@ -1,3 +1,4 @@
+<?php $session = session();?>
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
@@ -39,6 +40,12 @@
                             <li><a href="/admin/pages">Pages</a></li>
                             <li><a href="/admin/sections">Sections</a></li>
                             <li><a href="/admin/reviews">Reviews</a></li>
+                            <?php 
+                              if(($session->get('adminTypes') === 'superadmin' ))
+                              {?>
+                                  <li><a href="/admin/addAdmin">Add Admin</a></li>
+                              <?php } ?>
+                           
                         </ul>
                     </li>
                     <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
