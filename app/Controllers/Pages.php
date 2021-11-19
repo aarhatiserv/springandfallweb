@@ -7,6 +7,7 @@ use CodeIgniter\Controller;
 use App\Models\PagesModel;
 use App\Models\SectionsModel;
 use App\Models\ReviewModel;
+use App\Models\HotCoursesModel;
 
 class Pages extends Controller
 {
@@ -26,6 +27,9 @@ class Pages extends Controller
         
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
+
+        $hCoursesModel = new HotCoursesModel();
+        $data['hotCourses'] = $hCoursesModel->findAll();
 
         echo view('templates/header', $data);
         echo view('pages/home');
@@ -65,6 +69,9 @@ class Pages extends Controller
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
 
+        $hCoursesModel = new HotCoursesModel();
+        $data['hotCourses'] = $hCoursesModel->findAll();
+        
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
         echo view('templates/footer', $data);

@@ -94,6 +94,15 @@ $routes->group("admin", function ($routes) {
 	$routes->get("editSections/(:any)", "Admin\SectionsController::editSections/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('editSections', 'Admin/SectionsController::editSectionsPost');
 	$routes->get("deleteSections/(:any)", "Admin\SectionsController::deleteSections/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+
+    // Admin Colleges Routes
+    $routes->get('hotCourses', 'Admin/HotCoursesController::hotCourses');
+    $routes->get('addHotCourses', 'Admin/HotCoursesController::addHotCourses');
+    $routes->post('addHotCourses', 'Admin/HotCoursesController::addHotCoursesPost');
+    $routes->get("editHotCourses/(:any)", "Admin\HotCoursesController::editHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+    $routes->post('editHotCourses', 'Admin/HotCoursesController::editHotCoursesPost');
+    $routes->get("deleteHotCourses/(:any)", "Admin\HotCoursesController::deleteHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+
 });
 
 // auth routes

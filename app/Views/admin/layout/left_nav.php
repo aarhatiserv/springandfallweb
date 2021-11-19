@@ -33,6 +33,7 @@
                             <li><a href="/admin/pages">Pages</a></li>
                             <li><a href="/admin/sections">Sections</a></li>
                             <li><a href="/admin/reviews">Reviews</a></li>
+                            <li><a href="/admin/hotCourses">Hot Courses</a></li>
                             <?php 
                               if(($session->get('adminTypes') === 'superadmin' ))
                               {?>

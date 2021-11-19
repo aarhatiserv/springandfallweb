@@ -215,8 +215,8 @@
             <!-- ------------------------------------------Start header------------------------ -->
             <?php $session = session();?>
 
-<!-- top navigation -->
-<div class="top_nav">
+            <!-- top navigation -->
+            <div class="top_nav">
                 <div class="nav_menu">
                     <nav>
                         <div class="nav toggle">
@@ -227,7 +227,8 @@
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="../assets/backend/production/images/img.jpg" alt=""><?= $session->get('username');?>
+                                    <img src="../assets/backend/production/images/img.jpg"
+                                        alt=""><?= $session->get('username');?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -239,7 +240,8 @@
                                         </a>
                                     </li>
                                     <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="/admin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    <li><a href="/admin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -340,14 +342,14 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Edit Review
+                                    <h2>Edit Hot Courses
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/editReviews" method="POST" enctype="multipart/form-data">
-                                        <input type="hidden" name="id" value="<?= $reviewDatabyId[0]['id']?>" />
+                                    <form action="/admin/editHotCourses" method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?= $hCoursesDatabyId[0]['id']?>" />
                                         <div>
 
                                             <label for="name" style="margin-right:252px">Name</label>
@@ -356,15 +358,15 @@
                                             <br>
 
                                             <input type="text" id="name" name="name" placeholder="Name..."
-                                                style="margin-right:50px" value="<?= $reviewDatabyId[0]['name']?>"
+                                                style="margin-right:50px" value="<?= $hCoursesDatabyId[0]['name']?>"
                                                 required />
 
                                             <input type="text" id="title" name="title" placeholder="Title..."
-                                                style="margin-right:50px" value="<?= $reviewDatabyId[0]['title']?>"
+                                                style="margin-right:50px" value="<?= $hCoursesDatabyId[0]['title']?>"
                                                 required />
 
                                             <textarea name="discription" id="discription" rows="6" cols="70"
-                                                placeholder="Enter discription Here..." required><?= $reviewDatabyId[0]['discription']?>
+                                                placeholder="Enter discription Here..." required><?= $hCoursesDatabyId[0]['discription']?>
 </textarea>
                                         </div>
 
@@ -380,7 +382,7 @@
                                         </div>
                                         <br>
 
-                                        <button class="back"><a href="/admin/reviews" class="back">Back</a>
+                                        <button class="back"><a href="/admin/hotCourses" class="back">Back</a>
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>
