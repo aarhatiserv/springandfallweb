@@ -43,9 +43,9 @@
                     </li>
                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="/admin/home">Dashboard</a></li>
-                            <li><a href="/admin/home2">Dashboard2</a></li>
-                            <li><a href="/admin/home3">Dashboard3</a></li>
+                            <li><a href="/admin/home">Home</a></li>
+                            <!-- <li><a href="/admin/home2">Dashboard2</a></li>
+                            <li><a href="/admin/home3">Dashboard3</a></li> -->
                         </ul>
                     </li>
             <!--       <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>-->
