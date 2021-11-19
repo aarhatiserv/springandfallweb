@@ -49,7 +49,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0; text-align: center">
-                        <a href="/admin/home" class="site_title"><img src="../assets/images/logo/logo.png" alt="logo"
+                        <a href="/admin/home" class="site_title"><img src="../../assets/images/logo/logo.png" alt="logo"
                                 style="height:60px; width:75px;" /></a>
                     </div>
                     <h4 style="text-align: center">Spring & Fall</h4>
@@ -58,7 +58,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="../assets/backend/production/images/img.jpg" alt="..."
+                            <img src="../../assets/backend/production/images/img.jpg" alt="..."
                                 class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
@@ -227,7 +227,7 @@
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="../assets/backend/production/images/img.jpg"
+                                    <img src="../../assets/backend/production/images/img.jpg"
                                         alt=""><?= $session->get('username');?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
@@ -254,7 +254,7 @@
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -268,7 +268,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -282,7 +282,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -296,7 +296,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
