@@ -59,6 +59,9 @@ $routes->group("admin", function ($routes) {
 	$routes->get('addAdmin', 'Admin/AdminController::admin');
 	$routes->post('addAdmin', 'Admin/AdminController::addAdminPost');
 
+	$routes->get('forgotPassword', 'Admin/AdminController::forgotPassword');
+	$routes->post('forgotPassword', 'Admin/AdminController::forgotPasswordPost');
+
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/CollegeController::addColleges');

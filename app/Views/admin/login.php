@@ -46,7 +46,7 @@
                         <div>
                             <!-- <a  href="index.html">Log in</a> -->
                             <input type="submit" value="Log in" class="btn btn-default submit"/>
-                            <a class="reset_pass" href="#">Lost your password?</a>
+                            <a class="reset_pass" href="/admin/forgotPassword">Lost your password?</a>
                         </div>
 
                         <div class="clearfix"></div>

@@ -35,6 +35,26 @@ class AdminController extends Controller
 			// return redirect()->to('http://localhost:8080/admin/login');
 		}
 	}
+
+	public function forgotPassword()
+	{
+		echo view('admin/forgotPassword');
+	}
+
+	public function forgotPasswordPost()
+	{
+		$email = $this->request->getVar('email');
+		$model = new AdminModel();
+		$data['data'] = $model->where('email = ',$email)->findAll();
+
+		if(empty($data)){
+			$data['message'] = "Email Not Found";
+			echo view('admin/forgotPassword', $data);
+		}else{
+		echo view('admin/forgotPasswordData', $data);
+		}
+	}
+
 	public function admin()
 	{
 		$session = session();
@@ -220,8 +240,9 @@ class AdminController extends Controller
 					// 	]
 					// ];
 					// return $this->respondCreated($response);
-					return redirect()->to('https://springandfall.in/admin/home');
-					// return redirect()->to('http://localhost:8080/admin/home');
+					// return redirect()->to('https://springandfall.in/admin/home');
+					return redirect()->to('https://springandfall.in/admin/colleges');
+					// return redirect()->to('http://localhost:8080/admin/colleges');
 				} else {
 
 					$session->destroy();
