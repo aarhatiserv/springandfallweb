@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/springan/public_html/
-    - /bin/cp ./public/assets $DEPLOYPATH
-    - /bin/cp ./public/uploads $DEPLOYPATH
+    - /bin/cp public/assets $DEPLOYPATH
+    - /bin/cp public/uploads $DEPLOYPATH
