@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/springan/public_html/NazimTestYML/
-    - /bin/cp * $DEPLOYPATH
+    - /bin/cp * $DEPLOYPATH     
+    
