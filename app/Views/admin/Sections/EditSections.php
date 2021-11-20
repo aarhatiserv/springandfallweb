@@ -38,14 +38,19 @@
     <!-- Custom Theme Style -->
     <link href="../../assets/backend/build/css/custom.min.css" rel="stylesheet">
     <link href="../../assets/backend/build/css/addColleges.css" rel="stylesheet">
+    <style>
+    input.disabled:hover {
+        cursor: not-allowed;
+    }
+    </style>
 </head>
 
 <body class="nav-md">
 
     <div class="container body">
         <div class="main_container">
-           <!-- ------------------------------------------Start Left Nav------------------------ -->
-           <?php $session = session();?>
+            <!-- ------------------------------------------Start Left Nav------------------------ -->
+            <?php $session = session();?>
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0; text-align: center">
@@ -254,7 +259,8 @@
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -268,7 +274,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -282,7 +289,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -296,7 +304,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -362,7 +371,7 @@
 
                                             <input type="text" id="name" name="name" placeholder="Name..."
                                                 style="margin-right:50px" value="<?= $sectionsData->section_name ?>"
-                                                required />
+                                                class="disabled" disabled required />
 
                                             <input type="text" id="title" name="title" placeholder="Title..."
                                                 style="margin-right:50px" value="<?= $sectionsData->title ?>"

@@ -78,10 +78,10 @@ function getCollege(country) {
             countryAndCourseAndLevels();
             // alert(country + " " + courses + " " + levels)
             // call level and country and course api
-        }else{
-        this.country = country;
-        getCourses(courses);
-        // call country and course api
+        } else {
+            this.country = country;
+            getCourses(courses);
+            // call country and course api
         }
     } else if (levels != "") {
         if (courses != "") {
@@ -89,10 +89,10 @@ function getCollege(country) {
             countryAndCourseAndLevels();
             // alert(country + " " + courses + " " + levels)
             // call level and country and course api
-        }else{
-        this.country = country;
-        levelAndCountry();
-        //call country and levels api
+        } else {
+            this.country = country;
+            levelAndCountry();
+            //call country and levels api
         }
     } else {
         // call single country api
@@ -116,7 +116,8 @@ function getCollege(country) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                                item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -159,48 +160,49 @@ function getCollege(country) {
 function getCourses(course) {
 
     if (levels != "") {
-        if(country != ""){
+        if (country != "") {
             this.courses = course;
             countryAndCourseAndLevels();
             // alert(country+" "+courses+" "+levels);
             // call level and country and course api
-        }else{
-        this.courses = course;
-        courseAndLevels();
-        // alert(levels +" "+ course);
-         // call course and level api
+        } else {
+            this.courses = course;
+            courseAndLevels();
+            // alert(levels +" "+ course);
+            // call course and level api
         }
-       
+
     } else if (country != "") {
 
-        if(levels != ""){
+        if (levels != "") {
             this.courses = course;
             countryAndCourseAndLevels();
             // alert(country+" "+courses+" "+levels);
             // call level and country and course api
-        }else{
-         // call country and course api
-        this.courses = course;
-        $('.college').html("Please wait...");
-        $('.college').prop("disabled", true);
+        } else {
+            // call country and course api
+            this.courses = course;
+            $('.college').html("Please wait...");
+            $('.college').prop("disabled", true);
 
-        $.ajax({
-            url: '/api2/college/' + country + '/' + courses,
-            type: 'GET',
-            success: function(res) {
-                let collegeData = JSON.parse(res);
-                let dt = [];
-                console.log('res', collegeData);
-                if (collegeData.status !== undefined) {
+            $.ajax({
+                url: '/api2/college/' + country + '/' + courses,
+                type: 'GET',
+                success: function(res) {
+                    let collegeData = JSON.parse(res);
+                    let dt = [];
+                    console.log('res', collegeData);
+                    if (collegeData.status !== undefined) {
 
-                    if (collegeData.data.length == 0) {
-                        $('.college').html("No Record Found");
-                        $('.college').prop("disabled", false);
-                    } else {
-                        collegeData.data.map((item) => (
-                            dt.push(
-                                ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                        if (collegeData.data.length == 0) {
+                            $('.college').html("No Record Found");
+                            $('.college').prop("disabled", false);
+                        } else {
+                            collegeData.data.map((item) => (
+                                dt.push(
+                                    ` <li class="media my-4 bg-light">
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                                    item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -219,26 +221,26 @@ function getCourses(course) {
                                 </div>
                             </div>
                         </li>`
-                            )
-                        ));
-                        // $("#listColleges").html(dt);
-                        $('.college').html(dt);
-                        $('.college').prop("disabled", false);
+                                )
+                            ));
+                            // $("#listColleges").html(dt);
+                            $('.college').html(dt);
+                            $('.college').prop("disabled", false);
+                        }
                     }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                    // console.log(`error`, err);
+                    $('.ajaxError').html("Countries");
+                    $('.ajaxError').prop("disabled", false);
+                    // if (err) {
+                    //     swal("Oh noes!", "The AJAX request failed!", "error");
+                    // }
                 }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                // console.log(`error`, err);
-                $('.ajaxError').html("Countries");
-                $('.ajaxError').prop("disabled", false);
-                // if (err) {
-                //     swal("Oh noes!", "The AJAX request failed!", "error");
-                // }
-            }
-        });
-    }
-    }  else {
+            });
+        }
+    } else {
         /// call course api
         this.courses = course;
         $('.college').html("Please wait...");
@@ -260,7 +262,8 @@ function getCourses(course) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                                item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -303,30 +306,30 @@ function getCourses(course) {
 function getLevel(level) {
 
     if (country != "") {
-        if(courses != ""){
+        if (courses != "") {
             this.levels = level;
             countryAndCourseAndLevels();
             // alert(country+" "+courses+" "+levels)
             // call 3 api
-        }else{
+        } else {
             this.levels = level;
             levelAndCountry();
             // call country and course api
         }
-        
+
     } else if (courses != "") {
-       if(country != ""){
-        this.levels = level;
-        countryAndCourseAndLevels();
+        if (country != "") {
+            this.levels = level;
+            countryAndCourseAndLevels();
             // alert(country+" "+courses+" "+levels)
             // call 3 api
-       }else{
-        this.levels = level;
-        courseAndLevels();
-        // alert(levels + " " + courses);
-        // call courses and levels api
-       }
-        
+        } else {
+            this.levels = level;
+            courseAndLevels();
+            // alert(levels + " " + courses);
+            // call courses and levels api
+        }
+
     } else {
         // single parameter pass only level
         this.levels = level;
@@ -349,7 +352,8 @@ function getLevel(level) {
                         collegeData.data.map((item) => (
                             dt.push(
                                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                                item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -390,27 +394,28 @@ function getLevel(level) {
 }
 
 
-function levelAndCountry(){
+function levelAndCountry() {
     $('.college').html("Please wait...");
-        $('.college').prop("disabled", true);
+    $('.college').prop("disabled", true);
 
-        $.ajax({
-            url: '/api2/countryAndLevels/' + country + '/' + levels,
-            type: 'GET',
-            success: function(res) {
-                let collegeData = JSON.parse(res);
-                let dt = [];
-                console.log('res', collegeData);
-                if (collegeData.status !== undefined) {
+    $.ajax({
+        url: '/api2/countryAndLevels/' + country + '/' + levels,
+        type: 'GET',
+        success: function(res) {
+            let collegeData = JSON.parse(res);
+            let dt = [];
+            console.log('res', collegeData);
+            if (collegeData.status !== undefined) {
 
-                    if (collegeData.data.length == 0) {
-                        $('.college').html("No Record Found");
-                        $('.college').prop("disabled", false);
-                    } else {
-                        collegeData.data.map((item) => (
-                            dt.push(
-                                ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                if (collegeData.data.length == 0) {
+                    $('.college').html("No Record Found");
+                    $('.college').prop("disabled", false);
+                } else {
+                    collegeData.data.map((item) => (
+                        dt.push(
+                            ` <li class="media my-4 bg-light">
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                            item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -429,47 +434,48 @@ function levelAndCountry(){
                                 </div>
                             </div>
                         </li>`
-                            )
-                        ));
-                        // $("#listColleges").html(dt);
-                        $('.college').html(dt);
-                        $('.college').prop("disabled", false);
-                    }
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('.college').html(dt);
+                    $('.college').prop("disabled", false);
                 }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                // console.log(`error`, err);
-                $('.ajaxError').html("Countries");
-                $('.ajaxError').prop("disabled", false);
-                // if (err) {
-                //     swal("Oh noes!", "The AJAX request failed!", "error");
-                // }
             }
-        });
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            // console.log(`error`, err);
+            $('.ajaxError').html("Countries");
+            $('.ajaxError').prop("disabled", false);
+            // if (err) {
+            //     swal("Oh noes!", "The AJAX request failed!", "error");
+            // }
+        }
+    });
 }
 
-function courseAndLevels(){
+function courseAndLevels() {
     $('.college').html("Please wait...");
-        $('.college').prop("disabled", true);
+    $('.college').prop("disabled", true);
 
-        $.ajax({
-            url: '/api2/courseAndLevel/' + courses + '/' + levels,
-            type: 'GET',
-            success: function(res) {
-                let collegeData = JSON.parse(res);
-                let dt = [];
-                console.log('res', collegeData);
-                if (collegeData.status !== undefined) {
+    $.ajax({
+        url: '/api2/courseAndLevel/' + courses + '/' + levels,
+        type: 'GET',
+        success: function(res) {
+            let collegeData = JSON.parse(res);
+            let dt = [];
+            console.log('res', collegeData);
+            if (collegeData.status !== undefined) {
 
-                    if (collegeData.data.length == 0) {
-                        $('.college').html("No Record Found");
-                        $('.college').prop("disabled", false);
-                    } else {
-                        collegeData.data.map((item) => (
-                            dt.push(
-                                ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                if (collegeData.data.length == 0) {
+                    $('.college').html("No Record Found");
+                    $('.college').prop("disabled", false);
+                } else {
+                    collegeData.data.map((item) => (
+                        dt.push(
+                            ` <li class="media my-4 bg-light">
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                            item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -488,47 +494,48 @@ function courseAndLevels(){
                                 </div>
                             </div>
                         </li>`
-                            )
-                        ));
-                        // $("#listColleges").html(dt);
-                        $('.college').html(dt);
-                        $('.college').prop("disabled", false);
-                    }
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('.college').html(dt);
+                    $('.college').prop("disabled", false);
                 }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                // console.log(`error`, err);
-                $('.ajaxError').html("Countries");
-                $('.ajaxError').prop("disabled", false);
-                // if (err) {
-                //     swal("Oh noes!", "The AJAX request failed!", "error");
-                // }
             }
-        });
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            // console.log(`error`, err);
+            $('.ajaxError').html("Countries");
+            $('.ajaxError').prop("disabled", false);
+            // if (err) {
+            //     swal("Oh noes!", "The AJAX request failed!", "error");
+            // }
+        }
+    });
 }
 
-function countryAndCourseAndLevels(){
+function countryAndCourseAndLevels() {
     $('.college').html("Please wait...");
-        $('.college').prop("disabled", true);
+    $('.college').prop("disabled", true);
 
-        $.ajax({
-            url: '/api2/countryAndCourseAndLevel/' + country + '/' + courses+ '/' + levels,
-            type: 'GET',
-            success: function(res) {
-                let collegeData = JSON.parse(res);
-                let dt = [];
-                console.log('res', collegeData);
-                if (collegeData.status !== undefined) {
+    $.ajax({
+        url: '/api2/countryAndCourseAndLevel/' + country + '/' + courses + '/' + levels,
+        type: 'GET',
+        success: function(res) {
+            let collegeData = JSON.parse(res);
+            let dt = [];
+            console.log('res', collegeData);
+            if (collegeData.status !== undefined) {
 
-                    if (collegeData.data.length == 0) {
-                        $('.college').html("No Record Found");
-                        $('.college').prop("disabled", false);
-                    } else {
-                        collegeData.data.map((item) => (
-                            dt.push(
-                                ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                if (collegeData.data.length == 0) {
+                    $('.college').html("No Record Found");
+                    $('.college').prop("disabled", false);
+                } else {
+                    collegeData.data.map((item) => (
+                        dt.push(
+                            ` <li class="media my-4 bg-light">
+                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                            item.image + `" class="mr-3" alt="..."
                                 title="hrl" width="" height="" />
                             <div class="media-body py-3">
                                 <div class="row">
@@ -547,24 +554,24 @@ function countryAndCourseAndLevels(){
                                 </div>
                             </div>
                         </li>`
-                            )
-                        ));
-                        // $("#listColleges").html(dt);
-                        $('.college').html(dt);
-                        $('.college').prop("disabled", false);
-                    }
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('.college').html(dt);
+                    $('.college').prop("disabled", false);
                 }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                // console.log(`error`, err);
-                $('.ajaxError').html("Countries");
-                $('.ajaxError').prop("disabled", false);
-                // if (err) {
-                //     swal("Oh noes!", "The AJAX request failed!", "error");
-                // }
             }
-        });
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            // console.log(`error`, err);
+            $('.ajaxError').html("Countries");
+            $('.ajaxError').prop("disabled", false);
+            // if (err) {
+            //     swal("Oh noes!", "The AJAX request failed!", "error");
+            // }
+        }
+    });
 }
 </script>
 <section id="getstartdSection">
@@ -593,11 +600,32 @@ function countryAndCourseAndLevels(){
 <section id="personalDetails" style="display: none;">
     <div class="container">
         <div class="row">
-            <h5 class="pl-3">Personal details</h5>
+        <h5 class="pl-3" style="margin-bottom: -25px;">Personal details</h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <form>
+                    <!-- image -->
+                    <div class="form-row">
+                   
+                        <div class="col mb-3 mx-2">
+                            <div class="file-inputCareer">
+
+                                <input type="file" id="file" name="file" class="fileCareer" required />
+                                <label for="file">
+                                    <i class="fa fa-upload"></i>&ensp;Select file
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col mb-3 mx-2">
+                            <div class="file-nameCareer">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- image -->
+
+
                     <div class="form-row">
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
                         <div class="col mb-3 mx-2">
@@ -640,7 +668,7 @@ function countryAndCourseAndLevels(){
                     </div>
                 </form>
                 <div class="row">
-                    <h5 class="pl-3">Qualification</h5>
+                    <h5 class="pl-3" style="padding-bottom:20px;padding-top:16px">Qualification</h5>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -809,20 +837,20 @@ function countryAndCourseAndLevels(){
                             <h4>Your Opportunity </h4>
                         </div>
 
-                        
+
                         <div class="tab-content border-top border-primary" id="pills-tabContent">
 
-                           
+
                             <ul class="list-unstyled brd college" id="listColleges">
-                             
+
                             </ul>
-                           
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
     </div>
 </section>
 <!-- added by nazim | 28-jul-2021 -->

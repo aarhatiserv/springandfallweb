@@ -44,6 +44,8 @@ $session = session();
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/scholarship.css"/>
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/creative-card.css"/>
 
+    <!-- <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/profile.css"/> -->
+
     <link rel="stylesheet" href="assets/css/consultation.css"/>
     <link rel="stylesheet" href="assets/css/Visa_Consulation.css"/>
     <link rel="stylesheet" href="assets/css/overseas-insurance.css"/>
@@ -241,7 +243,26 @@ $session = session();
                     </li> -->
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
-                        <a href="<?= base_url('api/logout'); ?>" class="btn"  id="loginBtn" rel="noopener">SIGN OUT</a>
+                        <a href="<?php base_url('api/logout'); ?>" class="btn"  id="loginBtn" rel="noopener">SIGN OUT</a>
+
+                        <!-- profile Button -->
+                        <!-- <div class="container">
+  <div class="half">
+    <label for="profile2" class="profile-dropdown">
+      <input type="checkbox" id="profile2">
+      <img src="https://cdn0.iconfinder.com/data/icons/avatars-3/512/avatar_hipster_guy-512.png">
+      <span>John Doe</span>
+      <label for="profile2"><i class="mdi mdi-menu"></i></label>
+      <ul>
+        <li><a href="#"><i class="mdi mdi-email-outline"></i>Messages</a></li>
+        <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>
+        <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>
+        <li><a href="#"><i class="mdi mdi-logout"></i>Logout</a></li>
+      </ul>
+    </label>
+  </div>
+</div> -->
+                        <!-- profile Button -->
                         <?php else : ?>
                         <button  id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
                         <?php endif; ?>

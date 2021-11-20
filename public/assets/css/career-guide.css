@@ -10,3 +10,39 @@ text-decoration: none !important;
     max-width: 20%;
     height: 167px;
  }
+
+ .fileCareer {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.file-inputCareer label {
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 34px;
+    border-radius: 5px;
+    background: #2A3F54;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    margin-left: 974px;
+    margin-bottom: 8px;
+}
+
+.file-nameCareer {
+    position: absolute;
+    bottom: 14px;
+    left: 806px;
+    font-size: 14px;
+    color: #555;
+    width: 16%;
+    font-family: 'Poppins';
+}

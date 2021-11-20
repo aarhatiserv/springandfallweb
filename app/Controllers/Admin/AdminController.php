@@ -266,10 +266,18 @@ class AdminController extends Controller
 	}
 
 	public function logout(){
-      $session = session();
-	  $session->destroy();
-	  return redirect()->to('https://springandfall.in/admin/login');
-	//   return redirect()->to('http://localhost:8080/admin/login');
+
+		$session = session();
+		if(!empty($session->get('username'))){
+			$session = session();
+			$session->destroy();
+		    return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}else{
+			return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+      
 	}
 
 }

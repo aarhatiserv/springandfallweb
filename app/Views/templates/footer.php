@@ -14,14 +14,15 @@
         <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
             <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="130" title="logo" /><br>
             <div class="social-icons-fa">
-                <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i class="fa fa-facebook-square ml-4 mt-2 fa-2x"
-                        title="facebook"></i></a>
+                <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
+                        class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
 
-                <!-- <a href="https://www.instagram.com/_springandfall_/" target="_blank">
-                    <i class="fa fa-instagram ml-4 mt-2 fa-2x"  title="instagram"></i></a><br> -->
-                    <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i class="fa fa-instagram ml-4 mt-2 fa-2x"  title="instagram"></i></a><br/>
-                <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"  title="twitter"></i></a>
-                <a href="#"  target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"  title="linkedin"></i></a>
+                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i
+                        class="fa fa-instagram ml-4 mt-2 fa-2x" title="instagram"></i></a><br />
+                <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"
+                        title="twitter"></i></a>
+                <a href="#" target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"
+                        title="linkedin"></i></a>
                 <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
             </div>
         </div>
@@ -46,7 +47,8 @@
                     <input class="text-center" type="text" placeholder="Email Id">
                     <button type="button" id="Button" class="mt-1 ml-2">Subscribe</button>
                     <div class="appPlay">
-                        <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100" title="mobilestores" />
+                        <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
+                            title="mobilestores" />
                     </div><br>
                     <p class="mb-0 pb-2 credit">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
                 </div>
@@ -88,7 +90,7 @@
 
 <!-- EMI CALCULATOR SCRIPT -->
 <script src="assets/emicalculator/js/emicalc-lib.js" type="text/javascript"></script>
-  <script src="assets/emicalculator/js/emicalc-main.min.js" type="text/javascript"></script>
+<script src="assets/emicalculator/js/emicalc-main.min.js" type="text/javascript"></script>
 <!-- EMI CALCULATOR SCRIPT -->
 
 <?php
@@ -385,27 +387,46 @@ $(document).ready(() => {
         }
     });
 
-//     getCollege();
+    //     getCollege();
 
-//  function getCollege(){
-//     $.ajax({
-//                 url: "/api/college",
-//                 method: "GET",
-//                 success: function(data) {
-                    
-//                     var res = JSON.parse(data);
-//                     if (res.status === 200) {
-//                         swal("Thank you!", res.message, "success");
-//                         window.location.reload();
-//                     } else if (res.status === 2) {
-//                         swal("Opps.!!", res.message, "error");
-//                     } else {
-//                         swal("Opps.!!", "Something went wrong.!!", "error");
-//                     }
-//                 }
-//             })
-//        }
+    //  function getCollege(){
+    //     $.ajax({
+    //                 url: "/api/college",
+    //                 method: "GET",
+    //                 success: function(data) {
 
+    //                     var res = JSON.parse(data);
+    //                     if (res.status === 200) {
+    //                         swal("Thank you!", res.message, "success");
+    //                         window.location.reload();
+    //                     } else if (res.status === 2) {
+    //                         swal("Opps.!!", res.message, "error");
+    //                     } else {
+    //                         swal("Opps.!!", "Something went wrong.!!", "error");
+    //                     }
+    //                 }
+    //             })
+    //        }
+
+});
+</script>
+<script>
+const file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    // Get the selected file
+    const [file] = e.target.files;
+    // Get the file name and size
+    const {
+        name: fileName,
+        size
+    } = file;
+    // Convert size in bytes to kilo bytes
+    const fileSize = (size / 1000).toFixed(2);
+    // Set the text content
+    const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+    const fileName2 = `${fileName}`;
+    document.querySelector('.file-nameCareer').textContent = fileNameAndSize;
+    // document.getElementById("image").value = fileName2;
 });
 </script>
 </body>

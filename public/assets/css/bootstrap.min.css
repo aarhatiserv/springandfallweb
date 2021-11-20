@@ -2213,3 +2213,12 @@ a:hover{
     max-width: 20%;
     height: 167px;
  }
+
+ .fa-linkedin-square:hover{
+    color: #00008B;
+    cursor:pointer;
+ }
+ .fa-facebook-square:hover{
+    color: #00008B;
+    cursor:pointer;
+ }

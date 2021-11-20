@@ -1,9 +1,9 @@
+
 <div class="container-fluid px-0 clueless"
     style="margin-left: 0px; margin-bottom: 0px; height: auto; background: linear-gradient(270deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.16) 100%);">
     <img src="assets/images/education.png" alt="education" title="education" style=" width: 100%;">
-
-
 </div>
+
 <?= $this->include('templates/calltoaction') ?>
 <!-- 1 2 3 4 5 -->
 <div class="container-fluid px-0 px-md-5 px-lg-5 py-5 " style="height:auto; background: #E5E5E5; margin-top:0px;">
@@ -16,10 +16,10 @@
     </picture>
 </div>
 <!-- 1 2 3 4 5 ends -->
-
+<section>
 <div class="background">
 
-    <div class="creative-card">
+    <div class="creative-card details">
         <div class="photo"></div>
         <h2>LOANS APROVED</h2>
         <p>THIS WEEK</p>
@@ -32,12 +32,12 @@
             <div class="bar bar6"><span>7,0000</span></div>
             <div class="bar bar7"><span>10,0000</span></div>
         </div>
-        <h3>93,00000</h3>
+        <h3 style="color:white !important;">93,00000</h3>
     </div>
 
     <div class="info">Click to toggle details view</div>
 </div>
-
+</section>
 <!-- loan options -->
 <section id="loanOptions">
     <div class="container">
@@ -163,8 +163,9 @@
 
             </div>
             <div class="col-md-6 p-5">
-                <img class="img-fluid" src="https://via.placeholder.com/400" alt="why apply loan with spring and fall ?"
-                    title="why apply loan with spring and fall ?" width="" height="">
+                <img class="img-fluid" src="assets/images/Education Loan Spring nd Fall Website.jpg"
+                    alt="why apply loan with spring and fall ?" title="why apply loan with spring and fall ?" width=""
+                    height="">
             </div>
         </div>
 
