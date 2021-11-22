@@ -13,9 +13,15 @@ class CollegeController extends BaseController
 	}
 
 	public function getColleges($country){
-       $model = new CollegeModel();
-       $data = $model->where('country', $country)->findAll();
-	echo json_encode(["status" => 1, "data" => $data]);
+		if(!empty($country)){
+			
+			$model = new CollegeModel();
+			$data = $model->where('country', $country)->findAll();
+		 echo json_encode(["status" => 1, "data" => $data]);
+		}else{
+			return redirect()->to('https://springandfall.in/consultation');
+			// return redirect()->to('http://localhost:8080/consultation');
+		}
 	}
 
 	public function getCollegesWithCourses($country, $courses){

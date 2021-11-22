@@ -38,6 +38,8 @@ class Pages extends Controller
 
     public function view($page = 'home')
     {
+        $session = session();
+        // $session->remove('flagHome');
         if ($this->request->getMethod() === 'post' && $this->validate([
             'first_name' => 'required|min_length[3]|max_length[12]',
             'last_name' => 'required|min_length[3]|max_length[12]',
@@ -144,5 +146,14 @@ class Pages extends Controller
         } else {
             echo json_encode(["name" => "Sins "]);
         }
+    }
+
+
+    public function flag($flag)
+    {
+        $session = session();
+        $session->set('flagHome', $flag);
+        return redirect()->to('https://springandfall.in/consultation');
+        // return redirect()->to('http://localhost:8080/consultation');
     }
 }

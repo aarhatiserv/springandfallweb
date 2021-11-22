@@ -1,4 +1,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<?php 
+$session = session();
+?>
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function() {
+    $('.college').html("Please wait...");
+    $('.college').prop("disabled", true);
+});
+</script>
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
 <script language="JavaScript" type="text/javascript">
 function getCollege(country) {
 
@@ -21,7 +35,8 @@ function getCollege(country) {
                     collegeData.data.map((item) => (
                         dt.push(
                             ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" alt="..."
+                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                            item.image + `" class="mr-3" alt="..."
                                     title="hrl" width="" height="" />
                                 <div class="media-body py-3">
                                     <div class="row">
@@ -57,6 +72,7 @@ function getCollege(country) {
             }
         }
     });
+
 }
 
 var country = "";
@@ -108,7 +124,8 @@ function ff() {
                     collegeData.data.map((item) => (
                         dt.push(
                             ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image + `" class="mr-3" height="" width="" alt="..." title="hrl" />
+                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                            item.image + `" class="mr-3" height="" width="" alt="..." title="hrl" />
                                 <div class="media-body py-3">
                                     <div class="row">
                                         <div class="col-md-8">
@@ -175,8 +192,8 @@ for( $i = 0; $i < count($sectionData); $i++){
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>" alt="jumbotronimg"
-                        title="jumbotronimg" width="640" height="360" />
+                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>"
+                        alt="jumbotronimg" title="jumbotronimg" width="640" height="360" />
                 </div>
             </div>
         </div>
@@ -200,8 +217,8 @@ for( $i = 0; $i < count($sectionData); $i++){
                 </div>
 
                 <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>" alt="jumbotronimg"
-                        title="jumbotronimg" width="640" height="360" />
+                    <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>"
+                        alt="jumbotronimg" title="jumbotronimg" width="640" height="360" />
                 </div>
             </div>
         </div>
@@ -216,11 +233,20 @@ for( $i = 0; $i < count($sectionData); $i++){
         <div class="col-md-12">
             <div class="row">
                 <ul class="nav nav-pills mb-3 text-center" id="pills-tab">
+                    <?php if(!empty($session->get('flagHome'))){?>
+                    <li class="nav-item">
+                        <button class="nav-link rr mx-2 active" id="pills-countries-tab" data-toggle="pill"
+                            href="#pills-countries123" role="tab" aria-controls="pills-countries123"
+                            aria-selected="false">COUNTRIES</button>
+                    </li>
+
+                    <?php  }else{ ?>
                     <li class="nav-item">
                         <button class="nav-link rr mx-2 " id="pills-countries-tab" data-toggle="pill"
                             href="#pills-countries" role="tab" aria-controls="pills-countries"
                             aria-selected="false">COUNTRIES</button>
                     </li>
+                    <?php }?>
                     <li class="nav-item">
                         <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill"
                             href="#pills-courses" role="tab" aria-controls="pills-courses"
@@ -240,7 +266,115 @@ for( $i = 0; $i < count($sectionData); $i++){
             <!-- <div class="card-body">
                             <form>
                                 <div class="row"> -->
+            <?php if(!empty($session->get('flagHome'))){
+                  $flag = $session->get('flagHome'); ?>
+            <div class="tab-content border-top border-primary" id="pills-tabContent">
+                <div class="" id="pills-countries123" role="tabpanel" aria-labelledby="pills-countries-tab">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <?php  if($flag === 'USA'){
+                ?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2 active" id="pills-USA-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-USA"
+                                aria-selected="false">USA</button>
+                        </li>
+                        <?php 
+                              echo '<script type="text/javascript">',
+                              'getCollege("USA");',
+                              '</script>';
+                              }else{?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
+                                onclick="getCollege('USA')">USA</button>
+                        </li>
+                        <?php } 
+                            if($flag === 'UK'){?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2 active" id="pills-UK-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-UK"
+                                aria-selected="false">UK</button>
+                        </li>
+                        <?php 
+                     echo '<script type="text/javascript">',
+                     'getCollege("UK");',
+                     '</script>';
+                     }else{?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2" id="pills-UK-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
+                                onclick="getCollege('UK')">UK</button>
+                        </li>
+                        <?php }
+                        if($flag === 'Canada'){?>
 
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2 active" id="pills-Canada-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
+                                aria-selected="false">Canada</button>
+                        </li>
+                        <?php 
+                     echo '<script type="text/javascript">',
+                     'getCollege("Canada");',
+                     '</script>';
+                     }else{?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2" id="pills-Canada-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
+                                aria-selected="false" onclick="getCollege('Canada')">Canada</button>
+                        </li>
+                        <?php }
+                             if($flag === 'Germany'){?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2 active" id="pills-Germany-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
+                                aria-selected="false">Germany</button>
+                        </li>
+                        <?php  
+                        echo '<script type="text/javascript">',
+                              'getCollege("Germany");',
+                              '</script>';
+                              }else{?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2" id="pills-Germany-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
+                                aria-selected="false" onclick="getCollege('Germany')">Germany</button>
+                        </li>
+                        <?php }
+                            if($flag === 'France'){?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2 active" id="pills-France-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-France"
+                                aria-selected="false">France</button>
+                        </li>
+                        <?php  
+                     echo '<script type="text/javascript">',
+                     'getCollege("France");',
+                     '</script>';
+                     }else{?>
+                        <li class="nav-item">
+                            <button class="nav-link rr1 mx-2" id="pills-France-tab" data-toggle="pill"
+                                href="#pills-All-Countries" role="tab" aria-controls="pills-France"
+                                aria-selected="false" onclick="getCollege('France')">France</button>
+                        </li>
+                        <?php }?>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- ----------------------------------------------------------- -->
+            <div id="pills-tabContent">
+
+                <!-- -------------------------------------START COUNTRIES TAB---------------------------- -->
+                <div class="tab-pane" id="pills-All-Countries" role="tabpanel" aria-labelledby="pills-USA-tab">
+                    <ul class="list-unstyled college" id="listColleges">
+                    </ul>
+                </div>
+                <!-- ---------------------------------END COUNTRIES TAB---------------------------------- -->
+            </div>
+            <?php  $session->remove('flagHome');}?>
             <!-- <div class="form-check form-check-inline text-left d-flex justify-content-between"> -->
             <!-- <button class="rr"><span><label class="form-check-label " for="country"><img
                                                 src="https://flagcdn.com/16x12/us.png" alt="za" title="za" width=""
@@ -259,6 +393,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                                                 height="" />USA</label></span></button> -->
 
             <div class="tab-content border-top border-primary" id="pills-tabContent">
+
                 <div class="tab-pane fade" id="pills-countries" role="tabpanel" aria-labelledby="pills-countries-tab">
 
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
