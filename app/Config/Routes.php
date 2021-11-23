@@ -116,9 +116,6 @@ $routes->group("api", function ($routes) {
 	$routes->get("college/(:any)", "CollegeController::getColleges/$1");
 	$routes->get("course/(:any)", "CollegeController::getCourse/$1");
 	$routes->get("level/(:any)", "CollegeController::getLevel/$1");
-
-	$routes->get("flag/(:any)", "CollegeController::flag/$1");
-	
 });
 $routes->get("api2/college/(:any)/(:any)", "CollegeController::getCollegesWithCourses/$1/$2");
 $routes->get("api2/countryAndLevels/(:any)/(:any)", "CollegeController::getCountryAndLevels/$1/$2");
@@ -127,6 +124,7 @@ $routes->get("api2/countryAndCourseAndLevel/(:any)/(:any)/(:any)", "CollegeContr
 
 // main work
 $routes->get('consultation/(:any)', 'Pages::flag/$1');
+// $routes->get('country/(:any)', 'Pages::flagConsultation/$1');
 $routes->get('(:any)', 'Pages::view/$1');
 
 // admin routes

@@ -8,9 +8,11 @@ $(document).ready(function() {
     $('.college').html("Please wait...");
     $('.college').prop("disabled", true);
 });
+
+function refresh() {
+    window.location.href="consultation";
+}
 </script>
-
-
 <!-- ----------------------------------------------------------------------------------------------- -->
 
 <script language="JavaScript" type="text/javascript">
@@ -176,7 +178,7 @@ for( $i = 0; $i < count($sectionData); $i++){
 
                     <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
                     <p><?= $sectionData[$i]['discription']?></p>
-                    <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal"
+                    <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
                     <?php $session = session();
@@ -187,7 +189,9 @@ for( $i = 0; $i < count($sectionData); $i++){
             font-weight: bold;
             font-size: 14px;
             line-height: 32px;
-            color: #114694;">Sign Up
+            color: #114694;
+            width: 148px;
+            margin-bottom: 7px;">Sign Up
                     </button>
                     <?php endif; ?>
                 </div>
@@ -202,16 +206,18 @@ for( $i = 0; $i < count($sectionData); $i++){
                 <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
                     <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
                     <p><?= $sectionData[$i]['discription']?></p>
-                    <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal"
+                    <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
                     <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp"
                         style="font-family: 'PT Sans' ;
-            font-style: normal;
+             font-style: normal;
             font-weight: bold;
             font-size: 14px;
             line-height: 32px;
-            color: #114694;">Sign Up
+            color: #114694;
+            width: 148px;
+            margin-bottom: 7px;">Sign Up
                     </button>
 
                 </div>
@@ -239,14 +245,23 @@ for( $i = 0; $i < count($sectionData); $i++){
                             href="#pills-countries123" role="tab" aria-controls="pills-countries123"
                             aria-selected="false">COUNTRIES</button>
                     </li>
-
+                    <li class="nav-item">
+                        <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill"
+                            href="#pills-courses" role="tab" aria-controls="pills-courses"
+                            aria-selected="false" onclick="refresh()">COURSES</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link rr mx-2 " id="pills-careers-tab" data-toggle="pill"
+                            href="#pills-careers" role="tab" aria-controls="pills-careers"
+                            aria-selected="false">CAREERS</button>
+                    </li>
                     <?php  }else{ ?>
                     <li class="nav-item">
                         <button class="nav-link rr mx-2 " id="pills-countries-tab" data-toggle="pill"
                             href="#pills-countries" role="tab" aria-controls="pills-countries"
                             aria-selected="false">COUNTRIES</button>
                     </li>
-                    <?php }?>
+                    
                     <li class="nav-item">
                         <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill"
                             href="#pills-courses" role="tab" aria-controls="pills-courses"
@@ -257,6 +272,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                             href="#pills-careers" role="tab" aria-controls="pills-careers"
                             aria-selected="false">CAREERS</button>
                     </li>
+                    <?php }?>
                 </ul>
             </div>
 
@@ -374,7 +390,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                 </div>
                 <!-- ---------------------------------END COUNTRIES TAB---------------------------------- -->
             </div>
-            <?php  $session->remove('flagHome');}?>
+            <?php  $session->remove('flagHome');} else{?>
             <!-- <div class="form-check form-check-inline text-left d-flex justify-content-between"> -->
             <!-- <button class="rr"><span><label class="form-check-label " for="country"><img
                                                 src="https://flagcdn.com/16x12/us.png" alt="za" title="za" width=""
@@ -559,6 +575,7 @@ for( $i = 0; $i < count($sectionData); $i++){
             </div>
             <!-- ---------------------------------------End Careers Tab----------------------------------------- -->
         </div>
+        <?php }?>
         <!-- ---------------------------------------------------Data--------------------------------------- -->
     </div>
 </section>

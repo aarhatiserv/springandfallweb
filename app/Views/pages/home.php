@@ -11,7 +11,7 @@ for( $i = 0; $i < count($sectionData); $i++){
 
                 <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
                 <p><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <?php $session = session();
@@ -21,7 +21,9 @@ for( $i = 0; $i < count($sectionData); $i++){
             font-weight: bold;
             font-size: 14px;
             line-height: 32px;
-            color: #114694;">Sign Up
+            color: #114694;
+            width: 148px;
+            margin-bottom: 7px;">Sign Up
                 </button>
                 <?php endif; ?>
             </div>
@@ -38,15 +40,17 @@ for( $i = 0; $i < count($sectionData); $i++){
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
                 <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
                 <p><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;
-            font-style: normal;
+             font-style: normal;
             font-weight: bold;
             font-size: 14px;
             line-height: 32px;
-            color: #114694;">Sign Up
+            color: #114694;
+            width: 148px;
+            margin-bottom: 7px;">Sign Up
                 </button>
 
             </div>
@@ -74,7 +78,7 @@ for( $i = 0; $i < count($sectionData); $i++){
             <div class="col-lg-7">
                 <div class="card mb-3 careerCol">
                     <div class="card-body shadow ">
-                        <h1><?php echo $sectionData[$i]['title'] ?></h1>
+                        <h2 class="makeCareerP"><?php echo $sectionData[$i]['title'] ?></h2>
                         <p class="card-text graduate"><?php echo $sectionData[$i]['discription'] ?></p>
                     </div>
                 </div>

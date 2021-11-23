@@ -2222,3 +2222,13 @@ a:hover{
     color: #00008B;
     cursor:pointer;
  }
+
+ .makeCareerP{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: .1em;
+    color: #114694!important;
+ }

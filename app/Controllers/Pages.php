@@ -116,6 +116,7 @@ class Pages extends Controller
                 'service' => $service,
                 'country' => $country,
                 'message' => $message,
+                'active' => 1
             ]);
             // mail sening code  
 
@@ -141,6 +142,7 @@ class Pages extends Controller
                 $data = $email->printDebugger(['headers']);
                 // print_r($data);
                 echo json_encode(["status" => 2, "message" => "please try again later"]);
+                
             }
             // var_dump($request->getRawInput());
         } else {
@@ -153,7 +155,11 @@ class Pages extends Controller
     {
         $session = session();
         $session->set('flagHome', $flag);
+        // $url = 'http://localhost:8080/country/'.$flag;
         return redirect()->to('https://springandfall.in/consultation');
-        // return redirect()->to('http://localhost:8080/consultation');
+        // return redirect()->to("http://localhost:8080/consultation");
+        // return redirect()->to($url);
+
     }
+   
 }

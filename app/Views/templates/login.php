@@ -1,4 +1,4 @@
-<div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+<div class="modal fade" id="loginForm" data-backdrop="" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal" role="document">
         <div class="modal-content px-5" style="border-radius: 25px;">
             <div class="modal-header text-center border-0">

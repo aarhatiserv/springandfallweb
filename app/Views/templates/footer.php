@@ -428,6 +428,7 @@ file.addEventListener('change', (e) => {
     document.querySelector('.file-nameCareer').textContent = fileNameAndSize;
     // document.getElementById("image").value = fileName2;
 });
+
 </script>
 </body>
 

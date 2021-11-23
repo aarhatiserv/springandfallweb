@@ -1,5 +1,5 @@
-<div class="modal fade p-5" id="contactNowForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade p-5" id="contactNowForm" data-backdrop="" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content px-5" style="border-radius: 25px;">
             <div class="modal-header border-0 text-center">
@@ -13,32 +13,39 @@
             </div>
             <div class="modal-body">
                 <div>
-                    <form action="#" method="POST" id="queryForm">
-                        <?php  //\Config\Services::validation()->listErrors() 
-                        ?>
+                    <form action="#" method="POST" id="queryForm" name="myForm"
+                        onsubmit="return validateAgreeTerms(this)">
+
                         <div class="form-row">
                             <div class="col mb-3">
                                 <input type="text" style="border-radius: 10px;"
                                     class="form-control  border border-primary" name="fullname" id="fullname"
-                                    placeholder="Full Name">
+                                    placeholder="Full Name" required>
+
+                            </div>
+                            <br>
+                            <div style="visibility:hidden; color:red;" id="nameError">
+                                Only Letter is Required
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col mb-3">
                                 <input type="email" style="border-radius: 10px;"
-                                    class="form-control  border border-primary" name="email" id="emailID"
-                                    placeholder="Email address">
+                                    class="form-control  border border-primary" name="email" id="email"
+                                    placeholder="Email address" required>
                             </div>
                             <div class="col mb-3">
                                 <input type="text" style="border-radius: 10px;"
-                                    class="form-control  border border-primary" name="phone" id="phoneNo"
-                                    placeholder="Contact number">
+                                    class="form-control  border border-primary" minlength="10" maxlength="13"
+                                    title="10 digit mobile number" name="phone" id="phone"
+                                    onkeypress="javascript:return isNumber(event)" placeholder="Contact number"
+                                    required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <select name="service" id="service" style="border-radius: 10px;"
-                                    class="form-control  border border-primary  mt-0">
+                                    class="form-control  border border-primary  mt-0" required>
                                     <!-- <select  name="service" class="text-uppercase" id="service" required> -->
                                     <option value="">Interested services</option>
                                     <option value="collage selection">UNIVERSITY / COLLAGE SELECTION</option>
@@ -51,7 +58,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <select name="country" id="country" style="border-radius: 10px;"
-                                    class="form-control  border border-primary mt-0">
+                                    class="form-control  border border-primary mt-0" required>
                                     <option>Interested countries</option>
                                     <option value="UK">USA</option>
                                     <option value="UK">UK</option>
@@ -72,7 +79,7 @@
                             <div class="col-md-6 mb-3">
                                 <textarea type="textArea" style="border-radius: 10px;"
                                     class="form-control  border border-primary" name="message" id="msg"
-                                    placeholder="Your Message" rows="4"></textarea>
+                                    placeholder="Your Message" rows="4" required></textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="row text-right">
@@ -83,9 +90,15 @@
                                             <label class="form-check-label font-weight-bold" for="terms">
                                                 I accept terms & conditions
                                             </label>
+                                            <div style="visibility:hidden; color:red; text-align:left"
+                                                id="agree_chk_error">
+                                                Can't proceed as you didn't agree to the terms!
+                                            </div>
                                         </div>
-                                        <button type="submit" id="callBackQuery" class="btn call-now text-uppercase"><i
+                                        <button type="submit"  id= "callBackQuery" class="btn call-now text-uppercase"><i
                                                 class="fas fa-phone-alt"></i> Call Now</button>
+                                        <!-- <button type="submit" id="callBackQuery" class="btn call-now text-uppercase"
+                                            onclick="myFunction()"><i class="fas fa-phone-alt"></i> Call Now</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -97,3 +110,24 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+function validateAgreeTerms(form) {
+    //   console.log("checkbox checked is ", form.terms.checked);
+    if (!form.terms.checked) {
+        document.getElementById('agree_chk_error').style.visibility = 'visible';
+        return false;
+    } else {
+        document.getElementById('agree_chk_error').style.visibility = 'hidden';
+        return true;
+    }
+}
+
+
+function isNumber(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+}
+</script>
