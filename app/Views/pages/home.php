@@ -78,7 +78,7 @@ for( $i = 0; $i < count($sectionData); $i++){
             <div class="col-lg-7">
                 <div class="card mb-3 careerCol">
                     <div class="card-body shadow ">
-                        <h2 class="makeCareerP"><?php echo $sectionData[$i]['title'] ?></h2>
+                        <h3 class="makeCareerChange"><?php echo $sectionData[$i]['title'] ?></h3>
                         <p class="card-text graduate"><?php echo $sectionData[$i]['discription'] ?></p>
                     </div>
                 </div>

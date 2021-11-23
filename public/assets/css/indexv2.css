@@ -8,3 +8,12 @@ h3{color:#114694!important}.detailsAdmin{margin-top:13%}.signUp{width:150px;heig
 .get-started:hover{
     color:white !important;
 }
+.makeCareerChange{
+    font-family: Poppins !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    line-height: 60px !important;
+    letter-spacing: .1em !important;
+    color: #114694 !important;
+ }
