@@ -1,10 +1,54 @@
+<?php $session = session();?>
+
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript">
+
+function applyFunction(id){
+    $.ajax({
+  url: "/api/apply/" + id,
+  method: "POST",
+  success: function(data) {
+      var res = JSON.parse(data);
+      if (res.status === 1) {
+          swal("Thank you!", res.message, "success");
+          // window.location.reload();
+      } else if (res.status === 2) {
+          swal("Opps.!!", res.message, "error");
+      } else {
+          swal("Opps.!!", "Something went wrong.!!", "error");
+      }
+  }
+})
+}
+
+function fun(input){
+        var file = input.files[0];
+        let formData = new FormData();
+        formData.append("file", file); 
+        alert(file);
+ $.ajax({
+  url: "/api/careerGuide/imageUpload",
+  method: "POST",
+  data: formData,
+  success: function(data) {
+      var res = JSON.parse(data);
+      if (res.status === 1) {
+          swal("Thank you!", res.message, "success");
+          // window.location.reload();
+      } else if (res.status === 2) {
+          swal("Opps.!!", res.message, "error");
+      } else {
+          swal("Opps.!!", "Something went wrong.!!", "error");
+      }
+  }
+})
+    }
+
 $(document).ready(function() {
 
     // ------------------------------------Country--------------------
@@ -62,7 +106,7 @@ $(document).ready(function() {
     });
 });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script language="JavaScript" type="text/javascript">
 var country = "";
 var courses = "";
@@ -130,7 +174,8 @@ function getCollege(country) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
+                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +260,7 @@ function getCourses(course) {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow">Apply now</button>
+                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -276,7 +321,7 @@ function getCourses(course) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
+                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -366,7 +411,7 @@ function getLevel(level) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
+                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -428,7 +473,7 @@ function levelAndCountry() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow">Apply now</button>
+                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -488,7 +533,7 @@ function courseAndLevels() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow">Apply now</button>
+                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -548,7 +593,7 @@ function countryAndCourseAndLevels() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow">Apply now</button>
+                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -595,122 +640,123 @@ function countryAndCourseAndLevels() {
         </div>
     </div>
 </section>
-<!-- ends here -->
-<!-- personal details form section -->
+
 <section id="personalDetails" style="display: none;">
     <div class="container">
         <div class="row">
-        <h5 class="pl-3" style="margin-bottom: -25px;">Personal details</h5>
+            <h5 class="pl-3" style="margin-bottom: -25px;">Personal details</h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <form>
-                    <!-- image -->
-                    <div class="form-row">
-                   
-                        <div class="col mb-3 mx-2">
-                            <div class="file-inputCareer">
+              <form enctype="multipart/form-data">
+                <!-- image -->
+                <div class="form-row">
 
-                                <input type="file" id="file" name="file" class="fileCareer" required />
-                                <label for="file">
-                                    <i class="fa fa-upload"></i>&ensp;Select file
-                                </label>
-                            </div>
-                        </div>
+                    <div class="col mb-3 mx-2">
+                        <div class="file-inputCareer">
 
-                        <div class="col mb-3 mx-2">
-                            <div class="file-nameCareer">
-                            </div>
+                            <input type="file" id="file" name="file" class="fileCareer" multiple required onchange="fun(this)"/>
+                            <label for="file">
+                                <i class="fa fa-upload"></i>&ensp;Select file
+                            </label>
                         </div>
                     </div>
-                    <!-- image -->
+
+                    <div class="col mb-3 mx-2">
+                        <div class="file-nameCareer">
+                        </div>
+                    </div>
+                </div>
+                <!-- image -->
 
 
-                    <div class="form-row">
-                        <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
-                        </div>
-                        <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
-                        </div>
+                <div class="form-row">
+                    <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
                     </div>
-                    <div class="form-row">
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
-                        </div>
-                        <div class="col mb-3 mx-2">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                        </div>
+                    <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
                     </div>
-                    <div class="form-row">
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="addressline1" id="address"
-                                placeholder="Address Line1">
-                        </div>
-                        <div class="col mb-3 mx-2">
-                            <input type="address" class="form-control" name="addressline2" id="addressline2"
-                                placeholder="Address Line2">
-                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
                     </div>
-                    <div class="form-row">
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="city" id="city"
-                                placeholder="City/Town/Village">
-                        </div>
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="state" id="state" placeholder="State">
-                        </div>
-                        <div class="col mb-3 mx-2">
-                            <input type="text" class="form-control" name="pin" id="pin" placeholder="Pincode">
-                        </div>
+                    <div class="col mb-3 mx-2">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                     </div>
-                </form>
+                </div>
+                <div class="form-row">
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="addressline1" id="addressline1"
+                            placeholder="Address Line1">
+                    </div>
+                    <div class="col mb-3 mx-2">
+                        <input type="address" class="form-control" name="addressline2" id="addressline2"
+                            placeholder="Address Line2">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="city" id="city" placeholder="City/Town/Village">
+                    </div>
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="state" id="state" placeholder="State">
+                    </div>
+                    <div class="col mb-3 mx-2">
+                        <input type="text" class="form-control" name="pin" id="pin" placeholder="Pincode">
+                    </div>
+                </div>
+</form>
                 <div class="row">
                     <h5 class="pl-3" style="padding-bottom:20px;padding-top:16px">Qualification</h5>
                 </div>
+                <form>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form>
-                            <div class="form-row">
-                                <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                                <div class="col mb-3 mx-2">
-                                    <input type="text" class="form-control" name="qualification" id="qualification"
-                                        placeholder="Highest Qualification">
-                                </div>
-                                <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                                <div class="col mb-3 mx-2">
-                                    <input type="text" class="form-control" name="passingYear" id="passingYear"
-                                        placeholder="Year of Passing">
-                                </div>
+
+                        <div class="form-row">
+                            <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                            <div class="col mb-3 mx-2">
+                                <input type="text" class="form-control" name="qualification" id="qualification"
+                                    placeholder="Highest Qualification">
                             </div>
-                            <div class="form-row">
-                                <div class="col mb-3 mx-2">
-                                    <input type="text" class="form-control" name="higherSecondary" id="higherSecondary"
-                                        placeholder="12th">
-                                </div>
-                                <div class="col mb-3 mx-2">
-                                    <input type="text" class="form-control" name="higherSecondaryYear"
-                                        id="higherSecondaryYear" placeholder="Year of Passing">
-                                </div>
+                            <!-- <div class="col-md-6 mb-3 mx-2"> -->
+                            <div class="col mb-3 mx-2">
+                                <input type="text" class="form-control" name="passingYear" id="passingYear"
+                                    placeholder="Year of Passing">
                             </div>
-                            <div class="form-row">
-                                <div class="col mb-3 mx-2">
-                                    <input type="text" class="form-control" name="secondary" id="secondary"
-                                        placeholder="10th">
-                                </div>
-                                <div class="col mb-3 mx-2">
-                                    <input type="email" class="form-control" name="secondaryPassingYear"
-                                        id="secondaryPassingYear" placeholder="Year of Passing">
-                                </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col mb-3 mx-2">
+                                <input type="text" class="form-control" name="higherSecondary" id="higherSecondary"
+                                    placeholder="12th">
                             </div>
-                        </form>
+                            <div class="col mb-3 mx-2">
+                                <input type="text" class="form-control" name="higherSecondaryYear"
+                                    id="higherSecondaryYear" placeholder="Year of Passing">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col mb-3 mx-2">
+                                <input type="text" class="form-control" name="secondary" id="secondary"
+                                    placeholder="10th">
+                            </div>
+                            <div class="col mb-3 mx-2">
+                                <input type="email" class="form-control" name="secondaryPassingYear"
+                                    id="secondaryPassingYear" placeholder="Year of Passing">
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+</form>
                 <div class="row p-1 float-right">
-                    <button class="btn btn-primary  font-weight-bold mb-2 mr-2" id="next">Next</button>
+                    <button class="btn btn-primary font-weight-bold mb-2 mr-2" name="next" id="next"
+                        type="submit">Next</button>
                 </div>
             </div>
 </section>

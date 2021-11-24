@@ -214,7 +214,7 @@ $session = session();
                     <li class="nav-item mr-2">
                         <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
                     </li>
-                    <li class="nav-item dropdown mr-2">
+                    <!-- <li class="nav-item dropdown mr-2">
                         <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                             FINANCIAL AID
@@ -223,7 +223,7 @@ $session = session();
                             <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
                             <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP</a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown mr-2">
                         <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
@@ -233,6 +233,9 @@ $session = session();
                             <a class="dropdown-item anchor" href="consultation" id="consul" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
                             <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
                             <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                            <hr>
+                            <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                            <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP</a>
                             <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                             <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                             <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->
@@ -290,7 +293,7 @@ $session = session();
                         <li class="nav-item mr-2">
                             <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
                         </li>
-                        <li class="nav-item dropdown mr-2">
+                        <!-- <li class="nav-item dropdown mr-2">
                             <a class="nav-link dropdown-toggle anchor" href="#"  role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
                                 FINANCIAL AID
@@ -299,7 +302,7 @@ $session = session();
                                 <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
                                 <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown mr-2">
                             <a class="nav-link dropdown-toggle anchor" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
@@ -309,6 +312,9 @@ $session = session();
                                 <a class="dropdown-item anchor" href="consultation" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
                                 <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
                                 <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                                <hr>
+                                <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                                <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
                                 <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                                 <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                                 <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->

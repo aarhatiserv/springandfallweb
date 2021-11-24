@@ -33,7 +33,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $protocol = 'SMPTP';
+	public $protocol = 'SMTP';
 
 	/**
 	 * The server path to Sendmail.
@@ -61,7 +61,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = 'Support@spring';
+	public $SMTPPass = 'Aarhat@mail123';
 
 	/**
 	 * SMTP Port

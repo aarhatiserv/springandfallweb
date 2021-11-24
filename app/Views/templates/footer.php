@@ -387,49 +387,9 @@ $(document).ready(() => {
         }
     });
 
-    //     getCollege();
-
-    //  function getCollege(){
-    //     $.ajax({
-    //                 url: "/api/college",
-    //                 method: "GET",
-    //                 success: function(data) {
-
-    //                     var res = JSON.parse(data);
-    //                     if (res.status === 200) {
-    //                         swal("Thank you!", res.message, "success");
-    //                         window.location.reload();
-    //                     } else if (res.status === 2) {
-    //                         swal("Opps.!!", res.message, "error");
-    //                     } else {
-    //                         swal("Opps.!!", "Something went wrong.!!", "error");
-    //                     }
-    //                 }
-    //             })
-    //        }
-
 });
 </script>
-<script>
-const file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    // Get the selected file
-    const [file] = e.target.files;
-    // Get the file name and size
-    const {
-        name: fileName,
-        size
-    } = file;
-    // Convert size in bytes to kilo bytes
-    const fileSize = (size / 1000).toFixed(2);
-    // Set the text content
-    const fileNameAndSize = `${fileName} - ${fileSize}KB`;
-    const fileName2 = `${fileName}`;
-    document.querySelector('.file-nameCareer').textContent = fileNameAndSize;
-    // document.getElementById("image").value = fileName2;
-});
 
-</script>
 </body>
 
 </html>

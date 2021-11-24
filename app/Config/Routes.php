@@ -116,6 +116,10 @@ $routes->group("api", function ($routes) {
 	$routes->get("college/(:any)", "CollegeController::getColleges/$1");
 	$routes->get("course/(:any)", "CollegeController::getCourse/$1");
 	$routes->get("level/(:any)", "CollegeController::getLevel/$1");
+
+	$routes->post("careerGuide", "CollegeController::careerGuidePost");	
+	$routes->post("careerGuide/imageUpload", "CollegeController::careerGuideImagePost");
+	$routes->post("apply/(:any)", "CollegeController::apply/$1");
 });
 $routes->get("api2/college/(:any)/(:any)", "CollegeController::getCollegesWithCourses/$1/$2");
 $routes->get("api2/countryAndLevels/(:any)/(:any)", "CollegeController::getCountryAndLevels/$1/$2");
