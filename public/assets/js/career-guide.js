@@ -50,28 +50,28 @@ $.ajax({
   url: "/api/careerGuide",
   method: "POST",
   data: {
-    firstName: firstName,
-    lastName : lastName,
-    phone : phone,
-    email : email,
-    addressline1 : addressline1,
-    addressline2 : addressline2,
-    city : city,
-    state : state,
-    pin : pin,
-    qualification : qualification,
-    passingYear : passingYear,
-    higherSecondary : higherSecondary,
-    higherSecondaryYear : higherSecondaryYear,
-    secondary : secondary,
-    secondaryPassingYear : secondaryPassingYear,
+    'firstName': firstName,
+    'lastName' : lastName,
+    'phone' : phone,
+    'email' : email,
+    'addressline1' : addressline1,
+    'addressline2' : addressline2,
+    'city' : city,
+    'state' : state,
+    'pin' : pin,
+    'qualification' : qualification,
+    'passingYear' : passingYear,
+    'higherSecondary' : higherSecondary,
+    'higherSecondaryYear' : higherSecondaryYear,
+    'secondary' : secondary,
+    'secondaryPassingYear' : secondaryPassingYear,
     // fileName: fileName2,
   },
  
   success: function(data) {
       var res = JSON.parse(data);
       if (res.status === 1) {
-          swal("Thank you!", res.message, "success");
+          // swal("Thank you!", res.message, "success");
           // window.location.reload();
       } else if (res.status === 2) {
           swal("Opps.!!", res.message, "error");

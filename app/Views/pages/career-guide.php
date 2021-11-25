@@ -23,7 +23,7 @@ function applyFunction(id){
           swal("Opps.!!", "Something went wrong.!!", "error");
       }
   }
-})
+});
 }
 
 function fun(input){
