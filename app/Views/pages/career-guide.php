@@ -12,7 +12,12 @@ function applyFunction(id){
     $.ajax({
   url: "/api/apply/" + id,
   method: "POST",
+  beforeSend: function () {
+       $('#apply').val("Please wait");
+       $('#apply').prop("disabled", true);
+   },
   success: function(data) {
+    $('#apply').prop("disabled", false);
       var res = JSON.parse(data);
       if (res.status === 1) {
           swal("Thank you!", res.message, "success");
@@ -174,7 +179,7 @@ function getCollege(country) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                                <button class="btn applyNow" id="apply" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                                 
                                             </div>
                                         </div>
@@ -260,7 +265,7 @@ function getCourses(course) {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -321,7 +326,7 @@ function getCourses(course) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                                <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -411,7 +416,7 @@ function getLevel(level) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                                <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -473,7 +478,7 @@ function levelAndCountry() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -533,7 +538,7 @@ function courseAndLevels() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -593,7 +598,7 @@ function countryAndCourseAndLevels() {
                                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                         <div class="apply px-5">
                                             <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
+                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` + item.id + `)">Apply now</button>
                                         </div>
                                     </div>
                                 </div>
