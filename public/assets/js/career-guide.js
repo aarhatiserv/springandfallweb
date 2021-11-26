@@ -700,7 +700,7 @@ $(document).ready(function () {
 
   // ------------------------------------Country--------------------
   $("input:radio[name=country]").change(function () {
-    alert('Country');
+
     if (this.value == "USA") {
       getCollege(this.value);
     } else if (this.value == "UK") {
