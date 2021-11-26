@@ -88,10 +88,7 @@
 <!-- about parallax -->
 <script type="text/javascript" src="assets/js/about-parallax.js"></script>
 
-<!-- EMI CALCULATOR SCRIPT -->
-<script src="assets/emicalculator/js/emicalc-lib.js" type="text/javascript"></script>
-<script src="assets/emicalculator/js/emicalc-main.min.js" type="text/javascript"></script>
-<!-- EMI CALCULATOR SCRIPT -->
+
 
 <?php
 if (url_is('about')) {

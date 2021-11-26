@@ -11,29 +11,26 @@ $(document).ready(function () {
     // $("#personalDetails").hide();
   });
 
+  // When Click next button then calling the function
   $("#next").click(function () {
-    // alert("from submitted");
-    var firstName = $("#fname").val();
-    var lastName = $("#lname").val();
-    var phone = $("#phone").val();
-    var email = $("#email").val();
-    var addressline1 = $("#addressline1").val();
-    var addressline2 = $("#addressline2").val();
-    var city = $("#city").val();
-    var state = $("#state").val();
-    var pin = $("#pin").val();
-    var qualification = $("#qualification").val();
-    var passingYear = $("#passingYear").val();
-    var higherSecondary = $("#higherSecondary").val();
-    var higherSecondaryYear = $("#higherSecondaryYear").val();
-    var secondary = $("#secondary").val();
-    var secondaryPassingYear = $("#secondaryPassingYear").val();
-    // var input = document.getElementById("file");
-    // var file = input.files[0];
-    // var formData= new FormData();
-    // formData.append("image", file);
-    //  const [file] = e.target.files;
-    call(
+    // Career-Guide details store in variable
+    var firstName = $("#careerFname").val();
+    var lastName = $("#careerLname").val();
+    var phone = $("#careerPhone").val();
+    var email = $("#careerEmail").val();
+    var addressline1 = $("#careerAddressline1").val();
+    var addressline2 = $("#careerAddressline2").val();
+    var city = $("#careerCity").val();
+    var state = $("#careerState").val();
+    var pin = $("#careerPin").val();
+    var qualification = $("#careerQualification").val();
+    var passingYear = $("#careerPassingYear").val();
+    var higherSecondary = $("#careerHigherSecondary").val();
+    var higherSecondaryYear = $("#careerHigherSecondaryYear").val();
+    var secondary = $("#careerSecondary").val();
+    var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
+//call ajac for set session
+    addPersonalDetailsInSession(
       firstName,
       lastName,
       phone,
@@ -50,7 +47,7 @@ $(document).ready(function () {
       secondary,
       secondaryPassingYear
     );
-    // alert(firstName+lastName+phone+email+addressline1+addressline2+city+state+pin+qualification+passingYear+higherSecondary+higherSecondaryYear+secondary+secondaryPassingYear);
+    
     $("#getstartdSection").hide();
     $("#personalDetails").fadeOut();
     $("#areaOfInterest").fadeIn();
@@ -63,13 +60,12 @@ $(document).ready(function () {
 var country = "";
 var courses = "";
 var levels = "";
-
+// #############################################Start Get All Colleges #################################
 function getCollege(country) {
   if (courses != "") {
     if (levels != "") {
       this.country = country;
       countryAndCourseAndLevels();
-      // alert(country + " " + courses + " " + levels)
       // call level and country and course api
     } else {
       this.country = country;
@@ -80,7 +76,6 @@ function getCollege(country) {
     if (courses != "") {
       this.country = country;
       countryAndCourseAndLevels();
-      // alert(country + " " + courses + " " + levels)
       // call level and country and course api
     } else {
       this.country = country;
@@ -108,38 +103,25 @@ function getCollege(country) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                  item.image +
-                  `" class="mr-3" alt="..."
-                                    title="hrl" width="" height="" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                  item.names +
-                  `</p>
-                                            <p>` +
-                  item.country +
-                  ` </p>
-                                            <p>` +
-                  item.courses +
-                  ` </p>
-                                            <p>` +
-                  item.levels +
-                  ` </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow" id="apply" onclick="applyFunction(` +
-                  item.id +
-                  `)">Apply now</button>
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                      <div class="media-body py-3">
+                        <div class="row">
+                          <div class="col-md-8">
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                              <p>` + item.country +` </p>
+                              <p>` + item.courses +` </p>
+                              <p>` + item.levels +` </p>
+                          </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                      <div class="apply px-5">
+                        <p class="h5_2_P_Days">5 Days to go</p>
+                        <button class="btn applyNow" onclick="applyForCollages(` + item.id +`)">Apply now</button>
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>`
               )
             );
             // $("#listColleges").html(dt);
@@ -160,7 +142,9 @@ function getCollege(country) {
     });
   }
 }
-// ---------------------------------------------------------------
+// #############################################End Get All Colleges #################################
+
+// #############################################Start Get All Courses #################################
 function getCourses(course) {
   if (levels != "") {
     if (country != "") {
@@ -201,37 +185,25 @@ function getCourses(course) {
               collegeData.data.map((item) =>
                 dt.push(
                   ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                    item.image +
-                    `" class="mr-3" alt="..."
-                                title="hrl" width="" height="" />
-                            <div class="media-body py-3">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                    item.names +
-                    `</p>
-                                        <p>` +
-                    item.country +
-                    ` </p>
-                                        <p>` +
-                    item.courses +
-                    ` </p>
-                                        <p>` +
-                    item.levels +
-                    ` </p>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                        <div class="apply px-5">
-                                            <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                    item.id +
-                    `)">Apply now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>`
+                  <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                    <div class="media-body py-3">
+                      <div class="row">
+                        <div class="col-md-8">
+                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                            <p>` + item.country +` </p>
+                            <p>` + item.courses +` </p>
+                            <p>` + item.levels +` </p>
+                        </div>
+                      <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                    <div class="apply px-5">
+                      <p class="h5_2_P_Days">5 Days to go</p>
+                      <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                              
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>`
                 )
               );
               // $("#listColleges").html(dt);
@@ -272,37 +244,25 @@ function getCourses(course) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                  item.image +
-                  `" class="mr-3" alt="..."
-                                    title="hrl" width="" height="" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                  item.names +
-                  `</p>
-                                            <p>` +
-                  item.country +
-                  ` </p>
-                                            <p>` +
-                  item.courses +
-                  ` </p>
-                                            <p>` +
-                  item.levels +
-                  ` </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                  item.id +
-                  `)">Apply now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`
+                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                  <div class="media-body py-3">
+                    <div class="row">
+                      <div class="col-md-8">
+                          <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                          <p>` + item.country +` </p>
+                          <p>` + item.courses +` </p>
+                          <p>` + item.levels +` </p>
+                      </div>
+                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                  <div class="apply px-5">
+                    <p class="h5_2_P_Days">5 Days to go</p>
+                    <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>`
               )
             );
             // $("#listColleges").html(dt);
@@ -323,7 +283,9 @@ function getCourses(course) {
     });
   }
 }
-// ---------------------------------------------Level--------------------------
+// #############################################End Get All Courses #################################
+
+// #############################################Start Get All Levels #################################
 function getLevel(level) {
   if (country != "") {
     if (courses != "") {
@@ -369,37 +331,25 @@ function getLevel(level) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                                <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                  item.image +
-                  `" class="mr-3" alt="..."
-                                    title="hrl" width="" height="" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                  item.names +
-                  `</p>
-                                            <p>` +
-                  item.country +
-                  ` </p>
-                                            <p>` +
-                  item.courses +
-                  ` </p>
-                                            <p>` +
-                  item.levels +
-                  ` </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                  item.id +
-                  `)">Apply now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                      <div class="media-body py-3">
+                        <div class="row">
+                          <div class="col-md-8">
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                              <p>` + item.country +` </p>
+                              <p>` + item.courses +` </p>
+                              <p>` + item.levels +` </p>
+                          </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                      <div class="apply px-5">
+                        <p class="h5_2_P_Days">5 Days to go</p>
+                        <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>`
               )
             );
             // $("#listColleges").html(dt);
@@ -420,6 +370,7 @@ function getLevel(level) {
     });
   }
 }
+// #############################################Start Get All Country And Levels #################################
 
 function levelAndCountry() {
   $(".college").html("Please wait...");
@@ -440,37 +391,25 @@ function levelAndCountry() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                item.image +
-                `" class="mr-3" alt="..."
-                                title="hrl" width="" height="" />
-                            <div class="media-body py-3">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                item.names +
-                `</p>
-                                        <p>` +
-                item.country +
-                ` </p>
-                                        <p>` +
-                item.courses +
-                ` </p>
-                                        <p>` +
-                item.levels +
-                ` </p>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                        <div class="apply px-5">
-                                            <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                item.id +
-                `)">Apply now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>`
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                <div class="media-body py-3">
+                  <div class="row">
+                    <div class="col-md-8">
+                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                        <p>` + item.country +` </p>
+                        <p>` + item.courses +` </p>
+                        <p>` + item.levels +` </p>
+                    </div>
+                  <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                <div class="apply px-5">
+                  <p class="h5_2_P_Days">5 Days to go</p>
+                  <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                          
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>`
             )
           );
           // $("#listColleges").html(dt);
@@ -490,6 +429,9 @@ function levelAndCountry() {
     },
   });
 }
+// #############################################End Get All Country Levels #################################
+
+// #############################################Start Get All Courses and Levels #################################
 
 function courseAndLevels() {
   $(".college").html("Please wait...");
@@ -510,37 +452,25 @@ function courseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                item.image +
-                `" class="mr-3" alt="..."
-                                title="hrl" width="" height="" />
-                            <div class="media-body py-3">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                item.names +
-                `</p>
-                                        <p>` +
-                item.country +
-                ` </p>
-                                        <p>` +
-                item.courses +
-                ` </p>
-                                        <p>` +
-                item.levels +
-                ` </p>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                        <div class="apply px-5">
-                                            <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                item.id +
-                `)">Apply now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>`
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                      <div class="media-body py-3">
+                        <div class="row">
+                          <div class="col-md-8">
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                              <p>` + item.country +` </p>
+                              <p>` + item.courses +` </p>
+                              <p>` + item.levels +` </p>
+                          </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                      <div class="apply px-5">
+                        <p class="h5_2_P_Days">5 Days to go</p>
+                        <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>`
             )
           );
           // $("#listColleges").html(dt);
@@ -560,14 +490,15 @@ function courseAndLevels() {
     },
   });
 }
+// #############################################End Get All Courses And Levels #################################
 
+// #############################################Start Get All Country Courses And Levels #################################
 function countryAndCourseAndLevels() {
   $(".college").html("Please wait...");
   $(".college").prop("disabled", true);
 
   $.ajax({
-    url:
-      "/api2/countryAndCourseAndLevel/" +
+    url: "/api2/countryAndCourseAndLevel/" +
       country +
       "/" +
       courses +
@@ -586,37 +517,25 @@ function countryAndCourseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-                            <img class="p-3 image"  style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                item.image +
-                `" class="mr-3" alt="..."
-                                title="hrl" width="" height="" />
-                            <div class="media-body py-3">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                item.names +
-                `</p>
-                                        <p>` +
-                item.country +
-                ` </p>
-                                        <p>` +
-                item.courses +
-                ` </p>
-                                        <p>` +
-                item.levels +
-                ` </p>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                        <div class="apply px-5">
-                                            <p class="h5_2_P_Days">5 Days to go</p>
-                                            <button id="apply" class="btn applyNow" onclick="applyFunction(` +
-                item.id +
-                `)">Apply now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>`
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                <div class="media-body py-3">
+                  <div class="row">
+                    <div class="col-md-8">
+                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                        <p>` + item.country +` </p>
+                        <p>` + item.courses +` </p>
+                        <p>` + item.levels +` </p>
+                    </div>
+                  <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                <div class="apply px-5">
+                  <p class="h5_2_P_Days">5 Days to go</p>
+                  <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                          
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>`
             )
           );
           // $("#listColleges").html(dt);
@@ -638,8 +557,7 @@ function countryAndCourseAndLevels() {
 }
 
 // apply for collages
-// applyForCollages
-function applyFunction(id) {
+function applyForCollages(id) {
   $.ajax({
     url: "/api/apply/" + id,
     method: "POST",
@@ -663,40 +581,11 @@ function applyFunction(id) {
 }
 // apply for collages code ends here
 
-// document file upload function
-function carrerGuideFileUpload(input) {
-  var file = input.files[0];
-  let formData = new FormData();
-  formData.append("file", file);
-  // alert(file);
-
-  $.ajax({
-    url: "/api/careerGuide/imageUpload",
-    method: "POST",
-    data: formData,
-    processData: false,
-    contentType: false,
-
-    success: function (data) {
-      // var res = JSON.parse(data);
-      console.log(data);
-      // if (res.status === 1) {
-      //   swal("Thank you!", res.message, "success");
-      //   // window.location.reload();
-      // } else if (res.status === 2) {
-      //   swal("Opps.!!", res.message, "error");
-      // } else {
-      //   swal("Opps.!!", "Something went wrong.!!", "error");
-      // }
-    },
-  });
-}
 // ####################################################
 // ######### Add personal Deatils in session #########
 // ####################################################
 
-// addPersonalDetailsInSession
-function call(
+function addPersonalDetailsInSession(
   firstName,
   lastName,
   phone,
@@ -749,23 +638,64 @@ function call(
   });
 }
 
-var fileName2 = "";
-const file = document.querySelector("#file");
-file.addEventListener("change", (e) => {
-  // Get the selected file
-  const [file] = e.target.files;
+// ######################################## Start Career-Guide Dispaly File Name ##########################
+// var fileName2 = "";
+// const file = document.querySelector("#file");
+// file.addEventListener("change", (e) => {
+//   // Get the selected file
+//   const [file] = e.target.files;
 
-  // Get the file name and size
-  const { name: fileName, size } = file;
-  // Convert size in bytes to kilo bytes
-  const fileSize = (size / 1000).toFixed(2);
-  // Set the text content
-  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
-  fileName2 = `${fileName}`;
-  document.querySelector(".file-nameCareer").textContent = fileNameAndSize;
-  // document.getElementById("image").value = fileName2;
-});
+//   // Get the file name and size
+//   const {
+//     name: fileName,
+//     size
+//   } = file;
+//   // Convert size in bytes to kilo bytes
+//   const fileSize = (size / 1000).toFixed(2);
+//   // Set the text content
+//   const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+//   fileName2 = `${fileName}`;
+//   document.querySelector(".file-nameCareer").textContent = fileNameAndSize;
+//   // document.getElementById("image").value = fileName2;
+// });
+// ######################################## End Career-Guide Dispaly File Name##########################
 
+// document file upload function    #################### Start Active  Later ####################
+
+// function carrerGuideFileUpload(input) {
+//   var file = input.files[0];
+//   let formData = new FormData();
+//   formData.append("file", file);
+//   // alert(file);
+
+//   $.ajax({
+//     url: "/api/careerGuide/imageUpload",
+//     method: "POST",
+//     data: formData,
+//     processData: false,
+//     contentType: false,
+
+//     success: function (data) {
+//       // var res = JSON.parse(data);
+//       console.log(data);
+//       // if (res.status === 1) {
+//       //   swal("Thank you!", res.message, "success");
+//       //   // window.location.reload();
+//       // } else if (res.status === 2) {
+//       //   swal("Opps.!!", res.message, "error");
+//       // } else {
+//       //   swal("Opps.!!", "Something went wrong.!!", "error");
+//       // }
+//     },
+//   });
+// }
+
+// document file upload function    #################### End Active  Later ####################
+
+
+// #############################################End Get All Country Courses And Levels #################################
+
+// #############################################Start For Calls Country Courses And Levels FUnctions #################################
 $(document).ready(function () {
   // end of i
 

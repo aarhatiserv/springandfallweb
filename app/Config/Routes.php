@@ -120,7 +120,7 @@ $routes->group("api", function ($routes) {
 
 
 	$routes->post("careerGuide", "CollegeController::careerGuidePost");	
-	$routes->post("careerGuide/imageUpload", "CollegeController::careerGuideImagePost");
+	// $routes->post("careerGuide/imageUpload", "CollegeController::careerGuideImagePost");
 	$routes->POST("apply/(:any)", "CollegeController::apply/$1");
 });
 $routes->get("api2/college/(:any)/(:any)", "CollegeController::getCollegesWithCourses/$1/$2");

@@ -76,24 +76,6 @@ class CollegeController extends BaseController
         echo json_encode(["status" => 1, "data" => $data]);
     }
 
-
-    var $firstname = "";
-    var $lastname = "";
-    var $email = "";
-    var $phone = "";
-    var $address_1 = "";
-    var $address_2 = "";
-    var $city = "";
-    var $state = "";
-    var $pincode = "";
-    var $highest_qualification = "";
-    var $highest_qualification_passing_year = "";
-    var $higherSecondary = "";
-    var $higherSecondary_passing_year = "";
-    var $secondary = "";
-    var $secondary_passing_year = "";
-    var $userType = "";
-
     public function careerGuidePost()
     {
 
@@ -124,68 +106,62 @@ class CollegeController extends BaseController
     }
 
 
-    public function careerGuideImagePost()
-    {
+    // upload image post data from career-guide
+    
+    // public function careerGuideImagePost()
+    // {
+    //     $data = array();
 
-        //   $destinationPath = 'uploads/CareerGuide/';
-        //    $file = $this->request->getFile('file');
-        //    $file_name = $file->getClientName();
-        //    $file->move($destinationPath, $file_name);
-        //    echo json_encode(["status" => 1, "message" => "File Uploaded!".$file_name]);
+    //     // Read new token and assign to $data['token']
+    //     $data['token'] = csrf_hash();
 
+    //     ## Validation
+    //     $validation = \Config\Services::validation();
 
-        $data = array();
+    //     $input = $validation->setRules([
+    //         'file' => 'uploaded[file]|max_size[file,5120]|ext_in[file,jpeg,jpg,docx,pdf],'
+    //     ]);
 
-        // Read new token and assign to $data['token']
-        $data['token'] = csrf_hash();
+    //     if ($validation->withRequest($this->request)->run() == FALSE) {
 
-        ## Validation
-        $validation = \Config\Services::validation();
+    //         $data['success'] = 0;
+    //         $data['error'] = $validation->getError('file'); // Error response
 
-        $input = $validation->setRules([
-            'file' => 'uploaded[file]|max_size[file,1024]|ext_in[file,jpeg,jpg,docx,pdf],'
-        ]);
+    //     } else {
 
-        if ($validation->withRequest($this->request)->run() == FALSE) {
+    //         if ($file = $this->request->getFile('file')) {
+    //             if ($file->isValid() && !$file->hasMoved()) {
+    //                 // Get file name and extension
+    //                 $name = $file->getName();
+    //                 $ext = $file->getClientExtension();
 
-            $data['success'] = 0;
-            $data['error'] = $validation->getError('file'); // Error response
+    //                 // Get random file name
+    //                 $newName = $file->getRandomName();
 
-        } else {
+    //                 // Store file in public/uploads/career-guide folder
+    //                 $file->move('../public/uploads/career-guide', $newName);
 
-            if ($file = $this->request->getFile('file')) {
-                if ($file->isValid() && !$file->hasMoved()) {
-                    // Get file name and extension
-                    $name = $file->getName();
-                    $ext = $file->getClientExtension();
+    //                 // File path to display preview
+    //                  $filepath = base_url() . "/uploads/career-guide/" . $newName;
 
-                    // Get random file name
-                    $newName = $file->getRandomName();
-
-                    // Store file in public/uploads/ folder
-                    $file->move('../public/uploads', $newName);
-
-                    // File path to display preview
-                    $filepath = base_url() . "/uploads/" . $newName;
-
-                    // Response
-                    $data['success'] = 1;
-                    $data['message'] = 'Uploaded Successfully!';
-                    $data['filepath'] = $filepath;
-                    $data['extension'] = $ext;
-                } else {
-                    // Response
-                    $data['success'] = 2;
-                    $data['message'] = 'File not uploaded.';
-                }
-            } else {
-                // Response
-                $data['success'] = 2;
-                $data['message'] = 'File not uploaded.';
-            }
-        }
-        return $this->response->setJSON($data);
-    }
+    //                 // Response
+    //                 $data['success'] = 1;
+    //                 $data['message'] = 'Uploaded Successfully!';
+    //                 $data['filepath'] = $filepath;
+    //                 $data['extension'] = $ext;
+    //             } else {
+    //                 // Response
+    //                 $data['success'] = 2;
+    //                 $data['message'] = 'File not uploaded.';
+    //             }
+    //         } else {
+    //             // Response
+    //             $data['success'] = 2;
+    //             $data['message'] = 'File not uploaded.';
+    //         }
+    //     }
+    //     return $this->response->setJSON($data);
+    // }
 
     public function apply($collegeId)
     {
@@ -206,9 +182,9 @@ class CollegeController extends BaseController
             || $session->get('careerHigherSecondary_passing_year')
             || $session->get('careerSecondary')
             || $session->get('careerSecondary_passing_year')
-            || $session->get('userType'))) {
-            // return redirect->to('http://localhost:8080/career-guide');
-            return redirect()->to('https://springandfall.in/career-guide');
+            || $session->get('careerUserType'))) {
+            return redirect->to('http://localhost:8080/career-guide');
+            // return redirect()->to('https://springandfall.in/career-guide');
         } else {
             $data = [
                 "firstname" => $session->get('careerFirstname'),
@@ -226,7 +202,7 @@ class CollegeController extends BaseController
                 "higher_secondary_passing_year" => $session->get('careerHigherSecondary_passing_year'),
                 "secondary" => $session->get('careerSecondary'),
                 "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
-                "user_type" => $session->get('userType'),
+                "user_type" => $session->get('careerUserType'),
                 "college_id" => $collegeId,
                 "active" => 1
             ];

@@ -367,3 +367,8 @@
     <button type="button" class="btn btn-secondary closeButton" data-dismiss="modal">Close</button>
 </div>
 <!-- ----------------------------------------------EMI Calculator------------------------------- -->
+
+<!-- EMI CALCULATOR SCRIPT -->
+<script src="assets/emicalculator/js/emicalc-lib.js" type="text/javascript"></script>
+<script src="assets/emicalculator/js/emicalc-main.min.js" type="text/javascript"></script>
+<!-- EMI CALCULATOR SCRIPT -->

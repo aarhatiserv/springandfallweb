@@ -29,7 +29,7 @@
 <section id="personalDetails" style="display: none;">
     <div class="container">
         <div class="row">
-            <h5 class="pl-3" style="margin-bottom: -25px;">Personal details</h5>
+            <h5 class="pl-3" style="margin-bottom: 28px;">Personal details</h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -37,7 +37,7 @@
                 <!-- image -->
                 <div class="form-row">
 
-                    <div class="col mb-3 mx-2">
+                    <!-- <div class="col mb-3 mx-2">
                         <div class="file-inputCareer">
 
                             <input type="file" id="file" name="file" class="fileCareer" multiple required onchange="carrerGuideFileUpload(this)"/>
@@ -50,7 +50,7 @@
                     <div class="col mb-3 mx-2">
                         <div class="file-nameCareer">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- image -->
 
@@ -58,40 +58,40 @@
                 <div class="form-row">
                     <!-- <div class="col-md-6 mb-3 mx-2"> -->
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+                        <input type="text" class="form-control" name="careerFname" id="careerFname" placeholder="First Name">
                     </div>
                     <!-- <div class="col-md-6 mb-3 mx-2"> -->
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+                        <input type="text" class="form-control" name="careerLname" id="careerLname" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" placeholder="Phone Number">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input type="email" class="form-control" name="careerEmail" id="careerEmail" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="addressline1" id="addressline1"
+                        <input type="text" class="form-control" name="careerAddressline1" id="careerAddressline1"
                             placeholder="Address Line1">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="address" class="form-control" name="addressline2" id="addressline2"
+                        <input type="address" class="form-control" name="careerAddressline2" id="careerAddressline2"
                             placeholder="Address Line2">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="city" id="city" placeholder="City/Town/Village">
+                        <input type="text" class="form-control" name="careerCity" id="careerCity" placeholder="City/Town/Village">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="state" id="state" placeholder="State">
+                        <input type="text" class="form-control" name="careerState" id="careerState" placeholder="State">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="pin" id="pin" placeholder="Pincode">
+                        <input type="text" class="form-control" name="careerPin" id="careerPin" placeholder="Pincode">
                     </div>
                 </div>
 </form>
@@ -105,33 +105,33 @@
                         <div class="form-row">
                             <!-- <div class="col-md-6 mb-3 mx-2"> -->
                             <div class="col mb-3 mx-2">
-                                <input type="text" class="form-control" name="qualification" id="qualification"
+                                <input type="text" class="form-control" name="careerQualification" id="careerQualification"
                                     placeholder="Highest Qualification">
                             </div>
                             <!-- <div class="col-md-6 mb-3 mx-2"> -->
                             <div class="col mb-3 mx-2">
-                                <input type="text" class="form-control" name="passingYear" id="passingYear"
+                                <input type="text" class="form-control" name="careerPassingYear" id="careerPassingYear"
                                     placeholder="Year of Passing">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col mb-3 mx-2">
-                                <input type="text" class="form-control" name="higherSecondary" id="higherSecondary"
+                                <input type="text" class="form-control" name="careerHigherSecondary" id="careerHigherSecondary"
                                     placeholder="12th">
                             </div>
                             <div class="col mb-3 mx-2">
-                                <input type="text" class="form-control" name="higherSecondaryYear"
-                                    id="higherSecondaryYear" placeholder="Year of Passing">
+                                <input type="text" class="form-control" name="careerHigherSecondaryYear"
+                                    id="careerHigherSecondaryYear" placeholder="Year of Passing">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col mb-3 mx-2">
-                                <input type="text" class="form-control" name="secondary" id="secondary"
+                                <input type="text" class="form-control" name="careerSecondary" id="careerSecondary"
                                     placeholder="10th">
                             </div>
                             <div class="col mb-3 mx-2">
-                                <input type="email" class="form-control" name="secondaryPassingYear"
-                                    id="secondaryPassingYear" placeholder="Year of Passing">
+                                <input type="email" class="form-control" name="careerSecondaryPassingYear"
+                                    id="careerSecondaryPassingYear" placeholder="Year of Passing">
                             </div>
                         </div>
 
