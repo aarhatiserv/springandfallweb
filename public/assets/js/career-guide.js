@@ -11,7 +11,7 @@ $(document).ready(function () {
     // $("#personalDetails").hide();
   });
 
-  // When Click next button then calling the function
+  // When Click next button then calling this function
   $("#next").click(function () {
     // Career-Guide details store in variable
     var firstName = $("#careerFname").val();
@@ -700,6 +700,7 @@ $(document).ready(function () {
 
   // ------------------------------------Country--------------------
   $("input:radio[name=country]").change(function () {
+    alert('Country');
     if (this.value == "USA") {
       getCollege(this.value);
     } else if (this.value == "UK") {
