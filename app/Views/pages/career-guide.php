@@ -293,3 +293,93 @@
     <?= $this->include('templates/calltoaction') ?>
 
 </section>
+
+
+<script>
+
+var country = "";
+var courses = "";
+var levels = "";
+// #############################################Start Get All Colleges #################################
+function getCollege(country) {
+  if (courses != "") {
+    if (levels != "") {
+      this.country = country;
+      countryAndCourseAndLevels();
+      // call level and country and course api
+    } else {
+      this.country = country;
+      getCourses(courses);
+      // call country and course api
+    }
+  } else if (levels != "") {
+    if (courses != "") {
+      this.country = country;
+      countryAndCourseAndLevels();
+      // call level and country and course api
+    } else {
+      this.country = country;
+      levelAndCountry();
+      //call country and levels api
+    }
+  } else {
+    // call single country api
+    this.country = country;
+    $(".college").html("Please wait...");
+    $(".college").prop("disabled", true);
+
+    $.ajax({
+      url: "/api/college/" + country,
+      type: "GET",
+      success: function (res) {
+        let collegeData = JSON.parse(res);
+        let dt = [];
+        console.log("res", collegeData);
+        if (collegeData.status !== undefined) {
+          if (collegeData.data.length == 0) {
+            $(".college").html("No Record Found");
+            $(".college").prop("disabled", false);
+          } else {
+            collegeData.data.map((item) =>
+              dt.push(
+                ` <li class="media my-4 bg-light">
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                      <div class="media-body py-3">
+                        <div class="row">
+                          <div class="col-md-8">
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                              <p>` + item.country +` </p>
+                              <p>` + item.courses +` </p>
+                              <p>` + item.levels +` </p>
+                          </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
+                      <div class="apply px-5">
+                        <p class="h5_2_P_Days">5 Days to go</p>
+                        <button class="btn applyNow" onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>`
+              )
+            );
+            // $("#listColleges").html(dt);
+            $(".college").html(dt);
+            $(".college").prop("disabled", false);
+          }
+        }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        var errorMsg = "Ajax request failed: " + xhr.responseText;
+        // console.log(`error`, err);
+        $(".ajaxError").html("Countries");
+        $(".ajaxError").prop("disabled", false);
+        // if (err) {
+        //     swal("Oh noes!", "The AJAX request failed!", "error");
+        // }
+      },
+    });
+  }
+}
+    </script>
