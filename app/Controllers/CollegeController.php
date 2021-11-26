@@ -107,7 +107,7 @@ class CollegeController extends BaseController
 
 
     // upload image post data from career-guide
-    
+
     // public function careerGuideImagePost()
     // {
     //     $data = array();
@@ -183,8 +183,8 @@ class CollegeController extends BaseController
             || $session->get('careerSecondary')
             || $session->get('careerSecondary_passing_year')
             || $session->get('careerUserType'))) {
-            return redirect->to('http://localhost:8080/career-guide');
-            // return redirect()->to('https://springandfall.in/career-guide');
+            // return redirect()->to('http://localhost:8080/career-guide');
+            return redirect()->to('https://springandfall.in/career-guide');
         } else {
             $data = [
                 "firstname" => $session->get('careerFirstname'),

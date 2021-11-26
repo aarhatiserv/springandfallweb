@@ -697,7 +697,6 @@ function addPersonalDetailsInSession(
 
 // #############################################Start For Calls Country Courses And Levels FUnctions #################################
 $(document).ready(function () {
-  // end of i
 
   // ------------------------------------Country--------------------
   $("input:radio[name=country]").change(function () {
