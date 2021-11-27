@@ -1,6 +1,6 @@
 <div class="jumbotron ">
     <div class="container card">
-        <h2 class="text-center py-5"><strong>Terms and Conditions</strong></h2>
+        <h2 class="text-center py-5" style="margin-top:25px"><strong>Terms and Conditions</strong></h2>
         <div class="card-body justify-text">
             <p class="font-weight-bold">Welcome to springandfall.in!</p>
 
