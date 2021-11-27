@@ -1,4 +1,4 @@
-// code for hiding sections in career guide
+// Carred guide code added by Goutam reddy and Nazim
 
 $(document).ready(function () {
   // $("#personalDetails").hide(); // hide this personal details onload
@@ -10,7 +10,7 @@ $(document).ready(function () {
     // $("#areaOfInterest").show();
     // $("#personalDetails").hide();
   });
- 
+
   // When Click next button then calling this function
   $("#next").click(function () {
     // Career-Guide details store in variable
@@ -29,7 +29,7 @@ $(document).ready(function () {
     var higherSecondaryYear = $("#careerHigherSecondaryYear").val();
     var secondary = $("#careerSecondary").val();
     var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
-//call ajac for set session
+    //call ajac for set session
     addPersonalDetailsInSession(
       firstName,
       lastName,
@@ -47,7 +47,7 @@ $(document).ready(function () {
       secondary,
       secondaryPassingYear
     );
-    
+
     $("#getstartdSection").hide();
     $("#personalDetails").fadeOut();
     $("#areaOfInterest").fadeIn();
@@ -103,19 +103,31 @@ function getCollege(country) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                  item.image +
+                  `" class="mr-3" alt="..." title="hrl" width="" height="" />
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
-                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                              <p>` + item.country +` </p>
-                              <p>` + item.courses +` </p>
-                              <p>` + item.levels +` </p>
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                  item.names +
+                  `</p>
+                              <p>` +
+                  item.country +
+                  ` </p>
+                              <p>` +
+                  item.courses +
+                  ` </p>
+                              <p>` +
+                  item.levels +
+                  ` </p>
                           </div>
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                       <div class="apply px-5">
                         <p class="h5_2_P_Days">5 Days to go</p>
-                        <button class="btn applyNow" onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                        <button class="btn applyNow" onclick="applyForCollages(` +
+                  item.id +
+                  `)">Apply now</button>
                                                 
                       </div>
                     </div>
@@ -185,19 +197,31 @@ function getCourses(course) {
               collegeData.data.map((item) =>
                 dt.push(
                   ` <li class="media my-4 bg-light">
-                  <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                  <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                    item.image +
+                    `" class="mr-3" alt="..." title="hrl" width="" height="" />
                     <div class="media-body py-3">
                       <div class="row">
                         <div class="col-md-8">
-                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                            <p>` + item.country +` </p>
-                            <p>` + item.courses +` </p>
-                            <p>` + item.levels +` </p>
+                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                    item.names +
+                    `</p>
+                            <p>` +
+                    item.country +
+                    ` </p>
+                            <p>` +
+                    item.courses +
+                    ` </p>
+                            <p>` +
+                    item.levels +
+                    ` </p>
                         </div>
                       <div class="col-md-4 d-flex justify-content-end align-items-center ">
                     <div class="apply px-5">
                       <p class="h5_2_P_Days">5 Days to go</p>
-                      <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                      <button class="btn applyNow"  onclick="applyForCollages(` +
+                    item.id +
+                    `)">Apply now</button>
                                               
                     </div>
                   </div>
@@ -244,19 +268,31 @@ function getCourses(course) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                  item.image +
+                  `" class="mr-3" alt="..." title="hrl" width="" height="" />
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
-                          <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                          <p>` + item.country +` </p>
-                          <p>` + item.courses +` </p>
-                          <p>` + item.levels +` </p>
+                          <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                  item.names +
+                  `</p>
+                          <p>` +
+                  item.country +
+                  ` </p>
+                          <p>` +
+                  item.courses +
+                  ` </p>
+                          <p>` +
+                  item.levels +
+                  ` </p>
                       </div>
                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                   <div class="apply px-5">
                     <p class="h5_2_P_Days">5 Days to go</p>
-                    <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                    <button class="btn applyNow"  onclick="applyForCollages(` +
+                  item.id +
+                  `)">Apply now</button>
                                             
                   </div>
                 </div>
@@ -331,19 +367,31 @@ function getLevel(level) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                  item.image +
+                  `" class="mr-3" alt="..." title="hrl" width="" height="" />
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
-                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                              <p>` + item.country +` </p>
-                              <p>` + item.courses +` </p>
-                              <p>` + item.levels +` </p>
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                  item.names +
+                  `</p>
+                              <p>` +
+                  item.country +
+                  ` </p>
+                              <p>` +
+                  item.courses +
+                  ` </p>
+                              <p>` +
+                  item.levels +
+                  ` </p>
                           </div>
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                       <div class="apply px-5">
                         <p class="h5_2_P_Days">5 Days to go</p>
-                        <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                        <button class="btn applyNow"  onclick="applyForCollages(` +
+                  item.id +
+                  `)">Apply now</button>
                                                 
                       </div>
                     </div>
@@ -391,19 +439,31 @@ function levelAndCountry() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                item.image +
+                `" class="mr-3" alt="..." title="hrl" width="" height="" />
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                        <p>` + item.country +` </p>
-                        <p>` + item.courses +` </p>
-                        <p>` + item.levels +` </p>
+                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                item.names +
+                `</p>
+                        <p>` +
+                item.country +
+                ` </p>
+                        <p>` +
+                item.courses +
+                ` </p>
+                        <p>` +
+                item.levels +
+                ` </p>
                     </div>
                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                 <div class="apply px-5">
                   <p class="h5_2_P_Days">5 Days to go</p>
-                  <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                  <button class="btn applyNow"  onclick="applyForCollages(` +
+                item.id +
+                `)">Apply now</button>
                                           
                 </div>
               </div>
@@ -452,19 +512,31 @@ function courseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                item.image +
+                `" class="mr-3" alt="..." title="hrl" width="" height="" />
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
-                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                              <p>` + item.country +` </p>
-                              <p>` + item.courses +` </p>
-                              <p>` + item.levels +` </p>
+                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                item.names +
+                `</p>
+                              <p>` +
+                item.country +
+                ` </p>
+                              <p>` +
+                item.courses +
+                ` </p>
+                              <p>` +
+                item.levels +
+                ` </p>
                           </div>
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                       <div class="apply px-5">
                         <p class="h5_2_P_Days">5 Days to go</p>
-                        <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                        <button class="btn applyNow"  onclick="applyForCollages(` +
+                item.id +
+                `)">Apply now</button>
                                                 
                       </div>
                     </div>
@@ -498,7 +570,8 @@ function countryAndCourseAndLevels() {
   $(".college").prop("disabled", true);
 
   $.ajax({
-    url: "/api2/countryAndCourseAndLevel/" +
+    url:
+      "/api2/countryAndCourseAndLevel/" +
       country +
       "/" +
       courses +
@@ -517,19 +590,31 @@ function countryAndCourseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
+                item.image +
+                `" class="mr-3" alt="..." title="hrl" width="" height="" />
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                        <p>` + item.country +` </p>
-                        <p>` + item.courses +` </p>
-                        <p>` + item.levels +` </p>
+                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                item.names +
+                `</p>
+                        <p>` +
+                item.country +
+                ` </p>
+                        <p>` +
+                item.courses +
+                ` </p>
+                        <p>` +
+                item.levels +
+                ` </p>
                     </div>
                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                 <div class="apply px-5">
                   <p class="h5_2_P_Days">5 Days to go</p>
-                  <button class="btn applyNow"  onclick="applyForCollages(` + item.id +`)">Apply now</button>
+                  <button class="btn applyNow"  onclick="applyForCollages(` +
+                item.id +
+                `)">Apply now</button>
                                           
                 </div>
               </div>
@@ -692,14 +777,12 @@ function addPersonalDetailsInSession(
 
 // document file upload function    #################### End Active  Later ####################
 
-
 // #############################################End Get All Country Courses And Levels #################################
 
 // #############################################Start For Calls Country Courses And Levels FUnctions #################################
 $(document).ready(function () {
   // ------------------------------------Country--------------------
   $("input:radio[name=country]").change(function () {
-
     if (this.value == "USA") {
       getCollege(this.value);
     } else if (this.value == "UK") {
