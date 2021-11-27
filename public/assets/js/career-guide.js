@@ -10,7 +10,7 @@ $(document).ready(function () {
     // $("#areaOfInterest").show();
     // $("#personalDetails").hide();
   });
-
+ 
   // When Click next button then calling this function
   $("#next").click(function () {
     // Career-Guide details store in variable
