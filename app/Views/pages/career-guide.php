@@ -3,8 +3,6 @@
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <section id="getstartdSection">
     <div class="container">
