@@ -85,6 +85,8 @@
 
 <!-- career guide js -->
 <script type="text/javascript" src="assets/js/career-guide.js"></script>
+<!-- consultation js -->
+<script type="text/javascript" src="assets/js/consultation.js"></script>
 <!-- about parallax -->
 <script type="text/javascript" src="assets/js/about-parallax.js"></script>
 

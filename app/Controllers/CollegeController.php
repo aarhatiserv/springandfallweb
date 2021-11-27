@@ -163,10 +163,11 @@ class CollegeController extends BaseController
     //     return $this->response->setJSON($data);
     // }
 
-    public function apply($collegeId)
+    public function apply()
     {
-
         $session = session();
+        $collegeId = $this->request->getVar("id");
+
         if (empty($session->get('careerFirstname')
             || $session->get('careerLastname')
             || $session->get('careerEmail')
@@ -202,6 +203,7 @@ class CollegeController extends BaseController
                 "higher_secondary_passing_year" => $session->get('careerHigherSecondary_passing_year'),
                 "secondary" => $session->get('careerSecondary'),
                 "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
+                "requested_for" => "career-guide",
                 "user_type" => $session->get('careerUserType'),
                 "college_id" => $collegeId,
                 "active" => 1
@@ -244,7 +246,42 @@ class CollegeController extends BaseController
 
             //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
         }
+   }
+
+   public function applyForCollegeInConsultation(){
+    $session = session();
+
+    $collegeId = $this->request->getVar("id");
+    if(empty($session->get('token'))){
+        echo json_encode(["status" => 2, "message" => "Please signin or signup, then you can apply college"]);
+    }else{
+        $data = [
+            "requested_for" => "consultation",
+            "user_type" => $session->get('token'),
+            "college_id" => $collegeId,
+            "active" => 1
+        ];
+        $model = new CareerguideModel();
+        // $id = $session->get('idCareerGuide');
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Career Details Added',
+                'data' => [],
+            ];
+
+            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+        } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Hot Courses',
+                'data' => [],
+            ];
+        }
     }
+   }
     public function session_expire()
     {
         $session = session();

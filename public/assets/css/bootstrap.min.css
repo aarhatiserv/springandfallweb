@@ -1708,9 +1708,11 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover{backgr
 .pb-4,.py-4{padding-bottom:1.5rem!important}
 .pl-4,.px-4{padding-left:1.5rem!important}
 .p-5{padding:3rem!important}
-.pt-5,.py-5{padding-top:3rem!important}
+/* .pt-5,.py-5{padding-top:3rem!important} to .pt-5,.py-5{padding-top:0rem!important} for terms-and-condition alignment */
+.pt-5,.py-5{padding-top:0rem!important}
 .pr-5,.px-5{padding-right:3rem!important}
-.pb-5,.py-5{padding-bottom:3rem!important}
+/* .pb-5,.py-5{padding-bottom:3rem!important} to .pb-5,.py-5{padding-bottom:1rem!important} for terms-and-condition alignment */
+.pb-5,.py-5{padding-bottom:1rem!important}
 .pl-5,.px-5{padding-left:3rem!important}
 .m-n1{margin:-.25rem!important}
 .mt-n1,.my-n1{margin-top:-.25rem!important}
@@ -2232,3 +2234,4 @@ a:hover{
     letter-spacing: .1em;
     color: #114694!important;
  }
+ 
