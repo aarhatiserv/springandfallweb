@@ -10,7 +10,7 @@
                     located at
                     <a href="https://springandfall.in/">https://springandfall.in/</a>.
                 </p>
-
+ 
                 <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use
                     springandfall.in if
                     you do not agree to take all of the terms and conditions stated on this page.</p>
