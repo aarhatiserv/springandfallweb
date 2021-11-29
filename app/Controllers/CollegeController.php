@@ -216,7 +216,7 @@ class CollegeController extends BaseController
                     'messages' => 'Successfully Career Details Added',
                     'data' => [],
                 ];
-                
+
                 echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
             } else {
 
@@ -228,7 +228,7 @@ class CollegeController extends BaseController
                 ];
             }
 
-             echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
+            //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
         }
    }
 
