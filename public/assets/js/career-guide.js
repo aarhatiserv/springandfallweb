@@ -31,21 +31,33 @@ $(document).ready(function () {
     var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
 
     if(firstName == ""){
-        alert("First Name is Required");
+        // alert("First Name is Required");
+        $('#alertFirstName').fadeTo(2000, 500).slideUp(500, function() {
+          $("#alertFirstName").slideUp(500);  });
     }else if(phone == "" ){
-      alert("Phone Number is Required");
+      // alert("Phone Number is Required");
+      $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
+        $("#alertPhone").slideUp(500);  });
     }
     else if(email == "" ){
-      alert("Email is Required");
+      // alert("Email is Required");
+      $('#alertEmail').fadeTo(2000, 500).slideUp(500, function() {
+        $("#alertEmail").slideUp(500);  });
     }
     else if(city == "" ){
-      alert("City is Required");
+      // alert("City is Required");
+      $('#alertCity').fadeTo(2000, 500).slideUp(500, function() {
+        $("#alertCity").slideUp(500);  });
     }
     else if(state == "" ){
-      alert("State is Required");
+      // alert("State is Required");
+      $('#alertState').fadeTo(2000, 500).slideUp(500, function() {
+        $("#alertState").slideUp(500);  });
     }
     else if(pin == "" ){
-      alert("Pin Code is Required");
+      // alert("Pin Code is Required");
+      $('#alertPin').fadeTo(2000, 500).slideUp(500, function() {
+        $("#alertPin").slideUp(500);  });
     }else{
     //call ajax for set session
     addPersonalDetailsInSession(

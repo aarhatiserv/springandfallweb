@@ -4,6 +4,7 @@
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 
+
 <section id="getstartdSection">
     <div class="container">
         <div class="row">
@@ -27,6 +28,49 @@
 </section>
 
 <section id="personalDetails" style="display: none;">
+
+<!-- First Name alert -->
+<div class="alert" id="alertFirstName" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  First Name required.
+</div>
+<!-- End alert -->
+
+<!-- Phone Number alert -->
+<div class="alert" id="alertPhone" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Phone Number required.
+</div>
+<!-- End alert -->
+
+<!-- Email alert -->
+<div class="alert" id="alertEmail" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Email required.
+</div>
+<!-- End alert -->
+
+<!-- City alert -->
+<div class="alert" id="alertCity" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  City required.
+</div>
+<!-- End alert -->
+
+<!-- State alert -->
+<div class="alert" id="alertState" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  State required.
+</div>
+<!-- End alert -->
+
+<!-- Pin alert -->
+<div class="alert" id="alertPin" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Pin Code required.
+</div>
+<!-- End alert -->
+
     <div class="container">
         <div class="row">
             <h5 class="pl-3" style="margin-bottom: 28px;">Personal details</h5>
@@ -58,19 +102,19 @@
                 <div class="form-row">
                     <!-- <div class="col-md-6 mb-3 mx-2"> -->
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerFname" id="careerFname" placeholder="First Name">
+                        <input type="text" class="form-control" name="careerFname" id="careerFname" placeholder="First Name required*">
                     </div>
                     <!-- <div class="col-md-6 mb-3 mx-2"> -->
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerLname" id="careerLname" placeholder="Last Name">
+                        <input type="text" class="form-control" name="careerLname" id="careerLname" placeholder="Last Name required*">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" placeholder="Phone Number">
+                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" placeholder="Phone Number required*">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="email" class="form-control" name="careerEmail" id="careerEmail" placeholder="Email">
+                        <input type="email" class="form-control" name="careerEmail" id="careerEmail" placeholder="Email required*">
                     </div>
                 </div>
                 <div class="form-row">
@@ -85,13 +129,13 @@
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerCity" id="careerCity" placeholder="City/Town/Village">
+                        <input type="text" class="form-control" name="careerCity" id="careerCity" placeholder="City/Town/Village required*">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerState" id="careerState" placeholder="State">
+                        <input type="text" class="form-control" name="careerState" id="careerState" placeholder="State required*">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerPin" id="careerPin" placeholder="Pincode">
+                        <input type="text" class="form-control" name="careerPin" id="careerPin" placeholder="Pincode required*">
                     </div>
                 </div>
 </form>
@@ -106,12 +150,12 @@
                             <!-- <div class="col-md-6 mb-3 mx-2"> -->
                             <div class="col mb-3 mx-2">
                                 <input type="text" class="form-control" name="careerQualification" id="careerQualification"
-                                    placeholder="Highest Qualification">
+                                    placeholder="Highest Qualification required*" >
                             </div>
                             <!-- <div class="col-md-6 mb-3 mx-2"> -->
                             <div class="col mb-3 mx-2">
                                 <input type="text" class="form-control" name="careerPassingYear" id="careerPassingYear"
-                                    placeholder="Year of Passing">
+                                    placeholder="Year of Passing required*">
                             </div>
                         </div>
                         <div class="form-row">

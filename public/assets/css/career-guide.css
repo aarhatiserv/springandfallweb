@@ -46,3 +46,28 @@ text-decoration: none !important;
     width: 16%;
     font-family: 'Poppins';
 }
+
+
+.alert {
+    padding: 20px;
+    background-color: #f1a32d;
+    /* background-color: #ffcc00; */
+    color: white;
+    margin-left: 57%;
+    width: 42%;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
