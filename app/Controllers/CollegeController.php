@@ -227,12 +227,12 @@ class CollegeController extends BaseController
    
                 $email->setMessage($body);
                 if ($email->send()) {
-                    echo "email sent";
+                    echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
                 } else {
                     echo "email failed";
                 }
 
-                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+                // echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
             } else {
 
                 $response = [
