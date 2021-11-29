@@ -216,6 +216,21 @@ class CollegeController extends BaseController
                     'messages' => 'Successfully Career Details Added',
                     'data' => [],
                 ];
+            //     $email = \Config\Services::email();
+            //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            //     $email->setTo("sknazim1818@gmail.com");
+            //    //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
+            //     $email->setSubject('Welcome to Spring and Fall ');
+            //    //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
+            //     $data = ["username" => "NazimSpring"];
+            //     $body = view('templates/email', $data);
+   
+            //     $email->setMessage($body);
+            //     if ($email->send()) {
+            //         echo "email sent";
+            //     } else {
+            //         echo "email failed";
+            //     }
 
                 echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
             } else {
@@ -228,23 +243,7 @@ class CollegeController extends BaseController
                 ];
             }
 
-            //  $email = \Config\Services::email();
-            //  $email->setFrom('support@springandfall.in', 'Spring and Fall');
-            //  $email->setTo("sknazim1818@gmail.com");
-            // //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
-            //  $email->setSubject('Welcome to Spring and Fall ');
-            // //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
-            // //  $data = ["username" => $this->request->getVar("name"), "url" => $url];
-            //  $body = view('templates/email', $data);
-
-            //  $email->setMessage($body);
-            //  if ($email->send()) {
-            //      echo "email sent";
-            //  } else {
-            //      echo "email failed";
-            //  }
-
-            //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
+             echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
         }
    }
 
@@ -270,6 +269,22 @@ class CollegeController extends BaseController
                 'data' => [],
             ];
 
+            $email = \Config\Services::email();
+                $email->setFrom('support@springandfall.in', 'Spring and Fall');
+                $email->setTo("sknazim1818@gmail.com");
+               //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
+                $email->setSubject('Welcome to Spring and Fall ');
+               //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
+                $data = ["username" => "NazimSpring"];
+                $body = view('templates/email', $data);
+   
+                $email->setMessage($body);
+                if ($email->send()) {
+                    echo "email sent";
+                } else {
+                    echo "email failed";
+                }
+                
             echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
         } else {
 
