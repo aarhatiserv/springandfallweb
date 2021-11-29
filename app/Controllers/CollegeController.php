@@ -216,23 +216,23 @@ class CollegeController extends BaseController
                     'messages' => 'Successfully Career Details Added',
                     'data' => [],
                 ];
-                $email = \Config\Services::email();
-                $email->setFrom('support@springandfall.in', 'Spring and Fall');
-                $email->setTo($session->get('careerEmail'));
-               //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
-                $email->setSubject('Welcome to Spring and Fall ');
-               //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
-                $data = ["username" => "Rakesh"];
-                $body = view('templates/email', $data);
+            //     $email = \Config\Services::email();
+            //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            //     $email->setTo($session->get('careerEmail'));
+            //    //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
+            //     $email->setSubject('Welcome to Spring and Fall ');
+            //    //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
+            //     $data = ["username" => "Rakesh"];
+            //     $body = view('templates/email', $data);
    
-                $email->setMessage($body);
-                if ($email->send()) {
-                    echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-                } else {
-                    echo "email failed";
-                }
+            //     $email->setMessage($body);
+            //     if ($email->send()) {
+            //         echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            //     } else {
+            //         echo "email failed";
+            //     }
 
-                // echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
             } else {
 
                 $response = [
