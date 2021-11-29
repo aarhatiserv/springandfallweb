@@ -29,7 +29,25 @@ $(document).ready(function () {
     var higherSecondaryYear = $("#careerHigherSecondaryYear").val();
     var secondary = $("#careerSecondary").val();
     var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
-    //call ajac for set session
+
+    if(firstName == ""){
+        alert("First Name is Required");
+    }else if(phone == "" ){
+      alert("Phone Number is Required");
+    }
+    else if(email == "" ){
+      alert("Email is Required");
+    }
+    else if(city == "" ){
+      alert("City is Required");
+    }
+    else if(state == "" ){
+      alert("State is Required");
+    }
+    else if(pin == "" ){
+      alert("Pin Code is Required");
+    }else{
+    //call ajax for set session
     addPersonalDetailsInSession(
       firstName,
       lastName,
@@ -47,11 +65,12 @@ $(document).ready(function () {
       secondary,
       secondaryPassingYear
     );
-
+    
     $("#getstartdSection").hide();
     $("#personalDetails").fadeOut();
     $("#areaOfInterest").fadeIn();
     // $("p").show(); // hiding for later use
+    }
   });
 
   $("input[name=country").on("change", (e) => {});
