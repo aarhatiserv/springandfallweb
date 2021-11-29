@@ -419,9 +419,3 @@ for( $i = 0; $i < count($sectionData); $i++){
 </section>
 
 <?= $this->include('templates/calltoaction') ?>
-
-<script language="JavaScript" type="text/javascript">
-function refresh() {
-    window.location.href="consultation";
-}
-</script>

@@ -1,8 +1,12 @@
 // Display please wait when click tab of country and courses and career
-$(document).ready(function() {
-    $('.college').html("Please wait...");
-    $('.college').prop("disabled", true);
-});
+// $(document).ready(function() {
+//     $('.college').html("Please wait...");
+//     $('.college').prop("disabled", true);
+// });
+
+function refresh() {
+    window.location.href="consultation";
+}
 
 
 
