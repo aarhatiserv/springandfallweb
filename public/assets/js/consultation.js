@@ -4,11 +4,6 @@ $(document).ready(function() {
     $('.college').prop("disabled", true);
 });
 
-// refresh when click course tab related with session of home, flag click
-function refresh() {
-    window.location.href="consultation";
-}
-
 
 
 // apply for collages

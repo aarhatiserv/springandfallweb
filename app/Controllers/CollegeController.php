@@ -276,9 +276,10 @@ class CollegeController extends BaseController
             $response = [
                 'status' => 500,
                 "error" => true,
-                'messages' => 'Failed to add Hot Courses',
+                'messages' => 'Failed to add Career Details',
                 'data' => [],
             ];
+            echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
         }
     }
    }
