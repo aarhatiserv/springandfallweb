@@ -60,7 +60,7 @@ $(document).ready(function () {
         $("#alertPin").slideUp(500);  });
     }else{
 
-      if(phone.length <= 10){
+      if(phone.length <= 9){
         $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
           $("#alertPhone").slideUp(500);  });
       }else{
