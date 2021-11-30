@@ -117,7 +117,8 @@
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" placeholder="Phone Number required*">
+                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" maxlength="11" placeholder="Phone Number required*"
+                        onkeypress="javascript:return isNumber(event)" >
                     </div>
                     <div class="col mb-3 mx-2">
                         <input type="email" class="form-control" name="careerEmail" id="careerEmail" placeholder="Email required*">
@@ -141,7 +142,8 @@
                         <input type="text" class="form-control" name="careerState" id="careerState" placeholder="State required*">
                     </div>
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerPin" id="careerPin" placeholder="Pincode required*">
+                        <input type="text" class="form-control" name="careerPin" id="careerPin" maxlength="6" placeholder="Pincode required*"
+                        onkeypress="javascript:return isNumber(event)">
                     </div>
                 </div>
 </form>

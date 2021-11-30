@@ -60,36 +60,41 @@ $(document).ready(function () {
         $("#alertPin").slideUp(500);  });
     }else{
 
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-      {
-    //call ajax for set session
-    addPersonalDetailsInSession(
-      firstName,
-      lastName,
-      phone,
-      email,
-      addressline1,
-      addressline2,
-      city,
-      state,
-      pin,
-      qualification,
-      passingYear,
-      higherSecondary,
-      higherSecondaryYear,
-      secondary,
-      secondaryPassingYear
-    );
-    
-    $("#getstartdSection").hide();
-    $("#personalDetails").fadeOut();
-    $("#areaOfInterest").fadeIn();
-    // $("p").show(); // hiding for later use
-  }else{
-    $('#alertEmailValidation').fadeTo(2000, 500).slideUp(500, function() {
-      $("#alertEmailValidation").slideUp(500);  });
-  }
- }
+      if(phone.length <= 10){
+        $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
+          $("#alertPhone").slideUp(500);  });
+      }else{
+
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+           //call ajax for set session
+           addPersonalDetailsInSession(
+             firstName,
+             lastName,
+             phone,
+             email,
+             addressline1,
+             addressline2,
+             city,
+             state,
+             pin,
+             qualification,
+             passingYear,
+             higherSecondary,
+             higherSecondaryYear,
+             secondary,
+             secondaryPassingYear
+           );
+           
+           $("#getstartdSection").hide();
+           $("#personalDetails").fadeOut();
+           $("#areaOfInterest").fadeIn();
+           // $("p").show(); // hiding for later use
+        }else{
+            $('#alertEmailValidation').fadeTo(2000, 500).slideUp(500, function() {
+              $("#alertEmailValidation").slideUp(500);  });
+          } // close email validation else
+      } // close phone validation else
+    } // close required else
 });
 
   $("input[name=country").on("change", (e) => {});
@@ -792,3 +797,13 @@ $(document).ready(function () {
     }
   });
 });
+
+
+
+function isNumber(evt) {
+  var charCode = (evt.which) ? evt.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+
+  return true;
+}
