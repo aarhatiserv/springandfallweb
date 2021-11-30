@@ -9,8 +9,8 @@
     <div class="container">
         <div class="row">
             <!-- contetn for get started -->
-            <div class="col-6 mt-5">
-                <h1 class="career-guide-text mt-5">CAREER GUIDE</h1>
+            <div class="col-6 mt-1">
+                <h1 class="career-guide-text mt-3">CAREER GUIDE</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
@@ -79,11 +79,11 @@
 <!-- End alert -->
     <div class="container">
         <div class="row">
-            <h5 class="pl-3" style="margin-bottom: 28px;">Personal details</h5>
+            <h5 class="pl-1 pb-2" style="margin-bottom: 20px;">Personal details</h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
-              <form enctype="multipart/form-data">
+              <form enctype="multipart/form-data" style="width: 100%;">
                 <!-- image -->
                 <div class="form-row">
 
@@ -148,9 +148,9 @@
                 </div>
 </form>
                 <div class="row">
-                    <h5 class="pl-3" style="padding-bottom:20px;padding-top:16px">Qualification</h5>
+                    <h5 class="pl-1 pb-3" style="padding-bottom:20px;padding-top:10px">Qualification</h5>
                 </div>
-                <form>
+                <form style="width: 100%;">
                 <div class="row">
                     <div class="col-lg-12">
 

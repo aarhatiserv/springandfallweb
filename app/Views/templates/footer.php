@@ -12,8 +12,8 @@
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
-            <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="130" title="logo" /><br>
-            <div class="social-icons-fa">
+            <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="115" title="logo" /><br>
+            <div class="social-icons-fa p-2 pb-4">
                 <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
                         class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
 
@@ -43,10 +43,10 @@
         <div class="col-lg-4 colMargins">
             <div class="row">
                 <div class="col-sm-12 col-lg-12" id="subscribe-area">
-                    <p class="subscribe">Subscribe to our news letter</p>
+                    <p class="subscribe pt-2 pb-2">Subscribe to our news letter</p>
                     <input class="text-center" type="text" placeholder="Email Id">
                     <button type="button" id="Button" class="mt-1 ml-2">Subscribe</button>
-                    <div class="appPlay">
+                    <div class="appPlay pt-2">
                         <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
                             title="mobilestores" />
                     </div><br>

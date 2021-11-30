@@ -10,8 +10,8 @@ for( $i = 0; $i < count($sectionData); $i++){
             <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
                 <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
-                <p><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <p class="pb-2"><?= $sectionData[$i]['discription']?></p>
+                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <?php $session = session();
@@ -39,8 +39,8 @@ for( $i = 0; $i < count($sectionData); $i++){
 
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
                 <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
-                <p><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                <p class="pb-2"><?= $sectionData[$i]['discription']?></p>
+                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
                     style="font-size: 14px;">Contact Now
                 </button>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;
@@ -173,7 +173,7 @@ for( $i = 0; $i < count($sectionData); $i++){
         <span style="--i: 3"></span>
         <div class="container ">
             <div class="row">
-                <p class="col-12 text-center whySPN">WHY SPRING AND FALL</p>
+                <p class="col-12 text-center whySPN pt-3">WHY SPRING AND FALL</p>
             </div>
             <div class="row my-2 my--md-5 my-lg-5">
                 <div class="col-md-6">

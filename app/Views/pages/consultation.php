@@ -15,7 +15,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                 <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
                     <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
-                    <p><?= $sectionData[$i]['discription']?></p>
+                    <p class="pb-1"><?= $sectionData[$i]['discription']?></p>
                     <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
@@ -83,12 +83,12 @@ for( $i = 0; $i < count($sectionData); $i++){
                             href="#pills-countries123" role="tab" aria-controls="pills-countries123"
                             aria-selected="false">COUNTRIES</button>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item pl-2">
                         <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill"
                             href="#pills-courses" role="tab" aria-controls="pills-courses"
                             aria-selected="false" onclick="refresh()">COURSES</button>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item pl-2">
                         <button class="nav-link rr mx-2 " id="pills-careers-tab" data-toggle="pill"
                             href="#pills-careers" role="tab" aria-controls="pills-careers"
                             aria-selected="false">CAREERS</button>
@@ -124,7 +124,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                   $flag = $session->get('flagHome'); ?>
             <div class="tab-content border-top border-primary" id="pills-tabContent">
                 <div class="" id="pills-countries123" role="tabpanel" aria-labelledby="pills-countries-tab">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <?php  if($flag === 'USA'){
                 ?>
                         <li class="nav-item">
@@ -250,7 +250,7 @@ for( $i = 0; $i < count($sectionData); $i++){
 
                 <div class="tab-pane fade" id="pills-countries" role="tabpanel" aria-labelledby="pills-countries-tab">
 
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
@@ -283,7 +283,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                 <div class="tab-pane fade" id="pills-courses" role="tabpanel" aria-labelledby="pills-courses-tab">
 
                     <!-- ------------------------------- Start Courses Country------------------------------------------------------------- -->
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-USA2" aria-selected="false"
@@ -315,8 +315,8 @@ for( $i = 0; $i < count($sectionData); $i++){
                     <!-- ------------------------------- Start Courses Course------------------------------------------------------------- -->
                     <div class="tab-pane fade" id="pills-course" role="tabpanel" aria-labelledby="pills-course-tab">
 
-                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item">
+                        <ul class="nav nav-pills mb-3 pl-1 pt-1" id="pills-tab" role="tablist">
+                            <li class="nav-item  pb-3">
                                 <button class="nav-link rr1 mx-2" id="pills-engineering-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-engineering"
                                     aria-selected="false"
@@ -350,7 +350,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                 </div>
                 <!-- ------------------------------- Start career------------------------------------------------------------- -->
                 <div class="tab-pane fade" id="pills-careers" role="tabpanel" aria-labelledby="pills-careers-tab">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-2 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-career-tab" data-toggle="pill" href="#pills-career"
                                 role="tab" aria-controls="pills-career" aria-selected="false">Careers</button>

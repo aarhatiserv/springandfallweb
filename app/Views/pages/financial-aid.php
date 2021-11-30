@@ -49,67 +49,8 @@
 
                 <div class="row justify-content-center m-1">
 
-                    <p class="my-5 why">Why apply loan with spring and fall ?</p>
+                    <p class="why pt-3 pb-4">Why apply loan with spring and fall ?</p>
                 </div>
-
-                <!-- <div class="accordion" >
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button"
-                                            data-toggle="collapse" data-target="#whyQone" aria-expanded="true"
-                                            aria-controls="whyQone">
-                                            Easy to apply
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="whyQone" class="collapse show" aria-labelledby="headingOne">
-                                    <div class="card-body">
-                                        Some placeholder content for the first accordion panel. This panel is shown by
-                                        default, thanks to the <code>.show</code> class.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                            data-toggle="collapse" data-target="#whyQtwo" aria-expanded="false"
-                                            aria-controls="whyQtwo">
-                                            Less time
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="whyQtwo" class="collapse" aria-labelledby="headingTwo"
-                                    >
-                                    <div class="card-body">
-                                        Some placeholder content for the second accordion panel. This panel is hidden by
-                                        default.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                            data-toggle="collapse" data-target="#whyQthree" aria-expanded="false"
-                                            aria-controls="whyQthree">
-                                            No need to visit banks
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="whyQthree" class="collapse" aria-labelledby="headingThree">
-                                    <div class="card-body">
-                                        And lastly, the placeholder content for the third and final accordion panel.
-                                        This
-                                        panel is hidden by default.
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
 
                 <div id="accordion">
                     <div class="card cardLoan">
@@ -169,12 +110,12 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-top: 10px;">
             <div class="col-md-6">
 
                 <div class="row justify-content-center m-1">
 
-                    <p class="my-5 why">Loan without collaterel</p>
+                    <p class="why pb-3 pt-3">Loan without collaterel</p>
                 </div>
                 <div id="accordion">
                     <div class="card cardLoan">
@@ -226,7 +167,7 @@
             <div class="col-md-6 ">
                 <div class="row justify-content-center m-1">
 
-                    <p class="my-5 why">Loan with collaterel</p>
+                    <p class="why pb-3 pt-3">Loan with collaterel</p>
                 </div>
                 <div id="accordion">
                     <div class="card cardLoan">
@@ -284,7 +225,7 @@
 
 <!-- mission and vision -->
 <div class="container">
-    <div class="row  row-cols-sm-1 row-cols-md-3">
+    <div class="row text-center row-cols-sm-1 row-cols-md-3">
         <div class="col">
             <br><br>
             <div class="btn card" data-toggle="modal" data-target="#EMI"
@@ -305,7 +246,7 @@
       font-style: normal;
       font-weight: 600;
       font-size: 15px;
-      margin-left: 50px;
+      margin-left: -8px;
       text-transform: uppercase;      
       color: #000000;"> Always giving you more</p>
             <p style="font-family: Source Serif Pro;
@@ -343,11 +284,11 @@
         color: #114694;
         
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); margin-left: 0%; ">Our Lending Partners</p>
-                <div class="row row-cols-2">
-                    <div class="col">
+                <div class="row cols-2">
+                    <div class="col pr-2">
                         <img src="assets/images/avanse 1.png" alt="avanse" title="avanse" style="height: 150px;">
                     </div>
-                    <div class="col">
+                    <div class="col pb-4 pr-3 mb-4">
                         <br><br>
                         <img src="assets/images/auxilo 1.png" alt="auxilo" title="auxilo" style="height: 50px;">
                     </div>
