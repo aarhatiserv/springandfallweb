@@ -1,15 +1,15 @@
 <section id="scholarships">
     <div class="container">
-        <ul class="nav justify-content-end mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
+        <ul class="nav justify-content-end mb-3 pt-3" id="pills-tab" role="tablist">
+            <li class="nav-item pr-3" role="presentation">
                 <a class="nav-link sch active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
                     aria-controls="pills-home" aria-selected="true">LIVE</a>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item  pr-2" role="presentation">
                 <a class="nav-link sch" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
                     aria-controls="pills-profile" aria-selected="false">UPCOMMING</a>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item pr-2" role="presentation">
                 <a class="nav-link sch" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
                     aria-controls="pills-contact" aria-selected="false">ALWAYS OPEN</a>
             </li>
