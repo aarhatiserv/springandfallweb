@@ -129,11 +129,10 @@ $routes->get("api2/countryAndLevels/(:any)/(:any)", "CollegeController::getCount
 $routes->get("api2/courseAndLevel/(:any)/(:any)", "CollegeController::getCourseAndLevel/$1/$2");
 $routes->get("api2/countryAndCourseAndLevel/(:any)/(:any)/(:any)", "CollegeController::getCountryAndCourseAndLevel/$1/$2/$3");
 
-// page load privacyAndPoicy
+// For flag-section.php onclick call js to routes and show in condultation.php
+// $routes->get('consultation/(:any)', 'Pages::flag/$1');
 
 // main work
-$routes->get('consultation/(:any)', 'Pages::flag/$1');
-// $routes->get('country/(:any)', 'Pages::flagConsultation/$1');
 $routes->get('(:any)', 'Pages::view/$1');
 
 // admin routes

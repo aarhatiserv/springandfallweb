@@ -117,7 +117,7 @@
                 </div>
                 <div class="form-row">
                     <div class="col mb-3 mx-2">
-                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" maxlength="11" placeholder="Phone Number required*"
+                        <input type="text" class="form-control" name="careerPhone" id="careerPhone" maxlength="10" placeholder="Phone Number required*"
                         onkeypress="javascript:return isNumber(event)" >
                     </div>
                     <div class="col mb-3 mx-2">

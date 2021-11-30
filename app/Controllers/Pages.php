@@ -151,15 +151,17 @@ class Pages extends Controller
     }
 
 
-    public function flag($flag)
-    {
-        $session = session();
-        $session->set('flagHome', $flag);
-        // $url = 'http://localhost:8080/country/'.$flag;
-        return redirect()->to('https://springandfall.in/consultation');
-        // return redirect()->to("http://localhost:8080/consultation");
-        // return redirect()->to($url);
+// For flaf-section routes send to consultation page
 
-    }
+    // public function flag($flag)
+    // {
+    //     $session = session();
+    //     $session->set('flagHome', $flag);
+    //     // $url = 'http://localhost:8080/country/'.$flag;
+    //     return redirect()->to('https://springandfall.in/consultation');
+    //     // return redirect()->to("http://localhost:8080/consultation");
+    //     // return redirect()->to($url);
+
+    // }
    
 }
