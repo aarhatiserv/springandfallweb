@@ -9,9 +9,9 @@
     <div class="container">
         <div class="row">
             <!-- contetn for get started -->
-            <div class="col-6 mt-1">
+            <div class="col-md-6 mt-1 pl-4">
                 <h1 class="career-guide-text mt-3">CAREER GUIDE</h1>
-                <p>
+                <p class="pb-3 pt-2">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
                     Ut enim ad minim veniam,<br> quis nostrud exercitation ullamco laboris
