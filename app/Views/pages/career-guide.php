@@ -71,6 +71,12 @@
 </div>
 <!-- End alert -->
 
+<!-- Email Validationin alert -->
+<div class="alert" id="alertEmailValidation" style="display:none">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  You have entered an invalid email address!
+</div>
+<!-- End alert -->
     <div class="container">
         <div class="row">
             <h5 class="pl-3" style="margin-bottom: 28px;">Personal details</h5>

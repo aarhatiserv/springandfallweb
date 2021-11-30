@@ -59,6 +59,9 @@ $(document).ready(function () {
       $('#alertPin').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertPin").slideUp(500);  });
     }else{
+
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+      {
     //call ajax for set session
     addPersonalDetailsInSession(
       firstName,
@@ -82,8 +85,12 @@ $(document).ready(function () {
     $("#personalDetails").fadeOut();
     $("#areaOfInterest").fadeIn();
     // $("p").show(); // hiding for later use
-    }
-  });
+  }else{
+    $('#alertEmailValidation').fadeTo(2000, 500).slideUp(500, function() {
+      $("#alertEmailValidation").slideUp(500);  });
+  }
+ }
+});
 
   $("input[name=country").on("change", (e) => {});
 });
