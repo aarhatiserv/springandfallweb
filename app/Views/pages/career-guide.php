@@ -17,7 +17,7 @@
                     Ut enim ad minim veniam,<br> quis nostrud exercitation ullamco laboris
                     nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <button class="btn get-started flot-right" id="getStarted" role="button">Get Started</button>
+                <button class="btn col-6 get-started flot-right" id="getStarted" role="button">Get Started</button>
             </div>
             <div class="col-sm-6 p-5">
                 <img class="img-fluid" src="./assets/images/caree-guide/career-guide-image.png" alt="career-guide-image"
