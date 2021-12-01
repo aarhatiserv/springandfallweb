@@ -1,6 +1,7 @@
 // Display please wait when click tab of country and courses and career
 // $(document).ready(function() {
 //     $('.college').html("Please wait...");
+{/* <p class="h5_2_P_Days">5 Days to go</p> */}
 //     $('.college').prop("disabled", true);
 // });
 
@@ -75,7 +76,7 @@ function getCollegeInConsultation(country) {
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                
                                                 <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.id +`)">Apply now</button>
                                             </div>
                                         </div>
@@ -162,7 +163,7 @@ function getCollegeWithCountryAndCoursesInConsultation() {
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
+                                                
                                                 <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.id +`)">Apply now</button>
                                             </div>
                                         </div>

@@ -1,4 +1,3 @@
-
 <div class="container-fluid px-0 clueless"
     style="margin-left: 0px; margin-bottom: 0px; height: auto; background: linear-gradient(270deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.16) 100%);">
     <img src="assets/images/education.png" alt="education" title="education" style=" width: 100%;">
@@ -16,28 +15,75 @@
     </picture>
 </div>
 <!-- 1 2 3 4 5 ends -->
-<section>
-<div class="background">
 
-    <div class="creative-card details">
-        <div class="photo"></div>
-        <h2>LOANS APROVED</h2>
-        <p>THIS WEEK</p>
-        <div class="chart">
-            <div class="bar bar1"><span>20,0000</span></div>
-            <div class="bar bar2"><span>10,0000</span></div>
-            <div class="bar bar3"><span>15,0000</span></div>
-            <div class="bar bar4"><span>24,0000</span></div>
-            <div class="bar bar5"><span>7,0000</span></div>
-            <div class="bar bar6"><span>7,0000</span></div>
-            <div class="bar bar7"><span>10,0000</span></div>
+<!-- mission and vision -->
+<div class="container">
+    <div class="row text-center row-cols-sm-1 row-cols-md-3">
+        <div class="col">
+            <br><br>
+            <div class="btn card" data-toggle="modal" data-target="#EMI"
+                style="background: #E9E8FF; height:200px; width:200px; margin-right: 0%;">
+                <div class="card-body text-center">
+                    <img class="emi1" src="assets/images/EMI 1.png" alt="EMI" title="EMI" width="" height="">
+                    <p class="emi">EMI CALCULATOR</p>
+                </div>
+            </div>
         </div>
-        <h3 style="color:white !important;">93,00000</h3>
+        <div class="col">
+            <br><br><br>
+            <button class=" btn mr-3 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
+                style="font-size: 14px;">Contact Now
+            </button>
+            <br><br>
+            <p style="font-family: Source Serif Pro;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      margin-left: -8px;
+      text-transform: uppercase;      
+      color: #000000;"> Always giving you more</p>
+            <p style="font-family: Source Serif Pro;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      margin-left: 10px;
+      text-transform: uppercase;
+      
+      color: #000000;"> “When every Penny Counts”</p>
+        </div>
+        <div class="col">
+            <br><br>
+            <div class="card" style="background: #FDFBD1; height:200px; width:200px; margin-left: 100px;">
+                <div class="card-body text-center">
+                    <img src="assets/images/option-01 1.png" alt="img" title="img" width="" height="">
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="info">Click to toggle details view</div>
 </div>
-</section>
+
+<!-- <section>
+    <div class="background">
+
+        <div class="creative-card details">
+            <div class="photo"></div>
+            <h2>LOANS APROVED</h2>
+            <p>THIS WEEK</p>
+            <div class="chart">
+                <div class="bar bar1"><span>20,0000</span></div>
+                <div class="bar bar2"><span>10,0000</span></div>
+                <div class="bar bar3"><span>15,0000</span></div>
+                <div class="bar bar4"><span>24,0000</span></div>
+                <div class="bar bar5"><span>7,0000</span></div>
+                <div class="bar bar6"><span>7,0000</span></div>
+                <div class="bar bar7"><span>10,0000</span></div>
+            </div>
+            <h3 style="color:white !important;">93,00000</h3>
+        </div>
+
+        <div class="info">Click to toggle details view</div>
+    </div>
+</section> -->
 <!-- loan options -->
 <section id="loanOptions">
     <div class="container">
@@ -224,7 +270,7 @@
 <!-- loan options ends -->
 
 <!-- mission and vision -->
-<div class="container">
+<!-- <div class="container">
     <div class="row text-center row-cols-sm-1 row-cols-md-3">
         <div class="col">
             <br><br>
@@ -267,6 +313,7 @@
             </div>
         </div>
     </div>
+</div> -->
 
     <div class="container">
         <div class="row row-cols-3">
@@ -300,7 +347,7 @@
 </div>
 
 
-<script src="assets/js/creative-steps.js"></script>
+
 
 <!-- ----------------------------------------------EMI Calculator------------------------------- -->
 <div class="modal fade modalEmi" data-backdrop="false" id="EMI" aria-hidden="true" tab-index="-1">

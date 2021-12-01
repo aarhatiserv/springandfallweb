@@ -100,47 +100,50 @@ for( $i = 0; $i < count($sectionData); $i++){
             </div>
             <div class="card-deck">
                 <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-gyroscope="false">
-                    <a class="text-decoration-none" href="financial-aid">
+                   
                         <div class="card-body text-center">
                             <img class="img" src="assets/images/cards/edu.png" class="card-img-top"
                                 alt="education_spring" width="640" height="360" title="education_spring">
-                            <p class="card-title">EDUCATION <br>
+                                <p class="card-title">EDUCATION <br>
                                 CONSULTATION</p>
-                            <p class="card-text">University/ College Selection</p>
+                                <a class="text-decoration-none" href="consultation"> <p class="card-text zoom ">University/ College Selection</p></a>
                         </div>
-                    </a>
+                    
                 </div>
                 <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-gyroscope="false">
-                    <a class="text-decoration-none" href="scholarship">
+                   
                         <div class="card-body text-center">
                             <img class="img" src="assets/images/cards/financial.png" class="card-img-top"
                                 alt="finance_spring" width="640" height="360" title="finance_spring">
                             <p class="card-title">FINANCIAL<br>AID</p>
-                            <p class="card-text">Scholarships<br>Education Loan</p>
+                            <a class="text-decoration-none" href="scholarship">  <p class="card-text zoom pb-2"> Scholarships</p></a>
+                            <a class="text-decoration-none" href="financial-aid"> <p class="card-text zoom"> Education Loan</p></a>
                         </div>
-                    </a>
+                    
                 </div>
                 <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-gyroscope="false">
-                    <a class="text-decoration-none" href="overseas-insurance">
+                    
                         <div class="card-body text-center">
                             <img class="img" src="assets/images/cards/insurance.png" class="card-img-top"
                                 alt="insurance_sring" width="640" height="360" title="insurance_sring">
                             <p class="card-title">OVERSEAS<br>
                                 INSURANCE</p>
-                            <p class="card-text">Health Insurance<br>Life Insurance</p>
+                                <a class="text-decoration-none" href="overseas-insurance">  <p class="card-text zoom pb-2">Health Insurance</p></a>
+                                <a class="text-decoration-none" href="overseas-insurance">  <p class="card-text zoom">Life Insurance</p></a>
                         </div>
-                    </a>
+                
                 </div>
                 <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-gyroscope="false">
-                    <a class="text-decoration-none" href="visa-consultation">
+                    
                         <div class="card-body text-center">
                             <img class="img" src="assets/images/cards/plane.png" class="card-img-top" alt="visa_spring"
                                 width="640" height="360" title="visa_spring">
                             <p class="card-title">VISA<br>
                                 CONULTATION</p>
-                            <p class="card-text">Preparation<br>Application</p>
+                                <a class="text-decoration-none" href="visa-consultation"> <p class="card-text zoom pb-2 ">Preparation</p></a>
+                                <a class="text-decoration-none" href="visa-consultation">  <p class="card-text zoom">Application</p></a>
                         </div>
-                    </a>
+                    
                 </div>
 
             </div>

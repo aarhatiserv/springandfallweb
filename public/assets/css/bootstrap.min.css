@@ -2234,4 +2234,9 @@ a:hover{
     letter-spacing: .1em;
     color: #114694!important;
  }
+
+  
+  .card-text.zoom:hover {
+   font-size: 21px;
+  }
  

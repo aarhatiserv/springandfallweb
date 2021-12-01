@@ -32,9 +32,14 @@
     </div>
     </img>
     <img class="flight" src="assets/images/flight.png">
-</div> 
+</div> -->
+
+
+
+<p class="text-center" style="font-size:25px">Coming Soon...</p>
+
 <!--2nd Layer, text and select tag-->
-<div class="container-fluid layer2 mt-4">
+<!-- <div class="container-fluid layer2 mt-4">
     <div class="row">
         <div class="col-lg-5 helpPrepare">
             <p>We will help you to prepare the check list </p>
@@ -58,9 +63,9 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 <!--3rd layer, selecting the country part-->
-<div class="container-fluid mt-4 ml-0">
+<!-- <div class="container-fluid mt-4 ml-0">
     <div class="row">
         <div class="col-lg-8 col-xs-12 col-sm-12 col-md-12">
             <div class="container countryData">
@@ -105,7 +110,7 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <?= $this->include('templates/flags-section') ?>
