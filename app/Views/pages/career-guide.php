@@ -5,8 +5,8 @@
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php if($session->get('token')){?>
 <style type="text/css">
-#areaOfInterest {
-    display: block;
+#getstartdSection {
+    display: none;
 }
 </style>
 <?php }?>
