@@ -168,7 +168,7 @@ class CollegeController extends BaseController
         $session = session();
         $collegeId = $this->request->getVar("id");
 
-            if(empty($session->get('careerUserType'))){
+            if(!empty($session->get('token'))){
                 $data = [
                     
                     "requested_for" => "career-guide",
