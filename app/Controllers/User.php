@@ -279,7 +279,7 @@ class User extends ResourceController
 
 		$session = session();
 		$session->destroy();
-		return redirect()->to('https://spirngandfall.in/');
+		return redirect()->to('https://springandfall.in/home');
 	}
 
 
