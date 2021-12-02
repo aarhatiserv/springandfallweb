@@ -5,7 +5,7 @@
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php 
  if($session->get('token')){
-     echo '<script>alert("Token"); </script>';
+     echo '<script>$(".areaOfInterest").show();</script>';
  }
 ?>
 
