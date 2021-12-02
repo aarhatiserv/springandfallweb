@@ -5,7 +5,7 @@
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php 
  if($session->get('token')){ ?>
-    <script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">
      $(document).ready(function () {
          $("#areaOfInterest").fadeOut();
      });</script>
