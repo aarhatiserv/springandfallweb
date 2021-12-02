@@ -8,6 +8,9 @@
 #areaOfInterest {
     display: block !important;
 }
+#getstartdSection {
+    display: none !important;
+}
 </style>
 <?php }?>
 <section id="getstartdSection">
