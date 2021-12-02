@@ -165,12 +165,14 @@ class CollegeController extends BaseController
         $session = session();
         $collegeId = $this->request->getVar("id");
 
-            if(empty($session->get('careerUserType'))){
-                $userType = $session->get('token');
+            if(!empty($session->get('token'))){
+                $data = [
+                    "requested_for" => "career-guide",
+                    "user_type" => $session->get('token'),
+                    "college_id" => $collegeId,
+                    "active" => 1
+                ];
             }else{
-                $userType = $session->get('careerUserType');
-            }
-
             $data = [
                 "firstname" => $session->get('careerFirstname'),
                 "lastname" =>  $session->get('careerLastname'),
@@ -188,10 +190,11 @@ class CollegeController extends BaseController
                 "secondary" => $session->get('careerSecondary'),
                 "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
                 "requested_for" => "career-guide",
-                "user_type" => $userType,
+                "user_type" =>  $session->get('careerUserType'),
                 "college_id" => $collegeId,
                 "active" => 1
             ];
+        }
             $model = new CareerguideModel();
             // $id = $session->get('idCareerGuide');
             if ($model->insert($data)) {
