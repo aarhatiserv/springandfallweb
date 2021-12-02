@@ -44,8 +44,8 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-12" id="subscribe-area">
                     <p class="subscribe pt-2 pb-2">Subscribe to our news letter</p>
-                    <input class="text-center" type="text" placeholder="Email Id">
-                    <button type="button" id="Button" class="mt-1 ml-2">Subscribe</button>
+                    <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail" placeholder="Email Id">
+                    <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
                     <div class="appPlay pt-2">
                         <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
                             title="mobilestores" />
@@ -387,8 +387,79 @@ $(document).ready(() => {
         }
     });
 
+    // $("#subscribe").click({
+    //         // console.log(event); // for debugginh purpose
+    //         var email = $("#subscribeEmail").val();
+    //         $.ajax({
+    //             url: "/api/subscribe",
+    //             method: "POST",
+    //             data: email,
+    //             beforeSend: function() {
+    //                 $('#subscribe').val("Please wait");
+    //                 $('#subscribe').prop("disabled", true);
+
+    //             },
+    //             success: function(data) {
+    //                 $('#subscribe').val("Subscribe");
+    //                 $('#subscribe').prop("disabled", false);
+    //                 var res = JSON.parse(data);
+    //                 if (res.status === 1) {
+    //                     swal("Thank you!", res.message, "success");
+    //                     window.location.reload();
+    //                 } else if (res.status === 2) {
+    //                     swal("Opps.!!", res.message, "error");
+    //                 } else {
+    //                     swal("Opps.!!", "Something went wrong.!!", "error");
+    //                 }
+    //             }
+    //         })
+    //     }
+    // });
 });
 </script>
+
+<!-- subscribe -->
+<script>
+    $(document).ready(function () {
+        $("#subscribe").click(function () {
+            var email = $("#subscribeEmail").val();
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+
+            let formData = new FormData();
+            formData.append('email', email);
+            $.ajax({
+                url: "/api/subscribe",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    $('#subscribe').val("Please wait");
+                    $('#subscribe').prop("disabled", true);
+
+                },
+                success: function(data) {
+                    $('#subscribe').val("Subscribe");
+                    $('#subscribe').prop("disabled", false);
+                    var res = JSON.parse(data);
+                    if (res.status === 1) {
+                        swal("Thank you!", res.message, "success");
+                        window.location.reload();
+                    } else if (res.status === 2) {
+                        swal("Opps.!!", res.message, "error");
+                    } else {
+                        swal("Opps.!!", "Something went wrong.!!", "error");
+                    }
+                }
+            })
+        }else{
+            swal("Opps.!!", "Please Enter a Valid Email", "error");
+        }
+        
+        })
+    });
+</script>
+<!-- subscribe -->
 
 <script type="text/javascript">
 var idleTime = 0;

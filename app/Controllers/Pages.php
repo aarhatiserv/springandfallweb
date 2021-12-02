@@ -8,6 +8,7 @@ use App\Models\PagesModel;
 use App\Models\SectionsModel;
 use App\Models\ReviewModel;
 use App\Models\HotCoursesModel;
+use App\Models\SubscribeModel;
 
 class Pages extends Controller
 {
@@ -163,5 +164,35 @@ class Pages extends Controller
     //     // return redirect()->to($url);
 
     // }
+
+
+    public function subscribe(){
+        // print_r($this->request->getVar('email'));
+        $data = [
+            "email" => $this->request->getVar('email'),
+            "active" => 1,
+        ];
+        $model = new SubscribeModel();
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Subscribe Added',
+                'data' => [],
+            ];
+
+            echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);
+
+        } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Review',
+                'data' => [],
+            ];
+            echo json_encode(["status" => 2, "message" => "please try again later"]);
+        }
+       
+    }
    
 }
