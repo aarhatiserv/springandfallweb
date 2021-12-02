@@ -5,7 +5,7 @@
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php 
  if($session->get('token')){
-     echo '<script>$("#areaOfInterest").show();</script>';
+     echo '<script>document.getElementById("areaOfInterest").style.display = "inline";</script>';
  }
 ?>
 
