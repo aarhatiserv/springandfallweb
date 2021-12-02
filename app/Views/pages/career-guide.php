@@ -4,12 +4,12 @@
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php 
- if($session->get('token')){
-     echo '
+ if($session->get('token')){ ?>
+    <script>
      $(document).ready(function () {
          $("#areaOfInterest").fadeOut();
-     });';
- }
+     });</script>
+ <?php }
 ?>
 
 <section id="getstartdSection">
