@@ -3,13 +3,11 @@
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
-<?php 
- if($session->get('token')){
-   echo '<script type="text/javascript">';
-    echo '$(document).ready(function(){ alert("asvae") });';
-    echo '</script>';
- }
-?>
+
+//  if($session->get('token')){
+   <script type="text/javascript">
+    $(document).ready(function(){ alert("asvae") });
+   </script>
 
 <section id="getstartdSection">
     <div class="container">
