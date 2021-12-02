@@ -4,12 +4,11 @@
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
 <?php 
- if($session->get('token')){ ?>
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">
-     $(document).ready(function () {
-         $("#areaOfInterest").show();
-     });</script>
- <?php }
+ if($session->get('token')){
+   echo '<script type="text/javascript">';
+    echo '$(document).ready(function(){ alert("asvae") });';
+    echo '</script>';
+ }
 ?>
 
 <section id="getstartdSection">
