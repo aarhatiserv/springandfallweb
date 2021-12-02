@@ -168,25 +168,11 @@ class CollegeController extends BaseController
         $session = session();
         $collegeId = $this->request->getVar("id");
 
-        if (empty($session->get('careerFirstname')
-            || $session->get('careerLastname')
-            || $session->get('careerEmail')
-            || $session->get('careerPhone')
-            || $session->get('careerAddress_1')
-            || $session->get('careerAddress_2')
-            || $session->get('careerCity')
-            || $session->get('careerState')
-            || $session->get('careerPincode')
-            || $session->get('careerHighest_qualification')
-            || $session->get('careerHighest_qualification_passing_year')
-            || $session->get('careerHigherSecondary')
-            || $session->get('careerHigherSecondary_passing_year')
-            || $session->get('careerSecondary')
-            || $session->get('careerSecondary_passing_year')
-            || $session->get('careerUserType'))) {
-            // return redirect()->to('http://localhost:8080/career-guide');
-            return redirect()->to('https://springandfall.in/career-guide');
-        } else {
+            if(empty($session->get('careerUserType'))){
+                $userType = $session->get('token');
+            }else{
+                $userType = $session->get('careerUserType');
+            }
             $data = [
                 "firstname" => $session->get('careerFirstname'),
                 "lastname" =>  $session->get('careerLastname'),
@@ -204,7 +190,7 @@ class CollegeController extends BaseController
                 "secondary" => $session->get('careerSecondary'),
                 "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
                 "requested_for" => "career-guide",
-                "user_type" => $session->get('careerUserType'),
+                "user_type" => $userType,
                 "college_id" => $collegeId,
                 "active" => 1
             ];
@@ -229,7 +215,7 @@ class CollegeController extends BaseController
             }
 
             //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
-        }
+        // }
    }
 
    public function applyForCollegeInConsultation(){
