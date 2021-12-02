@@ -7,7 +7,7 @@
  if($session->get('token')){ ?>
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">
      $(document).ready(function () {
-         $("#areaOfInterest").fadeOut();
+         $("#areaOfInterest").show();
      });</script>
  <?php }
 ?>
