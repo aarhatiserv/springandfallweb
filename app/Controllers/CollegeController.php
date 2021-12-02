@@ -96,13 +96,10 @@ class CollegeController extends BaseController
         $session->set('careerHigherSecondary_passing_year', $this->request->getVar("higherSecondaryYear"));
         $session->set('careerSecondary', $this->request->getVar("secondary"));
         $session->set('careerSecondary_passing_year', $this->request->getVar("secondaryPassingYear"));
-
-        if (!empty($session->get('token'))) {
-            $session->set('careerUserType', $session->get('token'));
-        } else {
-            $session->set('careerUserType', 'guest');
-        }
+        $session->set('careerUserType', 'guest');
+        
         echo json_encode(["status" => 1, "message" => "Thank you"]);
+        
     }
 
 
@@ -173,7 +170,7 @@ class CollegeController extends BaseController
             }else{
                 $userType = $session->get('careerUserType');
             }
-            
+
             $data = [
                 "firstname" => $session->get('careerFirstname'),
                 "lastname" =>  $session->get('careerLastname'),
