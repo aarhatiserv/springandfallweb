@@ -359,7 +359,7 @@
                                             <label for="name" style="margin-right:252px">Name</label>
                                             <label for="title" style="margin-right:267px">Title</label>
                                             <label for="discription"style="margin-right: 221px;">Discription</label>
-                                            <label for="person">Person</label>
+                                            <!-- <label for="person">Person</label> -->
                                             <br>
 
                                             <input type="text" id="name" name="name" placeholder="Name..."
@@ -373,14 +373,14 @@
                                             <textarea name="discription" id="discription" rows="6" cols="70"
                                                 placeholder="Enter discription Here..." style="margin-right: 47px;" required><?= $reviewDatabyId[0]['discription']?>
 </textarea>
-                                            <select name="person" id="person">
+                                            <!-- <select name="person" id="person">
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
-                                            </select>
+                                            </select> -->
                                         </div>
 
                                         <div class="file-input">
-                                            <input type="file" id="file" name="file" class="file" />
+                                            <input type="file" id="file" name="file" class="file" required/>
                                             <label for="file">
                                                 <i class="fa fa-upload"></i>&ensp;Select file
                                                 <div class="file-name">
