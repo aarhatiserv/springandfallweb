@@ -168,38 +168,33 @@ class CollegeController extends BaseController
         $session = session();
         $collegeId = $this->request->getVar("id");
 
-            if(!empty($session->get('token'))){
-                $data = [
-                    
-                    "requested_for" => "career-guide",
-                    "user_type" => $session->get('token'),
-                    "college_id" => $collegeId,
-                    "active" => 1
-                ];
+            if(empty($session->get('careerUserType'))){
+                $userType = $session->get('token');
             }else{
-                $data = [
-                    "firstname" => $session->get('careerFirstname'),
-                    "lastname" =>  $session->get('careerLastname'),
-                    "email" => $session->get('careerEmail'),
-                    "phone" => $session->get('careerPhone'),
-                    "address_1" => $session->get('careerAddress_1'),
-                    "address_2" => $session->get('careerAddress_2'),
-                    "city" => $session->get('careerCity'),
-                    "state" => $session->get('careerState'),
-                    "pincode" => $session->get('careerPincode'),
-                    "highest_qualification" => $session->get('careerHighest_qualification'),
-                    "highest_qualification_passing_year" => $session->get('careerHighest_qualification_passing_year'),
-                    "higher_secondary" => $session->get('careerHigherSecondary'),
-                    "higher_secondary_passing_year" => $session->get('careerHigherSecondary_passing_year'),
-                    "secondary" => $session->get('careerSecondary'),
-                    "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
-                    "requested_for" => "career-guide",
-                    "user_type" => $session->get('careerUserType'),
-                    "college_id" => $collegeId,
-                    "active" => 1
-                ];
+                $userType = $session->get('careerUserType');
             }
             
+            $data = [
+                "firstname" => $session->get('careerFirstname'),
+                "lastname" =>  $session->get('careerLastname'),
+                "email" => $session->get('careerEmail'),
+                "phone" => $session->get('careerPhone'),
+                "address_1" => $session->get('careerAddress_1'),
+                "address_2" => $session->get('careerAddress_2'),
+                "city" => $session->get('careerCity'),
+                "state" => $session->get('careerState'),
+                "pincode" => $session->get('careerPincode'),
+                "highest_qualification" => $session->get('careerHighest_qualification'),
+                "highest_qualification_passing_year" => $session->get('careerHighest_qualification_passing_year'),
+                "higher_secondary" => $session->get('careerHigherSecondary'),
+                "higher_secondary_passing_year" => $session->get('careerHigherSecondary_passing_year'),
+                "secondary" => $session->get('careerSecondary'),
+                "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
+                "requested_for" => "career-guide",
+                "user_type" => $userType,
+                "college_id" => $collegeId,
+                "active" => 1
+            ];
             $model = new CareerguideModel();
             // $id = $session->get('idCareerGuide');
             if ($model->insert($data)) {
