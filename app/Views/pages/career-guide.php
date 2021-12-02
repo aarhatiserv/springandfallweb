@@ -3,7 +3,11 @@
 <!-- added by debanjan | 28-jul-2021 -->
 <!--Start of Jumbotron-->
 <!-- here .. i have show you how to export image from figma..just link here start  -->
-
+<?php 
+ if($session->get('token')){
+     echo '<script>alert("Token"); </script>';
+ }
+?>
 
 <section id="getstartdSection">
     <div class="container">
