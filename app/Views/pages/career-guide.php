@@ -6,7 +6,7 @@
 <?php if($session->get('token')){?>
 <style type="text/css">
 #areaOfInterest {
-    display: inline !important;
+    display: block !important;
 }
 </style>
 <?php }?>
