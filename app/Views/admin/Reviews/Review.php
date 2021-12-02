@@ -74,8 +74,14 @@
                                             <tr>
                                                 <td><?= $rd['name']?></td>
                                                 <td><?= $rd['title']?></td>
-                                                <td><?= $rd['discription']?></td>                                              
-                                                <td><a href="../uploads/ReviewsImage/<?= $rd['image']?>"target="_blank"><img src="../uploads/ReviewsImage/<?= $rd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
+                                                <td><?= $rd['discription']?></td>       
+                                                <?php 
+                                                $string = $rd['image'];
+                                                if (strpos($string, "http") === 0) {?>  
+                                                     <td><a href="<?= $string?>"target="_blank"><img src="<?= $string ?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
+                                                <?php }else{?>
+                                                   <td><a href="../uploads/ReviewsImage/<?= $rd['image']?>"target="_blank"><img src="../uploads/ReviewsImage/<?= $rd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
+                                                   <?php } ?>
                                                 <td><a href="/admin/editReviews/<?= $rd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $rd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php

@@ -241,8 +241,8 @@ class AdminController extends Controller
 					// ];
 					// return $this->respondCreated($response);
 					// return redirect()->to('https://springandfall.in/admin/home');
-					return redirect()->to('https://springandfall.in/admin/colleges');
-					// return redirect()->to('http://localhost:8080/admin/colleges');
+					// return redirect()->to('https://springandfall.in/admin/colleges');
+					return redirect()->to('http://localhost:8080/admin/colleges');
 				} else {
 
 					$session->destroy();

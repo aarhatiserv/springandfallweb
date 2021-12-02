@@ -79,11 +79,21 @@ class ReviewController extends Controller
             ];
             print_r('validate error');
         } else {
-            $destinationPath = 'uploads/ReviewsImage/';
-            $file = $this->request->getFile('file');
-            $file_name = $file->getClientName();
-            $file->move($destinationPath, $file_name);
 
+            $file = $this->request->getFile('file');
+            $person = $this->request->getVar("person");
+
+            if(!file_exists($file)){
+               if($person === "male"){
+                $file_name = "https://cdn-icons.flaticon.com/png/512/5349/premium/5349022.png?token=exp=1638431601~hmac=b123bff9334f27f4888c401e9677d2f0";
+               }else{
+                $file_name = "https://cdn-icons.flaticon.com/png/512/5349/premium/5349136.png?token=exp=1638431648~hmac=cc54a1e0225ac63a43f89af606a5fa1b";
+               }
+            }else{
+                $destinationPath = 'uploads/ReviewsImage/';
+                $file_name = $file->getClientName();
+                $file->move($destinationPath, $file_name);
+            }
             $model = new ReviewModel();
             $data = [
                 "name" => $this->request->getVar("name"),
@@ -100,8 +110,8 @@ class ReviewController extends Controller
                     'data' => [],
                 ];
 
-                return redirect()->to('https://springandfall.in/admin/reviews');
-                // return redirect()->to('http://localhost:8080/admin/reviews');
+                // return redirect()->to('https://springandfall.in/admin/reviews');
+                return redirect()->to('http://localhost:8080/admin/reviews');
 
             } else {
 
@@ -190,8 +200,8 @@ class ReviewController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                return redirect()->to('https://springandfall.in/admin/reviews');
-                // return redirect()->to('http://localhost:8080/admin/reviews');
+                // return redirect()->to('https://springandfall.in/admin/reviews');
+                return redirect()->to('http://localhost:8080/admin/reviews');
             } else {
 
                 $response = [
