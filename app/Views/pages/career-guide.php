@@ -13,6 +13,8 @@
 }
 </style>
 <?php }?>
+
+
 <section id="getstartdSection">
     <div class="container">
         <div class="row">
