@@ -209,17 +209,25 @@ class CollegeController extends BaseController
             $email = \Config\Services::email();
             $email->setFrom('support@springandfall.in', 'Spring and Fall');
             $email->setTo($session->get('careerEmail'));
-            // $email->setCC('r3ddy03@gmail.com');
-            // $email->setBCC('them@their-example.com');
-            // $tdata = $this->request->getRawInput();
-
-            // echo $table->generate($tdata);
-            // echo json_encode($tdata);
-            // 
-            // exit;
-
             $email->setSubject('Spring and Fall College Apply by - ' . $session->get('careerFirstname') . '');
-            $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<table align ="center">' 
+                                     .'<tr>'
+                                          . '<td align = "right" > Name :  </td>'
+                                          . '<td >'. $session->get('careerFirstname').$session->get('careerLastname') .'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right" > Phone :  </td>'
+                                          . '<td >'. $session->get('careerPhone').'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right" > Email :  </td>'
+                                          . '<td >'. $session->get('careerEmail').'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right" > pincode :  </td>'
+                                          . '<td >'. $session->get('careerPincode').'</td>' 
+                                    . '</tr>');
 
             if ($email->send()) {
 
