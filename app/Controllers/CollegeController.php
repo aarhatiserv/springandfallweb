@@ -214,7 +214,7 @@ class CollegeController extends BaseController
             $email->setTo($session->get('careerEmail'));
             $email->setSubject('Spring and Fall College Apply by - ' . $session->get('careerFirstname') . '');
             // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
-            $email->setMessage('<table align ="center" style="font-family: arial, sans-serif;border: 1px solid black">' 
+            $email->setMessage('<table align ="center" style="font-family: arial, sans-serif; border: 1px solid black; font-size:20px">' 
                                      .'<tr style="font-family: arial, sans-serif;border: 1px solid black">'
                                           . '<td align = "right"> Name :  </td>'
                                           . '<td >'. $session->get('careerFirstname').$session->get('careerLastname') .'</td>' 
