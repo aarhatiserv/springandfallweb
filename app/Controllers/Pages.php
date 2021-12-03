@@ -188,7 +188,7 @@ class Pages extends Controller
             $email->setMessage('<body style="background-color:#50C878">
                                    <h2 style="color:white"> Thanks For Subscribing!</h2>
                                    <p style="color:white">(You won\'t regret it)</p>
-                                   <button style="border-radius:10px;color:#50C878; background-color:white">Done</button>
+                                   <button style="border-radius:10px; color:#50C878; background-color:white;">Done</button>
                                    </body>');
 
             if ($email->send()) {
