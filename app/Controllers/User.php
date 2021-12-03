@@ -73,6 +73,7 @@ class User extends ResourceController
 				return $this->respondCreated($response);
 			} else {
 				if ($userModel->insert($data)) {
+					
 					$lastId = $userModel->insertID();
 
 					// print_r($lastid);
@@ -172,15 +173,15 @@ class User extends ResourceController
 						"data" => $userdata,
 					);
 
-                    $tokenUpdate = [
-						"token" => $token
-					];
-                    $userModel->update($userdata['id'], $tokenUpdate);
+                    // $tokenUpdate = [
+					// 	"token" => $token
+					// ];
+                    // $userModel->update($userdata['id'], $tokenUpdate);
 
 					$token = JWT::encode($payload, $key);
 					$session = session();
 					$session->set("token", $token);
-					$session->set("username", 'goutam');
+					// $session->set("username", 'goutam');
 
 					// $this->session->set("token", $token);
 					// $this->session->set("username", "goutam");
