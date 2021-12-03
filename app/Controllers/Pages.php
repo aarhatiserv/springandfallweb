@@ -185,9 +185,11 @@ class Pages extends Controller
             $email->setTo($this->request->getVar('email'));
             $email->setSubject('Thanks for subscribing news letter');
             // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
-            $email->setMessage('<h2> Thanks For Subscribing!</h2> <br> 
-                                   <p>(You won\'t regret it)</p>
-                                   <button>Done</button>');
+            $email->setMessage('<body style="background-color:#50C878">
+                                   <h2 style="color:white"> Thanks For Subscribing!</h2>
+                                   <p style="color:white">(You won\'t regret it)</p>
+                                   <button style="border-radius:10px;color:#50C878; background-color:white">Done</button>
+                                   </body>');
 
             if ($email->send()) {
 
