@@ -237,11 +237,7 @@ class CollegeController extends BaseController
                                     . '</tr>'
                                     . '<tr>'
                                           . '<td align = "right"> Course :  </td>'
-                                          . '<td >'. $collegeData[0]['courses'].'</td>' 
-                                    . '</tr>'
-                                    . '<tr>'
-                                          . '<td align = "right" > Level :  </td>'
-                                          . '<td >'. $collegeData[0]['levels'].'</td>' 
+                                          . '<td >'. $collegeData[0]['country'].'</td>' 
                                     . '</tr>');
 
             if ($email->send()) {
