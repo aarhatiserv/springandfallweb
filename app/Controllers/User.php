@@ -172,6 +172,11 @@ class User extends ResourceController
 						"data" => $userdata,
 					);
 
+                    $tokenUpdate = [
+						"token" => $token
+					];
+                    $userModel->update($userdata['id'], $tokenUpdate);
+
 					$token = JWT::encode($payload, $key);
 					$session = session();
 					$session->set("token", $token);
