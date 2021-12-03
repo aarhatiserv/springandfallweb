@@ -180,7 +180,26 @@ class Pages extends Controller
                 'data' => [],
             ];
 
-            echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($this->request->getVar('email'));
+            $email->setSubject('Thanks for subscribing news letter');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<h2> Thanks For Subscribing!</h2> <br> 
+                                   <p>(You won\'t regret it)</p>
+                                   <button>Done</button>');
+
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);          
+              } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
+
+            
 
         } else {
 
