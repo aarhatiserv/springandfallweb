@@ -246,7 +246,7 @@ $session = session();
                     </li> -->
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
-                        <a href="/api/logout"  id="loginBtn" rel="noopener">SIGN OUT</a>
+                        <a href="/api/logout" class="btn"  id="loginBtn" rel="noopener">SIGN OUT</a>
 
                         <!-- profile Button -->
                         <!-- <div class="container">
