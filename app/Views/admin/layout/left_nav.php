@@ -39,6 +39,7 @@
                               {?>
                                   <li><a href="/admin/addAdmin">Add Admin</a></li>
                               <?php } ?>
+                              <li><a href="/admin/subscribe">Subscribe</a></li>
                            
                         </ul>
                     </li>

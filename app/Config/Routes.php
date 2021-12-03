@@ -103,6 +103,9 @@ $routes->group("admin", function ($routes) {
     $routes->post('editHotCourses', 'Admin/HotCoursesController::editHotCoursesPost');
     $routes->get("deleteHotCourses/(:any)", "Admin\HotCoursesController::deleteHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
+     // Admin Subscribe Routes
+	 $routes->get('subscribe', 'Admin/SubscribeController::getSubscribe');
+	 $routes->get("deleteSubscribe/(:any)", "Admin\SubscribeController::deleteSubscribe/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 });
 
 // auth routes
