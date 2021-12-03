@@ -204,7 +204,34 @@ class CollegeController extends BaseController
                     'data' => [],
                 ];
 
+                // mail sening code  
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($session->get('careerEmail'));
+            // $email->setCC('r3ddy03@gmail.com');
+            // $email->setBCC('them@their-example.com');
+            // $tdata = $this->request->getRawInput();
+
+            // echo $table->generate($tdata);
+            // echo json_encode($tdata);
+            // 
+            // exit;
+
+            $email->setSubject('Spring and Fall College Apply by - ' . $session->get('careerFirstname') . '');
+            $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+
+            if ($email->send()) {
+
                 echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
+
+                
             } else {
 
                 $response = [
@@ -213,6 +240,7 @@ class CollegeController extends BaseController
                     'messages' => 'Failed to add Hot Courses',
                     'data' => [],
                 ];
+                echo json_encode(["status" => 2, "message" => "please try again later"]);
             }
 
             //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
