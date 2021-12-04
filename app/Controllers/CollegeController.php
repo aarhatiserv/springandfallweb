@@ -291,8 +291,9 @@ class CollegeController extends BaseController
                 'data' => [],
             ];
  
-            $leadsData = $model->where("id =", insertID())->findAll();
-
+            $leadsLastId = $model->insertID();
+            $leadsData = $model->where("id = ", $leadsLastId)->findAll();
+            
             $userModel = new UserModel();
             $userData = $userModel->where("id = ", $leadsData[0]['user_type'])->findAll();
 
