@@ -294,10 +294,10 @@ class CollegeController extends BaseController
             $leadsData = $model->findAll();
 
             $userModel = new UserModel();
-            $userData = $userModel->where("id = ", $leadsData[0]['user_type']);
+            $userData = $userModel->where("id = ", $leadsData[0]['user_type'])->findAll();
 
             $collegeModel = new CollegeModel();
-            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id']);
+            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id'])->findAll();
            
 
             $email = \Config\Services::email();
