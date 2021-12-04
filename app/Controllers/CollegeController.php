@@ -169,7 +169,7 @@ class CollegeController extends BaseController
             if(!empty($session->get('token'))){
                 $data = [
                     "requested_for" => "career-guide",
-                    "user_type" => $session->get('token'),
+                    "user_type" => $session->get('userId'),
                     "college_id" => $collegeId,
                     "active" => 1
                 ];
@@ -268,9 +268,8 @@ class CollegeController extends BaseController
    }
 
    public function applyForCollegeInConsultation(){
-    $session = session();
 
-        
+    $session = session();
 
     $collegeId = $this->request->getVar("id");
     if(empty($session->get('token'))){
@@ -278,7 +277,7 @@ class CollegeController extends BaseController
     }else{
         $data = [
             "requested_for" => "consultation",
-            "user_type" => $session->get('token'),
+            "user_type" => $session->get('userId'),
             "college_id" => $collegeId,
             "active" => 1
         ];
@@ -291,14 +290,14 @@ class CollegeController extends BaseController
                 'data' => [],
             ];
 
-            $dataLeads = $model->findAll();
+        //     $dataLeads = $model->findAll();
 
-         $key = $this->getKey();
+        //  $key = $this->getKey();
 
-		$token = $dataLeads[0]['user_type'];
+		// $token = $dataLeads[0]['user_type'];
         
-        $decoded = JWT::decode($token, $key, array("HS256"));
-        print_r($decoded);
+        // $decoded = JWT::decode($token, $key, array("HS256"));
+        // print_r($decoded);
 
             // $email = \Config\Services::email();
             //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
