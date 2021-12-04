@@ -290,15 +290,10 @@ class CollegeController extends BaseController
                 'data' => [],
             ];
 
-        //     $dataLeads = $model->findAll();
-
-        //  $key = $this->getKey();
-
-		// $token = $dataLeads[0]['user_type'];
-        
-        // $decoded = JWT::decode($token, $key, array("HS256"));
-        // print_r($decoded);
-
+            $db = \Config\Database::connect();
+            $query = $db->query('SELECT colleges.names, colleges.country, spring_users.name, spring_users.email, spring_users.phone, spring_users.phone FROM leads INNER JOIN colleges ON leads.college_id = colleges.id INNER JOIN spring_users ON leads.user_type = spring_users.id');
+            $leadsData = $query->getResult();
+            print_r($leadsData);
             // $email = \Config\Services::email();
             //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
             //     $email->setTo("sknazim1818@gmail.com");
