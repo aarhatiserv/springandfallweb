@@ -330,7 +330,7 @@ class CollegeController extends BaseController
             //     echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
                 
             // }
-            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!".$leadsData['email']]);
+            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!".$leadsData[0]['email']]);
            
         } else {
 
