@@ -294,7 +294,7 @@ class CollegeController extends BaseController
 
          $key = $this->getKey();
 
-		$token = $dataLeads['user_type'];
+		$token = $dataLeads[0]['user_type'];
         
         $decoded = JWT::decode($token, $key, array("HS256"));
         print_r($decoded);
