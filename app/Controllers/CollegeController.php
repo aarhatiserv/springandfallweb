@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\CollegeModel;
 use App\Models\CareerguideModel;
 use App\Controllers\BaseController;
+use \Firebase\JWT\JWT;
 
 class CollegeController extends BaseController
 {
