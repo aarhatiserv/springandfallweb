@@ -293,7 +293,7 @@ class CollegeController extends BaseController
             $db = \Config\Database::connect();
             $query = $db->query('SELECT colleges.names, colleges.country, spring_users.name, spring_users.email, spring_users.phone, spring_users.phone FROM leads INNER JOIN colleges ON leads.college_id = colleges.id INNER JOIN spring_users ON leads.user_type = spring_users.id');
             $leadsData = $query->getResult();
-            print_r($leadsData);
+            
             // $email = \Config\Services::email();
             //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
             //     $email->setTo("sknazim1818@gmail.com");
@@ -309,7 +309,7 @@ class CollegeController extends BaseController
             //     } else {
             //         echo json_encode(["status" => 2, "message" => "Please try agin later"]);
             //     }
-            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!.$leadsData"]);
            
         } else {
 
