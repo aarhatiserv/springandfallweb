@@ -29,7 +29,7 @@ function applyForCollegeInConsultation(id) {
       success: function (data) {
         $("#apply").prop("disabled", false);
         var res = JSON.parse(data);
-        console.log("applyForCollegeInConsultation",res.data);
+        console.log("applyForCollegeInConsultation",res);
         if (res.status === 1) {
           swal("Thank you!", res.message, "success");
           // window.location.reload();
