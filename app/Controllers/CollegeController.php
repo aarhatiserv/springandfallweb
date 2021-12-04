@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CollegeModel;
 use App\Models\CareerguideModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 use \Firebase\JWT\JWT;
 
@@ -289,48 +290,52 @@ class CollegeController extends BaseController
                 'messages' => 'Successfully Career Details Added',
                 'data' => [],
             ];
+ 
+            $leadsData = $model->findAll();
 
-            $db = \Config\Database::connect();
-            $query = $db->query('SELECT colleges.names, colleges.country, spring_users.name, spring_users.email, spring_users.phone, spring_users.phone FROM leads INNER JOIN colleges ON leads.college_id = colleges.id INNER JOIN spring_users ON leads.user_type = spring_users.id');
-            $leadsData = $query->getResult();
+            $userModel = new UserModel();
+            $userData = $userModel->where("id = ", $leadsData[0]['user_type']);
 
-            // $email = \Config\Services::email();
-            // $email->setFrom('support@springandfall.in', 'Spring and Fall');
-            // $email->setTo($leadsData['email']);
-            // $email->setSubject('Spring and Fall College Apply by - ' . $leadsData['name'] . '');
-            // // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
-            // $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
-            //                          .'<tr>'
-            //                               . '<td align = "right"> Name :  </td>'
-            //                               . '<td >'. $leadsData['name'] .'</td>' 
-            //                          . '</tr>'
-            //                          .'<tr>'
-            //                               . '<td align = "right"> Phone :  </td>'
-            //                               . '<td >'. $leadsData['phone'].'</td>' 
-            //                          . '</tr>'
-            //                          .'<tr>'
-            //                               . '<td align = "right"> Email :  </td>'
-            //                               . '<td >'. $leadsData['email'].'</td>' 
-            //                         . '</tr>'
-            //                         . '<tr>'
-            //                               . '<td align = "right"> College Name :  </td>'
-            //                               . '<td >'. $leadsData['names'].'</td>' 
-            //                         . '</tr>'
-            //                         . '<tr>'
-            //                               . '<td align = "right"> Course :  </td>'
-            //                               . '<td >'. $leadsData['country'].'</td>' 
-            //                         . '</tr>');
+            $collegeModel = new CollegeModel();
+            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id']);
+           
 
-            // if ($email->send()) {
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($userData[0]['email']);
+            $email->setSubject('Spring and Fall College Apply by - ' . $userData[0]['name'] . '');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
+                                     .'<tr>'
+                                          . '<td align = "right"> Name :  </td>'
+                                          . '<td >'. $userData[0]['name'] .'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Phone :  </td>'
+                                          . '<td >'. $userData[0]['phone'].'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Email :  </td>'
+                                          . '<td >'. $userData[0]['email'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> College Name :  </td>'
+                                          . '<td >'. $collegeData[0]['names'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> Course :  </td>'
+                                          . '<td >'. $collegeData[0]['country'].'</td>' 
+                                    . '</tr>');
 
-            //     echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-            // } else {
-            //     $data = $email->printDebugger(['headers']);
-            //     // print_r($data);
-            //     echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
                 
-            // }
-            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!", "data"=>$leadsData[0]['email']]);
+            }
            
         } else {
 
