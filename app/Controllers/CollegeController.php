@@ -293,23 +293,43 @@ class CollegeController extends BaseController
             $db = \Config\Database::connect();
             $query = $db->query('SELECT colleges.names, colleges.country, spring_users.name, spring_users.email, spring_users.phone, spring_users.phone FROM leads INNER JOIN colleges ON leads.college_id = colleges.id INNER JOIN spring_users ON leads.user_type = spring_users.id');
             $leadsData = $query->getResult();
-            
-            // $email = \Config\Services::email();
-            //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
-            //     $email->setTo("sknazim1818@gmail.com");
-            //    //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
-            //     $email->setSubject('Welcome to Spring and Fall ');
-            //    //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
-            //     $data = ["username" => "NazimSpring"];
-            //     $body = view('templates/email', $data);
-   
-            //     $email->setMessage($body);
-            //     if ($email->send()) {
-            //         echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-            //     } else {
-            //         echo json_encode(["status" => 2, "message" => "Please try agin later"]);
-            //     }
-            echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!.$leadsData"]);
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($leadsData['email']);
+            $email->setSubject('Spring and Fall College Apply by - ' . $leadsData['name'] . '');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
+                                     .'<tr>'
+                                          . '<td align = "right"> Name :  </td>'
+                                          . '<td >'. $leadsData['name'] .'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Phone :  </td>'
+                                          . '<td >'. $leadsData['phone'].'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Email :  </td>'
+                                          . '<td >'. $leadsData['email'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> College Name :  </td>'
+                                          . '<td >'. $leadsData['names'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> Course :  </td>'
+                                          . '<td >'. $leadsData['country'].'</td>' 
+                                    . '</tr>');
+
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
            
         } else {
 
