@@ -269,6 +269,8 @@ class CollegeController extends BaseController
    public function applyForCollegeInConsultation(){
     $session = session();
 
+        
+
     $collegeId = $this->request->getVar("id");
     if(empty($session->get('token'))){
         echo json_encode(["status" => 2, "message" => "Please signin or signup, then you can apply college"]);
@@ -288,6 +290,15 @@ class CollegeController extends BaseController
                 'data' => [],
             ];
 
+            $dataLeads = $model->findAll();
+
+         $key = $this->getKey();
+
+		$token = $dataLeads['user_type'];
+        
+        $decoded = JWT::decode($token, $key, array("HS256"));
+        print_r($decoded);
+
             // $email = \Config\Services::email();
             //     $email->setFrom('support@springandfall.in', 'Spring and Fall');
             //     $email->setTo("sknazim1818@gmail.com");
@@ -299,12 +310,12 @@ class CollegeController extends BaseController
    
             //     $email->setMessage($body);
             //     if ($email->send()) {
-            //         echo "email sent";
+            //         echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
             //     } else {
-            //         echo "email failed";
+            //         echo json_encode(["status" => 2, "message" => "Please try agin later"]);
             //     }
-
             echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+           
         } else {
 
             $response = [
@@ -342,4 +353,9 @@ class CollegeController extends BaseController
 
 
     }
+
+    private function getKey()
+	{
+		return "aarhat@123";
+	}
 }
