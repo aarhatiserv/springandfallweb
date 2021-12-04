@@ -174,6 +174,71 @@ class CollegeController extends BaseController
                     "college_id" => $collegeId,
                     "active" => 1
                 ];
+                $model = new CareerguideModel();
+        // $id = $session->get('idCareerGuide');
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Career Details Added',
+                'data' => [],
+            ];
+ 
+            $leadsLastId = $model->insertID();
+            $leadsData = $model->where("id = ", $leadsLastId)->findAll();
+            
+            $userModel = new UserModel();
+            $userData = $userModel->where("id = ", $leadsData[0]['user_type'])->findAll();
+
+            $collegeModel = new CollegeModel();
+            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id'])->findAll();
+           
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($userData[0]['email']);
+            $email->setSubject('Spring and Fall College Apply by - ' . $userData[0]['name'] . '');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
+                                     .'<tr>'
+                                          . '<td align = "right"> Name :  </td>'
+                                          . '<td >'. $userData[0]['name'] .'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Phone :  </td>'
+                                          . '<td >'. $userData[0]['phone'].'</td>' 
+                                     . '</tr>'
+                                     .'<tr>'
+                                          . '<td align = "right"> Email :  </td>'
+                                          . '<td >'. $userData[0]['email'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> College Name :  </td>'
+                                          . '<td >'. $collegeData[0]['names'].'</td>' 
+                                    . '</tr>'
+                                    . '<tr>'
+                                          . '<td align = "right"> Course :  </td>'
+                                          . '<td >'. $collegeData[0]['country'].'</td>' 
+                                    . '</tr>');
+
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+            }
+           
+        } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Career Details',
+                'data' => [],
+            ];
+            echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
+        }
             }else{
             $data = [
                 "firstname" => $session->get('careerFirstname'),
@@ -196,7 +261,7 @@ class CollegeController extends BaseController
                 "college_id" => $collegeId,
                 "active" => 1
             ];
-        }
+        
             $model = new CareerguideModel();
             // $id = $session->get('idCareerGuide');
             if ($model->insert($data)) {
@@ -263,7 +328,7 @@ class CollegeController extends BaseController
                 ];
                 echo json_encode(["status" => 2, "message" => "please try again later"]);
             }
-
+        }
             //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
         // }
    }
