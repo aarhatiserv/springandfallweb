@@ -26,9 +26,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12"> -->
             <?= $this->include('templates/calltoaction') ?>
-        </div>
+       <!-- </div>
     </div>
     </img>
     <img class="flight" src="assets/images/flight.png">
