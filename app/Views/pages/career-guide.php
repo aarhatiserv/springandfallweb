@@ -219,10 +219,10 @@
 <!-- added by debanjan | 30-jul-2021 -->
 <section id="areaOfInterest" style="display: none;">
     <div class="container">
-        <div class="row ml-5">
+        <div class="row ml-2">
             <h3>Area of Interest </h3>
         </div>
-        <div class="row ml-5 my-md-3">
+        <div class="row ml-4 my-md-3">
             <div class="col-lg-2">
                 <h5>Country</h5>
             </div>
@@ -264,7 +264,7 @@
 
             </div>
         </div>
-        <div class="row ml-5 my-md-3">
+        <div class="row ml-4 my-md-3">
             <div class="col-lg-2">
                 <h5>Level</h5>
             </div>
@@ -293,7 +293,7 @@
                 </div>
             </div>
         </div>
-        <div class="row ml-5 my-md-3">
+        <div class="row ml-4 my-md-3">
             <div class="col-lg-2">
                 <h5>Area of Study</h5>
             </div>
