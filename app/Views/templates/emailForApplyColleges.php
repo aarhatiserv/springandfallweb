@@ -40,6 +40,10 @@
             style="Margin-top: 0;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
             We want to make sure students get the best overseas study experience through our service </p>
 
+        <p
+            style="Margin-top: 0;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+            You have applied for : </p>
+
         <table>
             <tr>
                 <th>Name</th>
@@ -55,8 +59,21 @@
                 <td><?= $collegeName ?></td>
                 <td><?= $country ?></td>
             </tr>
-           
+
         </table>
+
+        <p align="center" style="Margin-top: 0;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+           <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
+                        class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
+
+                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i
+                        class="fa fa-instagram ml-4 mt-2 fa-2x" title="instagram"></i></a><br />
+                <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"
+                        title="twitter"></i></a>
+                <a href="#" target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"
+                        title="linkedin"></i></a>
+        </p>
+
     </div>
 </body>
 
