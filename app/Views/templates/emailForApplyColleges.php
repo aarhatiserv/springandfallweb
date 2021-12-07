@@ -31,7 +31,7 @@
             <img src="<?= base_url() ?>/assets/images/logo/logo.png">
         </div>
         <h1 style="font-size: 36px;  font-family: Georgia, Helvetica, sans-serif; font-style: italic; text-transform :capitalize;"
-            align="center">Thank You
+            align="center">Welcome
             <span><?php echo $username; ?></span>
         </h1>
         <h3 align="center">We're happy to have you with us.</h3>
