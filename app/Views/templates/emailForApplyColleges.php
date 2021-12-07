@@ -67,7 +67,7 @@
 
                 <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/instagram.png" style="height:40px; width:40px"></a>
                 <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png" style="height:40px; width:40px"></a>
-                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:50px; width:50px"></a>
+                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:40px; width:40px"></a>
         </p>
 
     </div>
