@@ -86,6 +86,11 @@
             comes from a line in section 1.10.32.</p>
 
 
+        <p
+            style="Margin-top: 40px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+            DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP </p>
+
+
     </div>
 </body>
 
