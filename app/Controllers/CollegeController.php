@@ -197,28 +197,32 @@ class CollegeController extends BaseController
             $email->setFrom('support@springandfall.in', 'Spring and Fall');
             $email->setTo($userData[0]['email']);
             $email->setSubject('Spring and Fall College Apply by - ' . $userData[0]['name'] . '');
-            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
-            $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
-                                     .'<tr>'
-                                          . '<td align = "right"> Name :  </td>'
-                                          . '<td >'. $userData[0]['name'] .'</td>' 
-                                     . '</tr>'
-                                     .'<tr>'
-                                          . '<td align = "right"> Phone :  </td>'
-                                          . '<td >'. $userData[0]['phone'].'</td>' 
-                                     . '</tr>'
-                                     .'<tr>'
-                                          . '<td align = "right"> Email :  </td>'
-                                          . '<td >'. $userData[0]['email'].'</td>' 
-                                    . '</tr>'
-                                    . '<tr>'
-                                          . '<td align = "right"> College Name :  </td>'
-                                          . '<td >'. $collegeData[0]['names'].'</td>' 
-                                    . '</tr>'
-                                    . '<tr>'
-                                          . '<td align = "right"> Course :  </td>'
-                                          . '<td >'. $collegeData[0]['country'].'</td>' 
-                                    . '</tr>');
+
+	        $data = ["username" => $userData[0]['name'], "phone" => $userData[0]['phone'], "email" =>$userData[0]['email'], "collegeName" =>$collegeData[0]['names'], "country" =>$collegeData[0]['country']];
+		    $body = view('templates/emailForApplyColleges', $data);
+            $email->setMessage($body);
+            
+            // $email->setMessage('<table align ="center" border="1" style="font-family: arial, sans-serif; border-collapse:collapse; font-size:17px; padding-top: 10px;padding-bottom: 10px;">' 
+            //                          .'<tr>'
+            //                               . '<td align = "right"> Name :  </td>'
+            //                               . '<td >'. $userData[0]['name'] .'</td>' 
+            //                          . '</tr>'
+            //                          .'<tr>'
+            //                               . '<td align = "right"> Phone :  </td>'
+            //                               . '<td >'. $userData[0]['phone'].'</td>' 
+            //                          . '</tr>'
+            //                          .'<tr>'
+            //                               . '<td align = "right"> Email :  </td>'
+            //                               . '<td >'. $userData[0]['email'].'</td>' 
+            //                         . '</tr>'
+            //                         . '<tr>'
+            //                               . '<td align = "right"> College Name :  </td>'
+            //                               . '<td >'. $collegeData[0]['names'].'</td>' 
+            //                         . '</tr>'
+            //                         . '<tr>'
+            //                               . '<td align = "right"> Course :  </td>'
+            //                               . '<td >'. $collegeData[0]['country'].'</td>' 
+            //                         . '</tr>');
 
             if ($email->send()) {
 
