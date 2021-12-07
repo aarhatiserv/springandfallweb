@@ -62,13 +62,29 @@
 
         </table>
 
-        <p align="center" style="Margin-top: 25px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 34px;line-height: 25px;Margin-bottom: 25px">
-           <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/facebook.png" style="height:40px; width:40px"></a>
+        <p align="center"
+            style="Margin-top: 25px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 34px;line-height: 25px;Margin-bottom: 25px">
+            <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><img
+                    src="<?= base_url() ?>/assets/images/iconsEmail/facebook.png" style="height:40px; width:40px"></a>
 
-                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/instagram.png" style="height:40px; width:40px"></a>
-                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png" style="height:40px; width:40px"></a>
-                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:45px; width:45px"></a>
+            <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><img
+                    src="<?= base_url() ?>/assets/images/iconsEmail/instagram.png" style="height:40px; width:40px"></a>
+            <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png"
+                    style="height:40px; width:40px"></a>
+            <a href="#" target="_blank" rel="noopener"><img
+                    src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:45px; width:45px"></a>
         </p>
+        <p
+            style="Margin-top: 40px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+            Disclimer : Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+            classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor
+            at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+            Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+            undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+            (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+            ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
+            comes from a line in section 1.10.32.</p>
+
 
     </div>
 </body>
