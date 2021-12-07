@@ -63,11 +63,11 @@
         </table>
 
         <p align="center" style="Margin-top: 0;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
-           <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/facebook.png" style="font-size: 0.73em;"></a>
+           <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/facebook.png" style="height:50px; width:50px"></a>
 
-                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/instagram.png" style="font-size: 0.73em;"></a>
-                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png" style="font-size: 0.73em;"></a>
-                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="font-size: 0.73em;"></a>
+                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/instagram.png" style="height:50px; width:50px"></a>
+                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png" style="height:50px; width:50px"></a>
+                <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:50px; width:50px"></a>
         </p>
 
     </div>
