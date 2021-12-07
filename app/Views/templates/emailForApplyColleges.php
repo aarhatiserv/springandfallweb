@@ -72,7 +72,7 @@
             <a href="#" target="_blank" rel="noopener"><img src="<?= base_url() ?>/assets/images/iconsEmail/twitter.png"
                     style="height:40px; width:40px"></a>
             <a href="#" target="_blank" rel="noopener"><img
-                    src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:45px; width:45px"></a>
+                    src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:45px; width:45px; margin-left: -4px;"></a>
         </p>
         <p
             style="Margin-top: 40px;color: #565656;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
