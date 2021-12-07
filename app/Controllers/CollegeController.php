@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models\CollegeModel;
 use App\Models\CareerguideModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
+use \Firebase\JWT\JWT;
 
 class CollegeController extends BaseController
 {
@@ -96,13 +98,10 @@ class CollegeController extends BaseController
         $session->set('careerHigherSecondary_passing_year', $this->request->getVar("higherSecondaryYear"));
         $session->set('careerSecondary', $this->request->getVar("secondary"));
         $session->set('careerSecondary_passing_year', $this->request->getVar("secondaryPassingYear"));
-
-        if (!empty($session->get('token'))) {
-            $session->set('careerUserType', $session->get('token'));
-        } else {
-            $session->set('careerUserType', 'guest');
-        }
+        $session->set('careerUserType', 'guest');
+        
         echo json_encode(["status" => 1, "message" => "Thank you"]);
+        
     }
 
 
@@ -163,29 +162,66 @@ class CollegeController extends BaseController
     //     return $this->response->setJSON($data);
     // }
 
-    public function apply($collegeId)
+    public function apply()
     {
-
         $session = session();
-        if (empty($session->get('careerFirstname')
-            || $session->get('careerLastname')
-            || $session->get('careerEmail')
-            || $session->get('careerPhone')
-            || $session->get('careerAddress_1')
-            || $session->get('careerAddress_2')
-            || $session->get('careerCity')
-            || $session->get('careerState')
-            || $session->get('careerPincode')
-            || $session->get('careerHighest_qualification')
-            || $session->get('careerHighest_qualification_passing_year')
-            || $session->get('careerHigherSecondary')
-            || $session->get('careerHigherSecondary_passing_year')
-            || $session->get('careerSecondary')
-            || $session->get('careerSecondary_passing_year')
-            || $session->get('careerUserType'))) {
-            // return redirect()->to('http://localhost:8080/career-guide');
-            return redirect()->to('https://springandfall.in/career-guide');
+        $collegeId = $this->request->getVar("id");
+
+            if(!empty($session->get('token'))){
+                $data = [
+                    "requested_for" => "career-guide",
+                    "user_type" => $session->get('userId'),
+                    "college_id" => $collegeId,
+                    "active" => 1
+                ];
+                $model = new CareerguideModel();
+        // $id = $session->get('idCareerGuide');
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Career Details Added',
+                'data' => [],
+            ];
+ 
+            $leadsLastId = $model->insertID();
+            $leadsData = $model->where("id = ", $leadsLastId)->findAll();
+            
+            $userModel = new UserModel();
+            $userData = $userModel->where("id = ", $leadsData[0]['user_type'])->findAll();
+
+            $collegeModel = new CollegeModel();
+            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id'])->findAll();
+           
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($userData[0]['email']);
+            $email->setSubject('Spring and Fall College Apply by - ' . $userData[0]['name'] . '');
+
+	        $data = ["username" => $userData[0]['name'], "phone" => $userData[0]['phone'], "email" =>$userData[0]['email'], "collegeName" =>$collegeData[0]['names'], "country" =>$collegeData[0]['country']];
+		    $body = view('templates/emailForApplyColleges', $data);
+            $email->setMessage($body);
+            
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+            }
+           
         } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Career Details',
+                'data' => [],
+            ];
+            echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
+        }
+            }else{
             $data = [
                 "firstname" => $session->get('careerFirstname'),
                 "lastname" =>  $session->get('careerLastname'),
@@ -202,10 +238,12 @@ class CollegeController extends BaseController
                 "higher_secondary_passing_year" => $session->get('careerHigherSecondary_passing_year'),
                 "secondary" => $session->get('careerSecondary'),
                 "secondary_passing_year" => $session->get('careerSecondary_passing_year'),
-                "user_type" => $session->get('careerUserType'),
+                "requested_for" => "career-guide",
+                "user_type" =>  $session->get('careerUserType'),
                 "college_id" => $collegeId,
                 "active" => 1
             ];
+        
             $model = new CareerguideModel();
             // $id = $session->get('idCareerGuide');
             if ($model->insert($data)) {
@@ -214,8 +252,32 @@ class CollegeController extends BaseController
                     'messages' => 'Successfully Career Details Added',
                     'data' => [],
                 ];
+                  
+                $collegeModel = new CollegeModel();
+                $collegeData = $collegeModel->where("id = ", $collegeId)->findAll();
+                
+                // mail sening code  
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($session->get('careerEmail'));
+            $email->setSubject('Spring and Fall College Apply by - ' . $session->get('careerFirstname') . '');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $data = ["username" => $session->get('careerFirstname').$session->get('careerLastname'), "phone" => $session->get('careerPhone'), "email" =>$session->get('careerEmail'), "collegeName" =>$collegeData[0]['names'], "country" =>$collegeData[0]['country']];
+		    $body = view('templates/emailForApplyColleges', $data);
+            $email->setMessage($body);
+
+            if ($email->send()) {
 
                 echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
+
+                
             } else {
 
                 $response = [
@@ -224,27 +286,77 @@ class CollegeController extends BaseController
                     'messages' => 'Failed to add Hot Courses',
                     'data' => [],
                 ];
+                echo json_encode(["status" => 2, "message" => "please try again later"]);
             }
-
-            //  $email = \Config\Services::email();
-            //  $email->setFrom('support@springandfall.in', 'Spring and Fall');
-            //  $email->setTo("sknazim1818@gmail.com");
-            // //  $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
-            //  $email->setSubject('Welcome to Spring and Fall ');
-            // //  $url = "http://" . $_SERVER['SERVER_NAME'] . '/user/verify.php?id=' . $lastId . '&token=' . $token;
-            // //  $data = ["username" => $this->request->getVar("name"), "url" => $url];
-            //  $body = view('templates/email', $data);
-
-            //  $email->setMessage($body);
-            //  if ($email->send()) {
-            //      echo "email sent";
-            //  } else {
-            //      echo "email failed";
-            //  }
-
+        }
             //  echo json_encode(["status" => 1, "message" => "call".$this->firstname]);
+        // }
+   }
+
+   public function applyForCollegeInConsultation(){
+
+    $session = session();
+
+    $collegeId = $this->request->getVar("id");
+    if(empty($session->get('token'))){
+        echo json_encode(["status" => 2, "message" => "Please signin or signup, then you can apply college"]);
+    }else{
+        $data = [
+            "requested_for" => "consultation",
+            "user_type" => $session->get('userId'),
+            "college_id" => $collegeId,
+            "active" => 1
+        ];
+        $model = new CareerguideModel();
+        // $id = $session->get('idCareerGuide');
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Career Details Added',
+                'data' => [],
+            ];
+ 
+            $leadsLastId = $model->insertID();
+            $leadsData = $model->where("id = ", $leadsLastId)->findAll();
+            
+            $userModel = new UserModel();
+            $userData = $userModel->where("id = ", $leadsData[0]['user_type'])->findAll();
+
+            $collegeModel = new CollegeModel();
+            $collegeData = $collegeModel->where("id = ", $leadsData[0]['college_id'])->findAll();
+           
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($userData[0]['email']);
+            $email->setSubject('Spring and Fall College Apply by - ' . $userData[0]['name'] . '');
+            
+            $data = ["username" => $userData[0]['name'], "phone" => $userData[0]['phone'], "email" =>$userData[0]['email'], "collegeName" =>$collegeData[0]['names'], "country" =>$collegeData[0]['country']];
+		    $body = view('templates/emailForApplyColleges', $data);
+            $email->setMessage($body);
+
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
+           
+        } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Career Details',
+                'data' => [],
+            ];
+            echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
         }
     }
+   }
     public function session_expire()
     {
         $session = session();
@@ -270,4 +382,9 @@ class CollegeController extends BaseController
 
 
     }
+
+    private function getKey()
+	{
+		return "aarhat@123";
+	}
 }

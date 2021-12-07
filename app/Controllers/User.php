@@ -73,6 +73,7 @@ class User extends ResourceController
 				return $this->respondCreated($response);
 			} else {
 				if ($userModel->insert($data)) {
+					
 					$lastId = $userModel->insertID();
 
 					// print_r($lastid);
@@ -157,6 +158,7 @@ class User extends ResourceController
 
 				if (password_verify($this->request->getVar("password"), $userdata['password'])) {
 
+
 					$key = $this->getKey();
 
 					$iat = time(); // current timestamp value
@@ -172,10 +174,16 @@ class User extends ResourceController
 						"data" => $userdata,
 					);
 
+                    // $tokenUpdate = [
+					// 	"token" => $token
+					// ];
+                    // $userModel->update($userdata['id'], $tokenUpdate);
+
 					$token = JWT::encode($payload, $key);
 					$session = session();
 					$session->set("token", $token);
-					$session->set("username", 'goutam');
+					$session->set("userId", $userdata['id']);
+					// $session->set("username", 'goutam');
 
 					// $this->session->set("token", $token);
 					// $this->session->set("username", "goutam");
@@ -279,7 +287,7 @@ class User extends ResourceController
 
 		$session = session();
 		$session->destroy();
-		return redirect()->to('/home');
+		return redirect()->to('https://springandfall.in/home');
 	}
 
 

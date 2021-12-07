@@ -1,6 +1,6 @@
 <div class="jumbotron ">
     <div class="container card">
-        <h2 class="text-center py-5"><strong>Terms and Conditions</strong></h2>
+        <h2 class="text-center py-5" style="margin-top:25px"><strong>Terms and Conditions</strong></h2>
         <div class="card-body justify-text">
             <p class="font-weight-bold">Welcome to springandfall.in!</p>
 
@@ -10,7 +10,7 @@
                     located at
                     <a href="https://springandfall.in/">https://springandfall.in/</a>.
                 </p>
-
+ 
                 <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use
                     springandfall.in if
                     you do not agree to take all of the terms and conditions stated on this page.</p>

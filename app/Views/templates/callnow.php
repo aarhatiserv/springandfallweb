@@ -88,7 +88,7 @@
                                         <div class="from-group my-3">
                                             <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
                                             <label class="form-check-label font-weight-bold" for="terms">
-                                                I accept terms & conditions
+                                                I accept <a href="privacy-policy">terms & conditions</a>
                                             </label>
                                             <div style="visibility:hidden; color:red; text-align:left"
                                                 id="agree_chk_error">

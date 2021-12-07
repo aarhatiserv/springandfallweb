@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <?php
@@ -167,6 +168,14 @@ function ff() {
 }
 </script>
 <?php
+=======
+
+<?php 
+$session = session();
+?>
+
+<?php 
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
 
 for ($i = 0; $i < count($sectionData); $i++) {
     if ($sectionData[$i]['section_name'] === 'consultation_banner') {
@@ -177,8 +186,13 @@ for ($i = 0; $i < count($sectionData); $i++) {
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
+<<<<<<< HEAD
                     <h3 class="banner-h3"><?= $sectionData[$i]['title'] ?></h3>
                     <p><?= $sectionData[$i]['discription'] ?></p>
+=======
+                    <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
+                    <p class="pb-1"><?= $sectionData[$i]['discription']?></p>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                     <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
@@ -247,12 +261,12 @@ for ($i = 0; $i < count($sectionData); $i++) {
                             href="#pills-countries123" role="tab" aria-controls="pills-countries123"
                             aria-selected="false">COUNTRIES</button>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item pl-2">
                         <button class="nav-link rr mx-2 " id="pills-courses-tab" data-toggle="pill"
                             href="#pills-courses" role="tab" aria-controls="pills-courses" aria-selected="false"
                             onclick="refresh()">COURSES</button>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item pl-2">
                         <button class="nav-link rr mx-2 " id="pills-careers-tab" data-toggle="pill"
                             href="#pills-careers" role="tab" aria-controls="pills-careers"
                             aria-selected="false">CAREERS</button>
@@ -288,23 +302,37 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 $flag = $session->get('flagHome'); ?>
             <div class="tab-content border-top border-primary" id="pills-tabContent">
                 <div class="" id="pills-countries123" role="tabpanel" aria-labelledby="pills-countries-tab">
+<<<<<<< HEAD
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <?php if ($flag === 'USA') {
                             ?>
+=======
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
+                        <?php  if($flag === 'USA'){
+                ?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2 active" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA"
                                 aria-selected="false">USA</button>
                         </li>
+<<<<<<< HEAD
                         <?php
                                 echo '<script type="text/javascript">',
                                 'getCollege("USA");',
                                 '</script>';
                             } else { ?>
+=======
+                        <?php 
+                              echo '<script type="text/javascript">',
+                              'getCollegeInConsultation("USA");',
+                              '</script>';
+                              }else{?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
-                                onclick="getCollege('USA')">USA</button>
+                                onclick="getCollegeInConsultation('USA')">USA</button>
                         </li>
                         <?php }
                             if ($flag === 'UK') { ?>
@@ -313,15 +341,23 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK"
                                 aria-selected="false">UK</button>
                         </li>
+<<<<<<< HEAD
                         <?php
                                 echo '<script type="text/javascript">',
                                 'getCollege("UK");',
                                 '</script>';
                             } else { ?>
+=======
+                        <?php 
+                     echo '<script type="text/javascript">',
+                     'getCollegeInConsultation("UK");',
+                     '</script>';
+                     }else{?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
-                                onclick="getCollege('UK')">UK</button>
+                                onclick="getCollegeInConsultation('UK')">UK</button>
                         </li>
                         <?php }
                             if ($flag === 'Canada') { ?>
@@ -331,15 +367,23 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
                                 aria-selected="false">Canada</button>
                         </li>
+<<<<<<< HEAD
                         <?php
                                 echo '<script type="text/javascript">',
                                 'getCollege("Canada");',
                                 '</script>';
                             } else { ?>
+=======
+                        <?php 
+                     echo '<script type="text/javascript">',
+                     'getCollegeInConsultation("Canada");',
+                     '</script>';
+                     }else{?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Canada-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
-                                aria-selected="false" onclick="getCollege('Canada')">Canada</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('Canada')">Canada</button>
                         </li>
                         <?php }
                             if ($flag === 'Germany') { ?>
@@ -348,15 +392,23 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
                                 aria-selected="false">Germany</button>
                         </li>
+<<<<<<< HEAD
                         <?php
                                 echo '<script type="text/javascript">',
                                 'getCollege("Germany");',
                                 '</script>';
                             } else { ?>
+=======
+                        <?php  
+                        echo '<script type="text/javascript">',
+                              'getCollegeInConsultation("Germany");',
+                              '</script>';
+                              }else{?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Germany-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
-                                aria-selected="false" onclick="getCollege('Germany')">Germany</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('Germany')">Germany</button>
                         </li>
                         <?php }
                             if ($flag === 'France') { ?>
@@ -365,15 +417,23 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
                                 aria-selected="false">France</button>
                         </li>
+<<<<<<< HEAD
                         <?php
                                 echo '<script type="text/javascript">',
                                 'getCollege("France");',
                                 '</script>';
                             } else { ?>
+=======
+                        <?php  
+                     echo '<script type="text/javascript">',
+                     'getCollegeInConsultation("France");',
+                     '</script>';
+                     }else{?>
+>>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-France-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
-                                aria-selected="false" onclick="getCollege('France')">France</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('France')">France</button>
                         </li>
                         <?php } ?>
                     </ul>
@@ -415,31 +475,31 @@ for ($i = 0; $i < count($sectionData); $i++) {
 
                 <div class="tab-pane fade" id="pills-countries" role="tabpanel" aria-labelledby="pills-countries-tab">
 
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
-                                onclick="getCollege('USA')">USA</button>
+                                onclick="getCollegeInConsultation('USA')">USA</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
-                                onclick="getCollege('UK')">UK</button>
+                                onclick="getCollegeInConsultation('UK')">UK</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Canada-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
-                                aria-selected="false" onclick="getCollege('Canada')">Canada</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('Canada')">Canada</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Germany-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
-                                aria-selected="false" onclick="getCollege('Germany')">Germany</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('Germany')">Germany</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-France-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
-                                aria-selected="false" onclick="getCollege('France')">France</button>
+                                aria-selected="false" onclick="getCollegeInConsultation('France')">France</button>
                         </li>
                     </ul>
                 </div>
@@ -448,31 +508,31 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <div class="tab-pane fade" id="pills-courses" role="tabpanel" aria-labelledby="pills-courses-tab">
 
                     <!-- ------------------------------- Start Courses Country------------------------------------------------------------- -->
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-USA2" aria-selected="false"
-                                onclick="getCollegeWithCourse('USA')">USA</button>
+                                onclick="getCollegeWithCountry('USA')">USA</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK2-tab" data-toggle="pill" href="#pills-course"
                                 role="tab" aria-controls="pills-UK2" aria-selected="false"
-                                onclick="getCollegeWithCourse('UK')">UK</button>
+                                onclick="getCollegeWithCountry('UK')">UK</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Canada2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-Canada2" aria-selected="false"
-                                onclick="getCollegeWithCourse('Canada')">Canada</button>
+                                onclick="getCollegeWithCountry('Canada')">Canada</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Germany2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-Germany2" aria-selected="false"
-                                onclick="getCollegeWithCourse('Germany')">Germany</button>
+                                onclick="getCollegeWithCountry('Germany')">Germany</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-France2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-France2" aria-selected="false"
-                                onclick="getCollegeWithCourse('France')">France</button>
+                                onclick="getCollegeWithCountry('France')">France</button>
                         </li>
                     </ul>
                     <!-- ------------------------------- End Courses Country------------------------------------------------------------- -->
@@ -480,33 +540,33 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     <!-- ------------------------------- Start Courses Course------------------------------------------------------------- -->
                     <div class="tab-pane fade" id="pills-course" role="tabpanel" aria-labelledby="pills-course-tab">
 
-                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item">
+                        <ul class="nav nav-pills mb-3 pl-1 pt-1" id="pills-tab" role="tablist">
+                            <li class="nav-item  pb-3">
                                 <button class="nav-link rr1 mx-2" id="pills-engineering-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-engineering"
                                     aria-selected="false"
-                                    onclick="getCollegeWithCourse1('Engineering')">Engineering</button>
+                                    onclick="getCollegeWithCourse('Engineering')">Engineering</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link rr1 mx-2" id="pills-management-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-management"
                                     aria-selected="false"
-                                    onclick="getCollegeWithCourse1('Management')">Management</button>
+                                    onclick="getCollegeWithCourse('Management')">Management</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link rr1 mx-2" id="pills-medical-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-medical"
-                                    aria-selected="false" onclick="getCollegeWithCourse1('Medical')">Medical</button>
+                                    aria-selected="false" onclick="getCollegeWithCourse('Medical')">Medical</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link rr1 mx-2" id="pills-design-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-design"
-                                    aria-selected="false" onclick="getCollegeWithCourse1('Design')">Design</button>
+                                    aria-selected="false" onclick="getCollegeWithCourse('Design')">Design</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link rr1 mx-2" id="pills-other-tab" data-toggle="pill"
                                     href="#pills-all-course" role="tab" aria-controls="pills-other"
-                                    aria-selected="false" onclick="getCollegeWithCourse1('Other')">Other</button>
+                                    aria-selected="false" onclick="getCollegeWithCourse('Other')">Other</button>
                             </li>
                         </ul>
                     </div>
@@ -515,7 +575,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 </div>
                 <!-- ------------------------------- Start career------------------------------------------------------------- -->
                 <div class="tab-pane fade" id="pills-careers" role="tabpanel" aria-labelledby="pills-careers-tab">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills mb-3 pl-2 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link rr1" id="pills-career-tab" data-toggle="pill" href="#pills-career"
                                 role="tab" aria-controls="pills-career" aria-selected="false">Careers</button>

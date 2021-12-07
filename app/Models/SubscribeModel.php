@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class SubscribeModel extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'spring_users';
+	protected $table                = 'subscribe';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id', 'name', 'username',    'email',    'phone',    'password',    'passtext',  'token',  'active',    'registered',    'ip', 'activation_code',    'last_login'];
+	protected $allowedFields        = ['id', 'email', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../fav.ico" type="image/ico">
-    <title>Spring & Fall | Admin</title>
+    <title>Admin | Spring & Fall</title>
 
 
 </head>
@@ -30,7 +30,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Review
+                            <h3>Subscribe
                                 <!-- <small>Some examples to get you started</small> -->
                             </h3>
                         </div>
@@ -44,22 +44,19 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Review Data
+                                    <h2>Subscribe Data
                                         <!-- <small>Users</small> -->
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <button role="button"><a href="/admin/addReviews"><i class="fa fa-plus"></i> Add
-                                            Review</a> </button>
+                                    <!-- <button role="button"><a href="/admin/addPages"><i class="fa fa-plus"></i> Add
+                                            Pages</a> </button> -->
                                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Title</th>
-                                                <th>Discription</th>
-                                                <th>Image</th>
+                                                <th>Email</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -67,16 +64,13 @@
 
                                         <tbody>
                                             <?php 
-                                               foreach($reviewData as $rd){
+                                               foreach($subscribeData as $sd){
                                               
                                                 ?>
                                                 
                                             <tr>
-                                                <td><?= $rd['name']?></td>
-                                                <td><?= $rd['title']?></td>
-                                                <td><?= $rd['discription']?></td>       
-                                                <td><a href="../uploads/ReviewsImage/<?= $rd['image']?>"target="_blank"><img src="../uploads/ReviewsImage/<?= $rd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
-                                                <td><a href="/admin/editReviews/<?= $rd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $rd['id']?>)"><i class="fa fa-trash"></i></a></td>
+                                                <td><?= $sd['email']?></td>                                          
+                                                <td><a onClick="javascript: ConfirmDelete(<?= $sd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
                                                }
@@ -106,7 +100,7 @@
       {
         var conf = confirm('Are you sure want to delete this record?');
             if (conf)
-                 location.href='/admin/deleteReviews/'+id;
+                 location.href='/admin/deleteSubscribe/'+id;
       }
   </script>
 </html>

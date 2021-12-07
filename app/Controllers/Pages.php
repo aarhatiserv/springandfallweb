@@ -8,6 +8,7 @@ use App\Models\PagesModel;
 use App\Models\SectionsModel;
 use App\Models\ReviewModel;
 use App\Models\HotCoursesModel;
+use App\Models\SubscribeModel;
 
 class Pages extends Controller
 {
@@ -151,15 +152,66 @@ class Pages extends Controller
     }
 
 
-    public function flag($flag)
-    {
-        $session = session();
-        $session->set('flagHome', $flag);
-        // $url = 'http://localhost:8080/country/'.$flag;
-        return redirect()->to('https://springandfall.in/consultation');
-        // return redirect()->to("http://localhost:8080/consultation");
-        // return redirect()->to($url);
+// For flaf-section routes send to consultation page
 
+    // public function flag($flag)
+    // {
+    //     $session = session();
+    //     $session->set('flagHome', $flag);
+    //     // $url = 'http://localhost:8080/country/'.$flag;
+    //     return redirect()->to('https://springandfall.in/consultation');
+    //     // return redirect()->to("http://localhost:8080/consultation");
+    //     // return redirect()->to($url);
+
+    // }
+
+
+    public function subscribe(){
+        // print_r($this->request->getVar('email'));
+        $data = [
+            "email" => $this->request->getVar('email'),
+            "active" => 1,
+        ];
+        $model = new SubscribeModel();
+        if ($model->insert($data)) {
+            $response = [
+                'status' => 200,
+                'messages' => 'Successfully Subscribe Added',
+                'data' => [],
+            ];
+
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($this->request->getVar('email'));
+            $email->setSubject('Thanks for subscribing news letter');
+            // $email->setMessage('<p>Name :' . $session->get('careerFirstname').$session->get('careerLastname') . '<br> Contact no :' . $session->get('careerPhone') . '<br> email :' . $session->get('careerEmail') . ' </p>');
+            $email->setMessage('<body>
+                                   <h2 font-size:24px"> Thanks For Subscribing!</h2>
+                                   </body>');
+
+            if ($email->send()) {
+
+                echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);          
+              } else {
+                $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
+                
+            }
+
+            
+
+        } else {
+
+            $response = [
+                'status' => 500,
+                "error" => true,
+                'messages' => 'Failed to add Review',
+                'data' => [],
+            ];
+            echo json_encode(["status" => 2, "message" => "please try again later"]);
+        }
+       
     }
    
 }

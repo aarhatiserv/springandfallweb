@@ -12,8 +12,8 @@
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
-            <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="130" title="logo" /><br>
-            <div class="social-icons-fa">
+            <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="115" title="logo" /><br>
+            <div class="social-icons-fa p-2 mr-3 pb-4">
                 <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
                         class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
 
@@ -26,27 +26,27 @@
                 <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
             </div>
         </div>
-        <div class="col-sm-12 col-lg-3  colMargins colText">
+        <div class="col-sm-12 col-lg-3  colMargins colText" style="margin-left:86px">
             <a href="about" rel="noopener" class="anchor">ABOUT US</a><br />
             <a href="career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
             <a href="financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
             <a href="visa-consultation" rel="noopener" class="anchor">CONSULTATION</a><br />
             <!-- <a href="">EVENTS</a> -->
         </div>
-        <div class="col-sm-12 col-lg-3  colMargins colText2">
+        <div class="col-sm-12 col-lg-3  colMargins colText2" style="margin-left:-57px">
             <a href="blog" rel="noopener" class="anchor">BLOG</a><br />
             <a href="terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a><br />
             <!-- <a href="#" onclick="comingSoon()">VIDEO</a><br />
                <a href="#" onclick="comingSoon()">CAREER</a><br />
                <a href="#" onclick="comingSoon()">AFFILIATE PROGRAM</a> -->
         </div>
-        <div class="col-lg-4 colMargins">
+        <div class="col-lg-4 colMargins" style="margin-left:-30px">
             <div class="row">
                 <div class="col-sm-12 col-lg-12" id="subscribe-area">
-                    <p class="subscribe">Subscribe to our news letter</p>
-                    <input class="text-center" type="text" placeholder="Email Id">
-                    <button type="button" id="Button" class="mt-1 ml-2">Subscribe</button>
-                    <div class="appPlay">
+                    <p class="subscribe pt-2 pb-2">Subscribe to our news letter</p>
+                    <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail" placeholder="Email Id">
+                    <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
+                    <div class="appPlay pt-2">
                         <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
                             title="mobilestores" />
                     </div><br>
@@ -83,9 +83,12 @@
 <script type="text/javascript" src="assets/slick/slick.min.js"></script>
 <!-- costom js section -->
 <script type="text/javascript" src="assets/js/counter-section.js"></script>
-
+<!-- loan approve -->
+<!-- <script src="assets/js/creative-steps.js"></script> -->
 <!-- career guide js -->
 <script type="text/javascript" src="assets/js/career-guide.js"></script>
+<!-- consultation js -->
+<script type="text/javascript" src="assets/js/consultation.js"></script>
 <!-- about parallax -->
 <script type="text/javascript" src="assets/js/about-parallax.js"></script>
 <script type="text/javascript" src="assets/js/college-parallax.js"></script>
@@ -387,10 +390,82 @@ $(document).ready(() => {
         }
     });
 
+    // $("#subscribe").click({
+    //         // console.log(event); // for debugginh purpose
+    //         var email = $("#subscribeEmail").val();
+    //         $.ajax({
+    //             url: "/api/subscribe",
+    //             method: "POST",
+    //             data: email,
+    //             beforeSend: function() {
+    //                 $('#subscribe').val("Please wait");
+    //                 $('#subscribe').prop("disabled", true);
+
+    //             },
+    //             success: function(data) {
+    //                 $('#subscribe').val("Subscribe");
+    //                 $('#subscribe').prop("disabled", false);
+    //                 var res = JSON.parse(data);
+    //                 if (res.status === 1) {
+    //                     swal("Thank you!", res.message, "success");
+    //                     window.location.reload();
+    //                 } else if (res.status === 2) {
+    //                     swal("Opps.!!", res.message, "error");
+    //                 } else {
+    //                     swal("Opps.!!", "Something went wrong.!!", "error");
+    //                 }
+    //             }
+    //         })
+    //     }
+    // });
 });
 </script>
 
+<!-- subscribe -->
+<script>
+    $(document).ready(function () {
+        $("#subscribe").click(function () {
+            var email = $("#subscribeEmail").val();
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+
+            let formData = new FormData();
+            formData.append('email', email);
+            $.ajax({
+                url: "/api/subscribe",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    $('#subscribe').val("Please wait");
+                    $('#subscribe').prop("disabled", true);
+
+                },
+                success: function(data) {
+                    $('#subscribe').val("Subscribe");
+                    $('#subscribe').prop("disabled", false);
+                    var res = JSON.parse(data);
+                    if (res.status === 1) {
+                        swal("Thank you!", res.message, "success");
+                        window.location.reload();
+                    } else if (res.status === 2) {
+                        swal("Opps.!!", res.message, "error");
+                    } else {
+                        swal("Opps.!!", "Something went wrong.!!", "error");
+                    }
+                }
+            })
+        }else{
+            swal("Opps.!!", "Please Enter a Valid Email", "error");
+        }
+        
+        })
+    });
+</script>
+<!-- subscribe -->
+
 <script type="text/javascript">
+
 var idleTime = 0;
 $(document).ready(function() {
     //Increment the idle time counter every minute.
