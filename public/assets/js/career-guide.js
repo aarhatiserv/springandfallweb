@@ -1,12 +1,12 @@
 // Carred guide code added by Goutam reddy and Nazim
 
 // For agree terms if not agree then disable next button
-jQuery('#terms').click(function() {
-  if (jQuery(this).is(":checked")) {
-      jQuery("#next").removeAttr("disabled");
+$('#termsCareer').click(function() {
+  if ($(this).is(":checked")) {
+      $("#next").removeAttr("disabled");
       document.getElementById('agree_chk_error').style.visibility = 'hidden';
   } else {
-      jQuery("#next").attr("disabled", "disabled");
+      $("#next").attr("disabled", "disabled");
       document.getElementById('agree_chk_error').style.visibility = 'visible';
   }
 });

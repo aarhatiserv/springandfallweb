@@ -207,7 +207,7 @@
                         </div>
 
                     </div>
-                    <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
+                    <input class="form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer">
                     <label class="form-check-label font-weight-bold" for="terms">
                                                 I accept <a href="privacy-policy">terms & conditions</a>
                                             </label>
