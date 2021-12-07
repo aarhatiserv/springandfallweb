@@ -1,1 +1,121 @@
-#banner{background:url(https://images.pexels.com/photos/4214966/pexels-photo-4214966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat fixed 100% 100%;background-size:cover;color:#fff;height:57vh;width:100%}#bannertext{width:24em;position:fixed;top:30%;left:50%;border:.5em solid #fff;margin-left:-12em;padding:2em 0;background-color:rgba(5,5,5,0.5)!important}.mission{font-size:27px;font-weight:inherit}.abb{font-size:29px}.abb1{font-size:29px;color:#114694!important}#content{max-width:28em;text-align:center;margin:0 auto;padding:2em}#mission{height:70vh;font-family:'Poppins';background:#020024;background:linear-gradient(148deg,rgba(2,0,36,1) 0%,rgba(0,100,162,1) 0%,rgba(156,189,204,1) 100%);color:#fff}.headline{background:rgba(255,255,255,0.1);padding:25px 55px 15px;position:relative}.headline::after{content:"";width:0;height:0;margin-top:-70px;margin-left:-193px;border-left:193px solid transparent;border-right:193px solid transparent;border-top:70px solid rgba(255,255,255,0.1);position:absolute;bottom:-70px;left:50%}.description{text-align:center;margin-top:80px;padding:20px;position:relative;opacity:1}.description h3{font-family:'Poppins';color:#fff!important}#vission{height:70vh;font-family:'Poppins';background:#020024;background:linear-gradient(148deg,rgba(2,0,36,1) 0%,rgba(242,31,124,0.989233193277311) 0%,rgba(255,170,211,0.9668242296918768) 100%);color:#fff}#values{height:70vh;font-family:'Poppins';background:#020024;background:linear-gradient(148deg,rgba(2,0,36,1) 0%,rgba(18,136,46,0.989233193277311) 0%,rgba(103,218,94,0.9668242296918768) 100%);color:#fff}#foundingTeam{height:90vh}@media only screen and (max-width: 400px){#bannertext{background-color:rgba(5,5,5,0.5)!important;width:20em!important;position:fixed!important;top:25%!important;left:7%!important;background-color:rgba(5,5,5,0.5)!important}#mission,#vission,#values{height:90vh!important}.description{margin-top:80px!important}}
+#banner {
+    background: url(https://images.pexels.com/photos/4214966/pexels-photo-4214966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat fixed 100% 100%;
+    background-size: cover;
+    color: #fff;
+    height: 57vh;
+    width: 100%
+}
+
+#bannertext {
+    width: 24em;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    border: .5em solid #fff;
+    margin-left: -12em;
+    padding: 2em 0;
+    background-color: rgba(5, 5, 5, 0.5) !important
+}
+
+.mission {
+    font-size: 27px;
+    font-weight: inherit
+}
+
+.abb {
+    font-size: 29px
+}
+
+.abb1 {
+    font-size: 29px;
+    color: #114694 !important
+}
+
+#content {
+    max-width: 28em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2em
+}
+
+#mission {
+    height: 70vh;
+    font-family: 'Poppins';
+    background: #020024;
+    background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(0, 100, 162, 1) 0%, rgba(156, 189, 204, 1) 100%);
+    color: #fff
+}
+
+.headline {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px 55px 15px;
+    position: relative
+}
+
+.headline::after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -70px;
+    margin-left: -193px;
+    border-left: 193px solid transparent;
+    border-right: 193px solid transparent;
+    border-top: 70px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: -70px;
+    left: 50%
+}
+
+.description {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+    position: relative;
+    opacity: 1
+}
+
+.description h3 {
+    font-family: 'Poppins';
+    color: #fff !important
+}
+
+#vission {
+    height: 70vh;
+    font-family: 'Poppins';
+    background: #020024;
+    background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(242, 31, 124, 0.989233193277311) 0%, rgba(255, 170, 211, 0.9668242296918768) 100%);
+    color: #fff
+}
+
+#values {
+    height: 70vh;
+    font-family: 'Poppins';
+    background: #020024;
+    background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(18, 136, 46, 0.989233193277311) 0%, rgba(103, 218, 94, 0.9668242296918768) 100%);
+    color: #fff
+}
+
+#foundingTeam {
+    height: 90vh
+}
+
+@media only screen and (max-width: 400px) {
+    #bannertext {
+        background-color: rgba(5, 5, 5, 0.5) !important;
+        width: 20em !important;
+        position: fixed !important;
+        top: 25% !important;
+        left: 7% !important;
+        background-color: rgba(5, 5, 5, 0.5) !important
+    }
+
+    #mission,
+    #vission,
+    #values {
+        height: 90vh !important
+    }
+
+    .description {
+        margin-top: 80px !important
+    }
+}

@@ -64,7 +64,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js">
+</script>
 <!-- vanila titlt -->
 <script type="text/javascript" src="assets/js/vanilla-tilt.min.js"></script>
 <script type="text/javascript" src="assets/js/scrollpopup.js"></script>
@@ -87,6 +88,8 @@
 <script type="text/javascript" src="assets/js/career-guide.js"></script>
 <!-- about parallax -->
 <script type="text/javascript" src="assets/js/about-parallax.js"></script>
+<script type="text/javascript" src="assets/js/college-parallax.js"></script>
+<script type="text/javascript" src="assets/js/college.js"></script>
 
 
 
@@ -389,15 +392,15 @@ $(document).ready(() => {
 
 <script type="text/javascript">
 var idleTime = 0;
-$(document).ready(function () {
+$(document).ready(function() {
     //Increment the idle time counter every minute.
     var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
 
     //Zero the idle timer on mouse movement.
-    $(this).mousemove(function (e) {
+    $(this).mousemove(function(e) {
         idleTime = 0;
     });
-    $(this).keypress(function (e) {
+    $(this).keypress(function(e) {
         idleTime = 0;
     });
 });
@@ -405,8 +408,8 @@ $(document).ready(function () {
 function timerIncrement() {
     idleTime = idleTime + 1;
     if (idleTime > 14) { // 15 minutes
-       //javascript er popup dite hobe, je abar login korar jonno session expired, because security
-       window.location.href = "/api/session_expire";
+        //javascript er popup dite hobe, je abar login korar jonno session expired, because security
+        window.location.href = "/api/session_expire";
         // window.location.reload();
     }
 }

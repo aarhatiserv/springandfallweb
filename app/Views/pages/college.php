@@ -1,0 +1,318 @@
+<div class="container-flui">
+    <div class="row">
+        <div class="col-1">
+            <a class="text-dark" href="#" onclick="window.history.go(-1)"></a>
+        </div>
+        <div class="col-11"></div>
+    </div>
+</div>
+<section id="collegeBanner"
+    style="background: url('assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
+    <div id="collegeBannerText">
+        <h1 class="text-center"><?= 'your college name goes here' ?></h1>
+        <p class="text-center" style="font-style: italic;"><?= "college description goes here" ?> </p>
+    </div>
+
+</section>
+
+<section id="collegeInfo">
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-md-9">
+                <ul class="nav nav-tabs" id="collegeInfoTab" role="tablist">
+                    <li class="nav-item " role="presentation">
+                        <a class="nav-link py-3 rounded-0 active" id="overview-tab" data-toggle="tab" href="#overview"
+                            role="tab" aria-controls="overview" aria-selected="true">OVERVIEW</a>
+                    </li>
+                    <li class="nav-item " role="presentation">
+                        <a class="nav-link py-3 rounded-0" id="courses-tab" data-toggle="tab" href="#courses" role="tab"
+                            aria-controls="courses" aria-selected="false">COURSES</a>
+                    </li>
+                    <li class="nav-item " role="presentation">
+                        <a class="nav-link py-3 rounded-0" id="faq-tab" data-toggle="tab" href="#faq" role="tab"
+                            aria-controls="faq" aria-selected="false">FAQ</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="collegeInfoTabContent">
+                    <div class="tab-pane my-3 fade show active" id="overview" role="tabpanel"
+                        aria-labelledby="overview-tab">
+                        <div class="container p-5">
+                            <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Excepturi, unde!</h4>
+                            <p class="text-justify w-80">Some placeholder text to demonstrate justified text alignment.
+                                Will
+                                you
+                                do the same for me? It's time to face the music I'm no longer your muse. Heard it's
+                                beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of
+                                me.
+                                Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to
+                                utopia.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus maxime
+                                itaque
+                                deserunt ducimus incidunt placeat, vitae atque numquam error libero illum rem, autem
+                                eius
+                                minima labore, laboriosam quia quam amet. Voluptatem molestias fugit quod architecto
+                                ratione, soluta eaque sed. Rem itaque maiores distinctio consectetur debitis tenetur
+                                excepturi placeat quidem similique nobis consequuntur natus beatae ut incidunt iste
+                                asperiores, fugiat modi quia. Assumenda dolore ea porro temporibus eaque dignissimos
+                                mollitia praesentium perferendis commodi adipisci ad eum explicabo voluptate fuga
+                                quisquam,
+                                iure recusandae voluptatem libero. Velit, nisi. Quia at non possimus maiores inventore a
+                                ut
+                                deserunt facilis. Voluptas, error qui possimus deserunt atque, reiciendis consequatur
+                                ducimus, quasi quos illo corporis cumque assumenda dicta modi ut animi reprehenderit.
+                                Ipsa
+                                quod sit consectetur provident, velit culpa repellat facilis eos architecto error
+                                dolores.
+                                Hic voluptatem aspernatur omnis, minima possimus quo deleniti consequatur delectus, a,
+                                sit
+                                totam accusamus. Provident facere modi commodi ipsa sapiente ducimus delectus illo,
+                                itaque
+                                fugit enim velit quae ratione eligendi reprehenderit odio eveniet eos. Impedit deleniti
+                                ipsa
+                                ipsum sit provident asperiores reprehenderit optio fuga at neque? Debitis dolores
+                                tempore
+                                consequatur rerum, qui repellendus quod libero ratione nam ab tenetur consequuntur iure
+                                architecto. Sunt, ab? Qui nobis asperiores mollitia neque itaque sequi.
+                            </p>
+                            <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Excepturi, unde!</h4>
+                            <p class="text-justify w-80">Some placeholder text to demonstrate justified text alignment.
+                                Will
+                                you
+                                do the same for me? It's time to face the music I'm no longer your muse. Heard it's
+                                beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of
+                                me.
+                                Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to
+                                utopia.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus maxime
+                                itaque
+                                deserunt ducimus incidunt placeat, vitae atque numquam error libero illum rem, autem
+                                eius
+                                minima labore, laboriosam quia quam amet. Voluptatem molestias fugit quod architecto
+                                ratione, soluta eaque sed. Rem itaque maiores distinctio consectetur debitis tenetur
+                                excepturi placeat quidem similique nobis consequuntur natus beatae ut incidunt iste
+                                asperiores, fugiat modi quia. Assumenda dolore ea porro temporibus eaque dignissimos
+                                mollitia praesentium perferendis commodi adipisci ad eum explicabo voluptate fuga
+                                quisquam,
+                                iure recusandae voluptatem libero. Velit, nisi. Quia at non possimus maiores inventore a
+                                ut
+                                deserunt facilis. Voluptas, error qui possimus deserunt atque, reiciendis consequatur
+                                ducimus, quasi quos illo corporis cumque assumenda dicta modi ut animi reprehenderit.
+                                Ipsa
+                                quod sit consectetur provident, velit culpa repellat facilis eos architecto error
+                                dolores.
+                                Hic voluptatem aspernatur omnis, minima possimus quo deleniti consequatur delectus, a,
+                                sit
+                                totam accusamus. Provident facere modi commodi ipsa sapiente ducimus delectus illo,
+                                itaque
+                                fugit enim velit quae ratione eligendi reprehenderit odio eveniet eos. Impedit deleniti
+                                ipsa
+                                ipsum sit provident asperiores reprehenderit optio fuga at neque? Debitis dolores
+                                tempore
+                                consequatur rerum, qui repellendus quod libero ratione nam ab tenetur consequuntur iure
+                                architecto. Sunt, ab? Qui nobis asperiores mollitia neque itaque sequi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                        <div class="container">
+                            <ul class="list-group list-group-flush " id="collegeCourses">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+                        <div class="container" id="courseFaqList">
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">1. How can i delete my complaint/comment?</h2>
+                                    <span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">2. I have posted a complaint/comment, but it doesn’t appear on
+                                        the website. Why? When my complaint will be posted?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">3. How can I edit a complaint I posted?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">4. How can i find out personal information of another user?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">5. How can i contact another user?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">2. I have posted a complaint/comment, but it doesn’t appear on
+                                        the website. Why? When my complaint will be posted?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">3. How can I edit a complaint I posted?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">4. How can i find out personal information of another user?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="topic">
+                                <div class="open">
+                                    <h2 class="question">5. How can i contact another user?
+                                    </h2><span class="faq-t"></span>
+                                </div>
+                                <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light mb-5" style="min-height: 600px;">
+                    <div class="card-title">adds</div>
+                </div>
+                <div class="card bg-light" style="min-height: 600px;">
+                    <div class="card-title">adds</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="similarUniversities">
+    <div class="container-fluid">
+        <div class="row">
+            <h4 class=" pl-3" style=" color: #114694 !important">Similar Universities </h4>
+        </div>
+    </div>
+</section>
+
+<section id="latestBlogs">
+    <div class="container-fluid">
+        <div class="row">
+            <h4 class=" pl-3" style=" color: #114694 !important">Latest blogs</h4>
+            <div class="card-group">
+                <div class="col-md-4">
+
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-left">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-left">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                content.
+                            </p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-left">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This card has even longer content than the first to show that equal
+                                height
+                                action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

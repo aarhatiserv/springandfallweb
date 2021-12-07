@@ -1,0 +1,140 @@
+#collegeBanner {
+    /* background: url(https://images.pexels.com/photos/4214966/pexels-photo-4214966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat fixed 100% 100%; */
+    
+    color: #fff;
+    height: 57vh;
+    width: 100%
+}
+
+#collegeBannerText { 
+    width: 24em;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    border: .5em solid #fff;
+    margin-left: -12em;
+    padding: 2em 0;
+    background-color: rgba(5, 5, 5, 0.5) !important
+}
+/* college tab css */
+#collegeInfoTab > .nav-item a {
+    color: #333 !important;
+    font-weight: 600 !important;
+}   
+#collegeInfoTab > .nav-item   {
+    background-color: #EAEAEA;
+    width: 200px;
+}
+#collegeInfoTab > .nav-item > .active  {
+    background-color: #2388FF !important;
+    border: #2388FF !important;
+    color:#fff !important;
+  
+    width: 200px;
+}
+
+/* tab content  css */
+
+#collegeInfoTabContent {
+    border: 1px solid #2388FF !important;
+    min-height: 600px;
+}
+/* tab content */
+
+/* college tab css ends */
+
+/* college courses */
+
+#collegeCourses > .list-group-item{
+    background-color: #EAEAEA;
+    margin-top: 10px;
+    border-bottom: none;
+    color: #021E48;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+/* college coursesends */
+
+/* course faq */
+#courseFaqList > dl{
+    list-style-type: decimal !important;
+}
+
+.topic {
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: solid 1px #ebebeb;
+  }
+  .open {
+    cursor: pointer;
+    display: block;
+    padding: 0px;
+  }
+  .open:hover {
+    opacity: 0.7;
+  }
+  .expanded {
+    background-color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+  }
+  .question {
+    padding-top: 30px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #526ee4;
+  }
+  .answer {
+    font-size: 16px;
+    line-height: 26px;
+    display: none;
+    margin-bottom: 30px;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .faq-t {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -55px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+  .faq-o {
+    top: -50px;
+    -moz-transform: rotate(-224deg);
+    -ms-transform: rotate(-224deg);
+    -webkit-transform: rotate(-224deg);
+    transform: rotate(-224deg);
+  }
+  @media only screen and (max-width: 480px) {
+    .faq-t {
+      display: none;
+    }
+    .question {
+      padding-right: 0px;
+    }
+    main {
+      padding: 10px;
+    }
+    .answer {
+      margin-bottom: 30px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  
+/* course faq */

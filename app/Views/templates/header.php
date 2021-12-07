@@ -5,7 +5,7 @@ $session = session();
 ?>
 
 <head>
-    
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,39 +21,42 @@ $session = session();
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif+Caption&display=swap" rel="stylesheet" /> -->
-        <!-- Font Awesome CDN -->
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 
-    
+
     <!--CSS LINKS-->
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/mainv1.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/indexv2.css"/>
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/latest-courses.css"/>
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/about.css"/>
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/career-guide.css"/>
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/indexv2.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/latest-courses.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/about.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/career-guide.css" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/financial-aid.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/scholarship.css"/>
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/creative-card.css"/>
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/scholarship.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/creative-card.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/college.css" />
 
     <!-- <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/profile.css"/> -->
 
-    <link rel="stylesheet" href="assets/css/consultation.css"/>
-    <link rel="stylesheet" href="assets/css/Visa_Consulation.css"/>
-    <link rel="stylesheet" href="assets/css/overseas-insurance.css"/>
+    <link rel="stylesheet" href="assets/css/consultation.css" />
+    <link rel="stylesheet" href="assets/css/Visa_Consulation.css" />
+    <link rel="stylesheet" href="assets/css/overseas-insurance.css" />
     <!-- <link rel="stylesheet" href="assets/css/exam_prep.css"> -->
 
     <!-- owl carouse -->
-    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.carousel.css"/>
-    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.theme.default.min.css" />
     <!-- owl carouse ends-->
 
     <!-- slick carousel -->
@@ -61,7 +64,7 @@ $session = session();
     <link rel="stylesheet" href="assets/slick/slick-theme.css" />
 
     <!-- EMI CALCULATOR CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/emicalculator/css/widget.css" />
+    <link rel="stylesheet" type="text/css" href="assets/emicalculator/css/widget.css" />
     <!-- EMI CALCULATOR CSS -->
 
     <!-- uikit ends -->
@@ -200,7 +203,8 @@ $session = session();
     opacity:0.9;
     ">
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png" alt="logo" width="206" height="130"  title="logo" /></a>
+            <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png"
+                    alt="logo" width="206" height="130" title="logo" /></a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -225,14 +229,18 @@ $session = session();
                         </div>
                     </li> -->
                     <li class="nav-item dropdown mr-2">
-                        <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
+                        <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            rel="noopener">
                             CONSULTATION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item anchor" href="consultation" id="consul" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
-                            <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
-                            <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                            <a class="dropdown-item anchor" href="consultation" id="consul"
+                                rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
+                            <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA
+                                CONSULTATION</a>
+                            <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE
+                                INSURANCE</a>
                             <hr>
                             <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
                             <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP</a>
@@ -246,7 +254,7 @@ $session = session();
                     </li> -->
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
-                        <a href="<?php base_url('api/logout'); ?>" class="btn"  id="loginBtn" rel="noopener">SIGN OUT</a>
+                        <a href="<?php base_url('api/logout'); ?>" class="btn" id="loginBtn" rel="noopener">SIGN OUT</a>
 
                         <!-- profile Button -->
                         <!-- <div class="container">
@@ -267,7 +275,7 @@ $session = session();
 </div> -->
                         <!-- profile Button -->
                         <?php else : ?>
-                        <button  id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
+                        <button id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
                         <?php endif; ?>
                     </li>
                 </ul>
@@ -279,7 +287,8 @@ $session = session();
         ?>
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light ">
-                <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png" alt="logo" width="206" height="130" title="logo"/></a>
+                <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png"
+                        alt="logo" width="206" height="130" title="logo" /></a>
                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -304,14 +313,18 @@ $session = session();
                             </div>
                         </li> -->
                         <li class="nav-item dropdown mr-2">
-                            <a class="nav-link dropdown-toggle anchor" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="noopener">
+                            <a class="nav-link dropdown-toggle anchor" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                rel="noopener">
                                 CONSULTATION
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item anchor" href="consultation" rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
-                                <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA CONSULTATION</a>
-                                <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE INSURANCE</a>
+                                <a class="dropdown-item anchor" href="consultation" rel="noopener">UNIVERSITY/COLLEGE
+                                    SELECTION</a>
+                                <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA
+                                    CONSULTATION</a>
+                                <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE
+                                    INSURANCE</a>
                                 <hr>
                                 <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
                                 <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
@@ -325,7 +338,8 @@ $session = session();
                         </li> -->
                         <li class="nav-item ml-2 mt-1">
                             <?php if ($session->get('token')) : ?>
-                            <a href="<?= base_url('api/logout'); ?>" class="btn" id="loginBtn" rel="noopener">SIGN OUT</a>
+                            <a href="<?= base_url('api/logout'); ?>" class="btn" id="loginBtn" rel="noopener">SIGN
+                                OUT</a>
                             <?php else : ?>
                             <button id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
                             <?php endif; ?>
