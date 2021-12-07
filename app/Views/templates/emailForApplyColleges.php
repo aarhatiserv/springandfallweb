@@ -75,7 +75,7 @@
                     src="<?= base_url() ?>/assets/images/iconsEmail/linkedin.png" style="height:45px; width:45px"></a>
         </p>
         <p
-            style="Margin-top: 40px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+            style="Margin-top: 40px;color: #565656;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
             Disclimer : Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
             classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor
             at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
@@ -87,7 +87,7 @@
 
 
         <p
-            style="Margin-top: 40px;color: #565656;font-family: Georgia,Helvetica,sans;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
+            style="Margin-top: 40px;color: #565656;font-size: 18px;line-height: 25px;Margin-bottom: 25px">
             DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP </p>
 
 
