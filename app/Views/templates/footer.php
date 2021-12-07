@@ -462,6 +462,7 @@ $(document).ready(() => {
 <!-- subscribe -->
 
 <script type="text/javascript">
+
 var idleTime = 0;
 $(document).ready(function () {
     //Increment the idle time counter every minute.

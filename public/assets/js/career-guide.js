@@ -1,5 +1,16 @@
 // Carred guide code added by Goutam reddy and Nazim
 
+// For agree terms if not agree then disable next button
+jQuery('#terms').click(function() {
+  if (jQuery(this).is(":checked")) {
+      jQuery("#next").removeAttr("disabled");
+      document.getElementById('agree_chk_error').style.visibility = 'hidden';
+  } else {
+      jQuery("#next").attr("disabled", "disabled");
+      document.getElementById('agree_chk_error').style.visibility = 'visible';
+  }
+});
+
 $(document).ready(function () {
   // $("#personalDetails").hide(); // hide this personal details onload
   $("#getStarted").click(function () {
@@ -11,8 +22,10 @@ $(document).ready(function () {
     // $("#personalDetails").hide();
   });
 
+
   // When Click next button then calling this function
   $("#next").click(function () {
+
     // Career-Guide details store in variable
     var firstName = $("#careerFname").val();
     var lastName = $("#careerLname").val();
