@@ -159,7 +159,7 @@ function getCollegeInCareer(country) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                    <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
@@ -240,7 +240,7 @@ function getCourses(course) {
               collegeData.data.map((item) =>
                 dt.push(
                   `<li class="media my-4 bg-light">
-                  <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                  <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                     <div class="media-body py-3">
                       <div class="row">
                         <div class="col-md-8">
@@ -299,7 +299,7 @@ function getCourses(course) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
@@ -386,7 +386,7 @@ function getLevel(level) {
             collegeData.data.map((item) =>
               dt.push(
                 ` <li class="media my-4 bg-light">
-                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
@@ -446,7 +446,7 @@ function levelAndCountry() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
@@ -508,7 +508,7 @@ function courseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
@@ -574,7 +574,7 @@ function countryAndCourseAndLevels() {
           collegeData.data.map((item) =>
             dt.push(
               ` <li class="media my-4 bg-light">
-              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
+              <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` + item.country + `/logo/` + item.image +`" class="mr-3" alt="..." title="hrl" width="" height="" />
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">

@@ -8,7 +8,7 @@
     </div>
 </div>
 <?php if(!empty($collegeDetails[0]['image_background'])){ ?>
-<section id="collegeBanner" style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
+<section id="collegeBanner" style="background: url('<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/banner/<?=$collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
 <?php } else{?>
     <section id="collegeBanner" style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
  <?php }?>

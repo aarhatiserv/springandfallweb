@@ -103,14 +103,17 @@ class CollegeController extends Controller
             ];
             print_r('validate error');
         } else {
-            $destinationPath = 'uploads/CollegesImage/';
+            $destinationPath = 'uploads/CollegesImage/'.$this->request->getVar("country").'/logo/';
             $file = $this->request->getFile('file');
-            $file_name = $file->getClientName();
+            // $file_name = $file->getClientName();
+            $ext = $file->getClientExtension();
+            $file_name = $this->request->getVar("collegeName").'.'.$ext;
             $file->move($destinationPath, $file_name);
 
-            $destinationPath1 = 'uploads/CollegesImage/';
+            $destinationPath1 = 'uploads/CollegesImage/'.$this->request->getVar("country").'/banner/';
             $fileBg = $this->request->getFile('fileBg');
-            $file_nameBg = $fileBg->getClientName();
+            $extBg = $file->getClientExtension();
+            $file_nameBg = $this->request->getVar("collegeName").'.'.$extBg;
             $fileBg->move($destinationPath1, $file_nameBg);
            
             $multipleCourse = $this->request->getVar("course");
@@ -251,14 +254,17 @@ class CollegeController extends Controller
             ];
             print_r('validate error');
         } else {
-            $destinationPath = 'uploads/CollegesImage/';
+            $destinationPath = 'uploads/CollegesImage/'.$this->request->getVar("country").'/logo/';
             $file = $this->request->getFile('file');
-            $file_name = $file->getClientName();
+            // $file_name = $file->getClientName();
+            $ext = $file->getClientExtension();
+            $file_name = $this->request->getVar("collegeName").'.'.$ext;
             $file->move($destinationPath, $file_name);
 
-            $destinationPath1 = 'uploads/CollegesImage/';
+            $destinationPath1 = 'uploads/CollegesImage/'.$this->request->getVar("country").'/banner/';
             $fileBg = $this->request->getFile('fileBg');
-            $file_nameBg = $fileBg->getClientName();
+            $extBg = $file->getClientExtension();
+            $file_nameBg = $this->request->getVar("collegeName").'.'.$extBg;
             $fileBg->move($destinationPath1, $file_nameBg);
            
             $multipleCourse = $this->request->getVar("course");
