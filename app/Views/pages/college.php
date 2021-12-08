@@ -1,16 +1,20 @@
-<div class="container-fluid">
+
+<div class="container-fluid" style="margin-bottom: 15px; margin-left: 35px;">
     <div class="row">
         <div class="col-1">
-            <a class="text-dark" href="#" onclick="window.history.go(-1)">BACK</a>
+            <a class="text-dark" style="" onclick="window.history.go(-1)"><b><</b> Go Back</a>
         </div>
         <div class="col-11"></div>
     </div>
 </div>
-<section id="collegeBanner"
-    style="background: url('assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
+<?php if(!empty($collegeDetails[0]['image_background'])){ ?>
+<section id="collegeBanner" style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
+<?php } else{?>
+    <section id="collegeBanner" style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
+ <?php }?>
     <div id="collegeBannerText">
-        <h1 class="text-center"><?= 'your college name goes here' ?></h1>
-        <p class="text-center" style="font-style: italic;"><?= "college address goes here" ?> </p>
+        <h1 class="text-center"><?= $collegeDetails[0]['names'] ?></h1>
+        <p class="text-center" style="font-style: italic;"><?= $collegeDetails[0]['address'].", ". $collegeDetails[0]['country'] ?> </p>
     </div>
 
 </section>
@@ -37,7 +41,12 @@
                     <div class="tab-pane my-3 fade show active" id="overview" role="tabpanel"
                         aria-labelledby="overview-tab">
                         <div class="container p-5">
-                            <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
+                            <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Excepturi, unde!</h4> -->
+                            <p class="text-justify w-80">
+                                <?=  $collegeDetails[0]['about'] ?>
+                            </p>
+                            <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Excepturi, unde!</h4>
                             <p class="text-justify w-80">Some placeholder text to demonstrate justified text alignment.
                                 Will
@@ -74,55 +83,19 @@
                                 tempore
                                 consequatur rerum, qui repellendus quod libero ratione nam ab tenetur consequuntur iure
                                 architecto. Sunt, ab? Qui nobis asperiores mollitia neque itaque sequi.
-                            </p>
-                            <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Excepturi, unde!</h4>
-                            <p class="text-justify w-80">Some placeholder text to demonstrate justified text alignment.
-                                Will
-                                you
-                                do the same for me? It's time to face the music I'm no longer your muse. Heard it's
-                                beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of
-                                me.
-                                Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to
-                                utopia.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus maxime
-                                itaque
-                                deserunt ducimus incidunt placeat, vitae atque numquam error libero illum rem, autem
-                                eius
-                                minima labore, laboriosam quia quam amet. Voluptatem molestias fugit quod architecto
-                                ratione, soluta eaque sed. Rem itaque maiores distinctio consectetur debitis tenetur
-                                excepturi placeat quidem similique nobis consequuntur natus beatae ut incidunt iste
-                                asperiores, fugiat modi quia. Assumenda dolore ea porro temporibus eaque dignissimos
-                                mollitia praesentium perferendis commodi adipisci ad eum explicabo voluptate fuga
-                                quisquam,
-                                iure recusandae voluptatem libero. Velit, nisi. Quia at non possimus maiores inventore a
-                                ut
-                                deserunt facilis. Voluptas, error qui possimus deserunt atque, reiciendis consequatur
-                                ducimus, quasi quos illo corporis cumque assumenda dicta modi ut animi reprehenderit.
-                                Ipsa
-                                quod sit consectetur provident, velit culpa repellat facilis eos architecto error
-                                dolores.
-                                Hic voluptatem aspernatur omnis, minima possimus quo deleniti consequatur delectus, a,
-                                sit
-                                totam accusamus. Provident facere modi commodi ipsa sapiente ducimus delectus illo,
-                                itaque
-                                fugit enim velit quae ratione eligendi reprehenderit odio eveniet eos. Impedit deleniti
-                                ipsa
-                                ipsum sit provident asperiores reprehenderit optio fuga at neque? Debitis dolores
-                                tempore
-                                consequatur rerum, qui repellendus quod libero ratione nam ab tenetur consequuntur iure
-                                architecto. Sunt, ab? Qui nobis asperiores mollitia neque itaque sequi.
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                     <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                         <div class="container">
                             <ul class="list-group list-group-flush " id="collegeCourses">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                                <li class="list-group-item">A fourth item</li>
-                                <li class="list-group-item">And a fifth one</li>
+                                <?php 
+                                  $course = explode (",", $collegeDetails[0]['courses']);
+                                  foreach($course as $c){ ?>
+                                     <li class="list-group-item"><?= $c ?></li>
+                                <?php  } ?>
+                                
+                               
                             </ul>
                         </div>
                     </div>

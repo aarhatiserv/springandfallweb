@@ -21,7 +21,7 @@ $session = session();
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/bootstrap.min.css" />
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
@@ -37,34 +37,34 @@ $session = session();
 
 
     <!--CSS LINKS-->
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/mainv1.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/indexv2.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/latest-courses.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/about.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/career-guide.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/financial-aid.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/scholarship.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/creative-card.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/college.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/mainv1.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/indexv2.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/latest-courses.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/about.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/career-guide.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/financial-aid.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/scholarship.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/creative-card.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/college.css" />
 
-    <!-- <link rel="preload" as="style" onload="this.rel='stylesheet'" href="assets/css/profile.css"/> -->
+    <!-- <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?=base_url()?>/assets/css/profile.css"/> -->
 
-    <link rel="stylesheet" href="assets/css/consultation.css" />
-    <link rel="stylesheet" href="assets/css/Visa_Consulation.css" />
-    <link rel="stylesheet" href="assets/css/overseas-insurance.css" />
-    <!-- <link rel="stylesheet" href="assets/css/exam_prep.css"> -->
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/consultation.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/Visa_Consulation.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/overseas-insurance.css" />
+    <!-- <link rel="stylesheet" href="<?=base_url()?>/assets/css/exam_prep.css"> -->
 
     <!-- owl carouse -->
-    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.carousel.css" />
-    <link rel="stylesheet" href="assets/plugins/dist/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/plugins/dist/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/plugins/dist/assets/owl.theme.default.min.css" />
     <!-- owl carouse ends-->
 
     <!-- slick carousel -->
-    <link rel="stylesheet" href="assets/slick/slick.css" />
-    <link rel="stylesheet" href="assets/slick/slick-theme.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/slick/slick.css" />
+    <link rel="stylesheet" href="<?=base_url()?>/assets/slick/slick-theme.css" />
 
     <!-- EMI CALCULATOR CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/emicalculator/css/widget.css" />
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>/assets/emicalculator/css/widget.css" />
     <!-- EMI CALCULATOR CSS -->
 
     <!-- uikit ends -->
@@ -203,7 +203,7 @@ $session = session();
     opacity:0.9;
     ">
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png"
+            <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
                     alt="logo" width="206" height="130" title="logo" /></a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -289,7 +289,7 @@ $session = session();
         ?>
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light ">
-                <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="assets/images/logo/logo1.png"
+                <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
                         alt="logo" width="206" height="130" title="logo" /></a>
                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"

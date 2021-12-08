@@ -163,7 +163,7 @@ function getCollegeInCareer(country) {
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
-                          <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                          <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                               <p>` + item.country +` </p> 
                               <p>` + item.courses.replace(/,/g, ', ') +` </p>
                           </div>
@@ -244,7 +244,7 @@ function getCourses(course) {
                     <div class="media-body py-3">
                       <div class="row">
                         <div class="col-md-8">
-                        <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                        <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                             <p>` + item.country +` </p>
                             <p>` + item.courses.replace(/,/g, ', ') +` </p>
 
@@ -303,7 +303,7 @@ function getCourses(course) {
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
-                      <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                      <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                           <p>` + item.country +` </p>
                           <p>` + item.courses.replace(/,/g, ', ') +` </p>
 
@@ -390,7 +390,7 @@ function getLevel(level) {
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
-                      <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                      <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                           <p>` + item.country +` </p>
                           <p>` + item.courses.replace(/,/g, ', ') +` </p>
 
@@ -450,7 +450,7 @@ function levelAndCountry() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                    <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
                         <p>` + item.courses.replace(/,/g, ', ') +` </p>
   
@@ -512,7 +512,7 @@ function courseAndLevels() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                    <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
                         <p>` + item.courses.replace(/,/g, ', ') +` </p>
                         
@@ -578,7 +578,7 @@ function countryAndCourseAndLevels() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                    <a href="/college/` + item.country + `/` + item.id + `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
                         <p>` + item.courses.replace(/,/g, ', ') +` </p>
                         

@@ -12,7 +12,7 @@
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
-            <img src="assets/images/logo/logo1.png" alt="logo" width="206" height="115" title="logo" /><br>
+            <img src="<?=base_url()?>/assets/images/logo/logo1.png" alt="logo" width="206" height="115" title="logo" /><br>
             <div class="social-icons-fa p-2 mr-3 pb-4">
                 <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
                         class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
@@ -47,7 +47,7 @@
                     <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail" placeholder="Email Id">
                     <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
                     <div class="appPlay pt-2">
-                        <img src="assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
+                        <img src="<?=base_url()?>/assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
                             title="mobilestores" />
                     </div><br>
                     <p class="mb-0 pb-2 credit">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
@@ -67,32 +67,32 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js">
 </script>
 <!-- vanila titlt -->
-<script type="text/javascript" src="assets/js/vanilla-tilt.min.js"></script>
-<script type="text/javascript" src="assets/js/scrollpopup.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/vanilla-tilt.min.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/scrollpopup.js"></script>
 <!-- vanila titlt ends -->
 <!-- axios -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- owl js -->
-<script type="text/javascript" src="assets/plugins/dist/owl.carousel.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/plugins/dist/owl.carousel.js"></script>
 <!-- owl js -->
 <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- relax -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 <!-- relax ends-->
 <!-- slick js -->
-<script type="text/javascript" src="assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/slick/slick.min.js"></script>
 <!-- costom js section -->
-<script type="text/javascript" src="assets/js/counter-section.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/counter-section.js"></script>
 <!-- loan approve -->
-<!-- <script src="assets/js/creative-steps.js"></script> -->
+<!-- <script src="<?=base_url()?>/assets/js/creative-steps.js"></script> -->
 <!-- career guide js -->
-<script type="text/javascript" src="assets/js/career-guide.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/career-guide.js"></script>
 <!-- consultation js -->
-<script type="text/javascript" src="assets/js/consultation.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/consultation.js"></script>
 <!-- about parallax -->
-<script type="text/javascript" src="assets/js/about-parallax.js"></script>
-<script type="text/javascript" src="assets/js/college-parallax.js"></script>
-<script type="text/javascript" src="assets/js/college.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/about-parallax.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/college-parallax.js"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/js/college.js"></script>
 
 
 

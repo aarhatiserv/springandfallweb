@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Controller;
 use App\Models\CollegeModel;
 use App\Models\CareerguideModel;
 use App\Models\UserModel;
-use App\Controllers\BaseController;
 use \Firebase\JWT\JWT;
 
-class CollegeController extends BaseController
+class CollegeController extends Controller
 {
     public function index()
     {
@@ -357,6 +357,19 @@ class CollegeController extends BaseController
         }
     }
    }
+
+   public function getConsultationCollegeDetails($country, $id){
+    $data['title'] = "College Details"; // Capitalize the first letter
+    $page = "college";
+
+    $model = new CollegeModel();
+    $data['collegeDetails'] = $model->where("id = ", $id)->findAll();
+    // echo "Hello";
+    echo view('templates/header', $data);
+    echo view('pages/' . $page, $data);
+    echo view('templates/footer', $data);
+   }
+
     public function session_expire()
     {
         $session = session();

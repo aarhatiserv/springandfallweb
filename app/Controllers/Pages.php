@@ -213,5 +213,5 @@ class Pages extends Controller
         }
        
     }
-   
+
 }
