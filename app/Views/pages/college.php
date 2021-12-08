@@ -216,10 +216,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-light mb-5" style="min-height: 50vh;">
+                <div class="card bg-light mb-5" style="min-height: 600px;">
                     <div class="card-title">adds</div>
                 </div>
-                <div class="card bg-light" style="min-height: 50vh;">
+                <div class="card bg-light" style="min-height: 600px;">
                     <div class="card-title">adds</div>
                 </div>
             </div>
