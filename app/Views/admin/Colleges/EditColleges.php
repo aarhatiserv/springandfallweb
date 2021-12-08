@@ -367,7 +367,7 @@
                                                 required />
 
                                             <input type="text" id="email" name="email" placeholder="Email..."
-                                                value="<?= $collegeDatabyId[0]['email']?>" required />
+                                                value="<?= $collegeDatabyId[0]['email']?>" />
 
                                         </div>
                                         <br>
@@ -393,11 +393,11 @@
 
                                             <input type="text" id="countryRank" name="countryRank"
                                                 placeholder="Country Rank" style="margin-right:50px"
-                                                value="<?= $collegeDatabyId[0]['country_rank']?>" required />
+                                                value="<?= $collegeDatabyId[0]['country_rank']?>" />
 
                                             <input type="text" id="globalRank" name="globalRank"
                                                 placeholder="Global Rank"
-                                                value="<?= $collegeDatabyId[0]['global_rank']?>" required />
+                                                value="<?= $collegeDatabyId[0]['global_rank']?>" />
                                         </div>
 
                                         <br>
@@ -423,11 +423,11 @@
                                                 required />
 
 
-                                            <select id="course" name="course" style="margin-right:50px" required>
-                                                <option value="<?= $collegeDatabyId[0]['courses']?>" selected hidden>
+                                            <select id="course" name="course[]" style="margin-right:50px" multiple required>
+                                                <option value="<?= $collegeDatabyId[0]['courses']?>" selected>
                                                     <?= $collegeDatabyId[0]['courses']?>
                                                 </option>
-                                                <option value="">Select Course</option>
+                                                
                                                 <option value="Engineering">Engineering</option>
                                                 <option value="Management">Management</option>
                                                 <option value="Medical">Medical</option>
@@ -436,11 +436,11 @@
                                             </select>
 
 
-                                            <select id="level" name="level" style="margin-right:50px" required>
-                                                <option value="<?= $collegeDatabyId[0]['levels']?>" selected hidden>
+                                            <select id="level" name="level[]" style="margin-right:50px" multiple required>
+                                                <option value="<?= $collegeDatabyId[0]['levels']?>" selected>
                                                     <?= $collegeDatabyId[0]['levels']?>
                                                 </option>
-                                                <option value="">Select Levels</option>
+                                                
                                                 <option value="Undergraduate">Under Graduate</option>
                                                 <option value="PostGraduate">Post Graduate</option>
                                                 <option value="Certification">Certification</option>
@@ -449,16 +449,34 @@
                                             </select>
                                         </div>
                                         <br>
-                                        <div class="file-input">
-                                            <input type="file" id="file" name="file" class="file" required />
-                                            <label for="file">
-                                                <i class="fa fa-upload"></i>&ensp;Select file
-                                                <div class="file-name">
+                                        <div>
+                                            <label for="collegeLogo" style="margin-right:206px">College Logo</label>
+                                            <label for="collegeBackground">College Background</label><br>
 
-                                                </div>
+                                            <div class="file-input">
+                                                <input type="file" id="file" name="file" class="file" required />
+                                                <label for="file">
+                                                    <i class="fa fa-upload"></i>&ensp;Select file
+                                                    <div class="file-name">
 
-                                            </label>
-                                            <input type="hidden" name="image" id="image" value="" />
+                                                    </div>
+
+                                                </label>
+                                                <input type="hidden" name="image" id="image" value="" />
+                                            </div>
+
+                                            <div class="file-input" style="margin-left: 291px; margin-top:-38px">
+
+                                                <input type="file" id="fileBg" name="fileBg" class="file" required />
+                                                <label for="fileBg">
+                                                    <i class="fa fa-upload"></i>&ensp;Select file
+                                                    <div class="file-nameBg">
+
+                                                    </div>
+
+                                                </label>
+                                                <input type="hidden" name="imageBg" id="imageBg" value="" />
+                                            </div>
                                         </div>
                                         <br>
                                         <br>
@@ -565,6 +583,25 @@ file.addEventListener('change', (e) => {
     const fileNameAndSize = `${fileName} - ${fileSize}KB`;
     const fileName2 = `${fileName}`;
     document.querySelector('.file-name').textContent = fileNameAndSize;
+    // document.getElementById("image").value = fileName2;
+});
+</script>
+<script>
+const fileBg = document.querySelector('#fileBg');
+fileBg.addEventListener('change', (e) => {
+    // Get the selected file
+    const [file] = e.target.files;
+    // Get the file name and size
+    const {
+        name: fileName,
+        size
+    } = file;
+    // Convert size in bytes to kilo bytes
+    const fileSize = (size / 1000).toFixed(2);
+    // Set the text content
+    const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+    const fileName2 = `${fileName}`;
+    document.querySelector('.file-nameBg').textContent = fileNameAndSize;
     // document.getElementById("image").value = fileName2;
 });
 </script>

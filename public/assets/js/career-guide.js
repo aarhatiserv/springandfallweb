@@ -163,10 +163,9 @@ function getCollegeInCareer(country) {
                       <div class="media-body py-3">
                         <div class="row">
                           <div class="col-md-8">
-                              <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
-                              <p>` + item.country +` </p>
-                              <p>` + item.courses +` </p>
-                              <p>` + item.levels +` </p>
+                          <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
+                              <p>` + item.country +` </p> 
+                              <p>` + item.courses.replace(/,/g, ', ') +` </p>
                           </div>
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                       <div class="apply px-5">
@@ -245,10 +244,10 @@ function getCourses(course) {
                     <div class="media-body py-3">
                       <div class="row">
                         <div class="col-md-8">
-                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                        <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                             <p>` + item.country +` </p>
-                            <p>` + item.courses +` </p>
-                            <p>` + item.levels +` </p>
+                            <p>` + item.courses.replace(/,/g, ', ') +` </p>
+
                         </div>
                       <div class="col-md-4 d-flex justify-content-end align-items-center ">
                     <div class="apply px-5">
@@ -304,10 +303,10 @@ function getCourses(course) {
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
-                          <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                      <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                           <p>` + item.country +` </p>
-                          <p>` + item.courses +` </p>
-                          <p>` + item.levels +` </p>
+                          <p>` + item.courses.replace(/,/g, ', ') +` </p>
+
                       </div>
                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                   <div class="apply px-5">
@@ -391,10 +390,10 @@ function getLevel(level) {
                   <div class="media-body py-3">
                     <div class="row">
                       <div class="col-md-8">
-                          <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                      <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                           <p>` + item.country +` </p>
-                          <p>` + item.courses +` </p>
-                          <p>` + item.levels +` </p>
+                          <p>` + item.courses.replace(/,/g, ', ') +` </p>
+
                       </div>
                     <div class="col-md-4 d-flex justify-content-end align-items-center ">
                   <div class="apply px-5">
@@ -451,10 +450,11 @@ function levelAndCountry() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
-                        <p>` + item.courses +` </p>
-                        <p>` + item.levels +` </p>
+                        <p>` + item.courses.replace(/,/g, ', ') +` </p>
+  
+
                     </div>
                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                 <div class="apply px-5">
@@ -512,10 +512,10 @@ function courseAndLevels() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
-                        <p>` + item.courses +` </p>
-                        <p>` + item.levels +` </p>
+                        <p>` + item.courses.replace(/,/g, ', ') +` </p>
+                        
                     </div>
                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                 <div class="apply px-5">
@@ -578,10 +578,10 @@ function countryAndCourseAndLevels() {
                 <div class="media-body py-3">
                   <div class="row">
                     <div class="col-md-8">
-                        <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p>
+                    <a href="#"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names +`</p></a>
                         <p>` + item.country +` </p>
-                        <p>` + item.courses +` </p>
-                        <p>` + item.levels +` </p>
+                        <p>` + item.courses.replace(/,/g, ', ') +` </p>
+                        
                     </div>
                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                 <div class="apply px-5">

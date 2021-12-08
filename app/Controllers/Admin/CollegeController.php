@@ -50,10 +50,7 @@ class CollegeController extends Controller
         $rules = [
             "collegeName" => "required",
             "url" => "required",
-            "email" => "required|valid_email|is_unique[colleges.email]|min_length[6]",
             "country" => "required",
-            "countryRank" => "required",
-            "globalRank" => "required",
             "address" => "required",
             "about" => "required",
             "offers" => "required",
@@ -69,19 +66,11 @@ class CollegeController extends Controller
             "url" => [
                 "required" => "url is required",
             ],
-            "email" => [
-                "required" => "Email required",
-                "valid_email" => "Email address is not in format",
-            ],
+            
             "country" => [
                 "required" => "Country is required",
             ],
-            "countryRank" => [
-                "required" => "Country Rank is required",
-            ],
-            "globalRank" => [
-                "required" => "Global Rank is required",
-            ],
+           
             "address" => [
                 "required" => "Address is required",
             ],
@@ -119,6 +108,25 @@ class CollegeController extends Controller
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
 
+            $destinationPath1 = 'uploads/CollegesImage/';
+            $fileBg = $this->request->getFile('fileBg');
+            $file_nameBg = $fileBg->getClientName();
+            $fileBg->move($destinationPath1, $file_nameBg);
+           
+            $multipleCourse = $this->request->getVar("course");
+            $mc="";  
+            foreach($multipleCourse as $mc1)  
+             {  
+                $mc .= $mc1.",";  
+             }  
+
+             $multipleLevel = $this->request->getVar("level");
+            $ml="";  
+            foreach($multipleLevel as $ml1)  
+             {  
+                $ml .= $ml1.",";  
+             }  
+
             $model = new CollegeModel();
             $data = [
                 "names" => $this->request->getVar("collegeName"),
@@ -131,23 +139,24 @@ class CollegeController extends Controller
                 "about" => $this->request->getVar("about"),
                 "offers" => $this->request->getVar("offers"),
                 "image" => $file_name,
-                "courses" => $this->request->getVar("course"),
-                "levels" => $this->request->getVar("level"),
+                "image_background" => $file_nameBg,
+                "courses" => $mc,
+                "levels" => $ml,
                 "active" => 1,
             ];
 
-            // checking user by email id
-            $modelData = $model->where("email", $this->request->getVar("email"))->first();
-            //     // if exsists
-            if (!empty($modelData)) {
-                $response = [
-                    'status' => 500,
-                    'error' => true,
-                    'messages' => 'This email id is already registred',
-                    'data' => [],
-                ];
-                // return $this->respondCreated($response);
-            } else {
+            // // checking user by email id
+            // $modelData = $model->where("email", $this->request->getVar("email"))->first();
+            // //     // if exsists
+            // if (!empty($modelData)) {
+            //     $response = [
+            //         'status' => 500,
+            //         'error' => true,
+            //         'messages' => 'This email id is already registred',
+            //         'data' => [],
+            //     ];
+            //     // return $this->respondCreated($response);
+            // } else {
                 if ($model->insert($data)) {
                     $response = [
                         'status' => 200,
@@ -167,7 +176,7 @@ class CollegeController extends Controller
                         'data' => [],
                     ];
                 }
-            }
+            // }
         }
     }
 
@@ -192,10 +201,7 @@ class CollegeController extends Controller
         $rules = [
             "collegeName" => "required",
             "url" => "required",
-            "email" => "required|min_length[6]",
             "country" => "required",
-            "countryRank" => "required",
-            "globalRank" => "required",
             "address" => "required",
             "about" => "required",
             "offers" => "required",
@@ -211,18 +217,8 @@ class CollegeController extends Controller
             "url" => [
                 "required" => "url is required",
             ],
-            "email" => [
-                "required" => "Email required",
-                "valid_email" => "Email address is not in format",
-            ],
             "country" => [
                 "required" => "Country is required",
-            ],
-            "countryRank" => [
-                "required" => "Country Rank is required",
-            ],
-            "globalRank" => [
-                "required" => "Global Rank is required",
             ],
             "address" => [
                 "required" => "Address is required",
@@ -260,6 +256,25 @@ class CollegeController extends Controller
             $file_name = $file->getClientName();
             $file->move($destinationPath, $file_name);
 
+            $destinationPath1 = 'uploads/CollegesImage/';
+            $fileBg = $this->request->getFile('fileBg');
+            $file_nameBg = $fileBg->getClientName();
+            $fileBg->move($destinationPath1, $file_nameBg);
+           
+            $multipleCourse = $this->request->getVar("course");
+            $mc="";  
+            foreach($multipleCourse as $mc1)  
+             {  
+                $mc .= $mc1.",";  
+             }  
+
+             $multipleLevel = $this->request->getVar("level");
+            $ml="";  
+            foreach($multipleLevel as $ml1)  
+             {  
+                $ml .= $ml1.",";  
+             }  
+
             $model = new CollegeModel();
 
             $id = $this->request->getVar("id");
@@ -274,8 +289,9 @@ class CollegeController extends Controller
                 "about" => $this->request->getVar("about"),
                 "offers" => $this->request->getVar("offers"),
                 "image" => $file_name,
-                "courses" => $this->request->getVar("course"),
-                "levels" => $this->request->getVar("level"),
+                "image_background" => $file_nameBg,
+                "courses" => $mc,
+                "levels" => $ml,
                 "active" => 1,
             ];
 

@@ -56,18 +56,18 @@
                                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
+                                                <th>College Name</th>
                                                 <th>Country</th>
-                                                <th>Cnt Rank</th>
-                                                <th>GLB Rank</th>
-                                                <th>Address</th>
-                                                <th>Email</th>
+                                                <!-- <th>Cnt Rank</th>
+                                                <th>GLB Rank</th> -->
+                                                <!-- <th>Address</th>
+                                                <th>Email</th> -->
                                                 <th>Website</th>
-                                                <th>About</th>
+                                                <!-- <th>About</th>
                                                 <th>Offers</th>
                                                 <th>Courses</th>
                                                 <th>Levels</th>
-                                                <th>Image</th>
+                                                <th>Image</th> -->
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -82,16 +82,22 @@
                                             <tr>
                                                 <td><?= $cd['names']?></td>
                                                 <td><?= $cd['country']?></td>
+                                                <?php /*
                                                 <td><?= $cd['country_rank']?></td>
                                                 <td><?= $cd['global_rank']?></td>
                                                 <td><?= $cd['address']?></td>
                                                 <td><?= $cd['email']?></td>
+                                                */ ?>
+                                               
                                                 <td><a href="<?= $cd['website']?>" target="_blank"><?= $cd['website']?></a></td>
+                                                <?php /*
+                                                
                                                 <td><?= $cd['about']?></td>
                                                 <td><?= $cd['offers']?></td>
                                                 <td><?= $cd['courses']?></td>
                                                 <td><?= $cd['levels']?></td>
                                                 <td><a href="../uploads/CollegesImage/<?= $cd['image']?>"target="_blank"><img src="../uploads/CollegesImage/<?= $cd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
+                                                   */ ?>
                                                 <td><a href="/admin/editCollege/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
