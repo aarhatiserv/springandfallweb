@@ -255,7 +255,7 @@ $session = session();
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
 
-                        <a href="/api/logout" class="btn" style="color:white !important" id="loginBtn" rel="noopener">SIGN OUT</a>
+                        <a href="/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
 
 
                         <!-- profile Button -->
@@ -340,7 +340,7 @@ $session = session();
                         </li> -->
                         <li class="nav-item ml-2 mt-1">
                             <?php if ($session->get('token')) : ?>
-                            <a href="/api/logout" class="btn" style="color:white !important" id="loginBtn" rel="noopener">SIGN OUT</a>
+                            <a href="/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
 
                             <?php else : ?>
                             <button id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
