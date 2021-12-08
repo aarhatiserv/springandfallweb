@@ -254,11 +254,9 @@ $session = session();
                     </li> -->
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
-<<<<<<< HEAD
-                        <a href="<?php base_url('api/logout'); ?>" class="btn" id="loginBtn" rel="noopener">SIGN OUT</a>
-=======
+
                         <a href="/api/logout" class="btn" style="color:white !important" id="loginBtn" rel="noopener">SIGN OUT</a>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
 
                         <!-- profile Button -->
                         <!-- <div class="container">
@@ -342,12 +340,8 @@ $session = session();
                         </li> -->
                         <li class="nav-item ml-2 mt-1">
                             <?php if ($session->get('token')) : ?>
-<<<<<<< HEAD
-                            <a href="<?= base_url('api/logout'); ?>" class="btn" id="loginBtn" rel="noopener">SIGN
-                                OUT</a>
-=======
                             <a href="/api/logout" class="btn" style="color:white !important" id="loginBtn" rel="noopener">SIGN OUT</a>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                             <?php else : ?>
                             <button id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
                             <?php endif; ?>

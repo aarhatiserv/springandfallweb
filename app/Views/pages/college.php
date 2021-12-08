@@ -1,7 +1,7 @@
-<div class="container-flui">
+<div class="container-fluid">
     <div class="row">
         <div class="col-1">
-            <a class="text-dark" href="#" onclick="window.history.go(-1)"></a>
+            <a class="text-dark" href="#" onclick="window.history.go(-1)">BACK</a>
         </div>
         <div class="col-11"></div>
     </div>
@@ -10,7 +10,7 @@
     style="background: url('assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
     <div id="collegeBannerText">
         <h1 class="text-center"><?= 'your college name goes here' ?></h1>
-        <p class="text-center" style="font-style: italic;"><?= "college description goes here" ?> </p>
+        <p class="text-center" style="font-style: italic;"><?= "college address goes here" ?> </p>
     </div>
 
 </section>

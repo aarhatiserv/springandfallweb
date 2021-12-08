@@ -1,181 +1,6 @@
-<<<<<<< HEAD
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<?php
-$session = session();
-?>
-<script language="JavaScript" type="text/javascript">
-$(document).ready(function() {
-    $('.college').html("Please wait...");
-    $('.college').prop("disabled", true);
-});
-
-function refresh() {
-    window.location.href = "consultation";
-}
-</script>
-<!-- ----------------------------------------------------------------------------------------------- -->
-
-<script language="JavaScript" type="text/javascript">
-function getCollege(country) {
-
-    $('.college').html("Please wait...");
-    $('.college').prop("disabled", true);
-
-    $.ajax({
-        url: '/api/college/' + country,
-        type: 'GET',
-        success: function(res) {
-            let collegeData = JSON.parse(res);
-            let dt = [];
-            console.log('res', collegeData);
-            if (collegeData.status !== undefined) {
-
-                if (collegeData.data.length == 0) {
-                    $('.college').html("No Record Found");
-                    $('.college').prop("disabled", false);
-                } else {
-                    collegeData.data.map((item) => (
-                        dt.push(
-                            ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                            item.image + `" class="mr-3" alt="..."
-                                    title="hrl" width="" height="" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` + item.names + `</p>
-                                            <p>` + item.country + ` </p>
-                                            <p>` + item.courses + ` </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`
-                        )
-                    ));
-                    // $("#listColleges").html(dt);
-                    $('.college').html(dt);
-                    $('.college').prop("disabled", false);
-                }
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-            console.log(`error`, err);
-            $('.ajaxError').html("Countries");
-            $('.ajaxError').prop("disabled", false);
-            if (err) {
-                swal("Oh noes!", "The AJAX request failed!", "error");
-            }
-        }
-    });
-
-}
-
-var country = "";
-var courses = "";
-
-function getCollegeWithCourse(country) {
-    if (country != "") {
-        this.country = country;
-        ff();
-    } else {
-        console.log("Please Select Any Country");
-    }
-}
-
-function getCollegeWithCourse1(courses) {
-    if (courses != "") {
-        this.courses = courses;
-        ff();
-    } else {
-        console.log("Please Select Any Course");
-    }
-
-}
-
-function ff() {
-
-    // if (country === "" || courses === "") {
-    //     console.log('courses and country', courses, country);
-    // $('.college').html("Country and Courses must be filled");
-    // $('.college').prop("disabled", true);
-    // } else {
-
-    $('.collegeWithCourse').html("Please wait...");
-    $('.collegeWithCourse').prop("disabled", true);
-
-    $.ajax({
-        url: '/api2/college/' + country + '/' + courses,
-        type: 'GET',
-        success: function(res) {
-            let collegeData = JSON.parse(res);
-            let dt = [];
-            console.log('res', collegeData);
-            if (collegeData.status !== undefined) {
-
-                if (collegeData.data.length == 0) {
-                    $('.collegeWithCourse').html("No Record Found");
-                    $('.collegeWithCourse').prop("disabled", false);
-                } else {
-                    collegeData.data.map((item) => (
-                        dt.push(
-                            ` <li class="media my-4 bg-light">
-                                <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                            item.image + `" class="mr-3" height="" width="" alt="..." title="hrl" />
-                                <div class="media-body py-3">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <p class="mt-0 mb-1 media-heading pb-2 h5_2_P"><a href="/college"` + item
-                            .names + `</a></p>
-                                            <p>` + item.country + ` </p>
-                                            <p>` + item.courses + ` </p>
-                                        </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center ">
-                                            <div class="apply px-5">
-                                                <p class="h5_2_P_Days">5 Days to go</p>
-                                                <button class="btn applyNow">Apply now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`
-                        )
-                    ));
-                    // $("#listColleges").html(dt);
-                    $('.collegeWithCourse').html(dt);
-                    $('.collegeWithCourse').prop("disabled", false);
-                }
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-            console.log(`error`, err);
-            $('.ajaxError').html("Countries");
-            $('.ajaxError').prop("disabled", false);
-            if (err) {
-                swal("Oh noes!", "The AJAX request failed!", "error");
-            }
-        }
-    });
-    // }
-}
-</script>
-<?php
-=======
 
 <?php 
 $session = session();
-?>
-
-<?php 
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
 
 for ($i = 0; $i < count($sectionData); $i++) {
     if ($sectionData[$i]['section_name'] === 'consultation_banner') {
@@ -186,13 +11,9 @@ for ($i = 0; $i < count($sectionData); $i++) {
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
-<<<<<<< HEAD
-                    <h3 class="banner-h3"><?= $sectionData[$i]['title'] ?></h3>
-                    <p><?= $sectionData[$i]['discription'] ?></p>
-=======
                     <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
                     <p class="pb-1"><?= $sectionData[$i]['discription']?></p>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                     <button class=" btn mr-1 mb-2 contact-now text-uppercase" data-toggle="modal"
                         data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                     </button>
@@ -302,33 +123,22 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 $flag = $session->get('flagHome'); ?>
             <div class="tab-content border-top border-primary" id="pills-tabContent">
                 <div class="" id="pills-countries123" role="tabpanel" aria-labelledby="pills-countries-tab">
-<<<<<<< HEAD
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                        <?php if ($flag === 'USA') {
-                            ?>
-=======
                     <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <?php  if($flag === 'USA'){
                 ?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2 active" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA"
                                 aria-selected="false">USA</button>
                         </li>
-<<<<<<< HEAD
-                        <?php
-                                echo '<script type="text/javascript">',
-                                'getCollege("USA");',
-                                '</script>';
-                            } else { ?>
-=======
+               
+
                         <?php 
                               echo '<script type="text/javascript">',
                               'getCollegeInConsultation("USA");',
                               '</script>';
                               }else{?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-USA" aria-selected="false"
@@ -341,19 +151,13 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK"
                                 aria-selected="false">UK</button>
                         </li>
-<<<<<<< HEAD
-                        <?php
-                                echo '<script type="text/javascript">',
-                                'getCollege("UK");',
-                                '</script>';
-                            } else { ?>
-=======
+
                         <?php 
                      echo '<script type="text/javascript">',
                      'getCollegeInConsultation("UK");',
                      '</script>';
                      }else{?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-UK" aria-selected="false"
@@ -367,19 +171,13 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
                                 aria-selected="false">Canada</button>
                         </li>
-<<<<<<< HEAD
-                        <?php
-                                echo '<script type="text/javascript">',
-                                'getCollege("Canada");',
-                                '</script>';
-                            } else { ?>
-=======
+
                         <?php 
                      echo '<script type="text/javascript">',
                      'getCollegeInConsultation("Canada");',
                      '</script>';
                      }else{?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Canada-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Canada"
@@ -392,19 +190,13 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
                                 aria-selected="false">Germany</button>
                         </li>
-<<<<<<< HEAD
-                        <?php
-                                echo '<script type="text/javascript">',
-                                'getCollege("Germany");',
-                                '</script>';
-                            } else { ?>
-=======
+
                         <?php  
                         echo '<script type="text/javascript">',
                               'getCollegeInConsultation("Germany");',
                               '</script>';
                               }else{?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Germany-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-Germany"
@@ -417,19 +209,13 @@ for ($i = 0; $i < count($sectionData); $i++) {
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
                                 aria-selected="false">France</button>
                         </li>
-<<<<<<< HEAD
-                        <?php
-                                echo '<script type="text/javascript">',
-                                'getCollege("France");',
-                                '</script>';
-                            } else { ?>
-=======
+
                         <?php  
                      echo '<script type="text/javascript">',
                      'getCollegeInConsultation("France");',
                      '</script>';
                      }else{?>
->>>>>>> 4c9b8358f56a9825e76558e3f1380af4c42799ca
+
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-France-tab" data-toggle="pill"
                                 href="#pills-All-Countries" role="tab" aria-controls="pills-France"
