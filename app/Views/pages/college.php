@@ -275,7 +275,7 @@
             foreach($similarUniversity as $su){ ?>
             <div class="column">
                 <img src="<?php base_url(); ?>/uploads/CollegesImage/<?= $su['country']?>/logo/<?= $su['image']?>" alt="<?= $su['names']?>" height="220" style="width:100%">
-                <p class="text-center"><?= $su['names']?></p>
+                <p class="text-center"><strong><?= $su['names']?></strong></p>
             </div>
             <?php }} else{ echo "No Similar University Found"; }?>
                 
