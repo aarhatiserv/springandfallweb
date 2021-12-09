@@ -93,7 +93,8 @@
                             <div class="container">
                                 <ul class="list-group list-group-flush " id="collegeCourses">
                                     <?php 
-                                  $course = explode (",", $collegeDetails[0]['courses']);
+                                    $newString = rtrim($collegeDetails[0]['courses'], ',');
+                                  $course = explode (",", $newString);
                                   foreach($course as $c){ ?>
                                     <li class="list-group-item"><?= $c ?></li>
                                     <?php  } ?>
