@@ -203,7 +203,7 @@ $session = session();
     opacity:0.9;
     ">
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
+            <a class="navbar-brand headerLogo" href="<?=base_url()?>/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
                     alt="logo" width="206" height="130" title="logo" /></a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -213,10 +213,10 @@ $session = session();
             <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item mr-2">
-                        <a class="nav-link anchor" href="about" rel="noopener">ABOUT US</a>
+                        <a class="nav-link anchor" href="<?=base_url()?>/about" rel="noopener">ABOUT US</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
+                        <a class="nav-link anchor" href="<?=base_url()?>/career-guide" rel="noopener">Career Guide</a>
                     </li>
                     <!-- <li class="nav-item dropdown mr-2">
                         <a class="nav-link dropdown-toggle anchor" href="#" aria-labelledby="navbarDropdownMenuLink" role="button"
@@ -235,15 +235,15 @@ $session = session();
                             CONSULTATION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item anchor" href="consultation" id="consul"
+                            <a class="dropdown-item anchor" href="<?=base_url()?>/consultation" id="consul"
                                 rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
-                            <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA
+                            <a class="dropdown-item anchor" href="<?=base_url()?>/visa-consultation" rel="noopener">VISA
                                 CONSULTATION</a>
-                            <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE
+                            <a class="dropdown-item anchor" href="<?=base_url()?>/overseas-insurance" rel="noopener">OVERSEASE
                                 INSURANCE</a>
                             <hr>
-                            <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
-                            <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP</a>
+                            <a class="dropdown-item anchor" href="<?=base_url()?>/financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                            <a class="dropdown-item anchor" href="<?=base_url()?>/scholarship" rel="noopener">SCHOLARSHIP</a>
                             <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                             <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                             <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->
@@ -255,7 +255,7 @@ $session = session();
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
 
-                        <a href="/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
+                        <a href="<?=base_url()?>/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
 
 
                         <!-- profile Button -->
@@ -289,7 +289,7 @@ $session = session();
         ?>
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light ">
-                <a class="navbar-brand headerLogo" href="/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
+                <a class="navbar-brand headerLogo" href="<?=base_url()?>/" rel="noopener"><img src="<?=base_url()?>/assets/images/logo/logo1.png"
                         alt="logo" width="206" height="130" title="logo" /></a>
                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -299,10 +299,10 @@ $session = session();
                 <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2">
-                            <a class="nav-link anchor" href="about" rel="noopener">ABOUT US</a>
+                            <a class="nav-link anchor" href="<?=base_url()?>/about" rel="noopener">ABOUT US</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link anchor" href="career-guide" rel="noopener">Career Guide</a>
+                            <a class="nav-link anchor" href="<?=base_url()?>/career-guide" rel="noopener">Career Guide</a>
                         </li>
                         <!-- <li class="nav-item dropdown mr-2">
                             <a class="nav-link dropdown-toggle anchor" href="#"  role="button"
@@ -321,15 +321,15 @@ $session = session();
                                 CONSULTATION
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item anchor" href="consultation" rel="noopener">UNIVERSITY/COLLEGE
+                                <a class="dropdown-item anchor" href="<?=base_url()?>/consultation" rel="noopener">UNIVERSITY/COLLEGE
                                     SELECTION</a>
-                                <a class="dropdown-item anchor" href="visa-consultation" rel="noopener">VISA
+                                <a class="dropdown-item anchor" href="<?=base_url()?>/visa-consultation" rel="noopener">VISA
                                     CONSULTATION</a>
-                                <a class="dropdown-item anchor" href="overseas-insurance" rel="noopener">OVERSEASE
+                                <a class="dropdown-item anchor" href="<?=base_url()?>/overseas-insurance" rel="noopener">OVERSEASE
                                     INSURANCE</a>
                                 <hr>
-                                <a class="dropdown-item anchor" href="financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
-                                <a class="dropdown-item anchor" href="scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
+                                <a class="dropdown-item anchor" href="<?=base_url()?>/financial-aid" rel="noopener">EDUCATIONAL LOAN</a>
+                                <a class="dropdown-item anchor" href="<?=base_url()?>/scholarship" rel="noopener">SCHOLARSHIP LOAN</a>
                                 <!-- <a class="dropdown-item" href="exam-prepration">EXAM PREPRATION</a>
                                 <a class="dropdown-item" href="#">TRAVEL ASSISTANCE</a>
                                 <a class="dropdown-item" href="#">INTERNATIONAL TRAINING</a> -->
@@ -340,7 +340,7 @@ $session = session();
                         </li> -->
                         <li class="nav-item ml-2 mt-1">
                             <?php if ($session->get('token')) : ?>
-                            <a href="/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
+                            <a href="<?=base_url()?>/api/logout" class="btn" style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
 
                             <?php else : ?>
                             <button id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button>
