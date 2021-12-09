@@ -1,4 +1,4 @@
-function EasyPeasyParallax() {
+function EasyPeasyParallaxAbout() {
   scrollPos = $(this).scrollTop();
   $("#banner").css({
     "background-position": "50% " + -scrollPos / 4 + "px",
@@ -10,6 +10,6 @@ function EasyPeasyParallax() {
 }
 $(document).ready(function () {
   $(window).scroll(function () {
-    EasyPeasyParallax();
+    EasyPeasyParallaxAbout();
   });
 });

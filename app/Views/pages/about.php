@@ -6,7 +6,7 @@ for( $i = 0; $i < count($sectionData); $i++){
     if($sectionData[$i]['section_name'] === 'banner'){
     ?>
 <div id="banner">
-    <div id="bannertext" style="opacity: 0.776;">
+    <div id="bannertext">
         <h1 class="text-center"><?= $sectionData[$i]['title']?></h1>
         <p class="text-center" style="font-style: italic;"><?= $sectionData[$i]['discription']?> </p>
     </div>
