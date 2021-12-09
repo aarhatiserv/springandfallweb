@@ -163,6 +163,10 @@
       width: 100%;
     }
   }
+
+  [class*="col-"] {
+    width: 100%;
+  }
   /* similar university */
   
 /* course faq */

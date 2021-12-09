@@ -25,8 +25,8 @@
     <section id="collegeInfo">
         <div class="container-fluid my-5">
             <div class="row">
-                <div class="col-md-9">
-                    <ul class="nav nav-tabs" id="collegeInfoTab" role="tablist">
+                <div class="col-md-9 col-s-12">
+                    <ul class="nav nav-tabs " id="collegeInfoTab" role="tablist">
                         <li class="nav-item " role="presentation">
                             <a class="nav-link py-3 rounded-0 active" id="overview-tab" data-toggle="tab"
                                 href="#overview" role="tab" aria-controls="overview" aria-selected="true">OVERVIEW</a>
@@ -269,12 +269,16 @@
         </div>
         <!-- -----------------------------------Similar University------------------------------------------ -->
         <div class="row">
-            <?php foreach($similarUniversity as $su){ ?>
+        
+            <?php 
+            if(!empty($similarUniversity)){
+            foreach($similarUniversity as $su){ ?>
             <div class="column">
-                <img src="<?php base_url(); ?>/uploads/CollegesImage/<?= $su['country']?>/logo/<?= $su['image']?>" alt="<?= $su['names']?>" style="width:100%">
+                <img src="<?php base_url(); ?>/uploads/CollegesImage/<?= $su['country']?>/logo/<?= $su['image']?>" alt="<?= $su['names']?>" height="220" style="width:100%">
                 <p class="text-center"><?= $su['names']?></p>
             </div>
-            <?php }?>
+            <?php }} else{ echo "No Similar University Found"; }?>
+                
         </div>
         <!-- -----------------------------------Similar University------------------------------------------ -->
     </section>
