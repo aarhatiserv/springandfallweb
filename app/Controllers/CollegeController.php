@@ -358,13 +358,14 @@ class CollegeController extends Controller
     }
    }
 
-   public function getConsultationCollegeDetails($country, $id){
+   public function getCollegeDetails($country, $id){
     $data['title'] = "College Details"; // Capitalize the first letter
     $page = "college";
 
     $model = new CollegeModel();
     $data['collegeDetails'] = $model->where("id = ", $id)->findAll();
-    // echo "Hello";
+    //  print_r($data['collegeDetails'][0]['country']);
+    $data['similarUniversity'] = $model->where("country = ", $data['collegeDetails'][0]['country'])->findAll(4);
     echo view('templates/header', $data);
     echo view('pages/' . $page, $data);
     echo view('templates/footer', $data);

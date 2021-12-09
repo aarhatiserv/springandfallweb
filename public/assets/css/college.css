@@ -137,5 +137,32 @@
       padding-right: 0px;
     }
   }
+
+  /* similar university */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 15.33%;
+    padding: 30px;
+    margin-left: 126px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+  /* similar university */
   
 /* course faq */

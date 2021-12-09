@@ -138,7 +138,7 @@ $routes->get("api2/countryAndCourseAndLevel/(:any)/(:any)/(:any)", "CollegeContr
 // $routes->get('consultation/(:any)', 'Pages::flag/$1');
 
 // for hit college name and show details of colleges
-$routes->get('college/(:any)/(:any)', 'CollegeController::getConsultationCollegeDetails/$1/$2');
+$routes->get('college/(:any)/(:any)', 'CollegeController::getCollegeDetails/$1/$2');
 // main work
 $routes->get('(:any)', 'Pages::view/$1');
 
