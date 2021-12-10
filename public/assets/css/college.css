@@ -12,10 +12,10 @@
     position: fixed;
     top: 40%;
     left: 50%;
-    border: .5em solid #fff;
+    /* border: .5em solid #fff; */
     margin-left: -12em;
     padding: 2em 0;
-    background-color: rgba(5, 5, 5, 0.5) !important
+    /* background-color: rgba(5, 5, 5, 0.5) !important */
 }
 /* college tab css */
 #collegeInfoTab > .nav-item a {
