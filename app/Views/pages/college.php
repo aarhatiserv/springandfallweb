@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-1">
             <a class="text-dark" style="" onclick="window.history.go(-1)"><b>
-                    <</b> Go Back</a>
+                    << /b> Go Back</a>
         </div>
         <div class="col-11"></div>
     </div>
@@ -15,7 +15,9 @@
         style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
         <?php }?>
         <div id="collegeBannerText">
-            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/logo/<?=$collegeDetails[0]['image']?>" alt="<?= $collegeDetails[0]['names'] ?>" width="200" height="200" style="margin-top: -100px;margin-left: 87px;" />
+            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/logo/<?=$collegeDetails[0]['image']?>"
+                alt="<?= $collegeDetails[0]['names'] ?>" width="200" height="200"
+                style="margin-top: -100px;margin-left: 87px;" />
             <h1 class="text-center"><?= $collegeDetails[0]['names'] ?></h1>
             <p class="text-center" style="font-style: italic;">
                 <?= $collegeDetails[0]['address'].", ". $collegeDetails[0]['country'] ?> </p>
@@ -26,7 +28,7 @@
     <section id="collegeInfo">
         <div class="container-fluid my-5">
             <div class="row">
-                <div class="col-md-9 col-s-12">
+                <div class="col-md-9">
                     <ul class="nav nav-tabs " id="collegeInfoTab" role="tablist">
                         <li class="nav-item " role="presentation">
                             <a class="nav-link py-3 rounded-0 active" id="overview-tab" data-toggle="tab"
@@ -270,16 +272,17 @@
         </div>
         <!-- -----------------------------------Similar University------------------------------------------ -->
         <div class="row">
-        
+
             <?php 
             if(!empty($similarUniversity)){
             foreach($similarUniversity as $su){ ?>
             <div class="column">
-                <img src="<?php base_url(); ?>/uploads/CollegesImage/<?= $su['country']?>/logo/<?= $su['image']?>" alt="<?= $su['names']?>" height="220" style="width:100%">
+                <img src="<?php base_url(); ?>/uploads/CollegesImage/<?= $su['country']?>/logo/<?= $su['image']?>"
+                    alt="<?= $su['names']?>" height="220" style="width:100%">
                 <p class="text-center"><strong><?= $su['names']?></strong></p>
             </div>
             <?php }} else{ echo "No Similar University Found"; }?>
-                
+
         </div>
         <!-- -----------------------------------Similar University------------------------------------------ -->
     </section>
