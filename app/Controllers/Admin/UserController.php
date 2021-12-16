@@ -34,7 +34,7 @@ class UserController extends Controller
 		if(!empty($session->get('username'))){
 
             $model = new UserModel();
-        $data['userDataFilter'] = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
         // echo view('admin/layout/stylesheet');
         // echo view('admin/User/PreviousDayUserDetails', $data);
         // echo view('admin/layout/script');

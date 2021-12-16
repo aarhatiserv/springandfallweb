@@ -12,9 +12,9 @@ function getval() {
         processData: false,
         contentType: false,
 
-        success: function(res) {
-            var data = res.data;
-            console.log(data);
+        success: function(data) {
+            var res = JSON.parse(data);
+            console.log(res);
         },
     });
     
