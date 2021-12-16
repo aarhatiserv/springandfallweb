@@ -97,7 +97,7 @@ function getval() {
                                         <tbody>
 
                                             <?php 
-                                            if(!empty($userData)){
+                                            if(!empty($userDataFilter)){
                                                foreach($userData as $ud){
                                               
                                                 ?>
@@ -136,12 +136,5 @@ function getval() {
 
 
 </body>
-<script type="text/javascript">
-function ConfirmDelete(id) {
-    var conf = confirm('Are you sure want to delete this record?');
-    if (conf)
-        location.href = '/admin/deleteCollege/' + id;
-}
-</script>
 
 </html>

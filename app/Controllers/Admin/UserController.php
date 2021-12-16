@@ -35,10 +35,10 @@ class UserController extends Controller
 
             $model = new UserModel();
         $data['userDataFilter'] = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
-        // echo view('admin/layout/stylesheet');
-        // echo view('admin/User/UserDetails', $data);
-        // echo view('admin/layout/script');
-        print_r($data);
+        echo view('admin/layout/stylesheet');
+        echo view('admin/User/PreviousDayUserDetails', $data);
+        echo view('admin/layout/script');
+        // print_r($data);
             
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
