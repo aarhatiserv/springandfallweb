@@ -28,7 +28,7 @@ class UserController extends Controller
 		}
     }
 
-    public function getPreviousDayUserDetails($filter)
+    public function getPreviousDayUserDetails()
     {
         $session = session();
 		if(!empty($session->get('username'))){
