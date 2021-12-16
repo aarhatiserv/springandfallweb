@@ -93,7 +93,7 @@ class User extends ResourceController
 					$email1 = \Config\Services::email();
 					$email1->setFrom('support@springandfall.in', 'Spring and Fall');
 					$email1->setTo('springnfall.20@gmail.com');
-					$email1->setSubject('Welcome to Spring and Fall ');
+					$email1->setSubject('New Leads Register');
 					$email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
 					if ($email1->send()) {
 						$response = [
