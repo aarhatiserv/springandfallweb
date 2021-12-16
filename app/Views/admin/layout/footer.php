@@ -1,7 +1,7 @@
  <!-- footer content -->
  <footer>
      <div class="pull-right">
-         Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+     DESIGNED AND DEVELOPED BY | © <a href="https://aarhatiserv.com/">AARHAT ISERV LLP</a>
      </div>
      <div class="clearfix"></div>
  </footer>
