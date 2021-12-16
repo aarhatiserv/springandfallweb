@@ -63,3 +63,6 @@
 <script src="../assets/backend/vendors/jszip/dist/jszip.min.js"></script>
 <script src="../assets/backend/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="../assets/backend/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+<!-- userFilterDetails.js -->
+<script src="../assets/backend/UserFilter/userFilterDetails.js"></script>
