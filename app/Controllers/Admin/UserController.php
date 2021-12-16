@@ -38,7 +38,7 @@ class UserController extends Controller
         // echo view('admin/layout/stylesheet');
         // echo view('admin/User/UserDetails', $data);
         // echo view('admin/layout/script');
-        echo json_encode(["status" => 2, "message" => "Something Went Wrong".$this->request->getVar("filter")]);
+        echo json_encode(["status" => 2, "message" => $this->request->getVar("filter")]);
             
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
