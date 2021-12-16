@@ -12,7 +12,9 @@
     <title>Spring & Fall | Admin</title>
 
 <style>
-    .someclassMax {max-height: 500px !important;}
+    .someclassMax {
+        min-height: 500px !important;
+        }
 </style>
 </head>
 
