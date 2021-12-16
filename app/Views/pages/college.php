@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-1">
             <a class="text-dark" style="" onclick="window.history.go(-1)"><b>
-                    << /b> Go Back</a>
+                    < </b> Go Back</a>
         </div>
         <div class="col-11"></div>
     </div>
