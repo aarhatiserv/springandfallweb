@@ -2,6 +2,7 @@
 function getval(sel)
 {
 
+    console.log(sel);
     let formData = new FormData();
     formData.append('filter', sel);
     $.ajax({
@@ -21,7 +22,7 @@ function getval(sel)
         //   alert("Previous Data Display", res.message, "success");
           // window.location.reload();
         } else if (res.status === 2) {
-          alert(res.message);
+            console.log("res", res.message);
         } else {
         //   alert("Opps.!!", "Something went wrong.!!", "error");
         }
