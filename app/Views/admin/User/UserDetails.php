@@ -110,14 +110,19 @@ function getval() {
                                             </tr>
                                             <?php
                                                }
-                                            }else{ ?>
-                                            <tr>
-                                                <td><?= $ud['name']?></td>
-                                                <td><?= $ud['email']?></td>
+                                            }else{ 
+                                            foreach($userDataFilter as $udf){
+                                              
+                                              ?>
 
-                                                <td><?= $ud['phone']?></td>
-                                            </tr>
+                                          <tr>
+                                              <td><?= $udf['name']?></td>
+                                              <td><?= $udf['email']?></td>
+
+                                              <td><?= $udf['phone']?></td>
+                                          </tr>
                                             <?php }
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
