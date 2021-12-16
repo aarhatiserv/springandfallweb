@@ -33,13 +33,11 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-        //     $model = new UserModel();
-        // $data['userData'] = $model->where("registered == ", $this->request->getVar("filter"))->findAll();
-        // echo view('admin/layout/stylesheet');
-        // echo view('admin/User/UserDetails', $data);
-        // echo view('admin/layout/script');
-        print_r("Date:", $this->request->getVar("filter"));
-        echo json_encode(["status" => 2, "message" => $this->request->getVar("filter")]);
+            $model = new UserModel();
+        $data['userData'] = $model->where("registered == ", $this->request->getVar("filter"))->findAll();
+        echo view('admin/layout/stylesheet');
+        echo view('admin/User/UserDetails', $data);
+        echo view('admin/layout/script');
             
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
