@@ -1,33 +1,20 @@
 <script>
-function getval()
-{
+function getval() {
 
     var filter = document.getElementById("filterUser").value;
     console.log(filter);
     let formData = new FormData();
     formData.append('filter', filter);
     $.ajax({
-      url: "/admin/PreviousData",
-      method: "POST",
-      data: formData,
-      processData: false,
-      contentType: false,
-    //   beforeSend: function () {
-    //     $("#apply").val("Please wait");
-    //     $("#apply").prop("disabled", true);
-    //   },
-      success: function (data) {
-        // // $("#apply").prop("disabled", false);
-        // var res = JSON.parse(data);
-        // if (res.status === 1) {
-        // //   alert("Previous Data Display", res.message, "success");
-        //   // window.location.reload();
-        // } else if (res.status === 2) {
-        //     console.log("res", res.message);
-        // } else {
-        // //   alert("Opps.!!", "Something went wrong.!!", "error");
-        // }
-      },
+        url: "/admin/PreviousData",
+        method: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+
+        success: function(data) {
+
+        },
     });
 }
 </script>
@@ -87,7 +74,7 @@ function getval()
                                 <div class="x_content">
                                     <!-- <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button> -->
-                                            <?php  $currentdate =  date("Y-m-d");
+                                    <?php  $currentdate =  date("Y-m-d");
                                                    $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day')); ?>
                                     Filter By <select name="filterUser" id="filterUser" onchange="getval();">
                                         <option value="all">Last all Days</option>
@@ -108,7 +95,9 @@ function getval()
 
 
                                         <tbody>
+
                                             <?php 
+                                            if(!empty($userData)){
                                                foreach($userData as $ud){
                                               
                                                 ?>
@@ -121,6 +110,14 @@ function getval()
                                             </tr>
                                             <?php
                                                }
+                                            }else{ ?>
+                                            <tr>
+                                                <td><?= $ud['name']?></td>
+                                                <td><?= $ud['email']?></td>
+
+                                                <td><?= $ud['phone']?></td>
+                                            </tr>
+                                            <?php }
                                             ?>
                                         </tbody>
                                     </table>
