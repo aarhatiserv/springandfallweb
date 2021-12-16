@@ -15,7 +15,7 @@ function getval() {
         success: function(data) {
             var res = JSON.parse(data);
             let dt = [];
-            $('#myTable').hide();
+            // $('#myTable').hide();
             if (res.status !== undefined) {
 
                 if (res.data.length == 0) {
