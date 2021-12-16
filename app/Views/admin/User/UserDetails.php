@@ -1,6 +1,7 @@
 <script>
 function getval(sel)
 {
+    alert(sel);
     let formData = new FormData();
     formData.append('filter', sel);
     $.ajax({
