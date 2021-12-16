@@ -95,9 +95,9 @@ function clearFilter()
                                             Colleges</a> </button> -->
                                     <?php  $currentdate =  date("Y-m-d");
                                                    $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day'));
-                                                   $Previous2DaysDate =  date('Y-m-d', strtotime($currentdate.' - 2 day'));
-                                                   $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 day'));
-                                                   $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 day'));
+                                                   $Previous2DaysDate =  date('Y-m-d', strtotime($currentdate.' - 2 days'));
+                                                   $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 days'));
+                                                   $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 days'));
                                                    ?>
                                     Filter By <select id='filterText' style='display:inline-block' onchange='filterText()'>
                                         <option value="all">Last all Days</option>
