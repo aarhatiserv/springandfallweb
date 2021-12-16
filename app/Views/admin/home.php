@@ -29,7 +29,7 @@
 
 
             <!-- page content -->
-            <div class="right_col" role="main">
+            <div class="right_col someclass" role="main">
                 <!-- top tiles -->
                 <div class="row tile_count">
                     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
