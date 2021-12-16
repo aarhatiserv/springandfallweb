@@ -60,13 +60,20 @@
                                                    $Previous2DaysDate =  date('Y-m-d', strtotime($currentdate.' - 2 days'));
                                                    $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 days'));
                                                    $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 days'));
+                                                   $Previous5DaysDate =  date('Y-m-d', strtotime($currentdate.' - 5 days'));
+                                                   $Previous6DaysDate =  date('Y-m-d', strtotime($currentdate.' - 6 days'));
+                                                   $Previous7DaysDate =  date('Y-m-d', strtotime($currentdate.' - 7 days'));
                                                    ?>
                                     Filter By <select id='filterText' style='display:inline-block' onchange='getval()'>
                                         <option value="all">Last all Days</option>
+                                        <option value="<?= $currentdate ?>">Today</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
                                         <option value="<?= $Previous3DaysDate ?>">Last 3 Days</option>
                                         <option value="<?= $Previous4DaysDate ?>">Last 4 Days</option>
+                                        <option value="<?= $Previous5DaysDate ?>">Last 5 Days</option>
+                                        <option value="<?= $Previous6DaysDate ?>">Last 6 Days</option>
+                                        <option value="<?= $Previous7DaysDate ?>">Last 7 Days</option>
                                     </select>
                                     <table id="datatable-buttons" class="table table-striped table-bordered"
                                         style="width: 100%;">
