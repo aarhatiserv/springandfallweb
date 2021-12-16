@@ -14,7 +14,7 @@ function getval() {
 
         success: function(data) {
             var res = JSON.parse(data);
-            console.log(res.data);
+            $('#myTable').hide();
         },
     });
     
