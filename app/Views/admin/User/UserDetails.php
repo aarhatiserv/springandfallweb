@@ -21,7 +21,7 @@ function getval(sel)
         //   alert("Previous Data Display", res.message, "success");
           // window.location.reload();
         } else if (res.status === 2) {
-          alert("Opps.!!", res.message);
+          alert(res.message);
         } else {
         //   alert("Opps.!!", "Something went wrong.!!", "error");
         }
