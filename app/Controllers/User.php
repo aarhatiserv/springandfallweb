@@ -88,12 +88,37 @@ class User extends ResourceController
 					$body = view('templates/email', $data);
 					$email->setMessage($body);
 					if ($email->send()) {
+
+						// --------------------------------------------------
+					$email1 = \Config\Services::email();
+					$email1->setFrom('support@springandfall.in', 'Spring and Fall');
+					$email1->setTo('springandfall.20@gmail.com');
+					$email1->setSubject('Welcome to Spring and Fall ');
+					$email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
+					if ($email1->send()) {
 						$response = [
 							'status' => 200,
 							"error" => false,
 							'messages' => "Please check your email inbox",
 							'data' => []
 						];
+					} else {
+						$response = [
+							'status' => 200,
+							'error' => true,
+							'messages' => 'Please check your email',
+							'data' => []
+						];
+					}
+						// -------------------------------------------------- 
+
+						
+						// $response = [
+						// 	'status' => 200,
+						// 	"error" => false,
+						// 	'messages' => "Please check your email inbox",
+						// 	'data' => []
+						// ];
 					} else {
 						$response = [
 							'status' => 200,
