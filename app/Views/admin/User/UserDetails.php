@@ -14,29 +14,52 @@ function getval() {
 
         success: function(data) {
             var res = JSON.parse(data);
+            let dt = [];
             $('#myTable').hide();
+            if (res.status !== undefined) {
+
+                if (res.data.length == 0) {
+                    $('#myTable').html("No Record Found");
+
+                } else {
+                    res.data.map((item) => (
+                        dt.push(
+                            ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                        )
+                    ));
+                    // $("#listColleges").html(dt);
+                    $('#myTable').html(dt);
+
+                }
+            }
         },
     });
-    
+
 }
 </script>
 <script>
-function filterText()
-	{  
-		var rex = new RegExp($('#filterText').val());
-		if(rex =="/all/"){clearFilter()}else{
-			$('.content').hide();
-			$('.content').filter(function() {
-			return rex.test($(this).text());
-			}).show();
-	}
-	}
-	
-function clearFilter()
-	{
-		$('.filterText').val('');
-		$('.content').show();
-	}
+function filterText() {
+    var rex = new RegExp($('#filterText').val());
+    if (rex == "/all/") {
+        clearFilter()
+    } else {
+        $('.content').hide();
+        $('.content').filter(function() {
+            return rex.test($(this).text());
+        }).show();
+    }
+}
+
+function clearFilter() {
+    $('.filterText').val('');
+    $('.content').show();
+}
 </script>
 
 <!DOCTYPE html>
@@ -140,7 +163,7 @@ function clearFilter()
                                             <tr>
                                                 No Record Found
                                             </tr>
-                                           <?php }
+                                            <?php }
                                               ?>
                                         </tbody>
                                     </table>
