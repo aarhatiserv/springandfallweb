@@ -109,6 +109,7 @@ $routes->group("admin", function ($routes) {
 
      // Admin User Routes
 	 $routes->get('user', 'Admin/UserController::getUserDetails');
+	 $routes->post('PreviousData', 'Admin/UserController::getPreviousDayUserDetails');
 	});
 
 // auth routes

@@ -1,7 +1,31 @@
 <script>
 function getval(sel)
 {
-    alert(sel.value);
+    let formData = new FormData();
+    formData.append('filter', sel);
+    $.ajax({
+      url: "/admin/PreviousData",
+      method: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+    //   beforeSend: function () {
+    //     $("#apply").val("Please wait");
+    //     $("#apply").prop("disabled", true);
+    //   },
+      success: function (data) {
+        // $("#apply").prop("disabled", false);
+        var res = JSON.parse(data);
+        if (res.status === 1) {
+          swal("Previous Data Display", res.message, "success");
+          // window.location.reload();
+        } else if (res.status === 2) {
+          swal("Opps.!!", res.message, "error");
+        } else {
+          swal("Opps.!!", "Something went wrong.!!", "error");
+        }
+      },
+    });
 }
 </script>
 
