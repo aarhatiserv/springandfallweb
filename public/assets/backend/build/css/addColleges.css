@@ -100,4 +100,6 @@ input:focus+label {
 }
 
 
-    .someclass {min-height: 200px !important;}
+.someclass {
+        min-height: 500px !important;
+    }
