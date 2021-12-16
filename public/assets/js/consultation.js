@@ -56,7 +56,7 @@ function getCollegeInConsultation(country) {
             let dt = [];
             console.log('res', collegeData);
             if (collegeData.status !== undefined) {
-
+ 
                 if (collegeData.data.length == 0) {
                     $('.college').html("No Record Found");
                     $('.college').prop("disabled", false);

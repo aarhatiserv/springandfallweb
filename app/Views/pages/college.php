@@ -4,7 +4,7 @@
             <a class="text-dark" style="" onclick="window.history.go(-1)"><b>
                     < </b> Go Back
             </a>
-        </div>
+        </div> 
         <div class="col-11"></div>
     </div>
 </div>

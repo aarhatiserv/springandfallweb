@@ -88,7 +88,7 @@ class User extends ResourceController
 					$body = view('templates/email', $data);
 					$email->setMessage($body);
 					if ($email->send()) {
-
+ 
 						// --------------------------------------------------
 					$email1 = \Config\Services::email();
 					$email1->setFrom('support@springandfall.in', 'Spring and Fall');
