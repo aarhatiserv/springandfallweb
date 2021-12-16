@@ -26,9 +26,23 @@ class UserController extends Controller
             return redirect()->to('https://springandfall.in/admin/login');
 			// return redirect()->to('http://localhost:8080/admin/login');
 		}
-
-       
     }
-    
+
+    public function getPreviousDayUserDetails()
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new UserModel();
+        $data['userData'] = $model->where("registered == ", $this->request->getVar("filter"))->findAll();
+        echo view('admin/layout/stylesheet');
+        echo view('admin/User/UserDetails', $data);
+        echo view('admin/layout/script');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+    }
 
 }
