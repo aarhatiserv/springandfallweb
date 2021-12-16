@@ -1,7 +1,8 @@
 <script>
-$('select').on('change', function() {
-  alert( this.value );
-});
+function getval(sel)
+{
+    alert(sel.value);
+}
 </script>
 
 <!DOCTYPE html>
@@ -59,7 +60,7 @@ $('select').on('change', function() {
                                 <div class="x_content">
                                     <!-- <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button> -->
-                                    Filter By <select name="" id="">
+                                    Filter By <select name="" id="" onchange="getval(this);">
                                         <option value="-1">Previous Day</option>
                                         <option value="2">Last 2 Days</option>
                                         <option value="3">Last 3 Days</option>
