@@ -98,7 +98,7 @@ function getval() {
 
                                             <?php 
                                             if(!empty($userDataFilter)){
-                                               foreach($userData as $ud){
+                                               foreach($userDataFilter as $ud){
                                               
                                                 ?>
 
