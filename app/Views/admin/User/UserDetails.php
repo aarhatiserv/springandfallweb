@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 function getval() {
 
     var filter = document.getElementById("filterUser").value;
@@ -18,6 +18,24 @@ function getval() {
     });
     
 }
+</script> -->
+<script>
+function filterText()
+	{  
+		var rex = new RegExp($('#filterText').val());
+		if(rex =="/all/"){clearFilter()}else{
+			$('.content').hide();
+			$('.content').filter(function() {
+			return rex.test($(this).text());
+			}).show();
+	}
+	}
+	
+function clearFilter()
+	{
+		$('.filterText').val('');
+		$('.content').show();
+	}
 </script>
 
 <!DOCTYPE html>
@@ -77,7 +95,7 @@ function getval() {
                                             Colleges</a> </button> -->
                                     <?php  $currentdate =  date("Y-m-d");
                                                    $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day')); ?>
-                                    Filter By <select name="filterUser" id="filterUser" onchange="getval();">
+                                    Filter By <select id='filterText' style='display:inline-block' onchange='filterText()'>
                                         <option value="all">Last all Days</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="2">Last 2 Days</option>
@@ -95,7 +113,7 @@ function getval() {
                                         </thead>
 
 
-                                        <tbody>
+                                        <tbody id="myTable">
 
                                             <?php 
                                             if(!empty($userData)){
@@ -103,7 +121,7 @@ function getval() {
                                               
                                                 ?>
 
-                                            <tr>
+                                            <tr class="content">
                                                 <td><?= $ud['name']?></td>
                                                 <td><?= $ud['email']?></td>
 
