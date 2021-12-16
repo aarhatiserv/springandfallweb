@@ -94,13 +94,17 @@ function clearFilter()
                                     <!-- <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button> -->
                                     <?php  $currentdate =  date("Y-m-d");
-                                                   $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day')); ?>
+                                                   $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day'));
+                                                   $Previous2DaysDate =  date('Y-m-d', strtotime($currentdate.' - 2 day'));
+                                                   $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 day'));
+                                                   $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 day'));
+                                                   ?>
                                     Filter By <select id='filterText' style='display:inline-block' onchange='filterText()'>
                                         <option value="all">Last all Days</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
-                                        <option value="2">Last 2 Days</option>
-                                        <option value="3">Last 3 Days</option>
-                                        <option value="4">Last 4 Days</option>
+                                        <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
+                                        <option value="<?= $Previous3DaysDate ?>">Last 3 Days</option>
+                                        <option value="<?= $Previous4DaysDate ?>">Last 4 Days</option>
                                     </select>
                                     <table id="datatable-buttons" class="table table-striped table-bordered"
                                         style="width: 100%;">
