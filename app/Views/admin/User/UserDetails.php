@@ -17,16 +17,16 @@ function getval()
     //     $("#apply").prop("disabled", true);
     //   },
       success: function (data) {
-        // $("#apply").prop("disabled", false);
-        var res = JSON.parse(data);
-        if (res.status === 1) {
-        //   alert("Previous Data Display", res.message, "success");
-          // window.location.reload();
-        } else if (res.status === 2) {
-            console.log("res", res.message);
-        } else {
-        //   alert("Opps.!!", "Something went wrong.!!", "error");
-        }
+        // // $("#apply").prop("disabled", false);
+        // var res = JSON.parse(data);
+        // if (res.status === 1) {
+        // //   alert("Previous Data Display", res.message, "success");
+        //   // window.location.reload();
+        // } else if (res.status === 2) {
+        //     console.log("res", res.message);
+        // } else {
+        // //   alert("Opps.!!", "Something went wrong.!!", "error");
+        // }
       },
     });
 }
