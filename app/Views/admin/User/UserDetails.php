@@ -1,7 +1,7 @@
 <script>
 function getval(sel)
 {
-    alert(sel);
+
     let formData = new FormData();
     formData.append('filter', sel);
     $.ajax({
@@ -18,12 +18,12 @@ function getval(sel)
         // $("#apply").prop("disabled", false);
         var res = JSON.parse(data);
         if (res.status === 1) {
-          swal("Previous Data Display", res.message, "success");
+        //   alert("Previous Data Display", res.message, "success");
           // window.location.reload();
         } else if (res.status === 2) {
-          swal("Opps.!!", res.message, "error");
+          alert("Opps.!!", res.message);
         } else {
-          swal("Opps.!!", "Something went wrong.!!", "error");
+        //   alert("Opps.!!", "Something went wrong.!!", "error");
         }
       },
     });
