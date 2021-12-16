@@ -1,3 +1,9 @@
+<script>
+$('select').on('change', function() {
+  alert( this.value );
+});
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,11 +60,11 @@
                                     <!-- <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button> -->
                                     Filter By <select name="" id="">
-                                        <option value="">Previous Day</option>
-                                        <option value="">Last 2 Days</option>
-                                        <option value="">Last 3 Days</option>
-                                        <option value="">Last 4 Days</option>
-                                        <option value="">Last all Days</option>
+                                        <option value="-1">Previous Day</option>
+                                        <option value="2">Last 2 Days</option>
+                                        <option value="3">Last 3 Days</option>
+                                        <option value="4">Last 4 Days</option>
+                                        <option value="all">Last all Days</option>
                                     </select>
                                     <table id="datatable-buttons" class="table table-striped table-bordered"
                                         style="width: 100%;">
