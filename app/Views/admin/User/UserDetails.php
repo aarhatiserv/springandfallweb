@@ -100,7 +100,7 @@ function clearFilter()
                                                    $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 days'));
                                                    $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 days'));
                                                    ?>
-                                    Filter By <select id='filterText' style='display:inline-block' onchange='getVal()'>
+                                    Filter By <select id='filterText' style='display:inline-block' onchange='getval()'>
                                         <option value="all">Last all Days</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
