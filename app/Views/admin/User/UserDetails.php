@@ -109,6 +109,7 @@ function clearFilter()
                                                 <th>User Name</th>
                                                 <th>Email ID</th>
                                                 <th>Phone No.</th>
+                                                <th>Date</th>
                                             </tr>
                                         </thead>
 
@@ -126,6 +127,7 @@ function clearFilter()
                                                 <td><?= $ud['email']?></td>
 
                                                 <td><?= $ud['phone']?></td>
+                                                <td><?= $ud['registered']?></td>
                                             </tr>
                                             <?php
                                                }
