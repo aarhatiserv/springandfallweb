@@ -1,10 +1,11 @@
 <script>
-function getval(sel)
+function getval()
 {
 
-    console.log(sel);
+    var filter = document.getElementById("filterUser").value;
+    console.log(filter);
     let formData = new FormData();
-    formData.append('filter', sel);
+    formData.append('filter', filter);
     $.ajax({
       url: "/admin/PreviousData",
       method: "POST",
@@ -88,7 +89,7 @@ function getval(sel)
                                             Colleges</a> </button> -->
                                             <?php  $currentdate =  date("Y-m-d");
                                                    $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day')); ?>
-                                    Filter By <select name="filter" id="" onchange="getval(this);">
+                                    Filter By <select name="filterUser" id="filterUser" onchange="getval();">
                                         <option value="all">Last all Days</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="2">Last 2 Days</option>
