@@ -65,7 +65,7 @@
                                                    $Previous7DaysDate =  date('Y-m-d', strtotime($currentdate.' - 7 days'));
                                                    ?>
                                     Filter By <select id='filterText' style='display:inline-block' onchange='getval()'>
-                                        <option value="all">Last all Days</option>
+                                        <option value="all">All Days</option>
                                         <option value="<?= $currentdate ?>">Today</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
