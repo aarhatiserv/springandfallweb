@@ -3,20 +3,20 @@ function getval() {
 
     var filter = document.getElementById("filterUser").value;
     // console.log(filter);
-    // let formData = new FormData();
-    // formData.append('filter', filter);
-    // $.ajax({
-    //     url: "/admin/PreviousData",
-    //     method: "POST",
-    //     data: formData,
-    //     processData: false,
-    //     contentType: false,
+    let formData = new FormData();
+    formData.append('filter', filter);
+    $.ajax({
+        url: "/admin/PreviousData",
+        method: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
 
-    //     success: function(data) {
+        success: function(data) {
 
-    //     },
-    // });
-    window.location.href = "/admin/PreviousData/"+filter;
+        },
+    });
+    
 }
 </script>
 
