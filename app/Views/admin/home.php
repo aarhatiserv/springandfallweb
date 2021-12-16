@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +11,9 @@
     <link rel="icon" href="../fav.ico" type="image/ico">
     <title>Spring & Fall | Admin</title>
 
-    <style>
-    .someclass {
-        max-height: 500px !important;
-    }
-    </style>
+<style>
+    .someclass {min-height: 200px !important;}
+</style>
 </head>
 
 <body class="nav-md">
@@ -30,7 +29,7 @@
 
 
             <!-- page content -->
-            <div class="right_col someclass" role="main">
+            <div class="right_col" role="main">
                 <!-- top tiles -->
                 <div class="row tile_count">
                     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
