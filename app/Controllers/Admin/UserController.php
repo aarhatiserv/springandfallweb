@@ -35,9 +35,10 @@ class UserController extends Controller
 
             $model = new UserModel();
         $data['userDataFilter'] = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
-        echo view('admin/layout/stylesheet');
-        echo view('admin/User/PreviousDayUserDetails', $data);
-        echo view('admin/layout/script');
+        // echo view('admin/layout/stylesheet');
+        // echo view('admin/User/PreviousDayUserDetails', $data);
+        // echo view('admin/layout/script');
+        echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
 		}else{

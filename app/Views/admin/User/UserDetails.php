@@ -1,7 +1,7 @@
-<!-- <script>
+<script>
 function getval() {
 
-    var filter = document.getElementById("filterUser").value;
+    var filter = document.getElementById("filterText").value;
     // console.log(filter);
     let formData = new FormData();
     formData.append('filter', filter);
@@ -12,13 +12,14 @@ function getval() {
         processData: false,
         contentType: false,
 
-        success: function(data) {
-
+        success: function(res) {
+            var data = res.data;
+            console.log(data);
         },
     });
     
 }
-</script> -->
+</script>
 <script>
 function filterText()
 	{  
@@ -99,7 +100,7 @@ function clearFilter()
                                                    $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 days'));
                                                    $Previous4DaysDate =  date('Y-m-d', strtotime($currentdate.' - 4 days'));
                                                    ?>
-                                    Filter By <select id='filterText' style='display:inline-block' onchange='filterText()'>
+                                    Filter By <select id='filterText' style='display:inline-block' onchange='getVal()'>
                                         <option value="all">Last all Days</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
