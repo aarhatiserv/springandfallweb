@@ -1,14 +1,13 @@
-
 <!--Start of Jumbotron-->
-<?php 
+<?php
 
-for( $i = 0; $i < count($sectionData); $i++){
-    if($sectionData[$i]['section_name'] === 'banner'){
-    ?>
+for ($i = 0; $i < count($sectionData); $i++) {
+    if ($sectionData[$i]['section_name'] === 'banner') {
+?>
 <div id="banner">
     <div id="bannertext">
-        <h1 class="text-center"><?= $sectionData[$i]['title']?></h1>
-        <p class="text-center" style="font-style: italic;"><?= $sectionData[$i]['discription']?> </p>
+        <h1 class="text-center"><?= $sectionData[$i]['title'] ?></h1>
+        <p class="text-center" style="font-style: italic;"><?= $sectionData[$i]['discription'] ?> </p>
     </div>
 </div>
 <!--Make your Career Best-->
@@ -37,79 +36,82 @@ for( $i = 0; $i < count($sectionData); $i++){
 </div>
 
 <!-- mission and vision end -->
-<?php 
-    }}
-    for( $i = 0; $i < count($sectionData); $i++){
-        if($sectionData[$i]['section_name'] === 'mission'){
-?>
+<?php
+    }
+}
+for ($i = 0; $i < count($sectionData); $i++) {
+    if ($sectionData[$i]['section_name'] === 'mission') {
+    ?>
 <!-- mission -->
 <section id="mission">
     <div class="container">
- 
+
         <div class="row">
             <div class="col-md-12 headline ">
-                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title']?></h1>
+                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
                 <div class="col-md-12 description rellax">
-                    <p class="mission"><?= $sectionData[$i]['discription']?> </p>
+                    <p class="mission"><?= $sectionData[$i]['discription'] ?> </p>
                 </div>
             </div>
 
         </div>
-      
+
     </div>
 </section>
-<?php 
-        } }
-        for( $i = 0; $i < count($sectionData); $i++){
-       if($sectionData[$i]['section_name'] === 'vission'){
-?>
+<?php
+    }
+}
+for ($i = 0; $i < count($sectionData); $i++) {
+    if ($sectionData[$i]['section_name'] === 'vission') {
+    ?>
 <!-- vission -->
 <section id="vission">
 
     <div class="container">
         <div class="row">
             <div class="col-md-12 headline " `>
-                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title']?></h1>
+                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
                 <div class="col-md-12 description rellax">
-                    <p class="mission"><?= $sectionData[$i]['discription']?></p>
+                    <p class="mission"><?= $sectionData[$i]['discription'] ?></p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<?php 
-        } }
-        for( $i = 0; $i < count($sectionData); $i++){
-        if($sectionData[$i]['section_name'] === 'values'){
-?>
+<?php
+    }
+}
+for ($i = 0; $i < count($sectionData); $i++) {
+    if ($sectionData[$i]['section_name'] === 'values') {
+    ?>
 <!-- values -->
 <section id="values">
     <div class="container">
-  
+
         <div class="row">
             <div class="col-md-12 headline ">
-                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title']?></h1>
+                <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
                 <div class="col-md-12 description rellax">
-                    <p class="mission"><?= $sectionData[$i]['discription']?>
+                    <p class="mission"><?= $sectionData[$i]['discription'] ?>
                     </p>
                 </div>
             </div>
 
 
         </div>
-     
+
     </div>
 </section>
 <?php
     }
 }
-    ?>
+?>
 
 <!-- information -->
 <div class="container">
@@ -177,7 +179,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                     <img src="https://via.placeholder.com/200" class="card-img-top" alt="Goutham Reddy"
                         title="Goutham Reddy" title="Rajshekar N" width="200" height="200">
                     <div class="card-body">
-                        <p class="card-title">Goutam Kumar</p>
+                        <p class="card-title">Gautam Kumar</p>
                         <p class="card-text text-center">Co-Founder </p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
