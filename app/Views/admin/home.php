@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +10,11 @@
     <link rel="icon" href="../fav.ico" type="image/ico">
     <title>Spring & Fall | Admin</title>
 
-<style>
-    .someclass {min-height: 200px !important;}
-</style>
+    <style>
+    .someclass {
+        max-height: 500px !important;
+    }
+    </style>
 </head>
 
 <body class="nav-md">
