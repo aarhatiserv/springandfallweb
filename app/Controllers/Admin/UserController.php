@@ -28,6 +28,22 @@ class UserController extends Controller
 		}
     }
 
+    public function getTodayUserDetails()
+    {
+        $session = session();
+        if(!empty($session->get('username'))){
+ 
+            $model = new UserModel();
+        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+        echo json_encode(["status" => 1, "data" => $data]);
+        // print_r($data);
+            
+        }else{
+            return redirect()->to('https://springandfall.in/admin/login');
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
+    }
+
     public function getPreviousDayUserDetails()
     {
         $session = session();

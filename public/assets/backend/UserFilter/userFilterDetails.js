@@ -2,7 +2,7 @@
 function getval() {
 
     var filter = document.getElementById("filterText").value;
-    
+
     var todayDate = today();
     var previousDayDate = previousDay();
 
@@ -10,7 +10,7 @@ function getval() {
        let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
-            url: "/admin/TodayData",
+            url: "/admin/todayData",
             method: "POST",
             data: formData,
             processData: false,
@@ -45,8 +45,7 @@ function getval() {
             },
         })
     } else if (filter === previousDayDate) {
-        
-       
+              
         let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({

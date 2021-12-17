@@ -109,7 +109,14 @@ $routes->group("admin", function ($routes) {
 
      // Admin User Routes
 	 $routes->get('user', 'Admin/UserController::getUserDetails');
+	 $routes->post('todayData', 'Admin/UserController::getTodayUserDetails');
 	 $routes->post('PreviousData', 'Admin/UserController::getPreviousDayUserDetails');
+	 $routes->post('lastTwoDaysData', 'Admin/UserController::getLastTwoDaysDataUserDetails');
+	 $routes->post('lastThreeDaysData', 'Admin/UserController::getLastThreeDaysDataUserDetails');
+	 $routes->post('lastFourDaysData', 'Admin/UserController::getLastFourDaysDataUserDetails');
+	 $routes->post('lastFiveDaysData', 'Admin/UserController::getLastFiveDaysDataUserDetails');
+	 $routes->post('lastSixDaysData', 'Admin/UserController::getLastSixDaysDataUserDetails');
+	 $routes->post('lastSevenDaysData', 'Admin/UserController::getLastSevenDaysDataUserDetails');
 	});
 
 // auth routes
