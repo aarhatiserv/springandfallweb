@@ -65,11 +65,8 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-        $currentdate =  date("Y-m-d");
-        $CurrDate =  date('Y-m-d', strtotime($currentdate.' - 0 day'));
-
-        // $model = new UserModel();
-        // $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $CurrDate, "> registered")->findAll();
+        $model = new UserModel();
+        $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $this->request->getVar("today"), "> registered")->findAll();
 
         // $db = \Config\Database::connect();
         // $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter"));

@@ -94,6 +94,7 @@ function getval() {
         console.log('filter 2', filter);
         let formData = new FormData();
         formData.append('filter', filter);
+        formData.append('today', todayDate);
         $.ajax({
             url: "/admin/lastTwoDaysData",
             method: "POST",
