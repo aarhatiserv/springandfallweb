@@ -65,13 +65,13 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-        $model = new UserModel();
-        $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $this->request->getVar("today"), "> registered")->findAll();
+        // $model = new UserModel();
+        // $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $this->request->getVar("today"), "> registered")->findAll();
 
-        // $db = \Config\Database::connect();
-        // $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter"));
-        // $data = $query->getResult();
-        print_r($CurrDate);
+        $db = \Config\Database::connect();
+        $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter").'AND registered < '.$this->request->getVar("today"));
+        $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
