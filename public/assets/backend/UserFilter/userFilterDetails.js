@@ -12,8 +12,6 @@ function getval() {
     var lastSixDayDate = lastSixDay();
     var lastSevenDayDate = lastSevenDay();
 
-    console.log('filter 2', filter);
-    console.log('last 2', lastTwoDayDate);
     if (filter === todayDate) {
         console.log('filter 0', filter);
        let formData = new FormData();
@@ -188,31 +186,31 @@ function previousDay() {
 }
 function lastTwoDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 2);
   return d.toISOString().split('T')[0];
 }
 function lastThreeDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 3);
   return d.toISOString().split('T')[0];
 }
 function lastFourDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 4);
   return d.toISOString().split('T')[0];
 }
 function lastFiveDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 5);
   return d.toISOString().split('T')[0];
 }
 function lastSixDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 6);
   return d.toISOString().split('T')[0];
 }
 function lastSevenDay() {
     let d = new Date();
-    d.setDate(d.getDate() - 1);
+    d.setDate(d.getDate() - 7);
   return d.toISOString().split('T')[0];
 }
