@@ -2,6 +2,10 @@
 function getval() {
 
     var filter = document.getElementById("filterText").value;
+    
+    if (filter === today()) {
+        alert(today());
+    }
     // console.log(filter);
     let formData = new FormData();
     formData.append('filter', filter);
@@ -41,4 +45,11 @@ function getval() {
         },
     });
 
+}
+
+
+function today() {
+    let d = new Date();
+  d.setDate(d.getDate());
+  return d.toISOString().split('T')[0];
 }
