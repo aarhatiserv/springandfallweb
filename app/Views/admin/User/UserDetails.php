@@ -56,6 +56,7 @@
                                     <!-- <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button> -->
                                     <?php  $currentdate =  date("Y-m-d");
+                                                   $CurrDate =  date('Y-m-d', strtotime($currentdate.' - 0 day'));
                                                    $PreviousDate =  date('Y-m-d', strtotime($currentdate.' - 1 day'));
                                                    $Previous2DaysDate =  date('Y-m-d', strtotime($currentdate.' - 2 days'));
                                                    $Previous3DaysDate =  date('Y-m-d', strtotime($currentdate.' - 3 days'));
@@ -66,7 +67,7 @@
                                                    ?>
                                     Filter By <select id='filterText' style='display:inline-block' onchange='getval()'>
                                         <option value="all">All Days</option>
-                                        <option value="<?= $currentdate ?>">Today</option>
+                                        <option value="<?= $CurrDate ?>">Today</option>
                                         <option value="<?= $PreviousDate ?>">Previous Day</option>
                                         <option value="<?= $Previous2DaysDate ?>">Last 2 Days</option>
                                         <option value="<?= $Previous3DaysDate ?>">Last 3 Days</option>
