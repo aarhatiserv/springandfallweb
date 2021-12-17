@@ -12,6 +12,8 @@ function getval() {
     var lastSixDayDate = lastSixDay();
     var lastSevenDayDate = lastSevenDay();
 
+    console.log('filter 2', filter);
+    console.log('last 2', lastTwoDayDate);
     if (filter === todayDate) {
         console.log('filter 0', filter);
        let formData = new FormData();
@@ -134,7 +136,7 @@ function getval() {
         let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
-            url: "/admin/PreviousData",
+            url: "#",
             method: "POST",
             data: formData,
             processData: false,
