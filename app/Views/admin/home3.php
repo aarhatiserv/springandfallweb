@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../fav.ico" type="image/ico">
     <title>Spring & Fall | Admin</title>
-
+    <style>
+    .someclassMax {
+        min-height: 500px !important;
+        }
+</style>
 </head>
 
 <body class="nav-md">
@@ -25,7 +29,7 @@
             <!-- ------------------------------------------End header-------------------------- -->
 
             <!-- page content -->
-            <div class="right_col" role="main">
+            <div class="right_col someclassMax" role="main">
                 <div class="">
                     <div class="row top_tiles" style="margin: 10px 0;">
                         <div class="col-md-3 col-sm-3 col-xs-6 tile">

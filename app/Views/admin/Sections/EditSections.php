@@ -39,6 +39,11 @@
     <link href="../../assets/backend/build/css/custom.min.css" rel="stylesheet">
     <link href="../../assets/backend/build/css/addColleges.css" rel="stylesheet">
     <style>
+    .someclassMax {
+        min-height: 500px !important;
+        }
+</style>
+    <style>
     input.disabled:hover {
         cursor: not-allowed;
     }
@@ -336,7 +341,7 @@
 
 
             <!-- page content -->
-            <div class="right_col" role="main">
+            <div class="right_col someclassMax" role="main">
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
