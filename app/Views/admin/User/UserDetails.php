@@ -14,7 +14,7 @@
 
     <style>
     .someclassMax {
-        min-height: 650px !important;
+        min-height: 670px !important;
         }
 </style>
 </head>
