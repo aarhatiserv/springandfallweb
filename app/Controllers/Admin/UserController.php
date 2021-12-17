@@ -34,7 +34,7 @@ class UserController extends Controller
 		if(!empty($session->get('username'))){
  
             $model = new UserModel();
-        $data = $model->where("registered >= ", $this->request->getVar("filter"))->findAll();
+        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
