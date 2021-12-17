@@ -130,14 +130,212 @@ function getval() {
                 }
             },
         });
-    }else {
-        // console.log(filter);
+    }else if (filter === lastThreeDayDate) {
+        console.log('filter 3', filter);
         let formData = new FormData();
         formData.append('filter', filter);
+        formData.append('today', todayDate);
         $.ajax({
-            url: "#",
+            url: "/admin/lastThreeDaysData",
             method: "POST",
             data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                var res = JSON.parse(data);
+                let dt = [];
+                // $('#myTable').hide();
+                if (res.status !== undefined) {
+
+                    if (res.data.length == 0) {
+                        $('#myTable').html("No Record Found");
+
+                    } else {
+                        res.data.map((item) => (
+                            dt.push(
+                                ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('#myTable').html(dt);
+
+                    }
+                }
+            },
+        });
+    }else if (filter === lastFourDayDate) {
+        console.log('filter 4', filter);
+        let formData = new FormData();
+        formData.append('filter', filter);
+        formData.append('today', todayDate);
+        $.ajax({
+            url: "/admin/lastFourDaysData",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                var res = JSON.parse(data);
+                let dt = [];
+                // $('#myTable').hide();
+                if (res.status !== undefined) {
+
+                    if (res.data.length == 0) {
+                        $('#myTable').html("No Record Found");
+
+                    } else {
+                        res.data.map((item) => (
+                            dt.push(
+                                ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('#myTable').html(dt);
+
+                    }
+                }
+            },
+        });
+    }else if (filter === lastFiveDayDate) {
+        console.log('filter 5', filter);
+        let formData = new FormData();
+        formData.append('filter', filter);
+        formData.append('today', todayDate);
+        $.ajax({
+            url: "/admin/lastFiveDaysData",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                var res = JSON.parse(data);
+                let dt = [];
+                // $('#myTable').hide();
+                if (res.status !== undefined) {
+
+                    if (res.data.length == 0) {
+                        $('#myTable').html("No Record Found");
+
+                    } else {
+                        res.data.map((item) => (
+                            dt.push(
+                                ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('#myTable').html(dt);
+
+                    }
+                }
+            },
+        });
+    }else if (filter === lastSixDayDate) {
+        console.log('filter 6', filter);
+        let formData = new FormData();
+        formData.append('filter', filter);
+        formData.append('today', todayDate);
+        $.ajax({
+            url: "/admin/lastSixDaysData",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                var res = JSON.parse(data);
+                let dt = [];
+                // $('#myTable').hide();
+                if (res.status !== undefined) {
+
+                    if (res.data.length == 0) {
+                        $('#myTable').html("No Record Found");
+
+                    } else {
+                        res.data.map((item) => (
+                            dt.push(
+                                ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('#myTable').html(dt);
+
+                    }
+                }
+            },
+        });
+    }else if (filter === lastSevenDayDate) {
+        console.log('filter 7', filter);
+        let formData = new FormData();
+        formData.append('filter', filter);
+        formData.append('today', todayDate);
+        $.ajax({
+            url: "/admin/lastSevenDaysData",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                var res = JSON.parse(data);
+                let dt = [];
+                // $('#myTable').hide();
+                if (res.status !== undefined) {
+
+                    if (res.data.length == 0) {
+                        $('#myTable').html("No Record Found");
+
+                    } else {
+                        res.data.map((item) => (
+                            dt.push(
+                                ` <tr>
+                                                <td>` + item.name + `</td>
+                                                <td>` + item.email + `</td>
+
+                                                <td>` + item.phone + `</td>
+                                                <td>` + item.registered + `</td>
+                                            </tr>`
+                            )
+                        ));
+                        // $("#listColleges").html(dt);
+                        $('#myTable').html(dt);
+
+                    }
+                }
+            },
+        });
+    }else {
+        // console.log(filter);
+
+        $.ajax({
+            url: "/admin/allUserData",
+            method: "POST",
             processData: false,
             contentType: false,
 

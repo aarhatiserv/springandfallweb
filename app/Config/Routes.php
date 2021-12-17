@@ -109,6 +109,7 @@ $routes->group("admin", function ($routes) {
 
      // Admin User Routes
 	 $routes->get('user', 'Admin/UserController::getUserDetails');
+	 $routes->post('allUserData', 'Admin/UserController::getAllUserDetails');
 	 $routes->post('todayData', 'Admin/UserController::getTodayUserDetails');
 	 $routes->post('PreviousData', 'Admin/UserController::getPreviousDayUserDetails');
 	 $routes->post('lastTwoDaysData', 'Admin/UserController::getLastTwoDaysDataUserDetails');

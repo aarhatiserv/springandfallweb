@@ -27,7 +27,21 @@ class UserController extends Controller
 			// return redirect()->to('http://localhost:8080/admin/login');
 		}
     }
-
+    public function getAllUserDetails()
+    {
+        $session = session();
+        if(!empty($session->get('username'))){
+ 
+            $model = new UserModel();
+        $data = $model->findAll();
+        echo json_encode(["status" => 1, "data" => $data]);
+        // print_r($data);
+            
+        }else{
+            return redirect()->to('https://springandfall.in/admin/login');
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
+    }
     public function getTodayUserDetails()
     {
         $session = session();
@@ -65,9 +79,6 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-        // $model = new UserModel();
-        // $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $this->request->getVar("today"), "> registered")->findAll();
-
         $db = \Config\Database::connect();
         $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
         $data = $query->getResult();
@@ -85,9 +96,11 @@ class UserController extends Controller
     {
         $session = session();
 		if(!empty($session->get('username'))){
- 
-            $model = new UserModel();
-        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+
+            $db = \Config\Database::connect();
+            $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
+            $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
@@ -102,8 +115,10 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
  
-            $model = new UserModel();
-        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+        $db = \Config\Database::connect();
+        $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
+        $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
@@ -118,8 +133,10 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
  
-            $model = new UserModel();
-        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+            $db = \Config\Database::connect();
+            $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
+            $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
@@ -134,8 +151,10 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
  
-            $model = new UserModel();
-        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+           $db = \Config\Database::connect();
+        $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
+        $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
@@ -150,8 +169,10 @@ class UserController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
  
-            $model = new UserModel();
-        $data = $model->where("registered = ", $this->request->getVar("filter"))->findAll();
+            $db = \Config\Database::connect();
+        $query = $db->query('SELECT * FROM spring_users WHERE registered >= "'.$this->request->getVar("filter").'" AND registered < "'.$this->request->getVar("today").'" ');
+        $data = $query->getResult();
+
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
