@@ -68,13 +68,13 @@ class UserController extends Controller
         $currentdate =  date("Y-m-d");
         $CurrDate =  date('Y-m-d', strtotime($currentdate.' - 0 day'));
 
-        $model = new UserModel();
-        $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $CurrDate, "> registered")->findAll();
+        // $model = new UserModel();
+        // $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $CurrDate, "> registered")->findAll();
 
         // $db = \Config\Database::connect();
         // $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter"));
         // $data = $query->getResult();
-
+        print_r($CurrDate);
         echo json_encode(["status" => 1, "data" => $data]);
         // print_r($data);
             
