@@ -52,6 +52,6 @@ function getval() {
 
 function today() {
     let d = new Date();
-  d.setDate(d.getDate());
+    d.setDate(d.getDate());
   return d.toISOString().split('T')[0];
 }
