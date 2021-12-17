@@ -2,7 +2,7 @@
 function getval() {
 
     var filter = document.getElementById("filterText").value;
-    console.log('filter', filter);
+    
     var todayDate = today();
     var previousDayDate = previousDay();
     var lastTwoDayDate = lastTwoDay();
@@ -13,6 +13,7 @@ function getval() {
     var lastSevenDayDate = lastSevenDay();
 
     if (filter === todayDate) {
+        console.log('filter 0', filter);
        let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
@@ -51,7 +52,7 @@ function getval() {
             },
         })
     } else if (filter === previousDayDate) {
-              
+        console.log('filter 1', filter);
         let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
@@ -90,7 +91,7 @@ function getval() {
             },
         })
     } else if (filter === lastTwoDayDate) {
-        console.log('filter', filter);
+        console.log('filter 2', filter);
         let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
