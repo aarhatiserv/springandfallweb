@@ -72,7 +72,7 @@ class UserController extends Controller
         // $data = $model->where("registered >= ", $this->request->getVar("filter"), "AND", $this->request->getVar("filter"), "<",$CurrDate)->findAll();
         
         $db = \Config\Database::connect();
-        $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter").'AND'.$this->request->getVar("filter"). '<'.$currdate);
+        $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter").'AND'.$this->request->getVar("filter"). '<'.$Currdate);
         $data = $query->getResult();
 
         echo json_encode(["status" => 1, "data" => $data]);
