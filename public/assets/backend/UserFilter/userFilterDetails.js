@@ -90,7 +90,7 @@ function getval() {
             },
         });
     } else if (filter === lastTwoDayDate) {
-              
+        console.log('filter', filter);
         let formData = new FormData();
         formData.append('filter', filter);
         $.ajax({
