@@ -69,7 +69,7 @@ class UserController extends Controller
         $CurrDate =  date('Y-m-d', strtotime($currentdate.' - 0 day'));
 
         $model = new UserModel();
-        $data = $model->where("registered <= ", $this->request->getVar("filter"), "AND", $this->request->getVar("filter"), "!=",$CurrDate)->findAll();
+        $data = $model->where($this->request->getVar("filter"), "<",$CurrDate,"AND registered >= ", $this->request->getVar("filter"))->findAll();
         
         // $db = \Config\Database::connect();
         // $query = $db->query('SELECT * FROM spring_users WHERE registered >='.$this->request->getVar("filter").'AND'.);
