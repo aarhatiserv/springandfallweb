@@ -40,7 +40,7 @@
     <link href="../../assets/backend/build/css/addColleges.css" rel="stylesheet">
     <style>
     .someclassMax {
-        min-height: 500px !important;
+        min-height: 670px !important;
         }
 </style>
 </head>
