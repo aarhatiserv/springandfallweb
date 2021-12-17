@@ -3,8 +3,7 @@ function getval() {
 
     var filter = document.getElementById("filterText").value;
     var todayDate = today();
-    console.log('today', today());
-    console.log('filter', filter);
+    
     if (filter === todayDate) {
         console.log('today', today());
         console.log('filter', filter);
