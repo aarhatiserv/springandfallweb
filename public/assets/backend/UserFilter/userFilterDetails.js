@@ -2,8 +2,8 @@
 function getval() {
 
     var filter = document.getElementById("filterText").value;
-    
-    if (filter === today()) {
+    var today = today();
+    if (filter === today) {
         console.log('today', today());
         console.log('filter', filter);
     } else {
