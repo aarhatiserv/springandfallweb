@@ -33,9 +33,11 @@ function applyForCollegeInConsultation(id) {
           swal("Thank you!", res.message, "success");
           // window.location.reload();
         } else if (res.status === 2) {
-          swal("Opps.!!", res.message, "error");
+            swal("Opps.!!", res.message, "error");
+            $('#loginForm').modal('show');
         } else {
-          swal("Opps.!!", "Something went wrong.!!", "error");
+            swal("Opps.!!", "Something went wrong.!!", "error");
+            $('#loginForm').modal('show');
         }
       },
     });
