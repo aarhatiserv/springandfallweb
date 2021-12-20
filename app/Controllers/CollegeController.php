@@ -25,7 +25,7 @@ class CollegeController extends Controller
             $model = new CollegeModel();
 
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT * FROM colleges INNER JOIN leads ON leads.user_type !='".$token."' AND leads.college_id != colleges.id AND colleges.country = '".$country."'");
+            $query = $db->query("SELECT * FROM colleges INNER JOIN leads where leads.user_type !='".$token."' AND leads.college_id != colleges.id AND colleges.country = '".$country."'");
             $data = $query->getResult();
 
             echo json_encode(["status" => 1, "data" => $data]);
