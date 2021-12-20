@@ -23,6 +23,13 @@
                                     placeholder="Full Name" required>
 
                             </div>
+                            <div class="col mb-3">
+                                <input type="text" style="border-radius: 10px;"
+                                    class="form-control  border border-primary" minlength="10" maxlength="13"
+                                    title="10 digit mobile number" name="phone" id="phone"
+                                    onkeypress="javascript:return isNumber(event)" placeholder="Contact number"
+                                    required>
+                            </div>
                             <br>
                             <div style="visibility:hidden; color:red;" id="nameError">
                                 Only Letter is Required
@@ -35,28 +42,6 @@
                                     placeholder="Email address" required>
                             </div>
                             <div class="col mb-3">
-                                <input type="text" style="border-radius: 10px;"
-                                    class="form-control  border border-primary" minlength="10" maxlength="13"
-                                    title="10 digit mobile number" name="phone" id="phone"
-                                    onkeypress="javascript:return isNumber(event)" placeholder="Contact number"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <select name="service" id="service" style="border-radius: 10px;"
-                                    class="form-control  border border-primary  mt-0" required>
-                                    <!-- <select  name="service" class="text-uppercase" id="service" required> -->
-                                    <option value="">Interested services</option>
-                                    <option value="collage selection">UNIVERSITY / COLLAGE SELECTION</option>
-                                    <option value="VISA CONSULTATION">VISA CONSULTATION</option>
-                                    <option value="OVERSEASE INSURANCE">OVERSEASE INSURANCE</option>
-                                    <option value="EXAM PREPRATION">EXAM PREPRATION</option>
-                                    <option value="TRAVEL ASSISTANCE">TRAVEL ASSISTANCE</option>
-                                    <option value="INTERNATIONAL TRAINING">INTERNATIONAL TRAINING</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3">
                                 <select name="country" id="country" style="border-radius: 10px;"
                                     class="form-control  border border-primary mt-0" required>
                                     <option>Interested countries</option>
@@ -74,6 +59,33 @@
                                     <option value="Phillipines">Phillipines</option>
                                 </select>
                             </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <select name="service" id="service" style="border-radius: 10px;"
+                                    class="form-control  border border-primary  mt-0" required>
+                                    <!-- <select  name="service" class="text-uppercase" id="service" required> -->
+                                    <option value="">Interested services</option>
+                                    <option value="collage selection">UNIVERSITY / COLLAGE SELECTION</option>
+                                    <option value="VISA CONSULTATION">VISA CONSULTATION</option>
+                                    <option value="OVERSEASE INSURANCE">OVERSEASE INSURANCE</option>
+                                    <option value="EXAM PREPRATION">EXAM PREPRATION</option>
+                                    <option value="TRAVEL ASSISTANCE">TRAVEL ASSISTANCE</option>
+                                    <option value="INTERNATIONAL TRAINING">INTERNATIONAL TRAINING</option>
+                                </select>
+                            </div>
+
+                            <div class="col my-3">
+                                <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
+                                <label class="form-check-label font-weight-bold" for="terms">
+                                    I accept <a href="privacy-policy">terms & conditions</a>
+                                </label>
+                                <div style="visibility:hidden; color:red; text-align:left" id="agree_chk_error">
+                                    Can't proceed as you didn't agree to the terms!
+                                </div>
+                            </div>
+
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
@@ -85,17 +97,8 @@
                                 <div class="row text-right">
                                     <div class="col-3"></div>
                                     <div class="col-9 float-right">
-                                        <div class="from-group my-3">
-                                            <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
-                                            <label class="form-check-label font-weight-bold" for="terms">
-                                                I accept <a href="privacy-policy">terms & conditions</a>
-                                            </label>
-                                            <div style="visibility:hidden; color:red; text-align:left"
-                                                id="agree_chk_error">
-                                                Can't proceed as you didn't agree to the terms!
-                                            </div>
-                                        </div>
-                                        <button type="submit"  id= "callBackQuery" class="btn call-now text-uppercase"><i
+
+                                        <button type="submit" id="callBackQuery" class="btn call-now text-uppercase"><i
                                                 class="fas fa-phone-alt"></i> Call Now</button>
                                         <!-- <button type="submit" id="callBackQuery" class="btn call-now text-uppercase"
                                             onclick="myFunction()"><i class="fas fa-phone-alt"></i> Call Now</button> -->
