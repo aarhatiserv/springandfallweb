@@ -36,12 +36,9 @@ class CollegeController extends Controller
         // $data = [$country, $courses];
         $dataAll = $model->where('country = ',$country)->findAll();
         if(!empty($dataAll)){
-
-            for($i=0;$i<$dataAll.length;$i++){
                 if (strpos($dataAll[$i]['courses'], $courses) !== false) {
-                     $dataSeparate = explode (",", $dataAll[$i]['courses']);
-                if( $dataSeparate[$i] === $courses){
-                    $data = $model->where("country'$country'AND '$dataAll[$i]['courses']' ='$dataAll[$i]['courses']' ")->findAll();
+                    
+                    $data = $model->where('country',$country)->findAll();
                     echo json_encode(["status" => 1, "data" => $data]);
                 }
              }
