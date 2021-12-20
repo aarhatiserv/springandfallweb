@@ -12,7 +12,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div>
+                <div class="row">
                     <form action="#" method="POST" id="queryForm" name="myForm"
                         onsubmit="return validateAgreeTerms(this)">
 
