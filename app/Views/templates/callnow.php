@@ -23,7 +23,7 @@
                                     placeholder="Full Name" required>
 
                             </div>
-                            <div class="col mb-3">
+                            <div class="col-md-6 mb-3">
                                 <input type="text" style="border-radius: 10px;"
                                     class="form-control  border border-primary" minlength="10" maxlength="13"
                                     title="10 digit mobile number" name="phone" id="phone"
