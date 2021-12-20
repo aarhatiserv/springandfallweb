@@ -207,8 +207,8 @@
                         </div>
 
                     </div>
-                    <input class="form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer">
-                    <label class="form-check-label font-weight-bold" for="terms">
+                    <input class="form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer" style="margin-top:6px !important">
+                    <label class="form-check-label font-weight-bold" for="terms" style="margin-left:20px !important">
                                                 I accept <a href="privacy-policy">terms & conditions</a>
                                             </label>
                                             <div style="visibility:hidden; color:red; text-align:left"
