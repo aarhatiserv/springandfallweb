@@ -118,12 +118,12 @@
 
                     <div class="form-row">
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col-12 col-md-6 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerFname" id="careerFname"
                                 placeholder="First Name required*">
                         </div>
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col-12 col-md-6 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerLname" id="careerLname"
                                 placeholder="Last Name required*">
                         </div>
