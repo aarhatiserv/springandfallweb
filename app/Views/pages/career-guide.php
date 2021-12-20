@@ -118,12 +118,12 @@
 
                     <div class="form-row">
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col-12 col-md-6 mb-3 mx-2">
+                        <div class="col-md-6 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerFname" id="careerFname"
                                 placeholder="First Name required*">
                         </div>
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                        <div class="col-12 col-md-6 mb-3 mx-2">
+                        <div class="col mb-3 mx-2">
                             <input type="text" class="form-control" name="careerLname" id="careerLname"
                                 placeholder="Last Name required*">
                         </div>
@@ -133,7 +133,7 @@
                             <input type="text" class="form-control" name="careerPhone" id="careerPhone" maxlength="10"
                                 placeholder="Phone Number required*" onkeypress="javascript:return isNumber(event)">
                         </div>
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col mb-3 mx-2">
                             <input type="email" class="form-control" name="careerEmail" id="careerEmail"
                                 placeholder="Email required*">
                         </div>
@@ -143,7 +143,7 @@
                             <input type="text" class="form-control" name="careerAddressline1" id="careerAddressline1"
                                 placeholder="Address Line1">
                         </div>
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col mb-3 mx-2">
                             <input type="address" class="form-control" name="careerAddressline2" id="careerAddressline2"
                                 placeholder="Address Line2">
                         </div>
@@ -153,11 +153,11 @@
                             <input type="text" class="form-control" name="careerCity" id="careerCity"
                                 placeholder="City/Town/Village required*">
                         </div>
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col mb-3 mx-2">
                             <input type="text" class="form-control" name="careerState" id="careerState"
                                 placeholder="State required*">
                         </div>
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col mb-3 mx-2">
                             <input type="text" class="form-control" name="careerPin" id="careerPin" maxlength="6"
                                 placeholder="Pincode required*" onkeypress="javascript:return isNumber(event)">
                         </div>
