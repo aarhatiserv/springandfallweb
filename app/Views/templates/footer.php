@@ -443,7 +443,7 @@ $(document).ready(() => {
                 },
                 success: function(data) {
                     $('#subscribe').val("Subscribe");
-                    $('#subscribe').prop("disabled", false);
+                    // $('#subscribe').prop("disabled", false);
                     var res = JSON.parse(data);
                     if (res.status === 1) {
                         swal("Thank you!", res.message, "success");
