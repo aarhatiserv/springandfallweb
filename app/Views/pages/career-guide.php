@@ -172,32 +172,32 @@
 
                             <div class="form-row">
                                 <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col-12 col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerQualification"
                                         id="careerQualification" placeholder="Highest Qualification required*">
                                 </div>
                                 <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerPassingYear"
                                         id="careerPassingYear" placeholder="Year of Passing required*">
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col-12 col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerHigherSecondary"
                                         id="careerHigherSecondary" placeholder="12th">
                                 </div>
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerHigherSecondaryYear"
                                         id="careerHigherSecondaryYear" placeholder="Year of Passing">
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col-12 col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerSecondary" id="careerSecondary"
                                         placeholder="10th">
                                 </div>
-                                <div class="col-md-6 mb-3 mx-2">
+                                <div class="col mb-3 mx-2">
                                     <input type="email" class="form-control" name="careerSecondaryPassingYear"
                                         id="careerSecondaryPassingYear" placeholder="Year of Passing">
                                 </div>
