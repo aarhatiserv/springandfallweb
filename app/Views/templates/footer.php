@@ -94,6 +94,7 @@
 <script type="text/javascript" src="<?=base_url()?>/assets/js/college-parallax.js"></script>
 <script type="text/javascript" src="<?=base_url()?>/assets/js/college.js"></script>
 
+<!-- Add consultation click apply and show ligin modal for sweetalert By Nazim 20-Dec-2021 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet"/>
 

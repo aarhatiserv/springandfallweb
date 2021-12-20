@@ -29,19 +29,23 @@ function applyForCollegeInConsultation(id) {
       success: function (data) {
         $("#apply").prop("disabled", false);
         var res = JSON.parse(data);
-        if (res.status === 1) {
-          swal("Thank you!", res.message, "success");
-          // window.location.reload();
-        } else if (res.status === 2) {
+          if (res.status === 1) {
+              swal({ title:"Thank you!", text:res.message, type:"success"});
+              // window.location.reload();
+          } else if (res.status === 2) {
             
-            swal("Opps.!!", res.message, "error");
+              swal({ title: "Opps.!!", text: res.message, type: "error" },
+                  function () {
+                    $('#loginForm').modal('show');
+        });
             
-                $('#loginForm').modal('show');
+                
         
         } else {
-            swal("Opps.!!", res.message, "error");
-            
-            $('#loginForm').modal('show');
+            swal({ title: "Opps.!!", text: res.message, type: "error" },
+            function () {
+              $('#loginForm').modal('show');
+  });
         }
       },
     });
