@@ -636,19 +636,13 @@ function applyForCollages(id) {
         // window.location.reload();
     } else if (res.status === 2) {
       
-        swal({ title: "Opps.!!", text: res.message, type: "error" },
-            function () {
-              $('#loginForm').modal('show');
-            });
+        swal({ title: "Opps.!!", text: res.message, type: "error" });
         
   }else if (res.status === 3) {  
       swal({ title: "Opps.!!", text: res.message, type: "error" });
     
 } else {
-      swal({ title: "Opps.!!", text: res.message, type: "error" },
-      function () {
-        $('#loginForm').modal('show');
-});
+        swal({ title: "Opps.!!", text: res.message, type: "error" });
   }
 },
 });
