@@ -77,9 +77,9 @@
                                 class="form-control  border border-primary" name="message" id="msg"
                                 placeholder="Your Message" rows="3" required></textarea>
                         </div>
-                        <div class="col mb-4" style="margin-top:-20px; margin-left:20px;">
+                        <div class="col mb-4" >
                             <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
-                            <label class="form-check-label font-weight-bold" for="terms">
+                            <label class="form-check-label font-weight-bold" for="terms" style="margin-top:-20px; margin-left:20px;">
                                 I accept <a href="privacy-policy">terms & conditions</a>
                             </label>
                             <div style="visibility:hidden; color:red; text-align:left" id="agree_chk_error">
