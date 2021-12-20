@@ -94,7 +94,8 @@
 <script type="text/javascript" src="<?=base_url()?>/assets/js/college-parallax.js"></script>
 <script type="text/javascript" src="<?=base_url()?>/assets/js/college.js"></script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet"/>
 
 <?php
 if (url_is('about')) {

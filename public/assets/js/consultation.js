@@ -34,28 +34,14 @@ function applyForCollegeInConsultation(id) {
           // window.location.reload();
         } else if (res.status === 2) {
             
+            swal("Opps.!!", res.message, "error");
             
-            swal({
-                title: 'Opps.!!',
-                text: res.message,
-                type: 'error',
-                allowOutsideClick: true,
-                html: true
-            },
-            function () {
                 $('#loginForm').modal('show');
-            });
+        
         } else {
-            swal({
-                title: 'Opps.!!',
-                text: 'Something Went Wrong',
-                type: 'error',
-                allowOutsideClick: true,
-                html: true
-            },
-            function () {
-                $('#loginForm').modal('show');
-            });
+            swal("Opps.!!", res.message, "error");
+            
+            $('#loginForm').modal('show');
         }
       },
     });
