@@ -31,13 +31,14 @@ class CollegeController extends Controller
     public function getCollegesWithCourses($country, $courses)
     {
         $model = new CollegeModel();
+        $data = $model->where("country = '$country'")->findAll();
         // $data = [$country, $courses];
-        $dataAll = $model->where("country = '$country'")->findAll();
-        if(!empty($dataAll)){
-            if (str_contains($dataAll[0]['courses'], $courses)) { 
-                print_r($dataAll);
-            }
-        }
+        // $dataAll = $model->where("country = '$country'")->findAll();
+        // if(!empty($dataAll)){
+        //     if (str_contains($dataAll[0]['courses'], $courses)) { 
+        //         print_r($dataAll);
+        //     }
+        // }
         echo json_encode(["status" => 1, "data" => $data]);
     }
     // ------------------------------------------Single Course-------------------------------
