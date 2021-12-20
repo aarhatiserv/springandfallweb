@@ -79,7 +79,7 @@
                         </div>
                         <div class="col mb-4" >
                             <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
-                            <label class="form-check-label font-weight-bold" for="terms" style="margin-top:-20px; margin-left:20px;">
+                            <label class="form-check-label font-weight-bold" for="terms" style="margin-top:-8px !important; margin-left:20px !important;">
                                 I accept <a href="privacy-policy">terms & conditions</a>
                             </label>
                             <div style="visibility:hidden; color:red; text-align:left" id="agree_chk_error">
