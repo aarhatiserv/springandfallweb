@@ -234,7 +234,7 @@
 
 <!-- Area of Interest Section -->
 <!-- added by debanjan | 30-jul-2021 -->
-<section id="areaOfInterest" style="display: none;">
+<section id="areaOfInterest" style="display: none; overflow:scroll; overflow-x: hidden;">
     <div class="container">
         <div class="row ml-1">
             <h3>Area of Interest </h3>
