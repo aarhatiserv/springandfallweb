@@ -203,9 +203,9 @@
                                 </div>
 
                                 <divclass="col-12 col-md-6 mb-3 mx-2">
-                                    <input class="form-control form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer"
+                                    <input class="form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer"
                                         style="margin-top:6px !important">
-                                    <label class="form-control form-check-label font-weight-bold" for="terms"
+                                    <label class="form-check-label font-weight-bold" for="terms"
                                         style="margin-left:20px !important">
                                         I accept <a href="privacy-policy">terms & conditions</a>
                                     </label>
