@@ -42,9 +42,7 @@ class CollegeController extends Controller
                     echo json_encode(["status" => 1, "data" => $data]);
                 }
              }
-   
-        }
-    }
+    
     // print_r($dataAll);
        
     }
