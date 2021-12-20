@@ -24,9 +24,7 @@ class CollegeController extends Controller
             $leadsModel = new CareerguideModel();
             $model = new CollegeModel();
 
-            $db = \Config\Database::connect();
-            $query = $db->query("SELECT * FROM colleges where country = '".$country."'");
-            $data = $query->getResult();
+            $data = $model->where('country = ', $country)->findAll();
 
             echo json_encode(["status" => 1, "data" => $data]);
         } else {
