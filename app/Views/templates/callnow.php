@@ -86,7 +86,7 @@
 
                         </div>
                         <div class="form-row">
-                        <div class="col-md-6 my-3">
+                        <div class="col-md-6" style="margin-top:-70px; margin-left:25px">
                                 <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
                                 <label class="form-check-label font-weight-bold" for="terms">
                                     I accept <a href="privacy-policy">terms & conditions</a>
