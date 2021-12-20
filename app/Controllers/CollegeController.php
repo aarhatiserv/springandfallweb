@@ -35,15 +35,15 @@ class CollegeController extends Controller
         // $data = $model->where('country', $country)->findAll();
         // $data = [$country, $courses];
         $dataAll = $model->where('country = ',$country)->findAll();
-        if(!empty($dataAll)){
-                if (strpos($dataAll[$i]['courses'], $courses) !== false) {
+
+                if (strpos($dataAll[0]['courses'], $courses) !== false) {
                     
                     $data = $model->where('country',$country)->findAll();
                     echo json_encode(["status" => 1, "data" => $data]);
                 }
-             }
+             
     
-    // print_r($dataAll);
+             echo json_encode(["status" => 1, "data" => $data]);
        
     }
     // ------------------------------------------Single Course-------------------------------
