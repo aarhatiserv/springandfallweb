@@ -172,7 +172,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-12 col-md-4 mb-3 mx-2">
+                        <div class="col-md-4 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerCity" id="careerCity"
                                 placeholder="City/Town/Village required*">
                         </div>
@@ -195,7 +195,7 @@
 
                             <div class="form-row">
                                 <!-- <div class="col-md-6 mb-3 mx-2"> -->
-                                <div class="col-12 col-md-6 mb-3 mx-2">
+                                <div class="col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerQualification"
                                         id="careerQualification" placeholder="Highest Qualification required*">
                                 </div>
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-12 col-md-6 mb-3 mx-2">
+                                <div class="col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerHigherSecondary"
                                         id="careerHigherSecondary" placeholder="12th">
                                 </div>
@@ -216,7 +216,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-12 col-md-6 mb-3 mx-2">
+                                <div class="col-md-6 mb-3 mx-2">
                                     <input type="text" class="form-control" name="careerSecondary" id="careerSecondary"
                                         placeholder="10th">
                                 </div>
@@ -228,7 +228,7 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="col-12 col-md-6 mb-3 mx-2">
+                                <div class="col-md-6 mb-3 mx-2">
                                     <input class="form-check-input p-3" name="termsCareer" type="checkbox"
                                         id="termsCareer" style="margin-top:6px !important">
                                     <label class="form-check-label font-weight-bold" for="terms"
