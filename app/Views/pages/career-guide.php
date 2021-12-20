@@ -149,11 +149,11 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-6 mb-3 mx-2">
+                        <div class="col-12 col-md-6 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerCity" id="careerCity"
                                 placeholder="City/Town/Village required*">
                         </div>
-                        <div class="col mb-3 mx-2">
+                        <div class="col-12 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerState" id="careerState"
                                 placeholder="State required*">
                         </div>
