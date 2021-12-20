@@ -632,15 +632,26 @@ function applyForCollages(id) {
       $("#apply").prop("disabled", false);
       var res = JSON.parse(data);
       if (res.status === 1) {
-        swal("Thank you!", res.message, "success");
+        swal({ title:"Thank you!", text:res.message, type:"success"});
         // window.location.reload();
-      } else if (res.status === 2) {
-        swal("Opps.!!", res.message, "error");
-      } else {
-        swal("Opps.!!", "Something went wrong.!!", "error");
-      }
-    },
-  });
+    } else if (res.status === 2) {
+      
+        swal({ title: "Opps.!!", text: res.message, type: "error" },
+            function () {
+              $('#loginForm').modal('show');
+            });
+        
+  }else if (res.status === 3) {  
+      swal({ title: "Opps.!!", text: res.message, type: "error" });
+    
+} else {
+      swal({ title: "Opps.!!", text: res.message, type: "error" },
+      function () {
+        $('#loginForm').modal('show');
+});
+  }
+},
+});
 }
 // apply for collages code ends here
 
