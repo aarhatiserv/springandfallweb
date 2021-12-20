@@ -37,11 +37,12 @@ function applyForCollegeInConsultation(id) {
               swal({ title: "Opps.!!", text: res.message, type: "error" },
                   function () {
                     $('#loginForm').modal('show');
-        });
-            
-                
-        
-        } else {
+                  });
+              
+        }else if (res.status === 3) {  
+            swal({ title: "Opps.!!", text: res.message, type: "error" });
+          
+      } else {
             swal({ title: "Opps.!!", text: res.message, type: "error" },
             function () {
               $('#loginForm').modal('show');
