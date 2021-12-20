@@ -176,7 +176,7 @@ class CollegeController extends Controller
                 ];
                 $model = new CareerguideModel();
         // $id = $session->get('idCareerGuide');
-        $appliedCollege = $model->where('college_id = ', $collegeId, 'AND user_type = ',$session->get('userId') ) -> findAll();
+        $appliedCollege = $model->where("college_id = '$collegeId' AND user_type = '$session->get('userId')")->findAll();
         if(!empty($appliedCollege)){
             echo json_encode(["status" => 3, "message" => "You Have Already Applied This College"]);
         }else{
