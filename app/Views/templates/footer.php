@@ -447,6 +447,7 @@ $(document).ready(() => {
                     var res = JSON.parse(data);
                     if (res.status === 1) {
                         swal("Thank you!", res.message, "success");
+                        document.getElementById("subscribeEmail").value = "";
                         // window.location.reload();
                     } else if (res.status === 2) {
                         swal("Opps.!!", res.message, "error");
