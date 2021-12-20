@@ -31,7 +31,7 @@ class CollegeController extends Controller
     public function getCollegesWithCourses($country, $courses)
     {
         $model = new CollegeModel();
-        $data = $model->where("country = '$country'")->findAll();
+        $data = $model->where('country', $country)->findAll();
         // $data = [$country, $courses];
         // $dataAll = $model->where("country = '$country'")->findAll();
         // if(!empty($dataAll)){
