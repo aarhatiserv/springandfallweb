@@ -309,6 +309,10 @@ class CollegeController extends Controller
         ];
         $model = new CareerguideModel();
         // $id = $session->get('idCareerGuide');
+        $appliedCollege = $model->where('user_type = ',$session->get('userId'), "AND college_id = ", $collegeId ) -> findAll();
+        if(!empty($appliedCollege)){
+            echo json_encode(["status" => 2, "message" => "You Have Already Applied This College"]);
+        }else{
         if ($model->insert($data)) {
             $response = [
                 'status' => 200,
@@ -355,6 +359,7 @@ class CollegeController extends Controller
             ];
             echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
         }
+    }
     }
    }
 
