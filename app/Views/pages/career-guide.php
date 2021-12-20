@@ -221,17 +221,7 @@
                         </div>
 
                     </div>
-                    <div>
-                        <input class="form-check-input p-3" name="termsCareer" type="checkbox" id="termsCareer"
-                            style="margin-top:6px !important">
-                        <label class="form-check-label font-weight-bold" for="terms"
-                            style="margin-left:20px !important">
-                            I accept <a href="privacy-policy">terms & conditions</a>
-                        </label>
-                        <div style="visibility:hidden; color:red; text-align:left" id="agree_chk_error">
-                            Can't proceed as you didn't agree to the terms!
-                        </div>
-                    </div>
+                    
                 </form>
                 <div class="row p-1 float-right">
                     <button class="btn btn-primary font-weight-bold mb-2 mr-2" name="next" id="next" type="submit"
