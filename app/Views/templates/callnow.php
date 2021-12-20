@@ -76,17 +76,17 @@
                                 </select>
                             </div>
 
-                            <div class="col mb-3">
-                                <textarea type="textArea" style="border-radius: 10px;"
-                                    class="form-control  border border-primary" name="message" id="msg"
-                                    placeholder="Your Message" rows="4" required></textarea>
-                            </div>
-
                             
-
+                            
+                            
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <textarea type="textArea" style="border-radius: 10px;"
+                                class="form-control  border border-primary" name="message" id="msg"
+                                placeholder="Your Message" rows="4" required></textarea>
                         </div>
                         <div class="form-row">
-                        <div class="col-md-6" style="margin-top:-70px; margin-left:25px">
+                            <div class="col-md-6" style="margin-top:-70px; margin-left:25px">
                                 <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
                                 <label class="form-check-label font-weight-bold" for="terms">
                                     I accept <a href="privacy-policy">terms & conditions</a>
