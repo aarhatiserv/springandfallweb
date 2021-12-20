@@ -33,17 +33,18 @@ class CollegeController extends Controller
         $model = new CollegeModel();
 
         // $data = $model->where('country', $country)->findAll();
-        $data = [$country, $courses];
+        // $data = [$country, $courses];
         $dataAll = $model->where("country = '$country'")->findAll();
-        if(!empty($dataAll)){
-            for($i=0;$i<$dataAll.length;$i++){
-                $dataSeparate = explode (",", $dataAll[$i]['courses']);
-                if( $dataSeparate[$i] === $courses){
-                    $data = $model->where("country'$country'AND courses ='$courses' ")->findAll();
-                }
-        }
-    }
-        echo json_encode(["status" => 1, "data" => $data]);
+    //     if(!empty($dataAll)){
+    //         for($i=0;$i<$dataAll.length;$i++){
+    //             $dataSeparate = explode (",", $dataAll[$i]['courses']);
+    //             if( $dataSeparate[$i] === $courses){
+    //                 $data = $model->where("country'$country'AND courses ='$courses' ")->findAll();
+    //             }
+    //     }
+    // }
+    print_r($dataAll);
+        echo json_encode(["status" => 1, "data" => $dataAll]);
     }
     // ------------------------------------------Single Course-------------------------------
     public function getCourse($course)
