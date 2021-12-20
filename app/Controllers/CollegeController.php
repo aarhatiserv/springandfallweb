@@ -17,15 +17,10 @@ class CollegeController extends Controller
 
     public function getColleges($country)
     {
-        $session  = session();
         if (!empty($country)) {
 
-            $token = $session.get('token');
-            $leadsModel = new CareerguideModel();
             $model = new CollegeModel();
-
-            $data = $model->where('country = ', $country)->findAll();
-
+            $data = $model->where('country', $country)->findAll();
             echo json_encode(["status" => 1, "data" => $data]);
         } else {
             return redirect()->to('https://springandfall.in/consultation');
