@@ -298,32 +298,27 @@ for ($i = 0; $i < count($sectionData); $i++) {
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-USA2" aria-selected="false"
-                                >USA</button>
-                                <!-- onclick="getCollegeWithCountry('USA')">USA</button> -->
+                                onclick="getCollegeWithCountry('USA')">USA</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK2-tab" data-toggle="pill" href="#pills-course"
                                 role="tab" aria-controls="pills-UK2" aria-selected="false"
-                                >UK</button>
-                                <!-- onclick="getCollegeWithCountry('UK')">UK</button> -->
+                                onclick="getCollegeWithCountry('UK')">UK</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Canada2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-Canada2" aria-selected="false"
-                                >Canada</button>
-                                <!-- onclick="getCollegeWithCountry('Canada')">Canada</button> -->
+                                onclick="getCollegeWithCountry('Canada')">Canada</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-Germany2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-Germany2" aria-selected="false"
-                                >Germany</button>
-                                <!-- onclick="getCollegeWithCountry('Germany')">Germany</button> -->
+                                onclick="getCollegeWithCountry('Germany')">Germany</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-France2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-France2" aria-selected="false"
-                                >France</button>
-                                <!-- onclick="getCollegeWithCountry('France')">France</button> -->
+                                onclick="getCollegeWithCountry('France')">France</button>
                         </li>
                     </ul>
                     <!-- ------------------------------- End Courses Country------------------------------------------------------------- -->
