@@ -17,7 +17,7 @@
                         onsubmit="return validateAgreeTerms(this)">
 
                         <div class="form-row">
-                            <div class="col mb-3">
+                            <div class="col-12 col-md-6 mb-3">
                                 <input type="text" style="border-radius: 10px;"
                                     class="form-control  border border-primary" name="fullname" id="fullname"
                                     placeholder="Full Name" required>
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col mb-3">
+                            <div class="col-12 col-md-6 mb-3">
                                 <input type="email" style="border-radius: 10px;"
                                     class="form-control  border border-primary" name="email" id="email"
                                     placeholder="Email address" required>
