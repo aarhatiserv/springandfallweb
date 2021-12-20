@@ -34,7 +34,7 @@ class CollegeController extends Controller
 
         // $data = $model->where('country', $country)->findAll();
         // $data = [$country, $courses];
-        $dataAll = $model->where("country = '$country'")->findAll();
+        $dataAll = $model->where('country = ',$country)->findAll();
     //     if(!empty($dataAll)){
     //         for($i=0;$i<$dataAll.length;$i++){
     //             $dataSeparate = explode (",", $dataAll[$i]['courses']);
