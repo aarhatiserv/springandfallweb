@@ -52,7 +52,7 @@ class CollegeController extends Controller
 
         $data = array();
         for($i = 0; $i<count($dataAll); $i++){
-            if (strpos($dataAll[$i]['courses'], $courses) !== false) {
+            if (strpos($dataAll[$i]['courses'], $course) !== false) {
                     
                 array_push($data, $dataAll[$i]);
                 }
