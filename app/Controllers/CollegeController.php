@@ -119,10 +119,11 @@ class CollegeController extends Controller
 
         $data = array();
         for($i = 0; $i<count($dataAll); $i++){
-            if ((strpos($dataAll[$i]['courses'], $course)) && (strpos($dataAll[$i]['levels'], $level))) {
-                    
-                array_push($data, $dataAll[$i]);
-                }
+            if (strpos($dataAll[$i]['courses'], $course) !== false){
+                if(strpos($dataAll[$i]['levels'], $level) !== false) {
+                   array_push($data, $dataAll[$i]);
+               }
+           }
             }
         echo json_encode(["status" => 1, "data" => $data]);
     }
