@@ -43,7 +43,11 @@ $(document).ready(function () {
     var secondary = $("#careerSecondary").val();
     var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
 
-    if(firstName == ""){
+    if (firstName == "") {
+      $('#careerFname').addClass('error');
+      setTimeout(function() {
+        $('#careerFname').removeClass('error');
+      }, 500);
         // alert("First Name is Required");
         $('#alertFirstName').fadeTo(2000, 500).slideUp(500, function() {
           $("#alertFirstName").slideUp(500);  });

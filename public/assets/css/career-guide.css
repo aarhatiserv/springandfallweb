@@ -71,3 +71,20 @@ text-decoration: none !important;
   .closebtn:hover {
     color: black;
   }
+
+  .error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+    border: 1px solid red;
+    outline: none;
+  }
+  
+  @keyframes shake {
+    0% {
+      left: -5px;
+    }
+    100% {
+      right: -5px;
+    }
+  }
