@@ -43,6 +43,11 @@ $(document).ready(function () {
     var secondary = $("#careerSecondary").val();
     var secondaryPassingYear = $("#careerSecondaryPassingYear").val();
 
+
+    if (firstName != "") {
+      $('#careerFname').removeClass('focus');
+   }
+
     if (firstName == "") {
       $('#careerFname').addClass('error');
       $('#careerFname').addClass('focus');
