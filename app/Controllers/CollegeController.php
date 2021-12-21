@@ -34,30 +34,44 @@ class CollegeController extends Controller
 
         $dataAll = $model->where('country', $country)->findAll();
 
-        $data = array();;
+        $data = array();
         for($i = 0; $i<count($dataAll); $i++){
             if (strpos($dataAll[$i]['courses'], $courses) !== false) {
                     
                 array_push($data, $dataAll[$i]);
                 }
-        }
-             
-    
-             echo json_encode(["status" => 1, "data" => $data]);
+            }
+        echo json_encode(["status" => 1, "data" => $data]);
        
     }
     // ------------------------------------------Single Course-------------------------------
     public function getCourse($course)
     {
         $model = new CollegeModel();
-        $data = $model->where('courses', $course)->findAll();
+        $dataAll = $model->findAll();
+
+        $data = array();
+        for($i = 0; $i<count($dataAll); $i++){
+            if (strpos($dataAll[$i]['courses'], $courses) !== false) {
+                    
+                array_push($data, $dataAll[$i]);
+                }
+        }
         echo json_encode(["status" => 1, "data" => $data]);
     }
     // ------------------------------------------Single Level-------------------------------
     public function getLevel($level)
     {
         $model = new CollegeModel();
-        $data = $model->where('levels', $level)->findAll();
+        $dataAll = $model->findAll();
+
+        $data = array();
+        for($i = 0; $i<count($dataAll); $i++){
+            if (strpos($dataAll[$i]['levels'], $level) !== false) {
+                    
+                array_push($data, $dataAll[$i]);
+                }
+        }
         echo json_encode(["status" => 1, "data" => $data]);
     }
 
@@ -66,7 +80,15 @@ class CollegeController extends Controller
     {
         $model = new CollegeModel();
         // $data = [$country, $courses];
-        $data = $model->where("country = '$country' AND levels ='$level'")->findAll();
+        $dataAll = $model->where('country', $country)->findAll();
+
+        $data = array();
+        for($i = 0; $i<count($dataAll); $i++){
+            if (strpos($dataAll[$i]['levels'], $level) !== false) {
+                    
+                array_push($data, $dataAll[$i]);
+                }
+            }
         echo json_encode(["status" => 1, "data" => $data]);
     }
 
@@ -75,7 +97,15 @@ class CollegeController extends Controller
     {
         $model = new CollegeModel();
         // $data = [$country, $courses];
-        $data = $model->where("courses = '$course' AND levels ='$level'")->findAll();
+        $dataAll = $model->findAll();
+
+        $data = array();
+        for($i = 0; $i<count($dataAll); $i++){
+            if ((strpos($dataAll[$i]['courses'], $courses)) && (strpos($dataAll[$i]['levels'], $level))) {
+                    
+                array_push($data, $dataAll[$i]);
+                }
+            }
         echo json_encode(["status" => 1, "data" => $data]);
     }
 
@@ -84,8 +114,15 @@ class CollegeController extends Controller
     public function getCountryAndCourseAndLevel($country, $course, $level)
     {
         $model = new CollegeModel();
-        // $data = [$country, $courses];
-        $data = $model->where("country = '$country'AND courses = '$course' AND levels ='$level'")->findAll();
+        $dataAll = $model->where('country', $country)->findAll();
+
+        $data = array();
+        for($i = 0; $i<count($dataAll); $i++){
+            if ((strpos($dataAll[$i]['courses'], $courses)) && (strpos($dataAll[$i]['levels'], $level))) {
+                    
+                array_push($data, $dataAll[$i]);
+                }
+            }
         echo json_encode(["status" => 1, "data" => $data]);
     }
 
