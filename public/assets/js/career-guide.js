@@ -144,8 +144,8 @@ $(document).ready(function () {
         $('#careerFname').removeClass('error');
       }, 500);
         // alert("First Name is Required");
-        $('#alertFirstName').fadeTo(2000, 500).slideUp(500, function() {
-          $("#alertFirstName").slideUp(500);  });
+        // $('#alertFirstName').fadeTo(2000, 500).slideUp(500, function() {
+        //   $("#alertFirstName").slideUp(500);  });
     }else if(phone == "" ){
       // alert("Phone Number is Required");
       $('#careerPhone').addClass('error');
@@ -153,8 +153,8 @@ $(document).ready(function () {
       setTimeout(function() {
         $('#careerPhone').removeClass('error');
       }, 500);
-      $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
-        $("#alertPhone").slideUp(500);  });
+      // $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
+      //   $("#alertPhone").slideUp(500);  });
     }
     else if (email == "") {
       $('#careerEmail').addClass('error');
@@ -163,8 +163,8 @@ $(document).ready(function () {
         $('#careerEmail').removeClass('error');
       }, 500);
       // alert("Email is Required");
-      $('#alertEmail').fadeTo(2000, 500).slideUp(500, function() {
-        $("#alertEmail").slideUp(500);  });
+      // $('#alertEmail').fadeTo(2000, 500).slideUp(500, function() {
+      //   $("#alertEmail").slideUp(500);  });
     }
     else if (city == "") {
       $('#careerCity').addClass('error');
@@ -173,8 +173,8 @@ $(document).ready(function () {
         $('#careerCity').removeClass('error');
       }, 500);
       // alert("City is Required");
-      $('#alertCity').fadeTo(2000, 500).slideUp(500, function() {
-        $("#alertCity").slideUp(500);  });
+      // $('#alertCity').fadeTo(2000, 500).slideUp(500, function() {
+      //   $("#alertCity").slideUp(500);  });
     }
     else if (state == "") {
       $('#careerState').addClass('error');
@@ -183,8 +183,8 @@ $(document).ready(function () {
         $('#careerState').removeClass('error');
       }, 500);
       // alert("State is Required");
-      $('#alertState').fadeTo(2000, 500).slideUp(500, function() {
-        $("#alertState").slideUp(500);  });
+      // $('#alertState').fadeTo(2000, 500).slideUp(500, function() {
+      //   $("#alertState").slideUp(500);  });
     }
     else if (pin == "") {
       $('#careerPin').addClass('error');
@@ -193,15 +193,15 @@ $(document).ready(function () {
         $('#careerPin').removeClass('error');
       }, 500);
       // alert("Pin Code is Required");
-      $('#alertPin').fadeTo(2000, 500).slideUp(500, function() {
-        $("#alertPin").slideUp(500);  });
+      // $('#alertPin').fadeTo(2000, 500).slideUp(500, function() {
+      //   $("#alertPin").slideUp(500);  });
     }else{
 
       if (phone.length <= 9) {
         $('#careerPhone').addClass('error');
         $('#careerPhone').addClass('focus');
-        $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
-          $("#alertPhone").slideUp(500);  });
+        // $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
+        //   $("#alertPhone").slideUp(500);  });
       }else{
         $('#careerPhone').removeClass('error');
         $('#careerPhone').removeClass('focus');
@@ -229,9 +229,11 @@ $(document).ready(function () {
            $("#personalDetails").fadeOut();
            $("#areaOfInterest").fadeIn();
            // $("p").show(); // hiding for later use
-        }else{
-            $('#alertEmailValidation').fadeTo(2000, 500).slideUp(500, function() {
-              $("#alertEmailValidation").slideUp(500);  });
+        } else {
+          $('#careerEmail').addClass('error');
+          $('#careerEmail').addClass('focus');
+            // $('#alertEmailValidation').fadeTo(2000, 500).slideUp(500, function() {
+            //   $("#alertEmailValidation").slideUp(500);  });
           } // close email validation else
       } // close phone validation else
     } // close required else
