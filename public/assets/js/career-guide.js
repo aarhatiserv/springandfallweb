@@ -45,6 +45,7 @@ $(document).ready(function () {
 
     if (firstName == "") {
       $('#careerFname').addClass('error');
+      $('#careerFname').addClass('focus');
       setTimeout(function() {
         $('#careerFname').removeClass('error');
       }, 500);
