@@ -1,76 +1,78 @@
 // Carred guide code added by Goutam reddy and Nazim
-$('input[name=careerFname]').change(function () { 
-  var x = $("#careerFname").val();
-  if (x === "") {
-    $('#careerFname').addClass('error');
-    $('#careerFname').addClass('focus');
-    setTimeout(function() {
-      $('#careerFname').removeClass('error');
-    }, 500);
-  } else {
-    $('#careerFname').removeClass('focus');
-  }
+$(document).ready(function () {
+  $('input[name=careerFname]').change(function () {
+    var x = $("#careerFname").val();
+    if (x === "") {
+      $('#careerFname').addClass('error');
+      $('#careerFname').addClass('focus');
+      setTimeout(function () {
+        $('#careerFname').removeClass('error');
+      }, 500);
+    } else {
+      $('#careerFname').removeClass('focus');
+    }
+  });
+  $('input[name=careerPhone]').change(function () {
+    var x = $("#careerPhone").val();
+    if (x.length <= 9) {
+      $('#careerPhone').addClass('error');
+      $('#careerPhone').addClass('focus');
+      setTimeout(function () {
+        $('#careerPhone').removeClass('error');
+      }, 500);
+    } else {
+      $('#careerPhone').removeClass('focus');
+    }
+  });
+  $('input[name=careerEmail]').change(function () {
+    var x = $("#careerEmail").val();
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x)) {
+      $('#careerEmail').removeClass('focus');
+    } else {
+      $('#careerEmail').addClass('error');
+      $('#careerEmail').addClass('focus');
+      setTimeout(function () {
+        $('#careerEmail').removeClass('error');
+      }, 500);
+    }
+  });
+  $('input[name=careerCity]').change(function () {
+    var x = $("#careerCity").val();
+    if (x === "") {
+      $('#careerCity').addClass('error');
+      $('#careerCity').addClass('focus');
+      setTimeout(function () {
+        $('#careerCity').removeClass('error');
+      }, 500);
+    } else {
+      $('#careerCity').removeClass('focus');
+    }
+  });
+  $('input[name=careerState]').change(function () {
+    var x = $("#careerState").val();
+    if (x === "") {
+      $('#careerState').addClass('error');
+      $('#careerState').addClass('focus');
+      setTimeout(function () {
+        $('#careerState').removeClass('error');
+      }, 500);
+    } else {
+      $('#careerState').removeClass('focus');
+    }
+  });
+  $('input[name=careerPin]').change(function () {
+    var x = $("#careerPin").val();
+    if (x.length <= 5) {
+      $('#careerPin').addClass('error');
+      $('#careerPin').addClass('focus');
+      setTimeout(function () {
+        $('#careerPin').removeClass('error');
+      }, 500);
+    } else {
+      $('#careerPin').removeClass('focus');
+    }
+  });
 });
-$('input[name=careerPhone]').change(function () { 
-  var x = $("#careerPhone").val();
-  if (x.length <= 9) {
-    $('#careerPhone').addClass('error');
-    $('#careerPhone').addClass('focus');
-    setTimeout(function() {
-      $('#careerPhone').removeClass('error');
-    }, 500);
-  } else {
-    $('#careerPhone').removeClass('focus');
-  }
- });
- $('input[name=careerEmail]').change(function () { 
-  var x = $("#careerEmail").val();
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x)) {
-     $('#careerEmail').removeClass('focus');
-  } else {
-    $('#careerEmail').addClass('error');
-    $('#careerEmail').addClass('focus');
-    setTimeout(function() {
-      $('#careerEmail').removeClass('error');
-    }, 500);
-  }
- });
- $('input[name=careerCity]').change(function () { 
-  var x = $("#careerCity").val();
-  if (x === "") {
-    $('#careerCity').addClass('error');
-    $('#careerCity').addClass('focus');
-    setTimeout(function() {
-      $('#careerCity').removeClass('error');
-    }, 500);
-  } else {
-    $('#careerCity').removeClass('focus');
-  }
- });
- $('input[name=careerState]').change(function () { 
-  var x = $("#careerState").val();
-  if (x === "") {
-    $('#careerState').addClass('error');
-    $('#careerState').addClass('focus');
-    setTimeout(function() {
-      $('#careerState').removeClass('error');
-    }, 500);
-  } else {
-    $('#careerState').removeClass('focus');
-  }
- });
- $('input[name=careerPin]').change(function () { 
-  var x = $("#careerPin").val();
-  if (x.length <= 5) {
-    $('#careerPin').addClass('error');
-    $('#careerPin').addClass('focus');
-    setTimeout(function() {
-      $('#careerPin').removeClass('error');
-    }, 500);
-  } else {
-    $('#careerPin').removeClass('focus');
-  }
- });
 // For agree terms if not agree then disable next button
 $('#termsCareer').click(function() {
   if ($(this).is(":checked")) {
