@@ -143,7 +143,7 @@
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
                         <div class="col-md-6 mb-3 mx-2">
                             <input type="text" class="form-control" name="careerFname" id="careerFname"
-                                placeholder="First Name required*">
+                                placeholder="First Name required*" autofocus>
                         </div>
                         <!-- <div class="col-md-6 mb-3 mx-2"> -->
                         <div class="col mb-3 mx-2">
