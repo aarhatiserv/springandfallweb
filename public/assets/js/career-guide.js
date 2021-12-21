@@ -47,6 +47,21 @@ $(document).ready(function () {
     if (firstName != "") {
       $('#careerFname').removeClass('focus');
    }
+    if (phone != "") {
+      $('#careerPhone').removeClass('focus');
+   }
+    if (email != "") {
+      $('#careerEmail').removeClass('focus');
+   }
+    if (city != "") {
+      $('#careerCity').removeClass('focus');
+   }
+    if (state != "") {
+      $('#careerState').removeClass('focus');
+   }
+    if (pin != "") {
+      $('#careerPin').removeClass('focus');
+   }
 
     if (firstName == "") {
       $('#careerFname').addClass('error');
@@ -59,35 +74,63 @@ $(document).ready(function () {
           $("#alertFirstName").slideUp(500);  });
     }else if(phone == "" ){
       // alert("Phone Number is Required");
+      $('#careerPhone').addClass('error');
+      $('#careerPhone').addClass('focus');
+      setTimeout(function() {
+        $('#careerPhone').removeClass('error');
+      }, 500);
       $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertPhone").slideUp(500);  });
     }
-    else if(email == "" ){
+    else if (email == "") {
+      $('#careerEmail').addClass('error');
+      $('#careerEmail').addClass('focus');
+      setTimeout(function() {
+        $('#careerEmail').removeClass('error');
+      }, 500);
       // alert("Email is Required");
       $('#alertEmail').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertEmail").slideUp(500);  });
     }
-    else if(city == "" ){
+    else if (city == "") {
+      $('#careerCity').addClass('error');
+      $('#careerCity').addClass('focus');
+      setTimeout(function() {
+        $('#careerCity').removeClass('error');
+      }, 500);
       // alert("City is Required");
       $('#alertCity').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertCity").slideUp(500);  });
     }
-    else if(state == "" ){
+    else if (state == "") {
+      $('#careerState').addClass('error');
+      $('#careerState').addClass('focus');
+      setTimeout(function() {
+        $('#careerState').removeClass('error');
+      }, 500);
       // alert("State is Required");
       $('#alertState').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertState").slideUp(500);  });
     }
-    else if(pin == "" ){
+    else if (pin == "") {
+      $('#careerPin').addClass('error');
+      $('#careerPin').addClass('focus');
+      setTimeout(function() {
+        $('#careerPin').removeClass('error');
+      }, 500);
       // alert("Pin Code is Required");
       $('#alertPin').fadeTo(2000, 500).slideUp(500, function() {
         $("#alertPin").slideUp(500);  });
     }else{
 
-      if(phone.length <= 9){
+      if (phone.length <= 9) {
+        $('#careerPhone').addClass('error');
+        $('#careerPhone').addClass('focus');
         $('#alertPhone').fadeTo(2000, 500).slideUp(500, function() {
           $("#alertPhone").slideUp(500);  });
       }else{
-
+        $('#careerPhone').removeClass('error');
+        $('#careerPhone').removeClass('focus');
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
            //call ajax for set session
            addPersonalDetailsInSession(
