@@ -356,7 +356,11 @@ $session = session();
                             <a class="nav-link" href="#">EVENTS</a>
                         </li> -->
                         <li class="nav-item ml-2 mt-1">
-                            <?php if ($session->get('token')) : ?>
+                            <?php if ($session->get('token')) : 
+                                $session = session();
+                                $userNameProfile = $session->get('userNameProfile')." ";
+                                $arr = explode(' ',trim($userNameProfile));
+                                ?>
                             <!-- <a href="" class="btn"
                                 style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN
                                 OUT</a> -->
@@ -369,12 +373,12 @@ $session = session();
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+          <!-- <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="50" height="50" class="rounded-circle"> -->
+          <p>Hi, <?= $arr[0] ?></p>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Dashboard</a>
           <a class="dropdown-item" href="#">Edit Profile</a>
-          <a class="dropdown-item" href="#">Log Out</a>
+          <a class="dropdown-item" href="<?= base_url() ?>/api/logout">Log Out</a>
         </div>
       </li>   
     </ul>

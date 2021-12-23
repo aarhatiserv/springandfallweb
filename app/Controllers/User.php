@@ -208,6 +208,7 @@ class User extends ResourceController
 					$session = session();
 					$session->set("token", $token);
 					$session->set("userId", $userdata['id']);
+					$session->set("userNameProfile", $userdata['name']);
 					// $session->set("username", 'goutam');
 
 					// $this->session->set("token", $token);
