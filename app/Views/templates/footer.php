@@ -128,6 +128,9 @@ var rellax = new Rellax('.rellax', {
 
 <script type="text/javascript">
 $(document).ready(function() {
+    setInterval(function(){ 
+    alert("after 5 second"); 
+}, 5000);
     $("#flags-carousel").owlCarousel({
         items: 6,
         loop: true,

@@ -17,7 +17,7 @@ $(document).ready(function () {
             changePassword.style.display = "block";
         }
     }
-
+ // when click back button in change password div then it is show profile section
     backChangePassword.onclick = function () {
         if (changePassword.style.display !== "none") {
             changePassword.style.display = "none";
