@@ -2,13 +2,17 @@
 $(document).ready(function () {
     const personalProfileDetails = document.getElementById("personalProfileDetails");
     const changePassword = document.getElementById("changePassword");
+    const backChangePassword = document.getElementById("backChangePassword");
+    const back = document.getElementById("back");
     const btn = document.getElementById("changePasswordBtn");
     btn.onclick = function () {
         if (personalProfileDetails.style.display !== "none") {
             personalProfileDetails.style.display = "none";
             changePassword.style.display = "block";
             btn.style.display = "none";
-            
+            back.style.display = "none";
+            backChangePassword.style.display = "block";
+        
         } else {
             changePassword.style.display = "block";
         }

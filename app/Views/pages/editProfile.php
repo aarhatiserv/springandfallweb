@@ -172,6 +172,10 @@
                             <div class="text-left">
                                 <a href="javascript:history.back();"><button type="button" id="back" name="back"
                                         class="btn btn-secondary">Back</button></a>
+
+                                        <button type="button" id="backChangePassword" name="backChangePassword"
+                                        class="btn btn-error" style="display:none">Back</button>
+
                                <button type="button" id="changePasswordBtn" name="changePasswordBtn"
                                         class="btn btn-success">Change Password</button>
                                 <button type="button" id="update" name="update" class="btn btn-primary update">Update</button>
