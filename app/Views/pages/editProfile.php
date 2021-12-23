@@ -169,9 +169,7 @@
                     <div class="row gutters">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="text-left">
-                            <script>
-    document.write('<a href="' + document.referrer + '">Go Back');
-</script><button type="button" id="submit" name="submit"
+                                <a href="javascript:history.back();"><button type="button" id="submit" name="submit"
                                         class="btn btn-secondary">Back</button></a>
                                <button type="button" id="changePasswordBtn" name="changePasswordBtn"
                                         class="btn btn-success">Change Password</button>
