@@ -308,6 +308,22 @@ class CollegeController extends Controller
                     'messages' => 'Successfully Career Details Added',
                     'data' => [],
                 ];
+                
+                // register guest to parmanent
+                $userModelGuest = new UserModel();
+                $password = random_strings(10);
+                $userDataGuest=[
+                 "name" => $session->get('careerFirstname'),
+                 "phone" => $session->get('careerPhone'),
+                 "email" => $session->get('careerEmail'),
+                 "password" => password_hash($password, PASSWORD_DEFAULT),
+                 "passtext" => $password,
+                ];
+
+                $userModelGuest->insert($userDataGuest);
+
+
+                
                   
                 $collegeModel = new CollegeModel();
                 $collegeData = $collegeModel->where("id = ", $collegeId)->findAll();
@@ -325,24 +341,9 @@ class CollegeController extends Controller
 
             if ($email->send()) {
                  
-                   // register guest to parmanent
-                   $userModel = new UserModel();
-                   $password = random_strings(10);
-                   $userData=[
-                    "name" => $session->get('careerFirstname'),
-                    "phone" => $session->get('careerPhone'),
-                    "email" => $session->get('careerEmail'),
-                    "password" => password_hash($password, PASSWORD_DEFAULT),
-                    "passtext" => $password,
-                   ];
-
-                   if($userModel->insert($userData)){
-
+                  
                        echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-                   }else{
-
-                   }
-
+               
             } else {
                 $data = $email->printDebugger(['headers']);
                 // print_r($data);
