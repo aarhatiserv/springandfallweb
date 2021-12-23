@@ -1,6 +1,6 @@
 <head>
     <style>
-    .bodyStyle {
+    body {
         margin: 0;
         color: #2e323c;
         background: #f5f6fa;
@@ -71,7 +71,7 @@
     }
     </style>
 </head>
-<div class="container bodyStyle">
+<div class="container">
     <div class="row gutters">
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
