@@ -324,8 +324,25 @@ class CollegeController extends Controller
             $email->setMessage($body);
 
             if ($email->send()) {
+                 
+                   // register guest to parmanent
+                   $userModel = new UserModel();
+                   $password = random_strings(10);
+                   $userData=[
+                    "name" => $session->get('careerFirstname')." ".$session->get('careerLastname'),
+                    "phone" => $session->get('careerPhone'),
+                    "email" => $session->get('careerEmail'),
+                    "password" => password_hash($password, PASSWORD_DEFAULT),
+                    "passtext" => $password,
+                   ];
 
-                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+                   if($userModel->inert($userData)){
+
+                       echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+                   }else{
+
+                   }
+
             } else {
                 $data = $email->printDebugger(['headers']);
                 // print_r($data);
@@ -463,4 +480,16 @@ class CollegeController extends Controller
 	{
 		return "aarhat@123";
 	}
+
+    unction random_strings($length_of_string)
+      {
+        
+          // String of all alphanumeric character
+          $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        
+          // Shuffle the $str_result and returns substring
+          // of specified length
+          return substr(str_shuffle($str_result), 
+                             0, $length_of_string);
+      }
 }
