@@ -1,9 +1,8 @@
-<?php $session  =  session(); ?>
+
 <head>
 <style>
     body {
     margin: 0;
-    padding-top: 40px;
     color: #2e323c;
     background: #f5f6fa;
     position: relative;
@@ -75,7 +74,7 @@
 				<div class="user-avatar">
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
-				<h5 class="user-name"><?= $session->get("userNameProfile")?></h5>
+				<h5 class="user-name"><?= $userDetails[0]['name'] ?></h5>
 				<h6 class="user-email">yuki@Maxwell.com</h6>
 			</div>
 			<div class="about">

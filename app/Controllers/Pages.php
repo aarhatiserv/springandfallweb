@@ -9,6 +9,7 @@ use App\Models\SectionsModel;
 use App\Models\ReviewModel;
 use App\Models\HotCoursesModel;
 use App\Models\SubscribeModel;
+use App\Models\UserModel;
 
 class Pages extends Controller
 {
@@ -74,6 +75,9 @@ class Pages extends Controller
 
         $hCoursesModel = new HotCoursesModel();
         $data['hotCourses'] = $hCoursesModel->findAll();
+
+        $userModel = new UserModel();
+        $data['userDetails'] = $userModel->where('id', $session->get('userId'))->findAll();
         
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
