@@ -338,6 +338,7 @@ class User extends ResourceController
 	}
 
 	public function editProfile(){
+		$session = session();
 		$userId = $this->request->getVar("userId");
 		$password = $this->request->getVar("password");
 		if($password != ""){
@@ -357,6 +358,8 @@ class User extends ResourceController
 	}
 	$userModel = new UserModel();
 	if($userModel->update($userId, $data)){
+        $session->remove('userNameProfile');
+		$session->set('userNameProfile', $this->request->getVar("name"));
 		echo json_encode(["status" => 1, "message" => "Profile Updated"]);
 	}else{
 		echo json_encode(["status" => 2, "message" => "please try again later"]);
