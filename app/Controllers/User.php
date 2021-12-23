@@ -302,6 +302,30 @@ class User extends ResourceController
 		}
 	}
 
+		// verfy email
+		public function verifyGuest($id, $token)
+		{
+			# getting id and toke from url arguments 
+			// echo $id . "token => " . $token;
+			$userModel = new UserModel();
+			$userdata = $userModel->where("id", $id)->first();
+			// match token
+			if (sha1($userdata['id']) == $token) {
+				$userModel->set('active', 1);
+				$userModel->where('id', $id);
+				if ($userModel->update()) {
+					$session = session();
+					// $session->setFlashdata('message_id', 'Message'); //message rendered
+					// $session->setFlashdata('seconds_redirect', 5); //time to be redirected (in seconds)
+					// $session->setFlashdata('url_redirect', base_url('controller/method')); //
+					$session->setFlashdata(['message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, "url_redirect" => 'newPassword']);
+					return redirect()->to('/tmp');
+				}
+			} else {
+				echo "not verified";
+			}
+		}
+	
 	public function temp()
 	{
 		return view("templates/temp_view");

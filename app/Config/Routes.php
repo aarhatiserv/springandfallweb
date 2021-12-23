@@ -43,6 +43,7 @@ $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
 $routes->get('email', 'User::email');
 $routes->get('verify/(:num)/(:any)', 'User::verify/$1/$2');
+$routes->get('verifyGuest/(:num)/(:any)', 'User::verifyGuest/$1/$2');
 $routes->get('tmp', 'User::temp');
 
 // Admin routes
