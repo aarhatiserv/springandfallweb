@@ -174,7 +174,7 @@
                                         class="btn btn-secondary">Back</button></a>
 
                                         <button type="button" id="backChangePassword" name="backChangePassword"
-                                        class="btn btn-error" style="display:none">Back</button>
+                                        class="btn btn-danger" style="display:none">Back</button>
 
                                <button type="button" id="changePasswordBtn" name="changePasswordBtn"
                                         class="btn btn-success">Change Password</button>
