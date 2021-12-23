@@ -403,7 +403,7 @@ class User extends ResourceController
 		
 		$data = [
 			"password" => password_hash($password, PASSWORD_DEFAULT),
-			"passtext" => $password
+			"passtext" => $password,
 		];
         if($model->update($id, $data)){
 			echo json_encode(["status" => 1, "message" => "New Password Updated"]);
