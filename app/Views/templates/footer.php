@@ -1,3 +1,12 @@
+<?php $session = session(); 
+if(!empty($session->get('token'))){ ?>
+<script>
+    setInterval(function(){ 
+        $('#loginForm').modal();
+}, 5000);
+</script>
+<?php }
+?>
 <!-- call now  -->
 <?= $this->include('templates/callnow') ?>
 <!-- callnow modal ends -->
@@ -122,6 +131,7 @@ var rellax = new Rellax('.rellax', {
 <!-- career guide js ends -->
 
 <?php
+
 }
 
 ?>
@@ -130,10 +140,6 @@ var rellax = new Rellax('.rellax', {
 $(document).ready(function() {
 
     // show login modal every 5 minute 
-   
-    setInterval(function(){ 
-        $('#loginForm').modal();
-}, 5000);
 
     $("#flags-carousel").owlCarousel({
         items: 6,
