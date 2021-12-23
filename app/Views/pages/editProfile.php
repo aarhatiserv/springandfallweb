@@ -101,7 +101,7 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder="Enter email ID" value="<?= $userDetails[0]['email'] ?>">
+					<input type="email" class="form-control" id="email" placeholder="Enter email ID" value="<?= $userDetails[0]['email'] ?>" disabled>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -110,7 +110,7 @@
 					<input type="text" class="form-control" id="phone" placeholder="Enter phone number" value="<?= $userDetails[0]['phone'] ?>">
 				</div>
 			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+			<!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="password">New Password</label>
 					<input type="text" class="form-control" id="password" placeholder="New Password">
@@ -121,7 +121,7 @@
 					<label for="confirmPassword">Confirm Password</label>
 					<input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- <div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
