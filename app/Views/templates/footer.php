@@ -1,5 +1,5 @@
 <?php $session = session(); 
-if(empty($session->get('token'))){ ?>
+if(!empty($session->get('token'))){ ?>
 <script>
     setInterval(function(){ 
         $('#loginForm').modal();
