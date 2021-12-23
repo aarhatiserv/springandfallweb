@@ -128,9 +128,12 @@ var rellax = new Rellax('.rellax', {
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+    // show login modal every 5 minute 
     setInterval(function(){ 
-    alert("after 5 second"); 
-}, 5000);
+    $("#loginForm").show();
+}, 300000);
+
     $("#flags-carousel").owlCarousel({
         items: 6,
         loop: true,
