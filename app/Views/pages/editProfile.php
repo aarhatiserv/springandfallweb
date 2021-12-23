@@ -1,5 +1,12 @@
 <head>
     <style>
+    .bodyStyle {
+        margin: 0;
+        color: #2e323c;
+        background: #f5f6fa;
+        position: relative;
+        height: 100%;
+    }
 
     .account-settings .user-profile {
         margin: 0 0 1rem 0;
@@ -64,7 +71,7 @@
     }
     </style>
 </head>
-<div class="container">
+<div class="container bodyStyle">
     <div class="row gutters">
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
