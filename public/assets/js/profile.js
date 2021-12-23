@@ -66,21 +66,30 @@ $("#update").click(function () {
                         title: "Opps.!!",
                         text: res.message,
                         type: "error"
-                    });
+                    },
+                    function () {
+                        window.location.href = "editProfile";
+                   });
 
                 } else if (res.status === 3) {
                     swal({
                         title: "Opps.!!",
                         text: res.message,
                         type: "error"
-                    });
+                    },
+                    function () {
+                        window.location.href = "editProfile";
+                   });
 
                 } else {
                     swal({
                         title: "Opps.!!",
                         text: res.message,
                         type: "error"
-                    });
+                    },
+                    function () {
+                        window.location.href = "editProfile";
+                   });
                 }
             },
         })
