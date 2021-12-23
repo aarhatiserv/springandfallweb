@@ -15,10 +15,10 @@ $(document).ready(function () {
   $('input[name=careerPhone]').change(function () {
     var x = $("#careerPhone").val();
     if (x.length <= 9) {
-      $('#careerPhone').addClass('errorCareer');
-      $('#careerPhone').addClass('focusCareer');
+      $('#careerPhone').addClass('error');
+      $('#careerPhone').addClass('focus');
       setTimeout(function () {
-        $('#careerPhone').removeClass('errorCareer');
+        $('#careerPhone').removeClass('error');
       }, 500);
     } else {
       $('#careerPhone').removeClass('focus');
