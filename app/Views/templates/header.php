@@ -281,7 +281,7 @@ $session = session();
           <!-- <p style="height:50; width:50">Hi,</p> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Edit Profile</a>
+          <a class="dropdown-item" href="editProfile">Edit Profile</a>
           <a class="dropdown-item" href="<?= base_url() ?>/api/logout">Log Out</a>
         </div>
       </li>   
@@ -398,7 +398,7 @@ $session = session();
           <!-- <p style="height:50; width:50">Hi,</p> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Edit Profile</a>
+          <a class="dropdown-item" href="editProfile">Edit Profile</a>
           <a class="dropdown-item" href="<?= base_url() ?>/api/logout">Log Out</a>
         </div>
       </li>   
