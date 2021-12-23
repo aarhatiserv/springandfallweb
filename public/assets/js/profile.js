@@ -54,8 +54,11 @@ $("#update").click(function () {
                         title: "Thank you!",
                         text: res.message,
                         type: "success"
-                    });
-                    window.location.href = "editProfile";
+                    },
+                    function () {
+                        window.location.href = "editProfile";
+                   });
+           
                     // window.location.reload();
                 } else if (res.status === 2) {
 
