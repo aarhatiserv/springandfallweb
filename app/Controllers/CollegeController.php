@@ -311,7 +311,7 @@ class CollegeController extends Controller
                 
                 // register guest to parmanent
                 $userModelGuest = new UserModel();
-                $password = random_strings(10);
+                $password = uniqid();
                 $userDataGuest=[
                  "name" => $session->get('careerFirstname'),
                  "phone" => $session->get('careerPhone'),
@@ -482,15 +482,5 @@ class CollegeController extends Controller
 		return "aarhat@123";
 	}
 
-    public function random_strings($length_of_string)
-      {
-        
-          // String of all alphanumeric character
-          $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        
-          // Shuffle the $str_result and returns substring
-          // of specified length
-          return substr(str_shuffle($str_result), 
-                             0, $length_of_string);
-      }
+
 }
