@@ -264,9 +264,25 @@ $session = session();
                     <li class="nav-item ml-2 mt-1">
                         <?php if ($session->get('token')) : ?>
 
-                        <a href="<?= base_url() ?>/api/logout" class="btn"
-                            style="color:white !important; line-height: 17px;" id="loginBtn" rel="noopener">SIGN OUT</a>
-
+                           <!-- profile drop down -->
+                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar-list-4">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="50" height="50" class="rounded-circle">  -->
+          Hi, <?= $arr[0] ?>
+          <!-- <p style="height:50; width:50">Hi,</p> -->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Edit Profile</a>
+          <a class="dropdown-item" href="<?= base_url() ?>/api/logout">Log Out</a>
+        </div>
+      </li>   
+    </ul>
+  </div>
 
                         <!-- profile Button -->
                         <!-- <div class="container">
