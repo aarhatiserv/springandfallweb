@@ -95,7 +95,7 @@
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
                 <div class="card-body">
-                    <div class="row gutters">
+                    <div class="row gutters" id="personalDetails">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-2 text-primary">Personal Details</h6>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row gutters" style="display:none">
+                    <div class="row gutters" id="changePassword" style="display:none">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="password">New Password</label>
@@ -170,8 +170,8 @@
                             <div class="text-right">
                                 <a href="home"><button type="button" id="submit" name="submit"
                                         class="btn btn-secondary">Cancel</button></a>
-                                <a href="home"><button type="button" id="submit" name="submit"
-                                        class="btn btn-success">Change Password</button></a>
+                               <button type="button" id="changePasswordBtn" name="changePasswordBtn"
+                                        class="btn btn-success">Change Password</button>
                                 <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
@@ -181,3 +181,17 @@
         </div>
     </div>
 </div>
+
+<script>
+const personalDetails = document.getElementById("personalDetails");
+const changePassword = document.getElementById("changePassword");
+const btn = document.getElementById("changePasswordBtn");
+btn.onclick = function () {
+  if (personalDetails.style.display !== "none") {
+        personalDetails.style.display = "none";
+        changePassword.style.display = "block";
+  } else {
+    changePassword.style.display = "block";
+  }
+};
+    </script>
