@@ -11,7 +11,7 @@ $(document).ready(function () {
             changePassword.style.display = "block";
             btn.style.display = "none";
             back.style.display = "none";
-            backChangePassword.style.display = "block";
+            backChangePassword.style.display = "inline";
         
         } else {
             changePassword.style.display = "block";
@@ -21,10 +21,10 @@ $(document).ready(function () {
     backChangePassword.onclick = function () {
         if (changePassword.style.display !== "none") {
             changePassword.style.display = "none";
-            personalProfileDetails.style.display = "block";
-            back.style.display = "block";
+            personalProfileDetails.style.display = "inline";
+            back.style.display = "inline";
             backChangePassword.style.display = "none";
-            btn.style.display = "block";
+            btn.style.display = "inline";
 
         
         } else {
