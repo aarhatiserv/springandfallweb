@@ -1,4 +1,4 @@
-.profile-dropdown {
+/* .profile-dropdown {
     display: inline-block;
     position: relative;
     margin: auto;
@@ -6,23 +6,23 @@
     font-size: 1.3rem;
     border-radius: 3px;
     -webkit-user-select: none;
-    /* Chrome all / Safari all */
+
     -moz-user-select: none;
-    /* Firefox all */
+
     -ms-user-select: none;
-    /* IE 10+ */
+
     user-select: none;
-    /* Likely future */
+
   }
   .profile-dropdown * {
     -webkit-user-select: none;
-    /* Chrome all / Safari all */
+
     -moz-user-select: none;
-    /* Firefox all */
+ 
     -ms-user-select: none;
-    /* IE 10+ */
+    
     user-select: none;
-    /* Likely future */
+
   }
   .profile-dropdown input[type=checkbox] {
     display: none;
@@ -171,4 +171,12 @@
     opacity: 0.25;
     z-index: -1;
     background: url(https://ar1web-com.googlecode.com/svn/Bg/bg63.gif);
+  } */
+
+  .bg-custom-1 {
+    background-color: #85144b;
+  }
+  
+  .bg-custom-2 {
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   }
