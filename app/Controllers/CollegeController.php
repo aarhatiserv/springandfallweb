@@ -313,7 +313,7 @@ class CollegeController extends Controller
                 $userModelGuest = new UserModel();
                 $password = uniqid();
                 $userDataGuest=[
-                 "name" => $session->get('careerFirstname'),
+                 "name" => $session->get('careerFirstname')." ".$session->get('careerLastname'),
                  "phone" => $session->get('careerPhone'),
                  "email" => $session->get('careerEmail'),
                  "password" => password_hash($password, PASSWORD_DEFAULT),
