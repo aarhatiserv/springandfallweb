@@ -14,11 +14,11 @@ if ($session->get('token')) : ?>
 <?php endif; ?>
 
 <script>
-   var newPassword = document.getElementById("newPassword");
+   var newPasswordText = document.getElementById("newPassword");
    var btn = document.getElementById("submit");
     btn.onclick = function () {
         let formData = new FormData();
-    formData.append('newPassword', newPassword);
+    formData.append('newPasswordGuest', newPasswordText);
     $.ajax({
       url: "/setNewPassword",
       method: "POST",

@@ -399,11 +399,11 @@ class User extends ResourceController
 		$session = session();
 		$model = new UserModel();
 		$id = $session->get('lastIDGuest');
-		$password = $this->request->getVar("newPassword");
+		$newPassword = $this->request->getVar("newPasswordGuest");
 		
 		$data = [
-			"password" => password_hash($password, PASSWORD_DEFAULT),
-			"passtext" => $password,
+			"password" => password_hash($newPassword, PASSWORD_DEFAULT),
+			"passtext" => $newPassword,
 		];
         if($model->update($id, $data)){
 			echo json_encode(["status" => 1, "message" => "New Password Updated"]);
