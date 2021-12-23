@@ -23,7 +23,9 @@ $(document).ready(function () {
             changePassword.style.display = "none";
             personalProfileDetails.style.display = "block";
             back.style.display = "block";
-            // backChangePassword.style.display = "block";
+            backChangePassword.style.display = "none";
+            btn.style.display = "block";
+
         
         } else {
             changePassword.style.display = "block";
