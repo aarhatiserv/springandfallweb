@@ -51,7 +51,7 @@ $session = session();
         href="<?= base_url() ?>/assets/css/creative-card.css" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?= base_url() ?>/assets/css/college.css" />
 
-    <!-- <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?= base_url() ?>/assets/css/profile.css"/> -->
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?= base_url() ?>/assets/css/profile.css"/>
 
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/consultation.css" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/Visa_Consulation.css" />
