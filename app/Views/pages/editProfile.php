@@ -102,21 +102,21 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name"
+                                <input type="text" class="form-control" id="profileFullName" placeholder="Enter full name"
                                     value="<?= $userDetails[0]['name'] ?>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="eMail">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email ID"
+                                <input type="email" class="form-control" id="profileEmail" placeholder="Enter email ID"
                                     value="<?= $userDetails[0]['email'] ?>" disabled>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number"
+                                <input type="text" class="form-control" id="profilePhone" placeholder="Enter phone number"
                                     value="<?= $userDetails[0]['phone'] ?>">
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="password">New Password</label>
-                                <input type="text" class="form-control" id="password" placeholder="New Password">
+                                <input type="text" class="form-control" id="profilePassword" placeholder="New Password">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -173,7 +173,7 @@
                                         class="btn btn-secondary">Back</button></a>
                                <button type="button" id="changePasswordBtn" name="changePasswordBtn"
                                         class="btn btn-success">Change Password</button>
-                                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                <button type="button" id="update" name="update" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </div>
