@@ -3,7 +3,7 @@ if(empty($session->get('token'))){ ?>
 <script>
     setInterval(function(){ 
         $('#loginForm').modal();
-}, 5000);
+}, 300000);
 </script>
 <?php }
 ?>
