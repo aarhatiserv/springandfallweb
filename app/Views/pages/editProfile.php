@@ -75,12 +75,12 @@
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
 				<h5 class="user-name"><?= $userDetails[0]['name'] ?></h5>
-				<h6 class="user-email">yuki@Maxwell.com</h6>
+				<h6 class="user-email"><?= $userDetails[0]['email'] ?></h6>
 			</div>
-			<div class="about">
+			<!-- <div class="about">
 				<h5>About</h5>
 				<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
@@ -95,29 +95,35 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="fullName">Full Name</label>
-					<input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+					<input type="text" class="form-control" id="fullName" placeholder="Enter full name" value="<?= $userDetails[0]['name'] ?>">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+					<input type="email" class="form-control" id="eMail" placeholder="Enter email ID" value="<?= $userDetails[0]['email'] ?>">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="phone">Phone</label>
-					<input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+					<input type="text" class="form-control" id="phone" placeholder="Enter phone number" <?= $userDetails[0]['phone'] ?>>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="website">Website URL</label>
-					<input type="url" class="form-control" id="website" placeholder="Website url">
+					<label for="password">New Password</label>
+					<input type="text" class="form-control" id="password" placeholder="New Password">
+				</div>
+			</div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="confirmPassword">Confirm Password</label>
+					<input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
 				</div>
 			</div>
 		</div>
-		<div class="row gutters">
+		<!-- <div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<h6 class="mt-3 mb-2 text-primary">Address</h6>
 			</div>
@@ -145,11 +151,11 @@
 					<input type="text" class="form-control" id="zIp" placeholder="Zip Code">
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-					<button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+					<a href="home"><button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button></a>
 					<button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
 				</div>
 			</div>
