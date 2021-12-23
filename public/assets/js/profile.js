@@ -17,6 +17,18 @@ $(document).ready(function () {
             changePassword.style.display = "block";
         }
     }
+
+    backChangePassword.onclick = function () {
+        if (changePassword.style.display !== "none") {
+            changePassword.style.display = "none";
+            personalProfileDetails.style.display = "block";
+            back.style.display = "block";
+            // backChangePassword.style.display = "block";
+        
+        } else {
+            changePassword.style.display = "block";
+        }
+    }
 });
 
 
