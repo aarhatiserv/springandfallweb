@@ -262,7 +262,11 @@ $session = session();
                         <a class="nav-link" href="#">EVENTS</a>
                     </li> -->
                     <li class="nav-item ml-2 mt-1">
-                        <?php if ($session->get('token')) : ?>
+                        <?php if ($session->get('token')) :
+                             $session = session();
+                             $userNameProfile = $session->get('userNameProfile')." ";
+                             $arr = explode(' ',trim($userNameProfile));
+                              ?>
 
                            <!-- profile drop down -->
                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
