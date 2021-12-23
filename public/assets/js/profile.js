@@ -16,9 +16,62 @@ $(document).ready(function () {
 
 // For Update Profile
 $("#update").click(function () {
+
+    var userId = $("#userId").val();
     var fullName = $("#profileFullName").val();
     var email = $("#profileEmail").val();
     var phone = $("#profilePhone").val();
     var password = $("#profilePassword").val();
-    alert(fullName+" "+email+" "+phone+" "+password);
+
+    let formData = new FormData();
+    formData.append('userId', userId);
+    formData.append('name', fullName);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('password', password);
+    $.ajax({
+        url: "/api/editProfile",
+        method: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        beforeSend: function () {
+            $("#update").val("Please wait");
+            $("#update").prop("disabled", true);
+        },
+        success: function (data) {
+            $("#update").prop("disabled", false);
+            var res = JSON.parse(data);
+            if (res.status === 1) {
+                swal({
+                    title: "Thank you!",
+                    text: res.message,
+                    type: "success"
+                });
+                // window.location.reload();
+            } else if (res.status === 2) {
+
+                swal({
+                    title: "Opps.!!",
+                    text: res.message,
+                    type: "error"
+                });
+
+            } else if (res.status === 3) {
+                swal({
+                    title: "Opps.!!",
+                    text: res.message,
+                    type: "error"
+                });
+
+            } else {
+                swal({
+                    title: "Opps.!!",
+                    text: res.message,
+                    type: "error"
+                });
+            }
+        },
+    })
+
 });

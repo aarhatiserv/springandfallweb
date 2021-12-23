@@ -336,4 +336,33 @@ class User extends ResourceController
 			echo "email failed";
 		}
 	}
+
+	public function editProfile(){
+		$userId = $this->request->getVar("userId");
+		$password = $this->request->getVar("password");
+		if($password != ""){
+		$data = [
+			"name" => $this->request->getVar("name"),
+			"email" => $this->request->getVar("email"),
+			"phone" => $this->request->getVar("phone"),
+			"password" => password_hash($this->request->getVar("password"), PASSWORD_DEFAULT),
+			"passtext" => $this->request->getVar("password"),
+		];
+	}else{
+		$data = [
+			"name" => $this->request->getVar("name"),
+			"email" => $this->request->getVar("email"),
+			"phone" => $this->request->getVar("phone"),
+		];
+	}
+	$userModel = new UserModel();
+	if($userModel->update($userId, $data)){
+		echo json_encode(["status" => 1, "message" => "Profile Updated"]);
+	}else{
+		echo json_encode(["status" => 2, "message" => "please try again later"]);
+	}
+
+
+	}
+
 }

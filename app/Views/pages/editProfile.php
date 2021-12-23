@@ -99,6 +99,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-2 text-primary">Personal Details</h6>
                         </div>
+                        <input type="hidden" name="userId" id="userId" value="<?= $userDetails[0]['id'] ?>">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
@@ -173,7 +174,7 @@
                                         class="btn btn-secondary">Back</button></a>
                                <button type="button" id="changePasswordBtn" name="changePasswordBtn"
                                         class="btn btn-success">Change Password</button>
-                                <button type="button" id="update" name="update" class="btn btn-primary">Update</button>
+                                <button type="button" id="update" name="update" class="btn btn-primary update">Update</button>
                             </div>
                         </div>
                     </div>

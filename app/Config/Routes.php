@@ -128,6 +128,7 @@ $routes->group("api", function ($routes) {
 	$routes->get("profile", "User::details");
 	$routes->get("logout", "User::logout");
 	$routes->get("session_expire", "CollegeController::session_expire"); // Career-Guide details remove by session for guest
+	$routes->get("editProfile", "User::editProfile");
 
 	$routes->post("subscribe", "Pages::subscribe");
 
