@@ -1,12 +1,5 @@
 <head>
     <style>
-    body {
-        margin: 0;
-        color: #2e323c;
-        background: #f5f6fa;
-        position: relative;
-        height: 100%;
-    }
 
     .account-settings .user-profile {
         margin: 0 0 1rem 0;
@@ -121,6 +114,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row gutters" id="changePassword" style="display:none">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
@@ -181,17 +175,3 @@
         </div>
     </div>
 </div>
-
-<script>
-const personalDetails = document.getElementById("personalDetails");
-const changePassword = document.getElementById("changePassword");
-const btn = document.getElementById("changePasswordBtn");
-btn.onclick = function () {
-  if (personalDetails.style.display !== "none") {
-        personalDetails.style.display = "none";
-        changePassword.style.display = "block";
-  } else {
-    changePassword.style.display = "block";
-  }
-};
-    </script>
