@@ -320,10 +320,53 @@ class CollegeController extends Controller
                  "passtext" => $password,
                 ];
 
-                $userModelGuest->insert($userDataGuest);
+                if($userModelGuest->insert($userDataGuest)){
+                    $lastId = $userModelGuest->insertID();
 
-
-                
+					// print_r($lastid);
+					// exit;
+					$token = sha1($lastId);
+					$email = \Config\Services::email();
+					$email->setFrom('support@springandfall.in', 'Spring and Fall');
+					$email->setTo($this->request->getVar("email"));
+					$email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
+					$url = "http://" . $_SERVER['SERVER_NAME'] . '/verify/' . $lastId . '/' . $token;
+					$data = ["username" => $this->request->getVar("name"), "url" => $url];
+					$body = view('templates/email', $data);
+					$email->setMessage($body);
+					if ($email->send()) {
+ 
+						// --------------------------------------------------
+					$email1 = \Config\Services::email();
+					$email1->setFrom('support@springandfall.in', 'Spring and Fall');
+					$email1->setTo('springnfall.20@gmail.com');
+					$email1->setSubject('New Leads Register');
+					$email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
+					if ($email1->send()) {
+						$response = [
+							'status' => 200,
+							"error" => false,
+							'messages' => "Please check your email inbox",
+							'data' => []
+						];
+					} else {
+						$response = [
+							'status' => 200,
+							'error' => true,
+							'messages' => 'Please check your email',
+							'data' => []
+						];
+					}
+						// -------------------------------------------------- 
+					} else {
+						$response = [
+							'status' => 200,
+							'error' => true,
+							'messages' => 'Please check your email',
+							'data' => []
+						];
+					}
+                }
                   
                 $collegeModel = new CollegeModel();
                 $collegeData = $collegeModel->where("id = ", $collegeId)->findAll();
