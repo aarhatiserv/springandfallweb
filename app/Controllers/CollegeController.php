@@ -329,7 +329,7 @@ class CollegeController extends Controller
                    $userModel = new UserModel();
                    $password = random_strings(10);
                    $userData=[
-                    "name" => $session->get('careerFirstname')." ".$session->get('careerLastname'),
+                    "name" => $session->get('careerFirstname'),
                     "phone" => $session->get('careerPhone'),
                     "email" => $session->get('careerEmail'),
                     "password" => password_hash($password, PASSWORD_DEFAULT),
