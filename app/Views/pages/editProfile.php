@@ -156,6 +156,7 @@
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
 					<a href="home"><button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button></a>
+                    <a href="home"><button type="button" id="submit" name="submit" class="btn btn-success">Change Password</button></a>
 					<button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
 				</div>
 			</div>
