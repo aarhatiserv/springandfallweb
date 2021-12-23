@@ -305,6 +305,7 @@ class User extends ResourceController
 		// verfy email
 		public function verifyGuest($id, $token)
 		{
+			setcookie("LastID", $id, time() + (86400 * 30), "/");
 			# getting id and toke from url arguments 
 			// echo $id . "token => " . $token;
 			$userModel = new UserModel();

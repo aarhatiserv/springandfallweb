@@ -331,7 +331,7 @@ class CollegeController extends Controller
 					$email->setTo($session->get('careerEmail'));
 					$email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
 					$url = "http://" . $_SERVER['SERVER_NAME'] . '/verifyGuest/' . $lastId . '/' . $token;
-					$data = ["username" => $this->request->getVar("name"), "url" => $url];
+					$data = ["username" => $session->get('careerFirstname'), "url" => $url];
 					$body = view('templates/emailGuestVerify', $data);
 					$email->setMessage($body);
 					if ($email->send()) {
