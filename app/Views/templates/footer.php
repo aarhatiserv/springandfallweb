@@ -131,8 +131,8 @@ $(document).ready(function() {
 
     // show login modal every 5 minute 
     setInterval(function(){ 
-    $(".loginForm").show();
-}, 50000);
+      $(".loginForm").show();
+}, 5000);
 
     $("#flags-carousel").owlCarousel({
         items: 6,
