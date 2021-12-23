@@ -41,7 +41,7 @@ if(!isset($_COOKIE[$LastID])) { ?>
         $("#submit").prop("disabled", false);
         var res = JSON.parse(data);
           if (res.status === 1) {
-              swal({ title:"Thank you!", text:res.message, type:"success"} function () {
+              swal({ title:"Thank you!", text:res.message, type:"success"}, function () {
                     $('#loginForm').modal('show');
                   });
           } else if (res.status === 2) {
