@@ -1,11 +1,11 @@
 // For Show new and confirm  password 
 $(document).ready(function () {
-    const personalDetails = document.getElementById("personalDetails");
+    const personalProfileDetails = document.getElementById("personalProfileDetails");
     const changePassword = document.getElementById("changePassword");
     const btn = document.getElementById("changePasswordBtn");
     btn.onclick = function () {
-        if (personalDetails.style.display !== "none") {
-            personalDetails.style.display = "none";
+        if (personalProfileDetails.style.display !== "none") {
+            personalProfileDetails.style.display = "none";
             changePassword.style.display = "block";
         } else {
             changePassword.style.display = "block";
