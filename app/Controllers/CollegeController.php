@@ -336,7 +336,7 @@ class CollegeController extends Controller
                     "passtext" => $password,
                    ];
 
-                   if($userModel->inert($userData)){
+                   if($userModel->insert($userData)){
 
                        echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
                    }else{
