@@ -130,8 +130,9 @@ var rellax = new Rellax('.rellax', {
 $(document).ready(function() {
 
     // show login modal every 5 minute 
+    const login = document.getElementById("loginForm");
     setInterval(function(){ 
-      $(".loginForm").fadeIn();
+      login.style.display = "block";
 }, 5000);
 
     $("#flags-carousel").owlCarousel({
