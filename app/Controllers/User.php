@@ -393,4 +393,21 @@ class User extends ResourceController
 
 	}
 
+	public function setNewPassword(){
+
+		$model = new UserModel();
+		$id = $this->request->getVar("userID");
+		$password = $this->request->getVar("newPassword");
+		
+		$data = [
+			"password" => password_hash($password, PASSWORD_DEFAULT),
+			"passtext" => $password
+		];
+        if($model->update($id, $data)){
+			echo json_encode(["status" => 1, "message" => "New Password Updated"]);
+		}else{
+			echo json_encode(["status" => 2, "message" => "New Password Not Set"]);
+		}
+		 
+	}
 }

@@ -45,6 +45,7 @@ $routes->get('email', 'User::email');
 $routes->get('verify/(:num)/(:any)', 'User::verify/$1/$2');
 $routes->get('verifyGuest/(:num)/(:any)', 'User::verifyGuest/$1/$2');
 $routes->get('tmp', 'User::temp');
+$routes->post('setNewPassword', 'User::setNewPassword');
 
 // Admin routes
 $routes->group("admin", function ($routes) {
