@@ -7,6 +7,8 @@ $(document).ready(function () {
         if (personalProfileDetails.style.display !== "none") {
             personalProfileDetails.style.display = "none";
             changePassword.style.display = "block";
+            btn.style.display = "none";
+            
         } else {
             changePassword.style.display = "block";
         }
