@@ -305,7 +305,8 @@ class User extends ResourceController
 		// verfy email
 		public function verifyGuest($id, $token)
 		{
-			setcookie("LastID", $id, time() + (86400 * 30), "/");
+			$session = session();
+			$session->set('lastIDGuest', $id);
 			# getting id and toke from url arguments 
 			// echo $id . "token => " . $token;
 			$userModel = new UserModel();
@@ -395,8 +396,9 @@ class User extends ResourceController
 
 	public function setNewPassword(){
 
+		$session = session();
 		$model = new UserModel();
-		$id = $this->request->getVar("userID");
+		$id = $session->get('lastIDGuest');
 		$password = $this->request->getVar("newPassword");
 		
 		$data = [
