@@ -481,7 +481,7 @@ class CollegeController extends Controller
 		return "aarhat@123";
 	}
 
-    unction random_strings($length_of_string)
+    public function random_strings($length_of_string)
       {
         
           // String of all alphanumeric character
