@@ -14,7 +14,7 @@ if ($session->get('token')) : ?>
 <?php endif; ?>
 
 <script>
-   var newPasswordText = $('newPassword').val();
+   var newPasswordText = $('#newPassword').val();
    var btn = document.getElementById("submit");
     btn.onclick = function () {
         let formData = new FormData();
