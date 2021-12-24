@@ -41,12 +41,12 @@ $("#update").click(function () {
     var fullName = $("#profileFullName").val();
     var email = $("#profileEmail").val();
     var phone = $("#profilePhone").val();
-    var profileHQ = $("#profileHQ").val();
-    var profileHQY = $("#profileHQY").val();
-    var profileHS = $("#profileHS").val();
-    var profileHSY = $("#profileHSY").val();
-    var profileS = $("#profileS").val();
-    var profileSY = $("#profileSY").val();
+    var profileHQ_1 = $("#profileHQ").val();
+    var profileHQY_2 = $("#profileHQY").val();
+    var profileHS_3 = $("#profileHS").val();
+    var profileHSY_4 = $("#profileHSY").val();
+    var profileS_5 = $("#profileS").val();
+    var profileSY_6 = $("#profileSY").val();
     var password = $("#profilePassword").val();
     var cnfPassword = $("#confirmPassword").val();
     if (password !== cnfPassword) {
@@ -61,12 +61,12 @@ $("#update").click(function () {
         formData.append('name', fullName);
         formData.append('email', email);
         formData.append('phone', phone);
-        formData.append('profileHQ', profileHQ);
-        formData.append('profileHQY', profileHQY);
-        formData.append('profileHS', profileHS);
-        formData.append('profileHSY', profileHSY);
-        formData.append('profileS', profileS);
-        formData.append('profileSY', profileSY);
+        formData.append('hq', profileHQ_1);
+        formData.append('hqy', profileHQY_2);
+        formData.append('hs', profileHS_3);
+        formData.append('hsy', profileHSY_4);
+        formData.append('s', profileS_5);
+        formData.append('sy', profileSY_6);
         formData.append('password', password);
         $.ajax({
             url: "/api/editProfile",
