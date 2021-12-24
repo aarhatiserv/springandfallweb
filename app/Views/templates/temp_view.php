@@ -11,7 +11,8 @@
     height:100vh;
   align-items: center;
   justify-content: center;">
-        <h1 style="padding : 20px 20px; background-color: green; color:white;">
+        <!-- <h1 style="padding : 20px 20px; background-color: green; color:white;"> -->
+        <h1 style="padding : 20px 20px; color:black;">
             <?= $session->getFlashdata('message_id'); ?></h1>
     </div>
 </body>
