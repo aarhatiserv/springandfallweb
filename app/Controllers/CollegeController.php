@@ -184,7 +184,7 @@ class CollegeController extends Controller
             // $email1->setTo('springnfall.20@gmail.com');
             $email1->setTo('sknazim1818@gmail.com');
             $email1->setSubject('New Leads Register');
-            $email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
+            $email1->setMessage('<p>Name :' . $session->get('careerFirstname')." ".$session->get('careerLastname') . '<br> Contact no :' .$session->get('careerPhone'). '<br> email :' . $session->get('careerEmail') . ' </p>');
             if ($email1->send()) {
                 $response = [
                     'status' => 200,
