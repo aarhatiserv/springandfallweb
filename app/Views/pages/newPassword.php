@@ -1,12 +1,10 @@
 <?php $session = session();
-if ($session->get('token')) : ?>
+if ($session->get('token')) : 
 
-   <script>
-    window.location.href="https://springandfall.in/";
-    </script>
+  $yourURL="https://springandfall.in/";
+  echo ("<script>location.href='$yourURL'</script>");
 
-
-<?php else : ?>
+else : ?>
 <div class="jumbotron text-center">
     <h1 class="font-weight-light">New Password</h1>
     <!-- <button class="my-5" id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button> -->
@@ -16,7 +14,3 @@ if ($session->get('token')) : ?>
 </div>
 
 <?php endif; ?>
-
-<script>
-
-</script>
