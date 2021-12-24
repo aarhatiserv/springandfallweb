@@ -105,6 +105,8 @@ if(empty($session->get('token'))){ ?>
 
 <!-- profile js -->
 <script type="text/javascript" src="<?=base_url()?>/assets/js/profile.js"></script>
+<!-- new Pasword -->
+<script type="text/javascript" src="<?=base_url()?>/assets/js/newPassword.js"></script>
 
 <!-- Add consultation click apply and show ligin modal for sweetalert By Nazim 20-Dec-2021 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
