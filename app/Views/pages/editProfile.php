@@ -40,7 +40,7 @@
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
                 <div class="card-body">
-                    <div class="row gutters">
+                    <div class="row gutters" id="personalProfileDetails" style="display:block">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-2 text-primary">Personal Details</h6>
                         </div>
@@ -66,12 +66,7 @@
                                     placeholder="Enter phone number" value="<?= $userDetails[0]['phone'] ?>">
                             </div>
                         </div>
-                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Website URL</label>
-                                <input type="url" class="form-control" id="website" placeholder="Website url">
-                            </div>
-                        </div> -->
+
                     </div>
                     <div class="row gutters">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
