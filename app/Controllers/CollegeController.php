@@ -169,12 +169,12 @@ class CollegeController extends Controller
             'email' => $session->get( 'careerEmail' ),
             'password' => password_hash( $password, PASSWORD_DEFAULT ),
             'passtext' => $password,
-            'highest_qualification' => $session->get( 'qualification' ),
-            'highest_qualification_passing_year' => $session->get( 'passingYear' ),
-            'higher_secondary' => $session->get( 'higherSecondary' ),
-            'higher_secondary_passing_year' => $session->get( 'higherSecondaryYear' ),
-            'secondary' =>$session->get( 'secondary' ),
-            'secondary_passing_year' => $session->get( 'secondaryPassingYear' ),
+            'highest_qualification' => $session->get( 'careerHighest_qualification' ),
+            'highest_qualification_passing_year' => $session->get( 'careerHighest_qualification_passing_year' ),
+            'higher_secondary' => $session->get( 'careerHigherSecondary' ),
+            'higher_secondary_passing_year' => $session->get( 'careerHigherSecondary_passing_year' ),
+            'secondary' =>$session->get( 'careerSecondary_passing_year' ),
+            'secondary_passing_year' => $session->get( 'careerSecondary_passing_year' ),
         ];
         $alreadyEmailFound = $userModelGuest->where( 'email', $session->get( 'careerEmail' ) )->first();
         if ( !empty( $alreadyEmailFound ) ) {
