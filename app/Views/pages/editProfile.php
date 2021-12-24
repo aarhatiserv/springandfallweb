@@ -52,28 +52,30 @@
                                 <input type="email" class="form-control" id="profileEmail" placeholder="Enter email ID"
                                     value="<?= $userDetails[0]['email'] ?>" disabled>
                             </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
                                 <input type="text" class="form-control" id="profilePhone" placeholder="Enter phone number"
                                     value="<?= $userDetails[0]['phone'] ?>">
                             </div>
                         </div>
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            
+                        </div> -->
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="HQ">Highest Qualification</label>
                                 <input type="text" class="form-control" id="profileHQ" placeholder="Enter Highest Qualification"
                                     value="<?= $userDetails[0]['highest_qualification'] ?>">
                             </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="HQY">Highest Qualification Year</label>
                                 <input type="text" class="form-control" id="profileHQY" placeholder="Enter Highest Qualification Year"
                                     value="<?= $userDetails[0]['highest_qualification_passing_year'] ?>">
                             </div>
                         </div>
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                           
+                        </div> -->
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="HS">Higher Secondary</label>
