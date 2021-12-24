@@ -197,9 +197,10 @@ class CollegeController extends Controller
                 $response = [
                     'status' => 200,
                     'error' => true,
-                    'messages' => 'Please check your email',
+                    'messages' => 'something went wrong',
                     'data' => []
                 ];
+                echo json_encode(["status" => 1, "message" => "Email Not send to your emailID"]);
             }
            
                 // -------------------------------------------------- 
@@ -207,14 +208,15 @@ class CollegeController extends Controller
                 $response = [
                     'status' => 200,
                     'error' => true,
-                    'messages' => 'Please check your email',
+                    'messages' => 'something went wrong',
                     'data' => []
                 ];
+                echo json_encode(["status" => 1, "message" => "Email Not send to your emailID"]);
             }
-            echo json_encode(["status" => 1, "message" => "Register your Details but email not send"]);
-        }
-          
+            // echo json_encode(["status" => 1, "message" => "Register your Details but email not send"]);
+        }else{
 
+        }   
         // echo json_encode(["status" => 1, "message" => "Thank you"]);
         
     }
