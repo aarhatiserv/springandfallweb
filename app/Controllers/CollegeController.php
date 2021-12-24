@@ -150,6 +150,69 @@ class CollegeController extends Controller
         $session->set('careerSecondary_passing_year', $this->request->getVar("secondaryPassingYear"));
         $session->set('careerUserType', 'guest');
         
+
+        // register guest to parmanent
+        $userModelGuest = new UserModel();
+        $password = uniqid();
+        $userDataGuest=[
+         "name" => $session->get('careerFirstname')." ".$session->get('careerLastname'),
+         "phone" => $session->get('careerPhone'),
+         "email" => $session->get('careerEmail'),
+         "password" => password_hash($password, PASSWORD_DEFAULT),
+         "passtext" => $password,
+        ];
+
+        if($userModelGuest->insert($userDataGuest)){
+            $lastId = $userModelGuest->insertID();
+
+            // print_r($lastid);
+            // exit;
+            $token = sha1($lastId);
+            $email = \Config\Services::email();
+            $email->setFrom('support@springandfall.in', 'Spring and Fall');
+            $email->setTo($session->get('careerEmail'));
+            $email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
+            $url = "http://" . $_SERVER['SERVER_NAME'] . '/verifyGuest/' . $lastId . '/' . $token;
+            $data = ["username" => $session->get('careerFirstname'), "url" => $url];
+            $body = view('templates/emailGuestVerify', $data);
+            $email->setMessage($body);
+            if ($email->send()) {
+
+                // --------------------------------------------------
+            $email1 = \Config\Services::email();
+            $email1->setFrom('support@springandfall.in', 'Spring and Fall');
+            // $email1->setTo('springnfall.20@gmail.com');
+            $email1->setTo('sknazim1818@gmail.com');
+            $email1->setSubject('New Leads Register');
+            $email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
+            if ($email1->send()) {
+                $response = [
+                    'status' => 200,
+                    "error" => false,
+                    'messages' => "Please check your email inbox",
+                    'data' => []
+                ];
+            } else {
+                $response = [
+                    'status' => 200,
+                    'error' => true,
+                    'messages' => 'Please check your email',
+                    'data' => []
+                ];
+            }
+            echo json_encode(["status" => 1, "message" => "Email send to your emailID and Please Verify Your Email"]);
+                // -------------------------------------------------- 
+            } else {
+                $response = [
+                    'status' => 200,
+                    'error' => true,
+                    'messages' => 'Please check your email',
+                    'data' => []
+                ];
+            }
+        }
+          
+
         echo json_encode(["status" => 1, "message" => "Thank you"]);
         
     }
@@ -275,8 +338,8 @@ class CollegeController extends Controller
                 'data' => [],
             ];
             echo json_encode(["status" => 2, "message" => "Something Went Wrong"]);
-        }
-    }
+              }
+            }
             }else{
             $data = [
                 "firstname" => $session->get('careerFirstname'),
@@ -309,65 +372,7 @@ class CollegeController extends Controller
                     'data' => [],
                 ];
                 
-                // register guest to parmanent
-                $userModelGuest = new UserModel();
-                $password = uniqid();
-                $userDataGuest=[
-                 "name" => $session->get('careerFirstname')." ".$session->get('careerLastname'),
-                 "phone" => $session->get('careerPhone'),
-                 "email" => $session->get('careerEmail'),
-                 "password" => password_hash($password, PASSWORD_DEFAULT),
-                 "passtext" => $password,
-                ];
-
-                if($userModelGuest->insert($userDataGuest)){
-                    $lastId = $userModelGuest->insertID();
-
-					// print_r($lastid);
-					// exit;
-					$token = sha1($lastId);
-					$email = \Config\Services::email();
-					$email->setFrom('support@springandfall.in', 'Spring and Fall');
-					$email->setTo($session->get('careerEmail'));
-					$email->setSubject('Welcome to Spring and Fall ' . $this->request->getVar('name') . '');
-					$url = "http://" . $_SERVER['SERVER_NAME'] . '/verifyGuest/' . $lastId . '/' . $token;
-					$data = ["username" => $session->get('careerFirstname'), "url" => $url];
-					$body = view('templates/emailGuestVerify', $data);
-					$email->setMessage($body);
-					if ($email->send()) {
- 
-						// --------------------------------------------------
-					$email1 = \Config\Services::email();
-					$email1->setFrom('support@springandfall.in', 'Spring and Fall');
-					$email1->setTo('springnfall.20@gmail.com');
-					$email1->setSubject('New Leads Register');
-					$email1->setMessage('<p>Name :' . $this->request->getVar("name") . '<br> Contact no :' .$this->request->getVar("phone"). '<br> email :' . $this->request->getVar("email") . ' </p>');
-					if ($email1->send()) {
-						$response = [
-							'status' => 200,
-							"error" => false,
-							'messages' => "Please check your email inbox",
-							'data' => []
-						];
-					} else {
-						$response = [
-							'status' => 200,
-							'error' => true,
-							'messages' => 'Please check your email',
-							'data' => []
-						];
-					}
-						// -------------------------------------------------- 
-					} else {
-						$response = [
-							'status' => 200,
-							'error' => true,
-							'messages' => 'Please check your email',
-							'data' => []
-						];
-					}
-                }
-                  
+                
                 $collegeModel = new CollegeModel();
                 $collegeData = $collegeModel->where("id = ", $collegeId)->findAll();
                 
