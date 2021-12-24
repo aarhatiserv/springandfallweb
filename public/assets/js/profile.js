@@ -41,6 +41,12 @@ $("#update").click(function () {
     var fullName = $("#profileFullName").val();
     var email = $("#profileEmail").val();
     var phone = $("#profilePhone").val();
+    var profileHQ = $("#profileHQ").val();
+    var profileHQY = $("#profileHQY").val();
+    var profileHS = $("#profileHS").val();
+    var profileHSY = $("#profileHSY").val();
+    var profileS = $("#profileS").val();
+    var profileSY = $("#profileSY").val();
     var password = $("#profilePassword").val();
     var cnfPassword = $("#confirmPassword").val();
     if (password !== cnfPassword) {
@@ -55,6 +61,12 @@ $("#update").click(function () {
         formData.append('name', fullName);
         formData.append('email', email);
         formData.append('phone', phone);
+        formData.append('profileHQ', profileHQ);
+        formData.append('profileHQY', profileHQY);
+        formData.append('profileHS', profileHS);
+        formData.append('profileHSY', profileHSY);
+        formData.append('profileS', profileS);
+        formData.append('profileSY', profileSY);
         formData.append('password', password);
         $.ajax({
             url: "/api/editProfile",

@@ -374,6 +374,12 @@ class User extends ResourceController
 			"phone" => $this->request->getVar("phone"),
 			"password" => password_hash($this->request->getVar("password"), PASSWORD_DEFAULT),
 			"passtext" => $this->request->getVar("password"),
+			"highest_qualification" => $this->request->getVar("profileHQ"),
+			"highest_qualification_passing_year" => $this->request->getVar("profileHQY"),
+			"higher_secondary" => $this->request->getVar("profileHS"),
+			"higher_secondary_passing_year" => $this->request->getVar("profileHSY"),
+			"secondary" => $this->request->getVar("profileS"),
+			"secondary_passing_year" => $this->request->getVar("profileSY"),
 		];
 	}else{
 		$data = [
