@@ -832,7 +832,7 @@ function addPersonalDetailsInSession(
         swal({
           title: "Opps.!!",
           text: res.message,
-          icon: "error", },
+          type: "error", },
           function () {
             $('#loginForm').modal();
         });
