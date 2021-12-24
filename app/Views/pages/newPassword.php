@@ -8,14 +8,15 @@ if ($session->get('token')) : ?>
     <h1 class="font-weight-light">New Password</h1>
     <!-- <button class="my-5" id="loginBtn" data-toggle="modal" data-target="#loginForm">SIGN IN</button> -->
     <input type="text" name="newPassword" id="newPassword" placeholder="New Password">
-    <button role="button" id="submit">Submit</button>
+    <button class="btn btn-primary font-weight-bold mb-2 mr-2" name="pass" id="pass" type="submit"
+                        disabled="disabled">Submit</button>
 </div>
 
 <?php endif; ?>
 
 <script>
 
-  $("#submit").click(function () {
+  $("#pass").click(function () {
     var newPasswordText =  $("#newPassword").val();
     let formData = new FormData();
     formData.append('newPasswordGuest', newPasswordText);
