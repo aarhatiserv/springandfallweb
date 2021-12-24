@@ -8,7 +8,7 @@ $(document).ready(function () {
     btn.onclick = function () {
         if (personalProfileDetails.style.display !== "none") {
             personalProfileDetails.style.display = "none";
-            changePassword.style.display = "block";
+            changePassword.style.display = "flex";
             btn.style.display = "none";
             back.style.display = "none";
             backChangePassword.style.display = "inline";
@@ -21,7 +21,7 @@ $(document).ready(function () {
     backChangePassword.onclick = function () {
         if (changePassword.style.display !== "none") {
             changePassword.style.display = "none";
-            personalProfileDetails.style.display = "inline";
+            personalProfileDetails.style.display = "flex";
             back.style.display = "inline";
             backChangePassword.style.display = "none";
             btn.style.display = "inline";
