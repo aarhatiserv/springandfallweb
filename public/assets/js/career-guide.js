@@ -828,6 +828,14 @@ function addPersonalDetailsInSession(
         // window.location.reload();
       } else if (res.status === 2) {
         swal("Opps.!!", res.message, "error");
+      }else if (res.status === 4) {
+        swal({
+          title: "Opps.!!",
+          text: res.message,
+          icon: "error", },
+          function () {
+            $('#loginForm').modal();
+        });
       } else {
         swal("Opps.!!", "Something went wrong.!!", "error");
       }

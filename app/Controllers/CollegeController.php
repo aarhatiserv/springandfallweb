@@ -161,7 +161,10 @@ class CollegeController extends Controller
          "password" => password_hash($password, PASSWORD_DEFAULT),
          "passtext" => $password,
         ];
-
+        $alreadyEmailFound = $userModelGuest->where('email', $session->get('careerEmail'))->first();
+        if(!empty($alreadyEmailFound)){
+            echo json_encode(["status" => 4, "message" => "Your Email already register, please sign in!"]);
+        }else{
         if($userModelGuest->insert($userDataGuest)){
             $lastId = $userModelGuest->insertID();
 
@@ -181,7 +184,8 @@ class CollegeController extends Controller
                 // --------------------------------------------------
             $email1 = \Config\Services::email();
             $email1->setFrom('support@springandfall.in', 'Spring and Fall');
-            $email1->setTo('springnfall.20@gmail.com');
+            // $email1->setTo('springnfall.20@gmail.com');
+            $email1->setTo('sknazim1818@gmail.com');
             $email1->setSubject('New Leads Register');
             $email1->setMessage('<p>Name :' . $session->get('careerFirstname')." ".$session->get('careerLastname') . '<br> Contact no :' .$session->get('careerPhone'). '<br> email :' . $session->get('careerEmail') . ' </p>');
             if ($email1->send()) {
@@ -215,7 +219,8 @@ class CollegeController extends Controller
             // echo json_encode(["status" => 1, "message" => "Register your Details but email not send"]);
         }else{
 
-        }   
+        } 
+    }  
         // echo json_encode(["status" => 1, "message" => "Thank you"]);
         
     }
