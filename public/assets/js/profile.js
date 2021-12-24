@@ -22,9 +22,9 @@ $(document).ready(function () {
         if (changePasswordPage.style.display !== "none") {
             changePasswordPage.style.display = "none";
             personalProfileDetails.style.display = "flex";
-            backBtn.style.display = "flex";
+            backBtn.style.display = "inline";
             backBtnChangePassword.style.display = "none";
-            btn.style.display = "flex";
+            btn.style.display = "inline";
 
         
         } else {
