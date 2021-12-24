@@ -406,7 +406,7 @@ class User extends ResourceController
 			"passtext" => $newPassword,
 		];
         if($model->update($id, $data)){
-			echo json_encode(["status" => 1, "message" =>$newPassword ]);
+			echo json_encode(["status" => 1, "message" =>"New Password set successfully" ]);
 		}else{
 			echo json_encode(["status" => 2, "message" => "New Password Not Set"]);
 		}
