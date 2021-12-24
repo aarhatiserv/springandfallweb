@@ -824,10 +824,7 @@ function addPersonalDetailsInSession(
     success: function (data) {
       var res = JSON.parse(data);
       if (res.status === 1) {
-        swal({ "Thank you!", res.message, "success"},
-          function () {
-         
-        });
+        swal( "Thank you!", res.message, "success");
         // window.location.reload();
       } else if (res.status === 2) {
         swal("Opps.!!", res.message, "error");
