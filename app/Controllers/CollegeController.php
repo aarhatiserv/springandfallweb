@@ -192,6 +192,7 @@ class CollegeController extends Controller
                     'messages' => "Please check your email inbox",
                     'data' => []
                 ];
+                echo json_encode(["status" => 1, "message" => "Email send to your emailID and Please Verify Your Email"]);
             } else {
                 $response = [
                     'status' => 200,
@@ -200,7 +201,7 @@ class CollegeController extends Controller
                     'data' => []
                 ];
             }
-            echo json_encode(["status" => 1, "message" => "Email send to your emailID and Please Verify Your Email"]);
+           
                 // -------------------------------------------------- 
             } else {
                 $response = [
@@ -210,10 +211,11 @@ class CollegeController extends Controller
                     'data' => []
                 ];
             }
+            echo json_encode(["status" => 1, "message" => "Register your Details but email not send"]);
         }
           
 
-        echo json_encode(["status" => 1, "message" => "Thank you"]);
+        // echo json_encode(["status" => 1, "message" => "Thank you"]);
         
     }
 
