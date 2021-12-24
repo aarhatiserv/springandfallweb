@@ -1,34 +1,34 @@
 // For Show new and confirm  password 
 $(document).ready(function () {
     const personalProfileDetails = document.getElementById("personalProfileDetails");
-    const changePassword = document.getElementById("changePassword");
-    const backChangePassword = document.getElementById("backChangePassword");
-    const back = document.getElementById("back");
+    const changePasswordPage = document.getElementById("changePassword");
+    const backBtnChangePassword = document.getElementById("backChangePassword");
+    const backBtn = document.getElementById("back");
     const btn = document.getElementById("changePasswordBtn");
     btn.onclick = function () {
         if (personalProfileDetails.style.display !== "none") {
             personalProfileDetails.style.display = "none";
-            changePassword.style.display = "flex";
+            changePasswordPage.style.display = "flex";
             btn.style.display = "none";
-            back.style.display = "none";
-            backChangePassword.style.display = "flex";
+            backBtn.style.display = "none";
+            backBtnChangePassword.style.display = "inline";
         
         } else {
-            changePassword.style.display = "flex";
+            personalProfileDetails.style.display = "flex";
         }
     }
  // when click back button in change password div then it is show profile section
-    backChangePassword.onclick = function () {
-        if (changePassword.style.display !== "none") {
-            changePassword.style.display = "none";
+ backBtnChangePassword.onclick = function () {
+        if (changePasswordPage.style.display !== "none") {
+            changePasswordPage.style.display = "none";
             personalProfileDetails.style.display = "flex";
-            back.style.display = "flex";
-            backChangePassword.style.display = "none";
+            backBtn.style.display = "flex";
+            backBtnChangePassword.style.display = "none";
             btn.style.display = "flex";
 
         
         } else {
-            changePassword.style.display = "block";
+            changePasswordPage.style.display = "block";
         }
     }
 });
