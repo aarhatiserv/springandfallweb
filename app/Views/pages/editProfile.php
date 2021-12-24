@@ -67,8 +67,8 @@
                             </div>
                         </div>
 
-                    </div>
-                    <div class="row gutters">
+                    
+                    
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mt-3 mb-2 text-primary">EDUCATIONAL Details</h6>
                         </div>
@@ -140,7 +140,7 @@
                     <div class="row gutters">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="text-right">
-                            <a href="javascript:history.back();"><button type="button" id="back" name="back"
+                                <a href="javascript:history.back();"><button type="button" id="back" name="back"
                                         class="btn btn-secondary">Back</button></a>
 
                                 <button type="button" id="backChangePassword" name="backChangePassword"

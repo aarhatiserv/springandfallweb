@@ -11,10 +11,10 @@ $(document).ready(function () {
             changePassword.style.display = "flex";
             btn.style.display = "none";
             back.style.display = "none";
-            backChangePassword.style.display = "inline";
+            backChangePassword.style.display = "flex";
         
         } else {
-            changePassword.style.display = "block";
+            changePassword.style.display = "flex";
         }
     }
  // when click back button in change password div then it is show profile section
@@ -22,9 +22,9 @@ $(document).ready(function () {
         if (changePassword.style.display !== "none") {
             changePassword.style.display = "none";
             personalProfileDetails.style.display = "flex";
-            back.style.display = "inline";
+            back.style.display = "flex";
             backChangePassword.style.display = "none";
-            btn.style.display = "inline";
+            btn.style.display = "flex";
 
         
         } else {
