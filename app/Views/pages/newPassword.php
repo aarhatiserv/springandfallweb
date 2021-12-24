@@ -14,6 +14,7 @@ if ($session->get('token')) : ?>
 <?php endif; ?>
 
 <script>
+$(document).ready(function () {
   $("#submit").click(function () {
     var newPasswordText =  $("#newPassword").val();
     let formData = new FormData();
@@ -47,5 +48,6 @@ if ($session->get('token')) : ?>
         }
       }
     })
-    }
+    })
+  });
 </script>
