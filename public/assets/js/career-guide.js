@@ -225,7 +225,9 @@ $(document).ready(function () {
              secondaryPassingYear
            );
            
-           
+           $("#getstartdSection").hide();
+           $("#personalDetails").fadeOut();
+           $("#areaOfInterest").fadeIn();
            // $("p").show(); // hiding for later use
         } else {
           $('#careerEmail').addClass('error');
@@ -824,9 +826,7 @@ function addPersonalDetailsInSession(
       if (res.status === 1) {
         swal({ "Thank you!", res.message, "success"},
           function () {
-            $("#getstartdSection").hide();
-            $("#personalDetails").fadeOut();
-            $("#areaOfInterest").fadeIn();
+         
         });
         // window.location.reload();
       } else if (res.status === 2) {
