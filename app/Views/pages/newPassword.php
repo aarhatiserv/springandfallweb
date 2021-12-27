@@ -1,5 +1,5 @@
 <?php $session = session();
-if ($session->get('token')) : 
+if ($session->get('userNewId')) : 
 
   $yourURL="https://springandfall.in/";
   echo ("<script>location.href='$yourURL'</script>");
