@@ -321,20 +321,11 @@ class User extends ResourceController {
 				$session->remove("userNewId");
 				return redirect()->to( '/' );
 			}
-            // $userModel->set( 'active', 1 );
-            // $userModel->where( 'id', $id );
-            // if ( $userModel->update() ) {
             $session = session();
-			
-            // $session->setFlashdata( 'message_id', 'Message' );
-            //message rendered
-            // $session->setFlashdata( 'seconds_redirect', 5 );
-            //time to be redirected ( in seconds )
-            // $session->setFlashdata( 'url_redirect', base_url( 'controller/method' ) );
-            //
+		
             $session->setFlashdata( [ 'message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, 'url_redirect' => 'newPassword' ] );
             return redirect()->to( '/tmp' );
-            // }
+            
         } else {
             echo 'not verified';
         }
