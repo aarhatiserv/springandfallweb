@@ -190,7 +190,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                         We can unite you to the fields you seek to proceed in the common proper institution or
                         university placed in the proper country...
                     </p>
-                    <button class="buttonWSF">Read More</button>
+                    <a href="about"><button class="buttonWSF">Read More</button></a>
                 </div>
                 <div class="col-md-6">
                     <img data-tilt data-tilt-glare data-tilt-max-glare="0.8"
