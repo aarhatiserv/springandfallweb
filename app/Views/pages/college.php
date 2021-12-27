@@ -296,7 +296,7 @@
            <?php  foreach($blogPostData as $bpd){  ?>
                     <div class="col-md-4">
                         <div class="card">
-                            <img src="<?= $bpd->image_mid?>"
+                            <img src="blog/<?= $bpd->image_mid?>"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-left"><?= $bpd->title ?></h5>
