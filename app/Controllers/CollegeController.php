@@ -51,7 +51,7 @@ public function getCoursesClickCountry($country){
 
     $data['title'] = "Consultation";
     echo view('templates/header', $data);
-    echo view('pages/university-or-college-selection', $country);
+    echo view('pages/about', $country);
     echo view('templates/footer', $data);
 }
 
