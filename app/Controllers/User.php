@@ -313,7 +313,7 @@ class User extends ResourceController {
         // echo $id . 'token => ' . $token;
         $userModel = new UserModel();
         $userdata = $userModel->where( 'id', $id )->first();
-        $userActive = $userModel->where( "id = '$id' AND active = 1"  )->first();
+        $userActive = $userModel->where( "id = '$id' AND active = '1'"  )->first();
         // match token
         if ( sha1( $userdata[ 'id' ] ) == $token ) {
 
@@ -321,10 +321,17 @@ class User extends ResourceController {
 				$session->remove("userNewId");
 				return redirect()->to( '/' );
 			}
-           
+            // $userModel->set( 'active', 1 );
+            // $userModel->where( 'id', $id );
+            // if ( $userModel->update() ) {
             $session = session();
 			
-            
+            // $session->setFlashdata( 'message_id', 'Message' );
+            //message rendered
+            // $session->setFlashdata( 'seconds_redirect', 5 );
+            //time to be redirected ( in seconds )
+            // $session->setFlashdata( 'url_redirect', base_url( 'controller/method' ) );
+            //
             $session->setFlashdata( [ 'message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, 'url_redirect' => 'newPassword' ] );
             return redirect()->to( '/tmp' );
             // }
