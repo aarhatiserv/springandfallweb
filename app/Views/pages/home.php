@@ -188,8 +188,9 @@ for( $i = 0; $i < count($sectionData); $i++){
                         Our vast system of convenient specialists supports you in recognising and ensuring the college
                         or university where you can shine.
                         We can unite you to the fields you seek to proceed in the common proper institution or
-                        university placed in the proper country.
+                        university placed in the proper country...
                     </p>
+                    <button href="about">Read More</button>
                 </div>
                 <div class="col-md-6">
                     <img data-tilt data-tilt-glare data-tilt-max-glare="0.8"
