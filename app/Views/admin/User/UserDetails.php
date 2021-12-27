@@ -1,3 +1,4 @@
+<?php $session = session() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +88,7 @@
                                                 <th>Phone No.</th>
                                                 <th>Date</th>
                                                 <?php 
-                                                   if(($session->get('adminTypes') === 'superadmin' ))
+                                                   if($session->get('adminTypes') === 'superadmin' )
                                                 {?>
                                                 <th>Action</th>
                                                 <?php }?>
@@ -111,7 +112,7 @@
                                                 <td><?= $ud['phone']?></td>
                                                 <td><?= $ud['registered']?></td>
                                                 <?php 
-                                                   if(($session->get('adminTypes') === 'superadmin' ))
+                                                   if($session->get('adminTypes') === 'superadmin' )
                                                 {?>
                                                     <td><a href="/admin/editUser/<?= $ud['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $ud['id']?>)"><i class="fa fa-trash"></i></a></td>
                                                 <?php }?>
