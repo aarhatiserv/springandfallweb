@@ -16,8 +16,7 @@ class User extends ResourceController {
     // 	$this->session->start();
     // }
 
-    public function register()
-    {
+    public function register() {
         $rules = [
             'name' => 'required',
             'email' => 'required|valid_email|is_unique[users.email]|min_length[6]',
@@ -140,13 +139,11 @@ class User extends ResourceController {
         return $this->respondCreated( $response );
     }
 
-    private function getKey()
-    {
+    private function getKey() {
         return 'aarhat@123';
     }
 
-    public function login()
-    {
+    public function login() {
         $rules = [
             'email' => 'required|valid_email|min_length[6]',
             'password' => 'required',
@@ -243,8 +240,7 @@ class User extends ResourceController {
         }
     }
 
-    public function details()
-    {
+    public function details() {
         $key = $this->getKey();
         $authHeader = $this->request->getHeader( 'Authorization' );
         $authHeader = $authHeader->getValue();
@@ -277,8 +273,7 @@ class User extends ResourceController {
 
     // verfy email
 
-    public function verify( $id, $token )
-    {
+    public function verify( $id, $token ) {
         # getting id and toke from url arguments
         // echo $id . 'token => ' . $token;
         $userModel = new UserModel();
@@ -305,56 +300,44 @@ class User extends ResourceController {
 
     // verfy email
 
-    public function verifyGuest( $id, $token )
-    {
+    public function verifyGuest( $id, $token ) {
         $session = session();
         $session->set( 'lastIDGuest', $id );
         # getting id and toke from url arguments
         // echo $id . 'token => ' . $token;
         $userModel = new UserModel();
         $userdata = $userModel->where( 'id', $id )->first();
-        $userActive = $userModel->where( "id = '$id' AND active = 1"  )->first();
+        $userActive = $userModel->where( "id = '$id' AND active = 1" )->first();
         // match token
         if ( sha1( $userdata[ 'id' ] ) == $token ) {
 
-			if(!empty($userActive)){
-				$session->remove("userNewId");
-				return redirect()->to( '/' );
-			}
-            // $userModel->set( 'active', 1 );
-            // $userModel->where( 'id', $id );
-            // if ( $userModel->update() ) {
-            $session = session();
-			
-            // $session->setFlashdata( 'message_id', 'Message' );
-            //message rendered
-            // $session->setFlashdata( 'seconds_redirect', 5 );
-            //time to be redirected ( in seconds )
-            // $session->setFlashdata( 'url_redirect', base_url( 'controller/method' ) );
-            //
-            $session->setFlashdata( [ 'message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, 'url_redirect' => 'newPassword' ] );
-            return redirect()->to( '/tmp' );
-            // }
+            if ( !empty( $userActive ) ) {
+                $session->remove( 'userNewId' );
+                return redirect()->to( '/' );
+            } else {
+
+                $session = session();
+
+                $session->setFlashdata( [ 'message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, 'url_redirect' => 'newPassword' ] );
+                return redirect()->to( '/tmp' );
+            }
         } else {
             echo 'not verified';
         }
     }
 
-    public function temp()
-    {
+    public function temp() {
         return view( 'templates/temp_view' );
     }
 
-    public function logout()
-    {
+    public function logout() {
 
         $session = session();
         $session->destroy();
         return redirect()->to( 'https://springandfall.in/home' );
     }
 
-    public function email()
-    {
+    public function email() {
         $lastId = 1;
         $token = sha1( $lastId );
         $email = \Config\Services::email();
@@ -429,9 +412,9 @@ class User extends ResourceController {
         ];
         if ( $model->update( $id, $data ) ) {
 
-             $session->set("userNewId", $id);
+            $session->set( 'userNewId', $id );
             echo json_encode( [ 'status' => 1, 'message' =>'New Password set successfully' ] );
-          
+
         } else {
             echo json_encode( [ 'status' => 2, 'message' => 'New Password Not Set' ] );
         }
