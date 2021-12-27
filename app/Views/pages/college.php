@@ -4,7 +4,7 @@
             <a class="text-dark" style="" onclick="window.history.go(-1)"><b>
                     < </b> Back
             </a>
-        </div> 
+        </div>
         <div class="col-11"></div>
     </div>
 </div>
@@ -293,11 +293,11 @@
             <div class="row">
                 <h4 class=" pl-3" style=" color: #114694 !important">Latest blogs</h4>
                 <div class="card-group">
-           <?php  foreach($blogPostData as $bpd){  ?>
+
+                    <?php  if(!empty($blogPostData)){ foreach($blogPostData as $bpd){  ?>
                     <div class="col-md-4">
                         <div class="card">
-                            <img src="../../blog/<?= $bpd->image_mid?>"
-                                class="card-img-top" alt="...">
+                            <img src="../../blog/<?= $bpd->image_mid?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-left"><?= $bpd->title ?></h5>
                                 <p class="card-text"><?= $bpd->summary?></p>
@@ -305,8 +305,8 @@
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
-                    <!-- <div class="col-md-4">
+                    <?php } } else {?>
+                    <div class="col-md-4">
 
 
                         <div class="card">
@@ -339,7 +339,26 @@
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="col-md-4">
+
+
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title text-left">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This card has even longer content than the first to show that
+                                    equal
+                                    height
+                                    action.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }?>
                 </div>
             </div>
         </div>
