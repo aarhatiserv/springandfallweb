@@ -42,7 +42,7 @@ class CollegeController extends Controller
                 array_push( $data, $dataAll[ $i ] );
             }
         }
-        getCoursesClickCountry($data);
+        // getCoursesClickCountry($data);
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
 
     }
