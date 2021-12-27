@@ -372,7 +372,7 @@
                                                 required />
 
                                             <input type="email" id="email" name="email" placeholder="email..."
-                                                style="margin-right:50px" value="<?= $userDatabyId[0]['email']?>" />
+                                                style="margin-right:50px" value="<?= $userDatabyId[0]['email']?>" disabled/>
 
                                             <input type="text" name="phone" id="phone" placeholder="Enter Phone No"
                                                 style="margin-right: 47px;" value="<?= $userDatabyId[0]['phone']?>" required />

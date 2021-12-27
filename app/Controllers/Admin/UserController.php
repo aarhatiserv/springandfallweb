@@ -200,7 +200,6 @@ class UserController extends Controller
     {
         $rules = [
             "name" => "required",
-            "email" => "required|valid_email|min_length[6]",
             "phone" => "required",
         ];
 
@@ -208,10 +207,6 @@ class UserController extends Controller
             "name" => [
                 "required" => "Name is required",
             ],
-            "email" => [
-				"required" => "Email required",
-				"valid_email" => "Email address is not in format"
-			],
             "phone" => [
                 "required" => "Phone is required",
             ],
@@ -231,7 +226,6 @@ class UserController extends Controller
             $id = $this->request->getVar("id");
             $data = [
                 "name" => $this->request->getVar("name"),
-                "email" => $this->request->getVar("email"),
                 "phone" => $this->request->getVar("phone"),
                 "city" => $this->request->getVar("city"),
                 "state" => $this->request->getVar("state"),
