@@ -144,6 +144,9 @@ $routes->group("api", function ($routes) {
 	$routes->get("level/(:any)", "CollegeController::getLevel/$1");
 
 
+	$routes->get("test/(:any)", "CollegeController::getCoursesClickCountry/$1");
+
+
 	$routes->post("careerGuide", "CollegeController::careerGuidePost");	
 	// $routes->post("careerGuide/imageUpload", "CollegeController::careerGuideImagePost");
 	$routes->POST("apply", "CollegeController::apply");

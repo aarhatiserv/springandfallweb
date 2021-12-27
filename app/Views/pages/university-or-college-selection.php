@@ -298,7 +298,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-USA2" aria-selected="false"
-                                onclick="getCollegeWithCountry('USA')">USA</button>
+                                onclick="/api/test/USA">USA</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK2-tab" data-toggle="pill" href="#pills-course"
