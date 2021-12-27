@@ -296,9 +296,9 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     <!-- ------------------------------- Start Courses Country------------------------------------------------------------- -->
                     <ul class="nav nav-pills mb-3 pl-1 pt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a href="/api/test/USA"><button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
+                            <button class="nav-link rr1 mx-2" id="pills-USA2-tab" data-toggle="pill"
                                 href="#pills-course" role="tab" aria-controls="pills-USA2" aria-selected="false"
-                                onclick="">USA</button></a>
+                                onclick=""><a href="/api/test/USA" >USA</a></button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rr1 mx-2" id="pills-UK2-tab" data-toggle="pill" href="#pills-course"
