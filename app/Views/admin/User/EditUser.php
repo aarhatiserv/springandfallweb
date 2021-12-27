@@ -357,7 +357,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/editReviews" method="POST" enctype="multipart/form-data">
+                                    <form action="/admin/editUser" method="POST">
                                         <input type="hidden" name="id" value="<?= $userDatabyId[0]['id']?>" />
                                         <div>
 
