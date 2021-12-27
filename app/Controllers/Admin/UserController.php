@@ -200,16 +200,12 @@ class UserController extends Controller
     {
         $rules = [
             "name" => "required",
-            "email" => "required",
             "phone" => "required",
         ];
 
         $messages = [
             "name" => [
                 "required" => "Name is required",
-            ],
-            "email" => [
-                "required" => "Email is required",
             ],
             "phone" => [
                 "required" => "Phone is required",
