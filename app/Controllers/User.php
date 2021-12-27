@@ -313,7 +313,7 @@ class User extends ResourceController {
         // echo $id . 'token => ' . $token;
         $userModel = new UserModel();
         $userdata = $userModel->where( 'id', $id )->first();
-        $userActive = $userModel->where( "id = '$id' AND active = '1'"  )->first();
+        $userActive = $userModel->where( "id = '$id' AND active = 1"  )->first();
         // match token
         if ( sha1( $userdata[ 'id' ] ) == $token ) {
 
