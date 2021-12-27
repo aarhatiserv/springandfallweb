@@ -190,7 +190,7 @@ class UserController extends Controller
 
             $model = new UserModel();
         $model->where("id = ", $id)->delete();
-        return redirect()->to('https://springandfall.in/admin/subscribe');
+        return redirect()->to('https://springandfall.in/admin/user');
         // return redirect()->to('http://localhost:8080/admin/subscribe');
             
 		}else{
