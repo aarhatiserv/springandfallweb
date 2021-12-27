@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +13,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -88,6 +86,12 @@
                                                 <th>Email ID</th>
                                                 <th>Phone No.</th>
                                                 <th>Date</th>
+                                                <?php 
+                                                   if(($session->get('adminTypes') === 'superadmin' ))
+                                                {?>
+                                                <th>Action</th>
+                                                <?php }?>
+
                                             </tr>
                                         </thead>
 
@@ -106,6 +110,12 @@
 
                                                 <td><?= $ud['phone']?></td>
                                                 <td><?= $ud['registered']?></td>
+                                                <?php 
+                                                   if(($session->get('adminTypes') === 'superadmin' ))
+                                                {?>
+                                                    <td><a href="/admin/editUser/<?= $ud['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $ud['id']?>)"><i class="fa fa-trash"></i></a></td>
+                                                <?php }?>
+
                                             </tr>
                                             <?php
                                                }
@@ -139,7 +149,7 @@
 function ConfirmDelete(id) {
     var conf = confirm('Are you sure want to delete this record?');
     if (conf)
-        location.href = '/admin/deleteCollege/' + id;
+        location.href = '/admin/deleteUser/' + id;
 }
 </script>
 
