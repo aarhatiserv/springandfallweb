@@ -23,7 +23,7 @@ class CollegeController extends Controller
             $data = $model->where( 'country', $country )->findAll();
             echo json_encode( [ 'status' => 1, 'data' => $data ] );
         } else {
-            return redirect()->to( 'https://springandfall.in/consultation' );
+            return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
             // return redirect()->to( 'http://localhost:8080/consultation' );
         }
     }
@@ -42,9 +42,19 @@ class CollegeController extends Controller
                 array_push( $data, $dataAll[ $i ] );
             }
         }
+        getCoursesClickCountry($data);
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
 
     }
+
+public function getCoursesClickCountry($data){
+
+    $data['title'] = "Consultation";
+    echo view('templates/header', $data);
+    echo view('pages/university-or-college-selection', $data);
+    echo view('templates/footer', $data);
+}
+
     // ------------------------------------------Single Course-------------------------------
 
     public function getCourse( $course )
