@@ -299,7 +299,7 @@
                             <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-left"><?= $bpd[0]['title'] ?></h5>
+                                <h5 class="card-title text-left"><?= $bpd->title ?></h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural
                                     lead-in to
                                     additional content. This content is a little bit longer.</p>
