@@ -294,8 +294,6 @@
                 <h4 class=" pl-3" style=" color: #114694 !important">Latest blogs</h4>
                 <div class="card-group">
                     <div class="col-md-4">
-
-
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                                 class="card-img-top" alt="...">
@@ -308,7 +306,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
 
 
                         <div class="card">
@@ -341,7 +339,7 @@
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

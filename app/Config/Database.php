@@ -50,6 +50,25 @@ class Database extends Config
 		'port'     => 3306,
 	];
 
+	public $blogDb = [
+		'DSN'      => '',
+		'hostname' => 'localhost',
+		'username' => 'root',
+		'password' => 'root',
+		'database' => 'springan_backend',
+		'DBDriver' => 'MySQLi',
+		'DBPrefix' => '',
+		'pConnect' => false,
+		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'charset'  => 'latin1',
+        'DBCollat' => 'latin1_swedish_ci',
+		'swapPre'  => '',
+		'encrypt'  => false,
+		'compress' => false,
+		'strictOn' => false,
+		'failover' => [],
+		'port'     => 3306,
+	];
 	/**
 	 * This database connection is used when
 	 * running PHPUnit database tests.

@@ -51,7 +51,7 @@ public function getCoursesClickCountry($country){
 
     $data['title'] = "Consultation";
     echo view('templates/header', $data);
-    echo view('pages/about', $country);
+    echo view('pages/university-or-college-selection', $country);
     echo view('templates/footer', $data);
 }
 
@@ -610,6 +610,11 @@ public function getCoursesClickCountry($country){
         $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
         $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
+        
+        $db1 = \Config\Database::connect("blogDb");
+        $query = $db1->query('SELECT * FROM posts');
+        $data['blogPostData'] = $query->getResult();
+
         echo view( 'templates/header', $data );
         echo view( 'pages/' . $page, $data );
         echo view( 'templates/footer', $data );
