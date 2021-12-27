@@ -313,16 +313,17 @@ class User extends ResourceController
 			$userdata = $userModel->where("id", $id)->first();
 			// match token
 			if (sha1($userdata['id']) == $token) {
-				$userModel->set('active', 1);
-				$userModel->where('id', $id);
-				if ($userModel->update()) {
+				// $userModel->set('active', 1);
+				// $userModel->where('id', $id);
+				// if ($userModel->update()) {
 					$session = session();
+					$session->set('token', $token);
 					// $session->setFlashdata('message_id', 'Message'); //message rendered
 					// $session->setFlashdata('seconds_redirect', 5); //time to be redirected (in seconds)
 					// $session->setFlashdata('url_redirect', base_url('controller/method')); //
 					$session->setFlashdata(['message_id' => 'Your email verified please wait while redirecting ....', 'second_redirect' => 5, "url_redirect" => 'newPassword']);
 					return redirect()->to('/tmp');
-				}
+				// }
 			} else {
 				echo "not verified";
 			}
@@ -418,7 +419,11 @@ class User extends ResourceController
 			"passtext" => $newPassword,
 		];
         if($model->update($id, $data)){
+			$userModel->set('active', 1);
+				$userModel->where('id', $id);
+				if ($userModel->update()) {
 			echo json_encode(["status" => 1, "message" =>"New Password set successfully" ]);
+				}
 		}else{
 			echo json_encode(["status" => 2, "message" => "New Password Not Set"]);
 		}
