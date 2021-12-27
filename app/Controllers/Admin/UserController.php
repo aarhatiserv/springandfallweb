@@ -182,6 +182,20 @@ class UserController extends Controller
 		}
     }
 
+    public function editUser($id)
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+            $model = new UserModel();
+            $data['userDatabyId'] = $model->where('id = ', $id)->findAll();
+            echo view('admin/User/EditUser', $data);
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
+    }
 
     public function deleteUser($id)
     {

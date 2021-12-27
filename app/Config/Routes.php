@@ -112,6 +112,7 @@ $routes->group("admin", function ($routes) {
      // Admin User Routes
 	 $routes->get('user', 'Admin/UserController::getUserDetails');
 	 $routes->get('deleteUser/(:any)', 'Admin\UserController::deleteUser/$1');
+	 $routes->get('editUser/(:any)', 'Admin\UserController::editUser/$1');
 
 	 $routes->post('allUserData', 'Admin/UserController::getAllUserDetails');
 	 $routes->post('todayData', 'Admin/UserController::getTodayUserDetails');
