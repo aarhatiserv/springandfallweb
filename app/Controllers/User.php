@@ -313,13 +313,19 @@ class User extends ResourceController {
         // echo $id . 'token => ' . $token;
         $userModel = new UserModel();
         $userdata = $userModel->where( 'id', $id )->first();
+        $userActive = $userModel->where( "id = '$id' AND active = '1'"  )->first();
         // match token
         if ( sha1( $userdata[ 'id' ] ) == $token ) {
+
+			if(!empty($userActive)){
+				$session->remove("userNewId");
+				return redirect()->to( '/' );
+			}
             // $userModel->set( 'active', 1 );
             // $userModel->where( 'id', $id );
             // if ( $userModel->update() ) {
             $session = session();
-
+			
             // $session->setFlashdata( 'message_id', 'Message' );
             //message rendered
             // $session->setFlashdata( 'seconds_redirect', 5 );
@@ -423,9 +429,9 @@ class User extends ResourceController {
         ];
         if ( $model->update( $id, $data ) ) {
 
-            $session->set( 'userNewId', $id );
+             $session->set("userNewId", $id);
             echo json_encode( [ 'status' => 1, 'message' =>'New Password set successfully' ] );
-
+          
         } else {
             echo json_encode( [ 'status' => 2, 'message' => 'New Password Not Set' ] );
         }
