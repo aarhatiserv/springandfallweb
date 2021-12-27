@@ -240,7 +240,7 @@ $session = session();
                             CONSULTATION
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item anchor" href="<?= base_url() ?>/consultation" id="consul"
+                            <a class="dropdown-item anchor" href="<?= base_url() ?>/university-or-college-selection" id="consul"
                                 rel="noopener">UNIVERSITY/COLLEGE SELECTION</a>
                             <a class="dropdown-item anchor" href="<?= base_url() ?>/visa-consultation"
                                 rel="noopener">VISA
