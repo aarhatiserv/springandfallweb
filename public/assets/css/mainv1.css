@@ -22,13 +22,13 @@
 
 .buttonWSF {
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #070076;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
+    font-size: 18px;
+    padding: 5px;
+    width: 105px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
