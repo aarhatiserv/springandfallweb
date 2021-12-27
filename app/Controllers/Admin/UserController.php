@@ -182,4 +182,21 @@ class UserController extends Controller
 		}
     }
 
+
+    public function deleteUser($id)
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $model = new UserModel();
+        $model->where("id = ", $id)->delete();
+        return redirect()->to('https://springandfall.in/admin/user');
+        // return redirect()->to('http://localhost:8080/admin/subscribe');
+            
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+       
+    }
 }
