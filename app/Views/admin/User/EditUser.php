@@ -393,14 +393,14 @@
 
                                             <input type="text" id="city" name="city" placeholder="city"
                                                 style="margin-right:50px" value="<?= $userDatabyId[0]['city']?>"
-                                                required />
+                                                 />
 
                                             <input type="text" id="state" name="state" placeholder="state"
                                                 style="margin-right:50px" value="<?= $userDatabyId[0]['state']?>"
-                                                required />
+                                                 />
 
                                             <input type="text" name="pin" id="pin" placeholder="Enter Pin No"
-                                                style="margin-right: 47px;" value="<?= $userDatabyId[0]['pin']?>" required />
+                                                style="margin-right: 47px;" value="<?= $userDatabyId[0]['pin']?>"  />
 
                                         </div>
                                         <br>
