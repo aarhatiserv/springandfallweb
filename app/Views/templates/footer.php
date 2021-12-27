@@ -39,7 +39,7 @@ if(empty($session->get('token'))){ ?>
             <a href="<?=base_url()?>/about" rel="noopener" class="anchor">ABOUT US</a><br />
             <a href="<?=base_url()?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
             <a href="<?=base_url()?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
-            <a href="<?=base_url()?>/visa-consultation" rel="noopener" class="anchor">CONSULTATION</a><br />
+            <a href="<?=base_url()?>/university-or-college-selection" rel="noopener" class="anchor">CONSULTATION</a><br />
             <!-- <a href="">EVENTS</a> -->
         </div>
         <div class="col-sm-12 col-lg-3  colMargins colText2" style="margin-left:-57px">

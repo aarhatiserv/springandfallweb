@@ -6,7 +6,7 @@
 // });
 
 function refresh() {
-    window.location.href="consultation";
+    window.location.href="university-or-college-selection";
 }
 
 
