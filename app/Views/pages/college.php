@@ -10,10 +10,10 @@
 <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-90"
     style="background: url('<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/banner/<?=$collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
     <?php } else{?>
-    <section id="collegeBanner"
+    <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-90"
         style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
         <?php }?>
-        <div id="collegeBannerText">
+        <div id="collegeBannerText" class="col-12 col-md-12 justify-content-center align-items-center w-90">
             <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/logo/<?=$collegeDetails[0]['image']?>"
                 alt="<?= $collegeDetails[0]['names'] ?>" width="200" height="200"
                 style="margin-top: -100px;margin-left: 87px;" />
