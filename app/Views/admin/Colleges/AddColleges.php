@@ -141,17 +141,17 @@
                                             </select>
 
                                             <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
-                                                required>
+                                                >
                                                
-                                                <option value="">CSE</option>
-                                                <option value="">ECE</option>
-                                                <option value="">EEE</option>
-                                                <option value="">ME</option>
-                                                <option value="">CE</option>
-                                                <option value="">AIEE</option>
-                                                <option value="">Genarel Management</option>
-                                                <option value="">Homan Resourse Management</option>
-                                                <option value="">Finance Management</option>
+                                                <option value="Engineering_CSE">CSE</option>
+                                                <option value="Engineering_ECE">ECE</option>
+                                                <option value="Engineering_EEE">EEE</option>
+                                                <option value="Engineering_ME">ME</option>
+                                                <option value="Engineering_CE">CE</option>
+                                                <option value="Engineering_AIEE">AIEE</option>
+                                                <option value="Management_GM">Genarel Management</option>
+                                                <option value="Management_HRM">Homan Resourse Management</option>
+                                                <option value="Management_FM">Finance Management</option>
                                             </select>
                                         </div>
                                         <br>
