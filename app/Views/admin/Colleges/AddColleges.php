@@ -149,9 +149,9 @@
                                                 <option value="Engineering_ME">ME</option>
                                                 <option value="Engineering_CE">CE</option>
                                                 <option value="Engineering_AIEE">AIEE</option>
-                                                <option value="Management_GM">Genarel Management</option>
-                                                <option value="Management_HRM">Homan Resourse Management</option>
-                                                <option value="Management_FM">Finance Management</option>
+                                                <option value="Management_Genarel Management">Genarel Management</option>
+                                                <option value="Management_Homan Resourse Management">Homan Resourse Management</option>
+                                                <option value="Management_Finance Management">Finance Management</option>
                                             </select>
                                         </div>
                                         <br>
