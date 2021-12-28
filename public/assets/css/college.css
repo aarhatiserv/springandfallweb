@@ -8,13 +8,13 @@
 }
 
 #collegeBannerText { 
-    width: 24em;
+    width: 26em;
     position: fixed;
-    top: 40%;
+    top: 37%;
     left: 50%;
     border: .5em solid #fff;
     margin-left: -12em;
-    padding: 2em 0;
+    padding: 53px 0;
     background-color: rgba(5, 5, 5, 0.5) !important
 }
 /* college tab css */
