@@ -113,8 +113,10 @@
                                     </div>
                                     <ul class="answer">
                                         <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Engineering" ) === 0) {?>
-                                              <li><?= $sc?></li>
+                                            if(strpos( $sc, "Engineering" ) === 0) {
+                                                $particularCourse = explode ("_", $sc);?>
+                                            
+                                              <li><?= $particularCourse?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
@@ -125,12 +127,67 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                        <li>Computer Science</li>
-                                        <li>Computer Science1</li>
-                                        <li>Computer Science2</li>
+                                    <?php foreach($subcourses as $sc){  
+                                            if(strpos( $sc, "Management" ) === 0) {?>
+                                              <li><?= $sc?></li>
+                                        <?php }}?>
                                     </ul>
                                 </div>
-                                   <?php }} ?>
+                                   <?php } else if($c === "Medical"){ ?>
+
+                                    <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                    <?php foreach($subcourses as $sc){  
+                                            if(strpos( $sc, "Medical" ) === 0) {?>
+                                              <li><?= $sc?></li>
+                                        <?php }}?>
+                                    </ul>
+                                </div>
+                                  <?php }  else if($c === "Design"){ ?>
+                                    <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                    <?php foreach($subcourses as $sc){  
+                                            if(strpos( $sc, "Design" ) === 0) {?>
+                                              <li><?= $sc?></li>
+                                        <?php }}?>
+                                    </ul>
+                                </div>
+                                 <?php } else if($c === "Other"){ ?>
+                                    <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                    <?php foreach($subcourses as $sc){  
+                                            if(strpos( $sc, "Other" ) === 0) {?>
+                                              <li><?= $sc?></li>
+                                        <?php }}?>
+                                    </ul>
+                                </div>
+                                 <?php } else{ ?>
+                                    <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                    
+                                              <li>Computer Science </li>
+                                              <li>Computer Science1 </li>
+                                              <li>Computer Science2 </li>
+                                      
+                                    </ul>
+                                </div>
+                              <?php }} ?>
 
 
                                 <!-- </ul> -->
