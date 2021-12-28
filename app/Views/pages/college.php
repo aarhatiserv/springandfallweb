@@ -99,8 +99,27 @@
                                     <?php 
                                     $newString = rtrim($collegeDetails[0]['courses'], ',');
                                   $course = explode (",", $newString);
-                                  foreach($course as $c){ ?>
+
+                                    $newString2 = rtrim($collegeDetails[0]['subcourses'], ',');
+                                  $subcourses = explode (",", $newString2);
+                                  foreach($course as $c){ 
+                                      if($c === "Engineering"){
+
+                                      ?>
                                   <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                        <?php foreach($subcourses as $sc){  
+                                            if(str_starts_with($sc, 'Engineering')) {?>
+                                              <li><?= $sc?></li>
+                                        <?php }}?>
+                                    </ul>
+                                </div>
+                                    <?php  } else if($c === "Management"){ ?>
+                                        <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c ?>
                                         </h2><span class="faq-t"></span>
@@ -111,7 +130,7 @@
                                         <li>Computer Science2</li>
                                     </ul>
                                 </div>
-                                    <?php  } ?>
+                                   <?php }} ?>
 
 
                                 <!-- </ul> -->
