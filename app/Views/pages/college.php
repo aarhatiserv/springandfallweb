@@ -1,7 +1,7 @@
 <div class="container-fluid" style="margin-bottom: 15px; margin-left: 35px;">
     <div class="row">
         <div class="col-1">
-            <a class="text-dark" style="" onclick="window.history.go(-1)"><i class="fas fa-less-than"></i>Back</a>
+            <a class="text-dark" style="" onclick="window.history.go(-1)"><i class="fas fa-less-than"></i> Back</a>
         </div>
         <div class="col-11"></div>
     </div>
