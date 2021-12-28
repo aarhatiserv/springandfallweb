@@ -177,9 +177,17 @@
   width: 95% !important;
 }
 #collegeBannerText{
-left: 25% !important;
+/* left: 25% !important;
 font-size: 1.5rem !important;
-margin-left: 23px !important;
+margin-left: 23px !important; */
+width: 26em;
+position: fixed;
+top: 34%;
+left: 25%;
+border: .5em solid #fff;
+margin-left: 23px;
+padding: 53px 0;
+background-color: rgba(5, 5, 5, 0.5) !important
 }
 #collegeBannerText img{
   width: 100 !important;
