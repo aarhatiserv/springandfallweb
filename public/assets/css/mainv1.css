@@ -58,3 +58,9 @@
     opacity: 1;
     right: 0;
   }
+
+  @media (min-width:320px) {
+    .colText2{
+      margin-top: -81px !important;
+    }
+  }
