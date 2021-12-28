@@ -64,3 +64,13 @@
       margin-top: -81px !important;
     }
   }
+  @media (min-width:961px)  {
+    .colText2{
+      margin-top: 50px !important;
+    }
+  }
+  @media (min-width: 1025px){
+    .colText2{
+      margin-top: 50px !important;
+    }
+  }
