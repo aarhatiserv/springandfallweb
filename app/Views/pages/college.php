@@ -28,7 +28,7 @@
         <div class="container-fluid my-5">
             <div class="row">
                 <div class="col-md-9">
-                    <ul class="nav nav-tabs " id="collegeInfoTab" role="tablist">
+                    <ul class="nav nav-tabs" style="flex-wrap: nowrap !important;" id="collegeInfoTab" role="tablist">
                         <li class="nav-item " role="presentation">
                             <a class="nav-link py-3 rounded-0 active" id="overview-tab" data-toggle="tab"
                                 href="#overview" role="tab" aria-controls="overview" aria-selected="true">OVERVIEW</a>
