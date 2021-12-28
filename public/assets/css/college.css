@@ -210,10 +210,10 @@ height: 190px;
     /* left: 25% !important;
     font-size: 1.5rem !important;
     margin-left: 23px !important; */
-    width: 26em;
+    width: 26em !important;
     position: fixed;
-    top: 35%;
-    left: 35%;
+    top: 35% !important;
+    left: 35% !important;
     border: .5em solid #fff;
     margin-left: 23px;
     padding: 53px 0;
@@ -237,10 +237,10 @@ height: 190px;
     /* left: 25% !important;
     font-size: 1.5rem !important;
     margin-left: 23px !important; */
-    width: 26em;
+    width: 26em !important;
     position: fixed;
-    top: 35%;
-    left: 35%;
+    top: 35% !important;
+    left: 35% !important;
     border: .5em solid #fff;
     margin-left: 23px;
     padding: 53px 0;
