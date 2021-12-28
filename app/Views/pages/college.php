@@ -113,7 +113,7 @@
                                     </div>
                                     <ul class="answer">
                                         <?php foreach($subcourses as $sc){  
-                                            if(str_starts_with($sc, 'Engineering')) {?>
+                                            if(strpos( $sc, "Engineering" ) === 0) {?>
                                               <li><?= $sc?></li>
                                         <?php }}?>
                                     </ul>
