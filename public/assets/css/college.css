@@ -173,7 +173,7 @@
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
 #collegeBanner{
-  width: 95%;
+  width: 95% !important;
 }
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
