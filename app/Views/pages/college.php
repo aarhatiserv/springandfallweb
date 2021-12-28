@@ -114,9 +114,9 @@
                                     <ul class="answer">
                                         <?php foreach($subcourses as $sc){  
                                             if(strpos( $sc, "Engineering" ) === 0) {
-                                                $particularCourse = explode ("_", $sc);?>
+                                              ?>
                                             
-                                              <li><?= $particularCourse?></li>
+                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
@@ -129,7 +129,7 @@
                                     <ul class="answer">
                                     <?php foreach($subcourses as $sc){  
                                             if(strpos( $sc, "Management" ) === 0) {?>
-                                              <li><?= $sc?></li>
+                                              <li><?= explode('_', $sc, 2)[1];?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
@@ -143,7 +143,7 @@
                                     <ul class="answer">
                                     <?php foreach($subcourses as $sc){  
                                             if(strpos( $sc, "Medical" ) === 0) {?>
-                                              <li><?= $sc?></li>
+                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
@@ -156,7 +156,7 @@
                                     <ul class="answer">
                                     <?php foreach($subcourses as $sc){  
                                             if(strpos( $sc, "Design" ) === 0) {?>
-                                              <li><?= $sc?></li>
+                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
@@ -169,7 +169,7 @@
                                     <ul class="answer">
                                     <?php foreach($subcourses as $sc){  
                                             if(strpos( $sc, "Other" ) === 0) {?>
-                                              <li><?= $sc?></li>
+                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
                                         <?php }}?>
                                     </ul>
                                 </div>
