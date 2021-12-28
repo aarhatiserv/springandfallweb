@@ -189,6 +189,9 @@ margin-left: 23px;
 padding: 53px 0;
 background-color: rgba(5, 5, 5, 0.5) !important
 }
+#collegeBannerText h1{
+  font-size: 1.5rem !important;
+}
 #collegeBannerText img{
   width: 100 !important;
   height: 100 !important;
