@@ -183,7 +183,7 @@ margin-left: 23px !important; */
 width: 16em !important;
 position: fixed;
 top: 32% !important;
-left: 12% !important;
+left: 15% !important;
 border: .5em solid #fff;
 margin-left: 23px;
 padding: 53px 0;
@@ -193,8 +193,8 @@ background-color: rgba(5, 5, 5, 0.5) !important
   font-size: 1.5rem !important;
 }
 #collegeBannerText img{
-  width: 100 !important;
-  height: 100 !important;
+  width: 100px !important;
+  height: 100px !important;
   }
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
