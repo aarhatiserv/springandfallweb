@@ -111,15 +111,17 @@
 
                                         <div>
                                             <label for="offers" style="margin-right:255px">Course Offers</label><label
-                                                for="course" style="margin-right:242px">Courses</label> <label
-                                                for="level">Levels</label><br>
+                                                for="course" style="margin-right:242px">Courses</label> 
+                                                <label for="level" style="margin-right:242px">Levels</label>
+                                                <label for="level">Sub Courses</label>
+                                                <br>
                                             <input type="text" id="offers" name="offers" placeholder="Offers..."
                                                 style="margin-right:50px" />
 
 
                                             <select id="course" name="course[]" style="margin-right:50px" multiple
                                                 required>
-                                                <option value="">Select Course</option>
+                                                
                                                 <option value="Engineering">Engineering</option>
                                                 <option value="Management">Management</option>
                                                 <option value="Medical">Medical</option>
@@ -130,8 +132,25 @@
 
                                             <select id="level" name="level[]" style="margin-right:50px" multiple
                                                 required>
-                                                <option value="">Select Levels</option>
-                                                <option value="Undergraduate">Under Graduate</option>
+                                                
+                                                <option value="">CSE</option>
+                                                <option value="">ECE</option>
+                                                <option value="">EEE</option>
+                                                <option value="">ME</option>
+                                                <option value="">CE</option>
+                                                <option value="">AIEE</option>
+                                                <option value="">Genarel Management</option>
+                                                <option value="">Homan Resourse Management</option>
+                                                <option value="">Finance Management</option>
+                                                <!-- <option value="">MBA</option>
+                                                <option value="">MBA</option>
+                                                <option value="">MBA</option> -->
+                                            </select>
+
+                                            <select id="level" name="subcourses[]" style="margin-right:50px" multiple
+                                                required>
+                                                
+                                                <option value="">Under Graduate</option>
                                                 <option value="PostGraduate">Post Graduate</option>
                                                 <option value="Certification">Certification</option>
                                                 <option value="Diploma">Diploma</option>
