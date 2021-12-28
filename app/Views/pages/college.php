@@ -51,6 +51,7 @@
                                 <p class="text-justify w-80">
                                     <?=  $collegeDetails[0]['about'] ?>
                                 </p>
+
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Excepturi, unde!</h4>
                             <p class="text-justify w-80">Some placeholder text to demonstrate justified text alignment.
@@ -92,17 +93,32 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
-                            <div class="container">
-                                <ul class="list-group list-group-flush " id="collegeCourses">
+                            <div class="container" id="collegeCourses">
+                                <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
+                               
                                     <?php 
                                     $newString = rtrim($collegeDetails[0]['courses'], ',');
                                   $course = explode (",", $newString);
                                   foreach($course as $c){ ?>
-                                    <li class="list-group-item"><?= $c ?></li>
+                                  <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa
+                                        qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
                                     <?php  } ?>
 
 
-                                </ul>
+                                <!-- </ul> -->
                             </div>
                         </div>
                         <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
