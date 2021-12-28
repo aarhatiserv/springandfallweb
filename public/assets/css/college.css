@@ -220,6 +220,10 @@ background-color: rgba(5, 5, 5, 0.5) !important
     #collegeBannerText h1{
       font-size: 2.5rem !important;
     }
+    #collegeBannerText img{
+      width: 200 !important;
+      height: 200 !important;
+      }
   
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
@@ -243,5 +247,9 @@ background-color: rgba(5, 5, 5, 0.5) !important
     #collegeBannerText h1{
       font-size: 2.5rem !important;
     }
+    #collegeBannerText img{
+      width: 200 !important;
+      height: 200 !important;
+      }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
