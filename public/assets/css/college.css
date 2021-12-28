@@ -204,11 +204,44 @@ background-color: rgba(5, 5, 5, 0.5) !important
     margin-left: 17px !important;
     width: 98% !important;
   }
+  #collegeBannerText{
+    /* left: 25% !important;
+    font-size: 1.5rem !important;
+    margin-left: 23px !important; */
+    width: 26em;
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    border: .5em solid #fff;
+    margin-left: 23px;
+    padding: 53px 0;
+    background-color: rgba(5, 5, 5, 0.5) !important
+    }
+    #collegeBannerText h1{
+      font-size: 2.5rem !important;
+    }
+  
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
   #collegeBanner{
     margin-left: 17px !important;
     width: 98% !important;
   }
+  #collegeBannerText{
+    /* left: 25% !important;
+    font-size: 1.5rem !important;
+    margin-left: 23px !important; */
+    width: 26em;
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    border: .5em solid #fff;
+    margin-left: 23px;
+    padding: 53px 0;
+    background-color: rgba(5, 5, 5, 0.5) !important
+    }
+    #collegeBannerText h1{
+      font-size: 2.5rem !important;
+    }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
