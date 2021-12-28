@@ -7,7 +7,7 @@
     </div>
 </div>
 <?php if(!empty($collegeDetails[0]['image_background'])){ ?>
-<section id="collegeBanner" class="col-12 col-md-12" 
+<section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-90"
     style="background: url('<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/banner/<?=$collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
     <?php } else{?>
     <section id="collegeBanner"
