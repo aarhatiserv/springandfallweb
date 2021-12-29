@@ -379,8 +379,8 @@
                                             <select id="level" name="level" style="margin-right:50px" 
                                                 >
                                                 <?php 
-                                            foreach($allDepartmentData as $dd){?>
-                                                 <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
+                                            foreach($allLevelData as $ld){?>
+                                                 <option value="<?= $ld['id']?>"> <?= $ld['name']?></option>
                                             <?php }
                                             ?>
                                             </select>
