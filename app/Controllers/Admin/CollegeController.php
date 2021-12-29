@@ -386,6 +386,7 @@ class CollegeController extends Controller
                 "college_id" => $id,
                 "department_id" => $department_id,
                 "level_id" => $level_id
+                "active"=>1
             ];
 
             $model = new CourseModel();
