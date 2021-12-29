@@ -449,6 +449,7 @@
 
                                         <tbody>
                                             <?php 
+                                            if(!empty($courseDetails)){
                                                foreach($courseDetails as $cd){
                                               
                                                 ?>
@@ -462,7 +463,7 @@
                                                 onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
                                                 class="fa fa-trash"></i></a></td>
                                             </tr>
-                                            <?php }?>
+                                            <?php }}?>
                                            
                                         </tbody>
                                     </table>
