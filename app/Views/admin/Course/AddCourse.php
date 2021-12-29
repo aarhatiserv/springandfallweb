@@ -365,7 +365,7 @@
                                             <br>
 
 
-                                            <select id="department" name="department" style="margin-right:50px" 
+                                            <select id="department_id" name="department_id" style="margin-right:50px" 
                                                 >
                                             <?php 
                                             foreach($allDepartmentData as $dd){?>
@@ -376,7 +376,7 @@
                                             </select>
 
 
-                                            <select id="level" name="level" style="margin-right:50px" 
+                                            <select id="level_id" name="level_id" style="margin-right:50px" 
                                                 >
                                                 <?php 
                                             foreach($allLevelData as $ld){?>
