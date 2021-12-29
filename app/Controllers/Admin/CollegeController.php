@@ -54,8 +54,8 @@ class CollegeController extends Controller
             "address" => "required",
             "about" => "required",
             "offers" => "required",
-            "course" => "required",
-            "level" => "required",
+            // "course" => "required",
+            // "level" => "required",
             // "file" => "required",
         ];
 
@@ -80,12 +80,12 @@ class CollegeController extends Controller
             "offers" => [
                 "required" => "Offers is required",
             ],
-            "course" => [
-                "required" => "Course is required",
-            ],
-            "level" => [
-                "required" => "Level is required",
-            ],
+            // "course" => [
+            //     "required" => "Course is required",
+            // ],
+            // "level" => [
+            //     "required" => "Level is required",
+            // ],
             'file' => [
                 'uploaded[file]',
                 'mime_in[file, image/png, image/jpg,image/jpeg, image/gif]',
@@ -116,20 +116,20 @@ class CollegeController extends Controller
             $file_nameBg = $this->request->getVar("collegeName").'.'.$extBg;
             $fileBg->move($destinationPath1, $file_nameBg);
            
-            $multipleCourse = $this->request->getVar("course");
-            $mc="";  
-            foreach($multipleCourse as $mc1)  
-             {  
-                $mc .= $mc1.",";  
-             }  
+            // $multipleCourse = $this->request->getVar("course");
+            // $mc="";  
+            // foreach($multipleCourse as $mc1)  
+            //  {  
+            //     $mc .= $mc1.",";  
+            //  }  
 
-             $multipleLevel = $this->request->getVar("level");
-            $ml="";  
-            foreach($multipleLevel as $ml1)  
-             {  
-                $ml .= $ml1.",";  
-             }  
-             $multipleSubcourses = $this->request->getVar("subcourses");
+            //  $multipleLevel = $this->request->getVar("level");
+            // $ml="";  
+            // foreach($multipleLevel as $ml1)  
+            //  {  
+            //     $ml .= $ml1.",";  
+            //  }  
+            //  $multipleSubcourses = $this->request->getVar("subcourses");
             // $ms="";  
             // foreach($multipleSubcourses as $ms1)  
             //  {  
@@ -149,9 +149,9 @@ class CollegeController extends Controller
                 "offers" => $this->request->getVar("offers"),
                 "image" => $file_name,
                 "image_background" => $file_nameBg,
-                "courses" => $mc,
-                "levels" => $ml,
-                "subcourses" => $multipleSubcourses,
+                // "courses" => $mc,
+                // "levels" => $ml,
+                // "subcourses" => $multipleSubcourses,
                 "active" => 1,
             ];
 
@@ -215,8 +215,8 @@ class CollegeController extends Controller
             "address" => "required",
             "about" => "required",
             "offers" => "required",
-            "course" => "required",
-            "level" => "required",
+            // "course" => "required",
+            // "level" => "required",
             // "file" => "required",
         ];
 
@@ -239,12 +239,12 @@ class CollegeController extends Controller
             "offers" => [
                 "required" => "Offers is required",
             ],
-            "course" => [
-                "required" => "Course is required",
-            ],
-            "level" => [
-                "required" => "Level is required",
-            ],
+            // "course" => [
+            //     "required" => "Course is required",
+            // ],
+            // "level" => [
+            //     "required" => "Level is required",
+            // ],
             'file' => [
                 'uploaded[file]',
                 'mime_in[file, image/png, image/jpg,image/jpeg, image/gif]',
@@ -274,19 +274,19 @@ class CollegeController extends Controller
             $file_nameBg = $this->request->getVar("collegeName").'.'.$extBg;
             $fileBg->move($destinationPath1, $file_nameBg);
            
-            $multipleCourse = $this->request->getVar("course");
-            $mc="";  
-            foreach($multipleCourse as $mc1)  
-             {  
-                $mc .= $mc1.",";  
-             }  
+            // $multipleCourse = $this->request->getVar("course");
+            // $mc="";  
+            // foreach($multipleCourse as $mc1)  
+            //  {  
+            //     $mc .= $mc1.",";  
+            //  }  
 
-             $multipleLevel = $this->request->getVar("level");
-            $ml="";  
-            foreach($multipleLevel as $ml1)  
-             {  
-                $ml .= $ml1.",";  
-             }  
+            //  $multipleLevel = $this->request->getVar("level");
+            // $ml="";  
+            // foreach($multipleLevel as $ml1)  
+            //  {  
+            //     $ml .= $ml1.",";  
+            //  }  
 
             $model = new CollegeModel();
 
@@ -303,8 +303,8 @@ class CollegeController extends Controller
                 "offers" => $this->request->getVar("offers"),
                 "image" => $file_name,
                 "image_background" => $file_nameBg,
-                "courses" => $mc,
-                "levels" => $ml,
+                // "courses" => $mc,
+                // "levels" => $ml,
                 "active" => 1,
             ];
 
