@@ -362,9 +362,8 @@ class CollegeController extends Controller
             $data['allDepartmentData'] = $dmodel->findAll();
             $data['allLevelData'] = $lmodel->findAll();
 
-            echo view('admin/layout/stylesheet');
             echo view('admin/Course/AddCourse', $data);
-            echo view('admin/layout/script');
+ 
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
 			// return redirect()->to('http://localhost:8080/admin/login');
