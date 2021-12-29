@@ -454,7 +454,7 @@
                                               
                                                 ?>
                                             <tr>
-                                                <td><?= $cd['department_id']?></td>
+                                                <td><?= $cd['department.name']?></td>
                                                 <td><?= $cd['level_id']?></td>
                                                 <td><?= $cd['name']?></td>
                                                 
