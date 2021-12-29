@@ -59,7 +59,7 @@
                                             <br>
 
                                             <input type="text" id="name" name="name"
-                                                placeholder="Department Name..."
+                                                placeholder="Level Name..."
                                                 required />
                                         </div>
                                         <br>
