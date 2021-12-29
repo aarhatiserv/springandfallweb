@@ -103,7 +103,7 @@
                                                 <td><?= $cd['levels']?></td>
                                                 <td><a href="../uploads/CollegesImage/<?= $cd['image']?>"target="_blank"><img src="../uploads/CollegesImage/<?= $cd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
                                                    */ ?>
-                                                <td><a href="/admin/editCollege/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a></td>
+                                                <td><a href="/admin/editCollege/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a></td>| <a href="/admin/addCourse/<?= $cd['id']?>"><i class="fa fa-add"></i></a></td>
                                             </tr>
                                             <?php
                                                }
