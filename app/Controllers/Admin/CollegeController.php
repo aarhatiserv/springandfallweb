@@ -396,9 +396,10 @@ class CollegeController extends Controller
                     'data' => [],
                 ];
                
-                $data['courseDetails'] = $model ->findAll();
-                echo view('admin/Course/AddCourse', $data);
+                // $data['courseDetails'] = $model ->findAll();
+                // echo view('admin/Course/AddCourse', $data);
                 // return redirect()->to('http://localhost:8080/admin/colleges');
+                return redirect()->to('https://springandfall.in/admin/colleges');
 
             } else {
 
