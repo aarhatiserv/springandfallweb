@@ -398,7 +398,7 @@ class CollegeController extends Controller
                 ];
                
                 $data['courseDetails'] = $model ->findAll();
-                echo view(`admin/Course/AddCourse/$id`, $data);
+                echo view('admin/Course/AddCourse/'.$id, $data);
                 // return redirect()->to('http://localhost:8080/admin/colleges');
                 // return redirect()->to('https://springandfall.in/admin/colleges');
 
