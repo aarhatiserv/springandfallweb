@@ -361,7 +361,8 @@ class CollegeController extends Controller
             $data['college_id'] = $id;
             $data['allDepartmentData'] = $dmodel->findAll();
             $data['allLevelData'] = $lmodel->findAll();
-            echo view('admin/layout/stylesheet');;
+
+            echo view('admin/layout/stylesheet');
             echo view('admin/Course/AddCourse', $data);
             echo view('admin/layout/script');
 		}else{
