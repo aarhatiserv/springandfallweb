@@ -110,7 +110,8 @@
                                         <br>
 
                                         <div>
-                                            <label for="offers" style="margin-right:255px">Course Offers</label><label
+                                            <label for="offers" style="margin-right:255px">Course Offers</label>
+                                            <!-- <label
                                                 for="course" style="margin-right:242px">Courses</label> <label
                                                 for="level" style="margin-right:242px">Levels</label>
                                                 <label
@@ -138,7 +139,7 @@
                                                 <option value="Certification">Certification</option>
                                                 <option value="Diploma">Diploma</option>
                                                 <option value="ExecutiveCourse">Executive Course</option>
-                                            </select>
+                                            </select> -->
 
                                             <!-- <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
                                                 >
@@ -153,7 +154,7 @@
                                                 <option value="Management_Homan Resourse Management">Homan Resourse Management</option>
                                                 <option value="Management_Finance Management">Finance Management</option>
                                             </select> -->
-                                            <input type="text" name="subcourses">
+                                            <!-- <input type="text" name="subcourses"> -->
                                         </div>
                                         <br>
                                         <div>
