@@ -80,6 +80,8 @@ $routes->group("admin", function ($routes) {
 	$routes->post('editLevel', 'Admin/LevelController::editLevelPost');
 	$routes->get("deleteLevel/(:any)", "Admin\LevelController::deleteLevel/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
+    // Admin Course Routes
+	$routes->get("addCourse/(:any)", "Admin\CollegeController::addCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');

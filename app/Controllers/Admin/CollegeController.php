@@ -3,6 +3,9 @@
 namespace App\Controllers\Admin;
 
 use App\Models\CollegeModel;
+use App\Models\DepartmentModel;
+use App\Models\LevelModel;
+
 use CodeIgniter\Controller;
 
 class CollegeController extends Controller
@@ -344,6 +347,26 @@ class CollegeController extends Controller
 
         
     }
-    //
+    
+    
+    public function addCourse($id)
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
 
+            $model = new CollegeModel();
+            $dmodel = new DepartmentModel();
+            $lmodel = new LevelModel();
+            // $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
+            $data['college_id'] = $id;
+            $data['allDepartmentData'] = $dmodel->findAll();
+            $data['allLevelData'] = $lmodel->findAll();
+            echo view('admin/Course/AddCourse', $data);
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+
+        
+    }
 }
