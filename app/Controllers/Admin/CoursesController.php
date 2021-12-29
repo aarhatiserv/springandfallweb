@@ -35,7 +35,7 @@ class CoursesController extends Controller
 		if(!empty($session->get('username'))){
 
             echo view('admin/layout/stylesheet');
-            echo view('admin/Pages/AddPages');
+            echo view('admin/Courses/AddCourse');
             echo view('admin/layout/script');
             
 		}else{
