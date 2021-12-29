@@ -338,7 +338,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Courses
+                            <h3>Department
                             </h3>
                         </div>
                     </div>
@@ -349,26 +349,26 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Edit Course
+                                    <h2>Edit Department
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/editCourse" method="POST">
-                                        <input type="hidden" name="id" value="<?= $courseDatabyId[0]['id']?>" />
+                                    <form action="/admin/editDepartment" method="POST">
+                                        <input type="hidden" name="id" value="<?= $departmentDatabyId[0]['id']?>" />
                                         <div>
 
-                                            <label for="name" style="margin-right:252px">Course Name</label>
+                                            <label for="name" style="margin-right:252px">Department Name</label>
                                             <br>
 
                                             <input type="text" id="name" name="name" placeholder="Name..."
-                                                value="<?= $courseDatabyId[0]['name']?>" required />
+                                                value="<?= $departmentDatabyId[0]['name']?>" required />
                                         </div>
 
                                         <br>
 
-                                        <button class="back"><a href="/admin/courses" class="back">Back</a>
+                                        <button class="back"><a href="/admin/department" class="back">Back</a>
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>

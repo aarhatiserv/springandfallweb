@@ -2,24 +2,24 @@
 
 namespace App\Controllers\Admin;
 
-use App\Models\CoursesModel;
+use App\Models\DepartmentModel;
 use CodeIgniter\Controller;
 
-class CoursesController extends Controller
+class DepartmentController extends Controller
 {
     public function index()
     {
         //
     }
-    public function course()
+    public function department()
     {
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new CoursesModel();
-        $data['coursesData'] = $model->findAll();
+            $model = new DepartmentModel();
+        $data['departmentData'] = $model->findAll();
         echo view('admin/layout/stylesheet');
-        echo view('admin/Courses/Course', $data);
+        echo view('admin/Department/Department', $data);
         echo view('admin/layout/script');
             
 		}else{
@@ -29,13 +29,13 @@ class CoursesController extends Controller
 
        
     }
-    public function addCourse()
+    public function addDepartment()
     {
         $session = session();
 		if(!empty($session->get('username'))){
 
             echo view('admin/layout/stylesheet');
-            echo view('admin/Courses/AddCourse');
+            echo view('admin/Department/AddDepartment');
             echo view('admin/layout/script');
             
 		}else{
@@ -45,7 +45,7 @@ class CoursesController extends Controller
       
     }
 
-    public function addCoursePost()
+    public function addDepartmentPost()
     {
         $rules = [
             "name" => "required",
@@ -67,7 +67,7 @@ class CoursesController extends Controller
             ];
             print_r('validate error');
         } else {
-            $model = new CoursesModel();
+            $model = new DepartmentModel();
             $data = [
                 "name" => $this->request->getVar("name"),
                 "active" => 1,
@@ -80,7 +80,7 @@ class CoursesController extends Controller
                     'data' => [],
                 ];
 
-                return redirect()->to('https://springandfall.in/admin/courses');
+                return redirect()->to('https://springandfall.in/admin/department');
                 // return redirect()->to('http://localhost:8080/admin/pages');
 
             } else {
@@ -96,14 +96,14 @@ class CoursesController extends Controller
         }
     }
 
-    public function editCourse($id)
+    public function editDepartment($id)
     {
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new CoursesModel();
-        $data['courseDatabyId'] = $model->where('id = ', $id)->findAll();
-        echo view('admin/Courses/EditCourse', $data);
+            $model = new DepartmentModel();
+        $data['departmentDatabyId'] = $model->where('id = ', $id)->findAll();
+        echo view('admin/Department/EditDepartment', $data);
             
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
@@ -112,7 +112,7 @@ class CoursesController extends Controller
        
     }
 
-    public function editCoursePost()
+    public function editDepartmentPost()
     {
         $rules = [
             "name" => "required",
@@ -134,7 +134,7 @@ class CoursesController extends Controller
             ];
             print_r('validate error');
         } else {
-            $model = new CoursesModel();
+            $model = new DepartmentModel();
             $id = $this->request->getVar("id");
             $data = [
                 "name" => $this->request->getVar("name"),
@@ -149,7 +149,7 @@ class CoursesController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                return redirect()->to('https://springandfall.in/admin/courses');
+                return redirect()->to('https://springandfall.in/admin/department');
                 // return redirect()->to('http://localhost:8080/admin/pages');
             } else {
 
@@ -163,14 +163,14 @@ class CoursesController extends Controller
         }
     }
 
-    public function deleteCourse($id)
+    public function deleteDepartment($id)
     {
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new CoursesModel();
+            $model = new DepartmentModel();
         $model->where('id = ', $id)->delete();
-        return redirect()->to('https://springandfall.in/admin/courses');
+        return redirect()->to('https://springandfall.in/admin/department');
         // return redirect()->to('http://localhost:8080/admin/pages');
             
 		}else{

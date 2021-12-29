@@ -35,7 +35,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Courses
+                            <h3>Department
                                 <!-- <small>Some examples to get you started</small> -->
                             </h3>
                         </div>
@@ -49,19 +49,19 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Courses Data
+                                    <h2>Department Data
                                         <!-- <small>Users</small> -->
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <button role="button"><a href="/admin/addCourse"><i class="fa fa-plus"></i> Add
-                                            Courses</a> </button>
+                                    <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
+                                    Department</a> </button>
                                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Course Name</th>
+                                                <th>Department Name</th>
                                                
                                                 <th>Action</th>
                                             </tr>
@@ -70,14 +70,14 @@
 
                                         <tbody>
                                             <?php 
-                                               foreach($coursesData as $cd){
+                                               foreach($departmentData as $dd){
                                               
                                                 ?>
                                                 
                                             <tr>
-                                                <td><?= $cd['name']?></td>
+                                                <td><?= $dd['name']?></td>
                                                 
-                                                <td><a href="/admin/editCourse/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a></td>
+                                                <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
                                                }
@@ -107,7 +107,7 @@
       {
         var conf = confirm('Are you sure want to delete this record?');
             if (conf)
-                 location.href='/admin/deleteCourse/'+id;
+                 location.href='/admin/deleteDepartment/'+id;
       }
   </script>
 </html>

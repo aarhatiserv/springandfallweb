@@ -64,13 +64,13 @@ $routes->group("admin", function ($routes) {
 	$routes->get('forgotPassword', 'Admin/AdminController::forgotPassword');
 	$routes->post('forgotPassword', 'Admin/AdminController::forgotPasswordPost');
 
-	// Admin Courses Routes
-	$routes->get('courses', 'Admin/CoursesController::course');
-	$routes->get('addCourse', 'Admin/CoursesController::addCourse');
-	$routes->post('addCourse', 'Admin/CoursesController::addCoursePost');
-	$routes->get("editCourse/(:any)", "Admin\CoursesController::editCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-	$routes->post('editCourse', 'Admin/CoursesController::editCoursePost');
-	$routes->get("deleteCourse/(:any)", "Admin\CoursesController::deleteCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	// Admin Department Routes
+	$routes->get('department', 'Admin/DepartmentController::department');
+	$routes->get('addDepartment', 'Admin/DepartmentController::addDepartment');
+	$routes->post('addDepartment', 'Admin/DepartmentController::addDepartmentPost');
+	$routes->get("editDepartment/(:any)", "Admin\DepartmentController::editDepartment/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editDepartment', 'Admin/DepartmentController::editDepartmentPost');
+	$routes->get("deleteDepartment/(:any)", "Admin\DepartmentController::deleteDepartment/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
 
 	// Admin Colleges Routes

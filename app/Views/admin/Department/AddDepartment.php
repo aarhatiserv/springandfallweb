@@ -34,7 +34,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Courses
+                            <h3>Department
                             </h3>
                         </div>
                     </div>
@@ -45,26 +45,26 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Add Course
+                                    <h2>Add Department
                                     </h2>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/addCourse" method="POST">
+                                    <form action="/admin/addDepartment" method="POST">
                                         <div>
 
-                                            <label for="name">Course Name</label>
+                                            <label for="name">Department Name</label>
                                            
                                             <br>
 
                                             <input type="text" id="name" name="name"
-                                                placeholder="Course Name..."
+                                                placeholder="Department Name..."
                                                 required />
                                         </div>
                                         <br>
 
-                                        <button class="back"><a href="/admin/courses" class="back">Back</a>
+                                        <button class="back"><a href="/admin/department" class="back">Back</a>
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>
