@@ -64,6 +64,15 @@ $routes->group("admin", function ($routes) {
 	$routes->get('forgotPassword', 'Admin/AdminController::forgotPassword');
 	$routes->post('forgotPassword', 'Admin/AdminController::forgotPasswordPost');
 
+	// Admin Courses Routes
+	$routes->get('courses', 'Admin/CoursesController::course');
+	$routes->get('addColleges', 'Admin/CollegeController::addColleges');
+	$routes->post('addColleges', 'Admin/CollegeController::addCollegesPost');
+	$routes->get("editCollege/(:any)", "Admin\CollegeController::editCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editCollege', 'Admin/CollegeController::editCollegePost');
+	$routes->get("deleteCollege/(:any)", "Admin\CollegeController::deleteCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+
+
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/CollegeController::addColleges');
