@@ -149,9 +149,6 @@ class CollegeController extends Controller
                 "offers" => $this->request->getVar("offers"),
                 "image" => $file_name,
                 "image_background" => $file_nameBg,
-                // "courses" => $mc,
-                // "levels" => $ml,
-                // "subcourses" => $multipleSubcourses,
                 "active" => 1,
             ];
 
