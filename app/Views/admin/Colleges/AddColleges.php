@@ -112,15 +112,16 @@
                                         <div>
                                             <label for="offers" style="margin-right:255px">Course Offers</label>
                                             <!-- <label
-                                                for="course" style="margin-right:242px">Courses</label> <label
+                                                for="course" style="margin-right:242px">Courses</label> 
+                                                <label
                                                 for="level" style="margin-right:242px">Levels</label>
                                                 <label
-                                                for="subcourses">Sub Courses</label><br>
+                                                for="subcourses">Sub Courses</label><br> -->
                                             <input type="text" id="offers" name="offers" placeholder="Offers..."
                                                 style="margin-right:50px" />
 
 
-                                            <select id="course" name="course[]" style="margin-right:50px" multiple
+                                            <!-- <select id="course" name="course[]" style="margin-right:50px" multiple
                                                 required>
                                                 
                                                 <option value="Engineering">Engineering</option>
@@ -139,9 +140,9 @@
                                                 <option value="Certification">Certification</option>
                                                 <option value="Diploma">Diploma</option>
                                                 <option value="ExecutiveCourse">Executive Course</option>
-                                            </select> -->
+                                            </select>
 
-                                            <!-- <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
+                                            <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
                                                 >
                                                
                                                 <option value="Engineering_CSE">CSE</option>
