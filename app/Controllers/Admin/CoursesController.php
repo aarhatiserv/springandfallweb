@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use App\Models\PagesModel;
+use App\Models\CoursesModel;
 use CodeIgniter\Controller;
 
 class CoursesController extends Controller
@@ -16,8 +16,8 @@ class CoursesController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new PagesModel();
-        $data['pagesData'] = $model->findAll();
+            $model = new CoursesModel();
+        $data['coursesData'] = $model->findAll();
         echo view('admin/layout/stylesheet');
         echo view('admin/Courses/Course', $data);
         echo view('admin/layout/script');

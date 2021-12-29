@@ -70,7 +70,7 @@
 
                                         <tbody>
                                             <?php 
-                                               foreach($courseData as $cd){
+                                               foreach($coursesData as $cd){
                                               
                                                 ?>
                                                 
