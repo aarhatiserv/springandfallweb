@@ -75,7 +75,7 @@
                                                 ?>
                                                 
                                             <tr>
-                                                <td><?= $cd['names']?></td>
+                                                <td><?= $cd['name']?></td>
                                                 
                                                 <td><a href="/admin/editCourse/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a></td>
                                             </tr>

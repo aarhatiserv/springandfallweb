@@ -14,7 +14,7 @@ class CoursesModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id', 'names', 'active'];
+	protected $allowedFields        = ['id', 'name', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;
