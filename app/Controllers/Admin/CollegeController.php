@@ -355,6 +355,7 @@ class CollegeController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
+            $coursemodel = new CourseModel();
             $model = new CollegeModel();
             $dmodel = new DepartmentModel();
             $lmodel = new LevelModel();
@@ -362,6 +363,7 @@ class CollegeController extends Controller
             $data['college_id'] = $id;
             $data['allDepartmentData'] = $dmodel->findAll();
             $data['allLevelData'] = $lmodel->findAll();
+            $data['courseDetails'] = $coursemodel->findAll();
 
             echo view('admin/Course/AddCourse', $data);
  
@@ -397,10 +399,9 @@ class CollegeController extends Controller
                     'data' => [],
                 ];
                
-                $data['courseDetails'] = $model ->findAll();
-                echo view('admin/Course/AddCourse/'.$id, $data);
+                // echo view('admin/Course/AddCourse/'.$id, $data);
                 // return redirect()->to('http://localhost:8080/admin/colleges');
-                // return redirect()->to('https://springandfall.in/admin/colleges');
+                return redirect()->to('https://springandfall.in/admin/addCourse/'.$id);
 
             } else {
 
