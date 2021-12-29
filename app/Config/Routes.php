@@ -82,7 +82,7 @@ $routes->group("admin", function ($routes) {
 
     // Admin Course Routes
 	$routes->get("addCourse/(:any)", "Admin\CollegeController::addCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-
+	$routes->post('addCourse', 'Admin/CollegeController::addCoursePost');
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/CollegeController::addColleges');

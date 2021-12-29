@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\CollegeModel;
 use App\Models\DepartmentModel;
 use App\Models\LevelModel;
+use App\Models\CourseModel;
 
 use CodeIgniter\Controller;
 
@@ -363,6 +364,60 @@ class CollegeController extends Controller
             $data['allLevelData'] = $lmodel->findAll();
 
             echo view('admin/Course/AddCourse', $data);
+ 
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}  
+    }
+
+    public function addCoursePost()
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $id = $this->request->getVar('id');
+            $department_id = $this->request->getVar('department_id');
+            $level_id = $this->request->getVar('level_id');
+            $course = $this->request->getVar('course');
+            
+            $data = [
+                "name" => $course,
+                "college_id" => $id,
+                "department_id" => $department_id,
+                "level_id" => $level_id
+            ];
+
+            $model = new CourseModel();
+            if ($model->insert($data)) {
+                $response = [
+                    'status' => 200,
+                    'messages' => 'Successfully college Added',
+                    'data' => [],
+                ];
+               
+                $data['courseDetails'] = $model ->findAll();
+                echo view('admin/Course/AddCourse', $data);
+                // return redirect()->to('http://localhost:8080/admin/colleges');
+
+            } else {
+
+                $response = [
+                    'status' => 500,
+                    "error" => true,
+                    'messages' => 'Failed to add college',
+                    'data' => [],
+                ];
+            }
+            // $model = new CollegeModel();
+            // $dmodel = new DepartmentModel();
+            // $lmodel = new LevelModel();
+            // $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
+            // $data['college_id'] = $id;
+            // $data['allDepartmentData'] = $dmodel->findAll();
+            // $data['allLevelData'] = $lmodel->findAll();
+
+            // echo view('admin/Course/AddCourse', $data);
  
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');

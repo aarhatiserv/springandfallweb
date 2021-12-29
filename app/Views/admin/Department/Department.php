@@ -13,8 +13,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 
 </head>
 
@@ -57,12 +57,13 @@
                                 </div>
                                 <div class="x_content">
                                     <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
-                                    Department</a> </button>
-                                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
+                                            Department</a> </button>
+                                    <table id="datatable-buttons" class="table table-striped table-bordered"
+                                        style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>Department Name</th>
-                                               
+
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -73,11 +74,14 @@
                                                foreach($departmentData as $dd){
                                               
                                                 ?>
-                                                
+
                                             <tr>
                                                 <td><?= $dd['name']?></td>
-                                                
-                                                <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i class="fa fa-trash"></i></a></td>
+
+                                                <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
+                                                            class="fa fa-edit"></i></a> | <a
+                                                        onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
+                                                            class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
                                                }
@@ -88,7 +92,7 @@
                             </div>
                         </div>
 
-                      
+
                     </div>
                 </div>
             </div>
@@ -103,11 +107,11 @@
 
 </body>
 <script type="text/javascript">
-      function ConfirmDelete(id)
-      {
-        var conf = confirm('Are you sure want to delete this record?');
-            if (conf)
-                 location.href='/admin/deleteDepartment/'+id;
-      }
-  </script>
+function ConfirmDelete(id) {
+    var conf = confirm('Are you sure want to delete this record?');
+    if (conf)
+        location.href = '/admin/deleteDepartment/' + id;
+}
+</script>
+
 </html>

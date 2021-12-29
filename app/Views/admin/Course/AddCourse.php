@@ -356,7 +356,7 @@
                                 </div>
                                 <div class="x_content">
                                     <form action="/admin/addCourse" method="POST">
-
+                                       <input type="hidden" name="id" value="<?= $college_id?>">
                                         <div>
                                             <label for="department" style="margin-right:255px">Department</label>
                                             <label for="level" style="margin-right:242px">Levels</label>
@@ -400,6 +400,76 @@
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+             <!-- page content -->
+             <div class="right_col someclassMax" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Course
+                                <!-- <small>Some examples to get you started</small> -->
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Course Data
+                                        <!-- <small>Users</small> -->
+                                    </h2>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <!-- <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
+                                            Department</a> </button> -->
+                                    <table id="datatable-buttons" class="table table-striped table-bordered"
+                                        style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Department Name</th>
+                                                <th>Levels Name</th>
+                                                <th>Course Name</th>
+
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <?php 
+                                               foreach($courseDetails as $cd){
+                                              
+                                                ?>
+                                            <tr>
+                                                <td><?= $cd['department_id']?></td>
+                                                <td><?= $cd['level_id']?></td>
+                                                <td><?= $cd['name']?></td>
+                                                
+                                                <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
+                                                class="fa fa-edit"></i></a> | <a
+                                                onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
+                                                class="fa fa-trash"></i></a></td>
+                                            </tr>
+                                            <?php }?>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
