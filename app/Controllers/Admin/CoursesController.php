@@ -67,7 +67,7 @@ class CoursesController extends Controller
             ];
             print_r('validate error');
         } else {
-            $model = new PagesModel();
+            $model = new CoursesModel();
             $data = [
                 "name" => $this->request->getVar("name"),
                 "active" => 1,
@@ -80,7 +80,7 @@ class CoursesController extends Controller
                     'data' => [],
                 ];
 
-                return redirect()->to('https://springandfall.in/admin/pages');
+                return redirect()->to('https://springandfall.in/admin/courses');
                 // return redirect()->to('http://localhost:8080/admin/pages');
 
             } else {
@@ -101,9 +101,9 @@ class CoursesController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new PagesModel();
-        $data['pagesDatabyId'] = $model->where('id = ', $id)->findAll();
-        echo view('admin/Pages/EditPages', $data);
+            $model = new CoursesModel();
+        $data['courseDatabyId'] = $model->where('id = ', $id)->findAll();
+        echo view('admin/Courses/EditCourse', $data);
             
 		}else{
             return redirect()->to('https://springandfall.in/admin/login');
@@ -134,7 +134,7 @@ class CoursesController extends Controller
             ];
             print_r('validate error');
         } else {
-            $model = new PagesModel();
+            $model = new CoursesModel();
             $id = $this->request->getVar("id");
             $data = [
                 "name" => $this->request->getVar("name"),
@@ -149,7 +149,7 @@ class CoursesController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                return redirect()->to('https://springandfall.in/admin/pages');
+                return redirect()->to('https://springandfall.in/admin/courses');
                 // return redirect()->to('http://localhost:8080/admin/pages');
             } else {
 
@@ -168,9 +168,9 @@ class CoursesController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
-            $model = new PagesModel();
+            $model = new CoursesModel();
         $model->where('id = ', $id)->delete();
-        return redirect()->to('https://springandfall.in/admin/pages');
+        return redirect()->to('https://springandfall.in/admin/courses');
         // return redirect()->to('http://localhost:8080/admin/pages');
             
 		}else{

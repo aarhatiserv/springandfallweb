@@ -51,7 +51,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form action="/admin/addPages" method="POST">
+                                    <form action="/admin/addCourse" method="POST">
                                         <div>
 
                                             <label for="name">Course Name</label>

@@ -67,10 +67,10 @@ $routes->group("admin", function ($routes) {
 	// Admin Courses Routes
 	$routes->get('courses', 'Admin/CoursesController::course');
 	$routes->get('addCourse', 'Admin/CoursesController::addCourse');
-	$routes->post('addColleges', 'Admin/CollegeController::addCollegesPost');
-	$routes->get("editCollege/(:any)", "Admin\CollegeController::editCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-	$routes->post('editCollege', 'Admin/CollegeController::editCollegePost');
-	$routes->get("deleteCollege/(:any)", "Admin\CollegeController::deleteCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('addCourse', 'Admin/CoursesController::addCoursePost');
+	$routes->get("editCourse/(:any)", "Admin\CoursesController::editCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editCourse', 'Admin/CoursesController::editCoursePost');
+	$routes->get("deleteCourse/(:any)", "Admin\CoursesController::deleteCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
 
 	// Admin Colleges Routes
