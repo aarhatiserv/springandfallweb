@@ -130,11 +130,11 @@ class CollegeController extends Controller
                 $ml .= $ml1.",";  
              }  
              $multipleSubcourses = $this->request->getVar("subcourses");
-            $ms="";  
-            foreach($multipleSubcourses as $ms1)  
-             {  
-                $ms .= $ms1.",";  
-             }  
+            // $ms="";  
+            // foreach($multipleSubcourses as $ms1)  
+            //  {  
+            //     $ms .= $ms1.",";  
+            //  }  
 
             $model = new CollegeModel();
             $data = [
@@ -151,7 +151,7 @@ class CollegeController extends Controller
                 "image_background" => $file_nameBg,
                 "courses" => $mc,
                 "levels" => $ml,
-                "subcourses" => $ms,
+                "subcourses" => $multipleSubcourses,
                 "active" => 1,
             ];
 

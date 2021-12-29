@@ -140,7 +140,7 @@
                                                 <option value="ExecutiveCourse">Executive Course</option>
                                             </select>
 
-                                            <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
+                                            <!-- <select id="subcourses" name="subcourses[]" style="margin-right:50px" multiple
                                                 >
                                                
                                                 <option value="Engineering_CSE">CSE</option>
@@ -152,7 +152,8 @@
                                                 <option value="Management_Genarel Management">Genarel Management</option>
                                                 <option value="Management_Homan Resourse Management">Homan Resourse Management</option>
                                                 <option value="Management_Finance Management">Finance Management</option>
-                                            </select>
+                                            </select> -->
+                                            <input type="text" name="subcourses">
                                         </div>
                                         <br>
                                         <div>
