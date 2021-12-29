@@ -15,6 +15,9 @@
         min-height: 670px !important;
     }
     </style>
+
+<?= $this->include('admin/layout/stylesheet') ?>
+<?= $this->include('admin/layout/script') ?>
 </head>
 
 <body class="nav-md">
