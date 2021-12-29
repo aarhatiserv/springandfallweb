@@ -454,10 +454,13 @@
                                               
                                                 ?>
                                             <tr>
-                                                <td><?= $cd->d_name?></td>
+                                                <!-- <td><?= $cd->d_name?></td>
                                                 <td><?= $cd->l_name?></td>
                                                 <td><?= $cd->name?></td>
-                                                
+                                                 -->
+                                                 <td><?= $cd['department_id']?></td>
+                                                 <td><?= $cd['level_id']?></td>
+                                                 <td><?= $cd['name']?></td>
                                                 <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
                                                 class="fa fa-edit"></i></a> | <a
                                                 onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
