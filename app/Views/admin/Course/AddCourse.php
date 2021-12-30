@@ -285,7 +285,9 @@
                                             <select id="department_id" name="department_id" style="margin-right:50px">
                                             
                                             <?php if(!empty($courseDetailsById)) {?>
-                                                  <option value="<?= $courseDetailsById->d_id?>"><?= $courseDetailsById->d_name?></option>
+                                                <?php foreach($courseDetailsById as $cdbi){ ?>
+                                                    <option value="<?= $cdbi->d_id?>"><?= $cdbi->d_name?></option>
+                                               <?php } ?>
                                                   <?php }else{?>
                                                     <option value=""> Select Department</option>
                                                     <?php }?>
@@ -300,7 +302,14 @@
 
 
                                             <select id="level_id" name="level_id" style="margin-right:50px">
-                                            <option value=""> Select Level</option>
+                                            <?php if(!empty($courseDetailsById)) {?>
+                                                <?php foreach($courseDetailsById as $cdbi){ ?>
+                                                    <option value="<?= $cdbi->l_id?>"><?= $cdbi->l_name?></option>
+                                               <?php } ?>
+                                                  <?php }else{?>
+                                                    <option value=""> Select Department</option>
+                                                    <?php }?>
+
                                             <?php if(!empty($courseDetailsById)) {?>
                                                   <option value="<?= $courseDetailsById->l_id?>"><?= $courseDetailsById->l_name?></option>
                                                   <?php }?>
