@@ -365,7 +365,7 @@ class CollegeController extends Controller
             $data['allLevelData'] = $lmodel->findAll();
 
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT department.name as d_name, level.name as l_name, name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '$id'");
+            $query = $db->query("SELECT department.name as d_name, level.name as l_name, course.name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '$id'");
             $data['courseDetails'] = $query->getResult();
      
             // $data['courseDetails'] = $coursemodel->where('college_id', $id)->findAll();
