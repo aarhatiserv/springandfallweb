@@ -22,7 +22,7 @@ class CollegeController extends Controller
 
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
-            $data = [];
+            $data[];
             for($i = 0; $i<count($data2); $i++){
                 $data.push($d2[$i]['id']);
             }
