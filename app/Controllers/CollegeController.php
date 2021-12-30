@@ -41,7 +41,7 @@ class CollegeController extends Controller
  {
         $model = new CollegeModel();
 
-        $dataA2 = $model->where( 'country', $country )->findAll();
+        $data2 = $model->where( 'country', $country )->findAll();
 
         $data = array();
         for($i = 0; $i<count($data2); $i++){
