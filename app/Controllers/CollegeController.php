@@ -645,7 +645,7 @@ public function getCoursesClickCountry($country){
             // $data['collegeDetails'] =  $query->getResult(); 
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
-        // $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
+        $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
         
         $db1 = \Config\Database::connect("blogDb");
         $query = $db1->query('SELECT * FROM posts ORDER BY RAND() LIMIT 3;');
