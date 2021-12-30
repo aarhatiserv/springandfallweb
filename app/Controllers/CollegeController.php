@@ -23,8 +23,8 @@ class CollegeController extends Controller
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
             $data = [];
-            foreach($data2 as $d2){
-                $data.push($d2['id']);
+            for($i = 0; $i<count($data2); $i++){
+                $data.push($d2[$i]['id']);
             }
             
             // $db = \Config\Database::connect();
