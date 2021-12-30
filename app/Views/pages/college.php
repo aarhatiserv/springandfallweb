@@ -112,12 +112,13 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                        <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Engineering" ) === 0) {
+                                        <?php 
+                                        // foreach($subcourses as $sc){  
+                                        //     if(strpos( $sc, "Engineering" ) === 0) {
                                               ?>
                                             
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
+                                             
+                                        <?php// }}?>
                                     </ul>
                                 </div>
                                     <?php  //} else if($c === "Management"){ ?>
