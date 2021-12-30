@@ -28,6 +28,7 @@ class CourseController extends Controller
             $lmodel = new LevelModel();
             // $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
             $data['college_id'] = $id;
+            $data['college_name'] = $model->where('id', $id)->findAll();
             $data['allDepartmentData'] = $dmodel->findAll();
             $data['allLevelData'] = $lmodel->findAll();
 
