@@ -32,7 +32,7 @@ class CollegeController extends Controller
             }
         
 
-            $data = super_unique($data,'d_name');
+            // $data = super_unique($data,'d_name');
             echo json_encode( [ 'status' => 1, 'data' => $data] );
         } else {
             return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
