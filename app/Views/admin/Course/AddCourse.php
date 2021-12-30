@@ -400,48 +400,49 @@
                                         <input type="submit" value="Submit">
                                     </form>
 
-                                    <div class="x_content">
-                                    <!-- <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
+                                    
+
+                                </div>
+                                <div class="x_content">
+                                        <!-- <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
                                             Department</a> </button> -->
-                                    <table id="datatable-buttons" class="table table-striped table-bordered"
-                                        style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>Department Name</th>
-                                                <th>Levels Name</th>
-                                                <th>Course Name</th>
+                                        <table id="datatable-buttons" class="table table-striped table-bordered"
+                                            style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Department Name</th>
+                                                    <th>Levels Name</th>
+                                                    <th>Course Name</th>
 
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
 
 
-                                        <tbody>
-                                            <?php 
+                                            <tbody>
+                                                <?php 
                                             if(!empty($courseDetails)){
                                                foreach($courseDetails as $cd){
                                               
                                                 ?>
-                                            <tr>
-                                                <!-- <td><?= $cd->d_name?></td>
+                                                <tr>
+                                                    <!-- <td><?= $cd->d_name?></td>
                                                 <td><?= $cd->l_name?></td>
                                                 <td><?= $cd->name?></td>
                                                  -->
-                                                <td><?= $cd['department_id']?></td>
-                                                <td><?= $cd['level_id']?></td>
-                                                <td><?= $cd['name']?></td>
-                                                <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
-                                                            class="fa fa-edit"></i></a> | <a
-                                                        onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
-                                                            class="fa fa-trash"></i></a></td>
-                                            </tr>
-                                            <?php }}?>
+                                                    <td><?= $cd['department_id']?></td>
+                                                    <td><?= $cd['level_id']?></td>
+                                                    <td><?= $cd['name']?></td>
+                                                    <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
+                                                                class="fa fa-edit"></i></a> | <a
+                                                            onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
+                                                                class="fa fa-trash"></i></a></td>
+                                                </tr>
+                                                <?php }}?>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                                </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
                             </div>
                         </div>
 
@@ -475,7 +476,7 @@
 
                                     <div class="clearfix"></div>
                                 </div>
-                               
+
                             </div>
                         </div>
 
