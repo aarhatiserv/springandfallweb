@@ -44,6 +44,37 @@ class CourseController extends Controller
 			// return redirect()->to('http://localhost:8080/admin/login');
 		}  
     }
+    public function editCourse($collegeId, $id)
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $coursemodel = new CourseModel();
+            $model = new CollegeModel();
+            $dmodel = new DepartmentModel();
+            $lmodel = new LevelModel();
+            // $data['collegeDatabyId'] = $model->where('id = ', $id)->findAll();
+            $data['college_id'] = $collegeId;
+            $data['allDepartmentData'] = $dmodel->findAll();
+            $data['allLevelData'] = $lmodel->findAll();
+
+            $db = \Config\Database::connect();
+            $query = $db->query("SELECT course.id as course_id, department.id as d_id, level.id as l_id, department.name as d_name, level.name as l_name, course.name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.id = '$id'");
+            $data['courseDetailsById'] = $query->getResult();
+
+            $db = \Config\Database::connect();
+            $query = $db->query("SELECT course.id as course_id,  department.name as d_name, level.name as l_name, course.name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '$collegeId'");
+            $data['courseDetails'] = $query->getResult();
+     
+            // $data['courseDetails'] = $coursemodel->where('college_id', $id)->findAll();
+
+            echo view('admin/Course/AddCourse', $data);
+ 
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}  
+    }
 
     public function addCoursePost()
     {
