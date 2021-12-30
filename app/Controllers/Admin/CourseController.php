@@ -59,7 +59,7 @@ class CourseController extends Controller
             $data['allLevelData'] = $lmodel->findAll();
 
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT course.name as course_name WHERE course.id = '$id'");
+            $query = $db->query("SELECT course.name as course_name From course WHERE course.id = '$id'");
             $data['courseDetailsById'] = $query->getResult();
 
             $db = \Config\Database::connect();
