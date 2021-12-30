@@ -120,6 +120,51 @@ class CourseController extends Controller
 		}
         
     }
+    public function editCoursePost()
+    {
+        $session = session();
+		if(!empty($session->get('username'))){
+
+            $id = $this->request->getVar('id');
+            $courseId = $this->request->getVar('courseId');
+            $department_id = $this->request->getVar('department_id');
+            $level_id = $this->request->getVar('level_id');
+            $course = $this->request->getVar('course');
+            
+            $data = [
+                "name" => $course,
+                "college_id" => $id,
+                "department_id" => $department_id,
+                "level_id" => $level_id,
+                "active"=>1
+            ];
+
+            $model = new CourseModel();
+            if ($model->update($courseId, $data)) {
+                $response = [
+                    'status' => 200,
+                    'messages' => 'Successfully college Added',
+                    'data' => [],
+                ];
+            
+                return redirect()->to('https://springandfall.in/admin/addCourse/'.$id);
+
+            } else {
+
+                $response = [
+                    'status' => 500,
+                    "error" => true,
+                    'messages' => 'Failed to add college',
+                    'data' => [],
+                ];
+            }
+
+		}else{
+            return redirect()->to('https://springandfall.in/admin/login');
+			// return redirect()->to('http://localhost:8080/admin/login');
+		}
+        
+    }
 
     public function deleteCourse($collegeId, $id)
     {

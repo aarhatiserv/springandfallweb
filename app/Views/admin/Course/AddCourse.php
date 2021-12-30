@@ -301,8 +301,16 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
+                                <?php if(empty($courseDetailsById)) {?>
                                     <form action="/admin/addCourse" method="POST">
-                                        <input type="hidden" name="id" value="<?= $college_id?>">
+                                    <input type="hidden" name="id" value="<?= $college_id?>">
+                                        <?php }else{ ?>
+
+                                            <form action="/admin/editCourse" method="POST">
+                                            <input type="hidden" name="id" value="<?= $college_id?>">
+                                            <input type="hidden" name="courseId" value="<?php foreach($courseDetailsById as $cdbi) {echo $cdbi->course_id; }?>">
+                                            <?php }?>
+                                       
                                         <div>
                                             <label for="department" style="margin-right:255px">Department</label>
                                             <label for="level" style="margin-right:242px">Levels</label>
