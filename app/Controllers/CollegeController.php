@@ -24,7 +24,8 @@ class CollegeController extends Controller
             $data2 = $model->where( 'country', $country )->findAll();
             $data = array();
             for($i = 0; $i<count($data2); $i++){
-                $data.push($data2[$i]);
+                // $data.push($data2[$i]);
+                array_push($data, $data2[$i]);
             }
             
             // $db = \Config\Database::connect();
