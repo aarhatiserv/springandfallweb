@@ -370,6 +370,7 @@
 
 
                                             <select id="department_id" name="department_id" style="margin-right:50px">
+                                            <option value=""> Select Department</option>
                                                 <?php 
                                             foreach($allDepartmentData as $dd){?>
                                                 <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
@@ -380,6 +381,8 @@
 
 
                                             <select id="level_id" name="level_id" style="margin-right:50px">
+                                            <option value=""> Select Level</option>
+
                                                 <?php 
                                             foreach($allLevelData as $ld){?>
                                                 <option value="<?= $ld['id']?>"> <?= $ld['name']?></option>
