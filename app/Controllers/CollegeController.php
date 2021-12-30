@@ -22,16 +22,16 @@ class CollegeController extends Controller
 
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
-            $data = array();
-            for($i = 0; $i<count($data2); $i++){
-                $data.push($d2[$i]['id']);
-            }
+            // $data = array();
+            // for($i = 0; $i<count($data2); $i++){
+            //     $data.push($d2[$i]['id']);
+            // }
             
             // $db = \Config\Database::connect();
             // $query = $db->query("SELECT course.id as course_id, department.id as d_id, department.name as d_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.id = '$id'");
             // $data['courseDetailsById'] = $query->getResult();
 
-            echo json_encode( [ 'status' => 1, 'data' => $data ] );
+            echo json_encode( [ 'status' => 1, 'data' => $data2 ] );
         } else {
             return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
             // return redirect()->to( 'http://localhost:8080/consultation' );
