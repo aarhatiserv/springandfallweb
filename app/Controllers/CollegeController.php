@@ -47,7 +47,7 @@ class CollegeController extends Controller
         $dataDepartment = $dmodel->where( 'name', $course )->findAll();
 
         $data = array();
-        for($i = 0; $i<count($data2); $i++){
+        for($i = 0; $i<count($dataCollege); $i++){
             // $data.push($data2[$i]);
             $db = \Config\Database::connect();
             $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$dataCollege[$i]['id']."' AND course.department_id = '".$dataDepartment[$i]['id']."'");
