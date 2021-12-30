@@ -23,7 +23,6 @@ class CollegeController extends Controller
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
             $data = array();
-            $data1 = array();
             for($i = 0; $i<count($data2); $i++){
                 // $data.push($data2[$i]);
                 $db = \Config\Database::connect();
@@ -31,10 +30,10 @@ class CollegeController extends Controller
                 array_push($data, $query->getResult()); 
             }
         
-            $data = array_map("unserialize", array_unique(array_map("serialize", $data)));
+            $result = array_map("unserialize", array_unique(array_map("serialize", $reqArray)));
 
             // $data = super_unique($data,'d_name');
-            echo json_encode( [ 'status' => 1, 'data' => $data] );
+            echo json_encode( [ 'status' => 1, 'data' => $result] );
         } else {
             return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
             // return redirect()->to( 'http://localhost:8080/consultation' );
