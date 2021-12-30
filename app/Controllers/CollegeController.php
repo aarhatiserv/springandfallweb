@@ -641,7 +641,7 @@ public function getCoursesClickCountry($country){
             // $data['collegeDetails'] =  $query->getResult(); 
     
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT about From colleges WHERE id = '$id'");
+            $query = $db->query("SELECT about From colleges WHERE id = '".$id."'");
             $data['collegeDetails'] =  $query->getResult(); 
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
