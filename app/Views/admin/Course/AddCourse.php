@@ -312,7 +312,7 @@
                                             </select>
 
                                             <textarea name="course" id="course" rows="6" cols="70"
-                                                placeholder="Enter Address Here..." style="margin-right:50px" value="<?= $courseDetailsById->course_name?>">
+                                                placeholder="Enter Address Here..." style="margin-right:50px" value="<?=foreach($courseDetailsById as $cdbi) {$cdbi->course_name }?>">
 </textarea>
 
                                         </div>
