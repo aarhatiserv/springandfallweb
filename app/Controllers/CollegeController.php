@@ -633,29 +633,25 @@ public function getCoursesClickCountry($country){
 
         // $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
         $model = new CollegeModel();
-        $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
+        $dataCollege = $model->where( 'id = ', $id )->findAll();
 
         // $model = new CollegeModel();
         $dmodel = new DepartmentModel();
         $lmodel = new LevelModel();
         $cmodel = new CourseModel();
         $dataCourse = $cmodel->findAll();
-        // $dataCollege = $model->where( 'country', $country )->findAll();
-        $dataCollege = $model->where( 'country', $country )->findAll();
-        $dataDepartment = $dmodel->where( 'name', $course )->findAll();
-        $dataLevel = $lmodel->where( 'name', $level )->findAll();
     
-        $data4 = array();
+        $data['collegeDetails'] = array();
         for($i = 0; $i<count($dataCourse); $i++){
             // $data.push($data2[$i]);
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE colleges.country = '".$dataCollege[$i]['country']."' AND department.name = '".$dataDepartment[$i]['name']."' AND level.name = '".$dataLevel[$i]['name']."'");
-            array_push($data4, $query->getResult()); 
+            $query = $db->query("SELECT DISTINCT  department.id as d_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image, colleges.image_background as image_background, level.id as l_id, level.name as l_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '".$dataCollege[$i]['id']."'");
+            array_push($data['collegeDetails'], $query->getResult()); 
         }
 
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
-        $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
+        // $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
         
         $db1 = \Config\Database::connect("blogDb");
         $query = $db1->query('SELECT * FROM posts ORDER BY RAND() LIMIT 3;');
