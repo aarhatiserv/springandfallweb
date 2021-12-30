@@ -88,17 +88,17 @@ public function getCoursesClickCountry($country){
 
     public function getLevel( $level )
  {
-        $model = new CollegeModel();
-        $data2 = $model->findAll();
-
-        $data = array();
-        for ( $i = 0; $i<count( $dataAll );
-        $i++ ) {
-            if ( strpos( $dataAll[ $i ][ 'levels' ], $level ) !== false ) {
-
-                array_push( $data, $dataAll[ $i ] );
-            }
-        }
+    $model = new LevelModel();
+    $coursemodel = new CourseModel();
+    $dataCourse = $coursemodel->findAll();
+    $dataLevel = $model->where( 'name', $level )->findAll();
+    $data = array();
+    for($i = 0; $i<count($dataCourse); $i++){
+        // $data.push($data2[$i]);
+        $db = \Config\Database::connect();
+        $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE level.name = '".$dataLevel[$i]['name']."'");
+        array_push($data, $query->getResult()); 
+    }
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
     }
 
