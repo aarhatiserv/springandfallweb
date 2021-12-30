@@ -41,15 +41,14 @@ class CollegeController extends Controller
  {
         $model = new CollegeModel();
 
-        $dataAll = $model->where( 'country', $country )->findAll();
+        $dataA2 = $model->where( 'country', $country )->findAll();
 
         $data = array();
-        for ( $i = 0; $i<count( $dataAll );
-        $i++ ) {
-            if ( strpos( $dataAll[ $i ][ 'courses' ], $course ) !== false ) {
-
-                array_push( $data, $dataAll[ $i ] );
-            }
+        for($i = 0; $i<count($data2); $i++){
+            // $data.push($data2[$i]);
+            $db = \Config\Database::connect();
+            $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
+            array_push($data, $query->getResult()); 
         }
         // getCoursesClickCountry($data);
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
@@ -69,15 +68,14 @@ public function getCoursesClickCountry($country){
     public function getCourse( $course )
  {
         $model = new CollegeModel();
-        $dataAll = $model->findAll();
+        $data2 = $model->findAll();
 
         $data = array();
-        for ( $i = 0; $i<count( $dataAll );
-        $i++ ) {
-            if ( strpos( $dataAll[ $i ][ 'courses' ], $course ) !== false ) {
-
-                array_push( $data, $dataAll[ $i ] );
-            }
+        for($i = 0; $i<count($data2); $i++){
+            // $data.push($data2[$i]);
+            $db = \Config\Database::connect();
+            $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
+            array_push($data, $query->getResult()); 
         }
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
     }
@@ -86,7 +84,7 @@ public function getCoursesClickCountry($country){
     public function getLevel( $level )
  {
         $model = new CollegeModel();
-        $dataAll = $model->findAll();
+        $data2 = $model->findAll();
 
         $data = array();
         for ( $i = 0; $i<count( $dataAll );
