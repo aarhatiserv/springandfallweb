@@ -32,7 +32,7 @@ class CollegeController extends Controller
                 
             }
             foreach($data as $d){
-                $data = array_unique($d);
+                array_push($data,array_unique($d) );
             }
             // $data = array_unique($data[]);
 
