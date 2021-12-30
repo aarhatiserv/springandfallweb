@@ -327,7 +327,7 @@
                         <label class="form-check-label" for="level">Diploma</label>
                     </div>
                     <div class="form-group mx-2">
-                        <input class="form-check-input" type="radio" name="level" id="level" value="ExecutiveCourse">
+                        <input class="form-check-input" type="radio" name="level" id="level" value="Executivecourse">
                         <label class="form-check-label" for="level">Executive Course</label>
                     </div>
                 </div>
