@@ -23,18 +23,16 @@ class CollegeController extends Controller
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
             $data = array();
+            $data1 = array();
             for($i = 0; $i<count($data2); $i++){
                 // $data.push($data2[$i]);
                 $db = \Config\Database::connect();
                 $query = $db->query("SELECT  department.name as d_name, colleges.id as college_id FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
-                array_push($data, $query->getResult()); 
+                array_push($data1, $query->getResult()); 
             }
             
-            for($i = 0 ; $i < count($data); $i++){
-                for($j = 0; $j< count($data[$i]) ; $j++){
-
-                    array_push($data, array_unique($data[$i][$j]));
-                }
+            foreach($data1 as $row){
+                $data[$row['d_name']] = $row['d_name'];
             }
 
 
