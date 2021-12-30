@@ -22,8 +22,11 @@ class CollegeController extends Controller
 
             $model = new CollegeModel();
             $data2 = $model->where( 'country', $country )->findAll();
-           
-            $data = $data2['id'];
+            $data = [];
+            foreach($data2 as $d2){
+                $data.push($d2['id']);
+            }
+            
             // $db = \Config\Database::connect();
             // $query = $db->query("SELECT course.id as course_id, department.id as d_id, department.name as d_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.id = '$id'");
             // $data['courseDetailsById'] = $query->getResult();
