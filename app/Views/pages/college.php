@@ -6,20 +6,20 @@
         <div class="col-11"></div>
     </div>
 </div>
-<?php if(!empty($collegeDetails[0]['image_background'])){ ?>
+<?php if(!empty($collegeDetails)){ ?>
 <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-100"
-    style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $collegeDetails->country ?>/banner/<?=$collegeDetails[0]['image_background']?>') no-repeat fixed 100% 100%;background-size: cover;">
+    style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $collegeDetails->country ?>/banner/<?=$collegeDetails->image_background?>') no-repeat fixed 100% 100%;background-size: cover;">
     <?php } else{?>
     <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-90"
         style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
         <?php }?>
         <div id="collegeBannerText" class="col-12 col-md-12 justify-content-center align-items-center w-90">
-            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails[0]['country']?>/logo/<?=$collegeDetails[0]['image']?>"
-                alt="<?= $collegeDetails[0]['names'] ?>" width="200" height="200"
+            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails->country?>/logo/<?=$collegeDetails->image?>"
+                alt="<?= $collegeDetails->college_name ?>" width="200" height="200"
                 style="margin-top: -100px;margin-left: 87px;" />
-            <h1 class="text-center"><?= $collegeDetails[0]['names'] ?></h1>
+            <h1 class="text-center"><?= $collegeDetails->college_name ?></h1>
             <p class="text-center" style="font-style: italic;">
-                <?= $collegeDetails[0]['address'].", ". $collegeDetails[0]['country'] ?> </p>
+                <?= $collegeDetails->address.", ". $collegeDetails->country ?> </p>
         </div>
 
     </section>
@@ -49,7 +49,7 @@
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Excepturi, unde!</h4> -->
                                 <p class="text-justify w-80">
-                                    sdbcsh<? foreach($collegeDetails as $cd){ echo $cd->about; }?>
+                                    sdbcsh<?= $collegeDetails->about; }?>
                                 </p>
 
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
