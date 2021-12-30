@@ -25,12 +25,12 @@ class CollegeController extends Controller
             $data = array();
             for($i = 0; $i<count($data2); $i++){
                 // $data.push($data2[$i]);
-                array_push($data, $data2[$i]['id']);
+                $db = \Config\Database::connect();
+                $query = $db->query("SELECT course.id as course_id, department.id as d_id, department.name as d_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '".$data2[$i]['id']."'");
+                array_push($data, $query->getResult(););
             }
             
-            // $db = \Config\Database::connect();
-            // $query = $db->query("SELECT course.id as course_id, department.id as d_id, department.name as d_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.id = '$id'");
-            // $data['courseDetailsById'] = $query->getResult();
+
 
             echo json_encode( [ 'status' => 1, 'data' => $data] );
         } else {
