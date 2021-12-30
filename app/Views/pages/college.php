@@ -49,7 +49,7 @@
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Excepturi, unde!</h4> -->
                                 <p class="text-justify w-80">
-                                    <?=  $collegeDetails->about ?>
+                                    <? foreach($collegeDetails as $cd){ echo $cd->about; }?>
                                 </p>
 
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
