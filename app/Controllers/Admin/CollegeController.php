@@ -368,7 +368,7 @@ class CollegeController extends Controller
             // $query = $db->query('SELECT department.name as d_name, level.name as l_name, name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id');
             // $data['courseDetails'] = $query->getResult();
      
-            $data['courseDetails'] = $coursemodel->findAll();
+            $data['courseDetails'] = $coursemodel->where('college_id', $id)->findAll();
 
             echo view('admin/Course/AddCourse', $data);
  
