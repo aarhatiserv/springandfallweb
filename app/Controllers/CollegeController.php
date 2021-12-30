@@ -31,6 +31,7 @@ class CollegeController extends Controller
                 array_push($data, $query->getResult()); 
             }
         
+            $data = array_map("unserialize", array_unique(array_map("serialize", $data)));
 
             // $data = super_unique($data,'d_name');
             echo json_encode( [ 'status' => 1, 'data' => $data] );
