@@ -286,7 +286,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Courses Of <?= $college_name['names']?>
+                            <h3>Courses Of <?= $college_name[0]['names']?>
                             </h3>
                         </div>
                     </div>
