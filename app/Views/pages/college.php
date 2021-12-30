@@ -97,13 +97,13 @@
                                 <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
                                
                                     <?php 
-                                    $newString = rtrim($collegeDetails[0]['courses'], ',');
-                                  $course = explode (",", $newString);
+                                //     $newString = rtrim($collegeDetails[0]['courses'], ',');
+                                //   $course = explode (",", $newString);
 
-                                    $newString2 = rtrim($collegeDetails[0]['subcourses'], ',');
-                                  $subcourses = explode (",", $newString2);
-                                  foreach($course as $c){ 
-                                      if($c === "Engineering"){
+                                //     $newString2 = rtrim($collegeDetails[0]['subcourses'], ',');
+                                //   $subcourses = explode (",", $newString2);
+                                //   foreach($course as $c){ 
+                                //       if($c === "Engineering"){
 
                                       ?>
                                   <div class="topic">
@@ -120,7 +120,7 @@
                                         <?php }}?>
                                     </ul>
                                 </div>
-                                    <?php  } else if($c === "Management"){ ?>
+                                    <?php  //} else if($c === "Management"){ ?>
                                         <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c ?>
@@ -133,7 +133,7 @@
                                         <?php }}?>
                                     </ul>
                                 </div>
-                                   <?php } else if($c === "Medical"){ ?>
+                                   <?php// } else if($c === "Medical"){ ?>
 
                                     <div class="topic">
                                     <div class="open">
@@ -147,7 +147,7 @@
                                         <?php }}?>
                                     </ul>
                                 </div>
-                                  <?php }  else if($c === "Design"){ ?>
+                                  <?php //}  else if($c === "Design"){ ?>
                                     <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c ?>
@@ -160,7 +160,7 @@
                                         <?php }}?>
                                     </ul>
                                 </div>
-                                 <?php } else if($c === "Other"){ ?>
+                                 <?php// } else if($c === "Other"){ ?>
                                     <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c ?>
@@ -173,7 +173,7 @@
                                         <?php }}?>
                                     </ul>
                                 </div>
-                                 <?php } else{ ?>
+                                 <?php //} else{ ?>
                                     <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c ?>
@@ -187,7 +187,7 @@
                                       
                                     </ul>
                                 </div>
-                              <?php }} ?>
+                              <?php //}} ?>
 
 
                                 <!-- </ul> -->
