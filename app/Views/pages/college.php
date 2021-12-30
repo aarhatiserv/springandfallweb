@@ -96,10 +96,10 @@
                             <div class="container" id="collegeCourses">
                                 <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
                                
-                                 
+                                 <?php foreach($collegeDetails as $cd){?>
                                   <div class="topic">
                                     <div class="open">
-                                        <h2 class="question">
+                                        <h2 class="question"><?= $cd->d_name?>
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
@@ -107,64 +107,8 @@
                                        
                                     </ul>
                                 </div>
-                                    
-                                        <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question">
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                            
-                                    </ul>
-                                </div>
+                                   <?php }?>
                                 
-
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question">
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                   
-                                    </ul>
-                                </div>
-                                
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question">
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                   
-                                    </ul>
-                                </div>
-                                
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question">
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    
-                                    </ul>
-                                </div>
-                               
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question">
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    
-                                              <li>Computer Science </li>
-                                              <li>Computer Science1 </li>
-                                              <li>Computer Science2 </li>
-                                      
-                                    </ul>
-                                </div>
-                         
-
-
                                 <!-- </ul> -->
                             </div>
                         </div>
