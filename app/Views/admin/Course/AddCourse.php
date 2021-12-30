@@ -330,7 +330,7 @@
                                                     <?php }?>
 
                                                 <?php 
-                                            foreach($allDepartmentData as $dd){?>
+                                               foreach($allDepartmentData as $dd){?>
                                                 <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
                                                 <?php }
                                             ?>
@@ -346,10 +346,6 @@
                                                   <?php }else{?>
                                                     <option value=""> Select Department</option>
                                                     <?php }?>
-
-                                            <?php if(!empty($courseDetailsById)) {?>
-                                                  <option value="<?= $courseDetailsById->l_id?>"><?= $courseDetailsById->l_name?></option>
-                                                  <?php }?>
                                                 <?php 
                                             foreach($allLevelData as $ld){?>
                                                 <option value="<?= $ld['id']?>"> <?= $ld['name']?></option>
