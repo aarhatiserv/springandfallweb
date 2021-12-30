@@ -128,10 +128,10 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Management" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1];?></li>
-                                        <?php }}?>
+                                    <?php 
+                                    // foreach($subcourses as $sc){  
+                                    //         if(strpos( $sc, "Management" ) === 0) {?>
+                                             
                                     </ul>
                                 </div>
                                    <?php// } else if($c === "Medical"){ ?>
@@ -142,10 +142,7 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Medical" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
+                                   
                                     </ul>
                                 </div>
                                   <?php //}  else if($c === "Design"){ ?>
@@ -155,10 +152,7 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Design" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
+                                   
                                     </ul>
                                 </div>
                                  <?php// } else if($c === "Other"){ ?>
@@ -168,10 +162,7 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Other" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
+                                    
                                     </ul>
                                 </div>
                                  <?php //} else{ ?>
