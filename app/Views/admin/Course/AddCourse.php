@@ -321,7 +321,7 @@
                                             </select>
 
                                             <textarea name="course" id="course" rows="6" cols="70"
-                                                placeholder="Enter Address Here..." style="margin-right:50px" ><?php foreach($courseDetailsById as $cdbi) {echo $cdbi->course_name; } ?>
+                                                placeholder="Enter Address Here..." style="margin-right:50px" ><?php  if(!empty($courseDetailsById)) {foreach($courseDetailsById as $cdbi) {echo $cdbi->course_name; }} ?>
 </textarea>
 
                                         </div>
