@@ -641,7 +641,7 @@ public function getCoursesClickCountry($country){
             // $data['collegeDetails'] =  $query->getResult(); 
     
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT department.id as d_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image, colleges.image_background as image_background, colleges.about as about, colleges.address as address, level.id as l_id, level.name as l_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE colleges.id = '".$id."'");
+            $query = $db->query("SELECT department.id as d_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image, colleges.image_background as image_background, colleges.about as about, colleges.address as address, level.id as l_id, level.name as l_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id");
             $data['collegeDetails'] =  $query->getResult(); 
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
