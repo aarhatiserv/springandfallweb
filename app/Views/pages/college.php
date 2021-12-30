@@ -108,7 +108,12 @@
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                        
+                                    <?php 
+                                
+                                       foreach($subcourses as $sc){ 
+                                    ?>
+                                    <li><?= $sc->l_name?></li>
+                                    <?php }?>
                                     </ul>
                                 </div>
                                    
