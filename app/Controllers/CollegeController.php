@@ -153,18 +153,23 @@ public function getCoursesClickCountry($country){
 
     public function getCountryAndCourseAndLevel( $country, $course, $level )
  {
-        $model = new CollegeModel();
-        $dataAll = $model->where( 'country', $country )->findAll();
+    $model = new CollegeModel();
+    $dmodel = new DepartmentModel();
+    $lmodel = new LevelModel();
+    $cmodel = new CourseModel();
+    $dataCourse = $cmodel->findAll();
+    // $dataCollege = $model->where( 'country', $country )->findAll();
+    $dataCollege = $model->where( 'names', $country )->findAll();
+    $dataDepartment = $dmodel->where( 'name', $course )->findAll();
+    $dataLevel = $lmodel->where( 'name', $level )->findAll();
 
-        $data = array();
-        for ( $i = 0; $i<count( $dataAll );
-        $i++ ) {
-            if ( strpos( $dataAll[ $i ][ 'courses' ], $course ) !== false ) {
-                if ( strpos( $dataAll[ $i ][ 'levels' ], $level ) !== false ) {
-                    array_push( $data, $dataAll[ $i ] );
-                }
-            }
-        }
+    $data = array();
+    for($i = 0; $i<count($dataCourse); $i++){
+        // $data.push($data2[$i]);
+        $db = \Config\Database::connect();
+        $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE colleges.country = '".$dataCollege[$i]['country']."' AND department.name = '".$dataDepartment[$i]['name']."' AND level.name = '".$dataLevel[$i]['name']."'");
+        array_push($data, $query->getResult()); 
+    }
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
     }
 
