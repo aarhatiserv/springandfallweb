@@ -362,7 +362,7 @@
                                                 <?php  if(!empty($courseDetailsById))
                                                  {
                                                      foreach($courseDetailsById as $cdbi) {
-                                                         echo $cdbi->course_name; 
+                                                         echo $cdbi->name; 
                                                          }
                                                          } ?>
 </textarea>
