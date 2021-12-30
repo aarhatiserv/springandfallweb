@@ -97,97 +97,22 @@
                                 <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
                                
                                     <?php 
-                                    $newString = rtrim($collegeDetails[0]['courses'], ',');
-                                  $course = explode (",", $newString);
-
-                                    $newString2 = rtrim($collegeDetails[0]['subcourses'], ',');
-                                  $subcourses = explode (",", $newString2);
-                                  foreach($course as $c){ 
-                                      if($c === "Engineering"){
+                                
+                                  foreach($courses as $c){ 
+                                     
 
                                       ?>
                                   <div class="topic">
                                     <div class="open">
-                                        <h2 class="question"><?= $c ?>
+                                        <h2 class="question"><?= $c->d_name ?>
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                        <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Engineering" ) === 0) {
-                                              ?>
-                                            
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
+                                        
                                     </ul>
                                 </div>
-                                    <?php  } else if($c === "Management"){ ?>
-                                        <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Management" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1];?></li>
-                                        <?php }}?>
-                                    </ul>
-                                </div>
-                                   <?php } else if($c === "Medical"){ ?>
-
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Medical" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
-                                    </ul>
-                                </div>
-                                  <?php }  else if($c === "Design"){ ?>
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Design" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
-                                    </ul>
-                                </div>
-                                 <?php } else if($c === "Other"){ ?>
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    <?php foreach($subcourses as $sc){  
-                                            if(strpos( $sc, "Other" ) === 0) {?>
-                                              <li><?= explode('_', $sc, 2)[1]; ?></li>
-                                        <?php }}?>
-                                    </ul>
-                                </div>
-                                 <?php } else{ ?>
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                    
-                                              <li>Computer Science </li>
-                                              <li>Computer Science1 </li>
-                                              <li>Computer Science2 </li>
-                                      
-                                    </ul>
-                                </div>
-                              <?php }} ?>
+                                   
+                              <?php } ?>
 
 
                                 <!-- </ul> -->
