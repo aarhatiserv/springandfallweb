@@ -436,7 +436,7 @@
                                                  
                                                     <td><a href="/admin/editDepartment/<?= $cd->course_id?>"><i
                                                                 class="fa fa-edit"></i></a> | <a
-                                                            onClick="javascript: ConfirmDelete(<?= $cd->course_id?>)"><i
+                                                            onClick="javascript: ConfirmDelete(<?= $college_id ?>,<?= $cd->course_id?>)"><i
                                                                 class="fa fa-trash"></i></a></td>
                                                 </tr>
                                                 <?php }}?>
@@ -462,11 +462,11 @@
 
 </body>
 <script type="text/javascript">
-      function ConfirmDelete(id)
+      function ConfirmDelete(collegeId, id)
       {
         var conf = confirm('Are you sure want to delete this record?');
             if (conf)
-                 location.href='/admin/deleteCourse/'+id;
+                 location.href='/admin/deleteCourse/'+ collegeId + '/' + id;
       }
 </script>
 <!-- jQuery -->

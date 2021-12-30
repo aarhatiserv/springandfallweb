@@ -90,14 +90,14 @@ class CourseController extends Controller
         
     }
 
-    public function deleteCourse($id)
+    public function deleteCourse($collegeId, $id)
     {
         $session = session();
 		if(!empty($session->get('username'))){
 
             $model = new CourseModel();
             $model->where('id',$id)->delete();
-            return redirect()->to('https://springandfall.in/admin/colleges');
+            return redirect()->to('https://springandfall.in/admin/addCourse/'.$collegeId);
             // return redirect()->to('http://localhost:8080/admin/colleges');
             
 		}else{
