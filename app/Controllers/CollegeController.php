@@ -27,15 +27,13 @@ class CollegeController extends Controller
                 // $data.push($data2[$i]);
                 $db = \Config\Database::connect();
                 $query = $db->query("SELECT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
-                $result = $query->getResult();
-                $data2 += $result->d_name;
-                // array_push($data, $query->getResult()); 
+                array_push($data, $query->getResult()); 
             }
         
             // $result = array_map("unserialize", array_unique(array_map("serialize", $data)));
 
             // $data = super_unique($data,'d_name');
-            echo json_encode( [ 'status' => 1, 'data' => $data2] );
+            echo json_encode( [ 'status' => 1, 'data' => $data] );
         } else {
             return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
             // return redirect()->to( 'http://localhost:8080/consultation' );
