@@ -72,9 +72,10 @@ public function getCoursesClickCountry($country){
     public function getCourse( $course )
  {
     $model = new DepartmentModel();
+    $coursemodel = new CourseModel();
     $dataDepartment = $model->where( 'name', $course )->findAll();
     $data = array();
-    for($i = 0; $i<count($data2); $i++){
+    for($i = 0; $i<count($coursemodel); $i++){
         // $data.push($data2[$i]);
         $db = \Config\Database::connect();
         $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE department.name = '".$dataDepartment[$i]['name']."'");
