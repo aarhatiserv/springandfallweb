@@ -7,19 +7,16 @@
     </div>
 </div>
 <?php if(!empty($collegeDetails)){ ?>
+    <?php foreach($collegeDetails as $cd){?>
 <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-100"
-    style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $collegeDetails->country ?>/banner/<?= $collegeDetails->image_background?>') no-repeat fixed 100% 100%;background-size: cover;">
-    <?php } else{?>
-    <section id="collegeBanner" class="col-12 col-md-12 d-flex justify-content-center align-items-center w-90"
-        style="background: url('<?=base_url()?>/assets/images/college/demo_banner.png') no-repeat fixed 100% 100%;background-size: cover;">
-        <?php }?>
+    style="background: url('<?=base_url()?>/uploads/CollegesImage/<?= $cd->country ?>/banner/<?= $cd->image_background?>') no-repeat fixed 100% 100%;background-size: cover;">
         <div id="collegeBannerText" class="col-12 col-md-12 justify-content-center align-items-center w-90">
-            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$collegeDetails->country?>/logo/<?=$collegeDetails->image?>"
-                alt="<?= $collegeDetails->college_name ?>" width="200" height="200"
+            <img src="<?=base_url()?>/uploads/CollegesImage/<?=$cd->country?>/logo/<?=$cd->image?>"
+                alt="<?= $cd->college_name ?>" width="200" height="200"
                 style="margin-top: -100px;margin-left: 87px;" />
-            <h1 class="text-center"><?= $collegeDetails->college_name ?></h1>
+            <h1 class="text-center"><?= $cd->college_name ?></h1>
             <p class="text-center" style="font-style: italic;">
-                <?= $collegeDetails->address.", ". $collegeDetails->country ?> </p>
+                <?= $cd->address.", ". $cd->country ?> </p>
         </div>
 
     </section>
@@ -49,7 +46,7 @@
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Excepturi, unde!</h4> -->
                                 <p class="text-justify w-80">
-                                    <?php foreach($collegeDetails as $cdd) {echo $cdd->about;} ?>
+                                   <?= $cd->about?>
                                 </p>
 
                                 <!-- <h4 style=" color: #114694 !important">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -96,7 +93,7 @@
                             <div class="container" id="collegeCourses">
                                 <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
                                
-                                 <?php foreach($collegeDetails as $cd){?>
+                                 
                                   <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $cd->d_name?>
@@ -107,7 +104,7 @@
                                        
                                     </ul>
                                 </div>
-                                   <?php }?>
+                                   <?php }}?>
                                 
                                 <!-- </ul> -->
                             </div>
