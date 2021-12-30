@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\CollegeModel;
+use App\Models\CourseModel;
 use App\Models\CareerguideModel;
 use App\Models\UserModel;
 use \Firebase\JWT\JWT;
@@ -20,7 +21,12 @@ class CollegeController extends Controller
         if ( !empty( $country ) ) {
 
             $model = new CollegeModel();
-            $data = $model->where( 'country', $country )->findAll();
+            $data2 = $model->where( 'country', $country )->findAll();
+           $data = $data2[0];
+            // $db = \Config\Database::connect();
+            // $query = $db->query("SELECT course.id as course_id, department.id as d_id, department.name as d_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN level ON course.level_id = level.id WHERE course.id = '$id'");
+            // $data['courseDetailsById'] = $query->getResult();
+
             echo json_encode( [ 'status' => 1, 'data' => $data ] );
         } else {
             return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
