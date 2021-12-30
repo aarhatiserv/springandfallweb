@@ -633,6 +633,9 @@ public function getCoursesClickCountry($country){
 
         // $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
         $model = new CollegeModel();
+        $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
+
+        // $model = new CollegeModel();
         $dmodel = new DepartmentModel();
         $lmodel = new LevelModel();
         $cmodel = new CourseModel();
@@ -649,6 +652,7 @@ public function getCoursesClickCountry($country){
             $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE colleges.country = '".$dataCollege[$i]['country']."' AND department.name = '".$dataDepartment[$i]['name']."' AND level.name = '".$dataLevel[$i]['name']."'");
             array_push($data, $query->getResult()); 
         }
+
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
         $data[ 'similarUniversity' ] = $model->where( 'country = ', $data[ 'collegeDetails' ][ 0 ][ 'country' ] )->findAll( 4 );
