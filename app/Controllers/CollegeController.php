@@ -25,7 +25,7 @@ class CollegeController extends Controller
             $data = array();
             for($i = 0; $i<count($data2); $i++){
                 // $data.push($data2[$i]);
-                array_push($data, $data2[$i]);
+                array_push($data, $data2[$i]['id']);
             }
             
             // $db = \Config\Database::connect();
