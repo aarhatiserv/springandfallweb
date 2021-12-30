@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\CollegeModel;
 use App\Models\CourseModel;
+use App\Models\LevelModel;
 use App\Models\DepartmentModel;
 use App\Models\CareerguideModel;
 use App\Models\UserModel;
