@@ -283,10 +283,13 @@
 
 
                                             <select id="department_id" name="department_id" style="margin-right:50px">
-                                            <option value=""> Select Department</option>
+                                            
                                             <?php if(!empty($courseDetailsById)) {?>
                                                   <option value="<?= $courseDetailsById->d_id?>"><?= $courseDetailsById->d_name?></option>
-                                                  <?php }?>
+                                                  <?php }else{?>
+                                                    <option value=""> Select Department</option>
+                                                    <?php }?>
+
                                                 <?php 
                                             foreach($allDepartmentData as $dd){?>
                                                 <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
