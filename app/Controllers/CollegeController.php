@@ -631,8 +631,8 @@ public function getCoursesClickCountry($country){
         // Capitalize the first letter
         $page = 'college';
 
-        // $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
         // $model = new CollegeModel();
+        // $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
 
 
             // $data.push($data2[$i]);
