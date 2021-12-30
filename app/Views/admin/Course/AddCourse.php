@@ -10,7 +10,7 @@
     <link rel="icon" href="../../fav.ico" type="image/ico">
     <title>Spring & Fall | Admin</title>
 
-    
+
     <!-- Bootstrap -->
     <link href="../../assets/backend/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -50,8 +50,8 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-                  <!-- ------------------------------------------Start Left Nav------------------------ -->
-                  <?php $session = session();?>
+            <!-- ------------------------------------------Start Left Nav------------------------ -->
+            <?php $session = session();?>
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0; text-align: center">
@@ -260,7 +260,8 @@
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -274,7 +275,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -288,7 +290,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -302,7 +305,8 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="../../assets/backend/production/images/img.jpg"
+                                            <span class="image"><img
+                                                    src="../../assets/backend/production/images/img.jpg"
                                                     alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
@@ -356,7 +360,7 @@
                                 </div>
                                 <div class="x_content">
                                     <form action="/admin/addCourse" method="POST">
-                                       <input type="hidden" name="id" value="<?= $college_id?>">
+                                        <input type="hidden" name="id" value="<?= $college_id?>">
                                         <div>
                                             <label for="department" style="margin-right:255px">Department</label>
                                             <label for="level" style="margin-right:242px">Levels</label>
@@ -365,23 +369,21 @@
                                             <br>
 
 
-                                            <select id="department_id" name="department_id" style="margin-right:50px" 
-                                                >
-                                            <?php 
+                                            <select id="department_id" name="department_id" style="margin-right:50px">
+                                                <?php 
                                             foreach($allDepartmentData as $dd){?>
-                                                 <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
-                                            <?php }
+                                                <option value="<?= $dd['id']?>"> <?= $dd['name']?></option>
+                                                <?php }
                                             ?>
 
                                             </select>
 
 
-                                            <select id="level_id" name="level_id" style="margin-right:50px" 
-                                                >
+                                            <select id="level_id" name="level_id" style="margin-right:50px">
                                                 <?php 
                                             foreach($allLevelData as $ld){?>
-                                                 <option value="<?= $ld['id']?>"> <?= $ld['name']?></option>
-                                            <?php }
+                                                <option value="<?= $ld['id']?>"> <?= $ld['name']?></option>
+                                                <?php }
                                             ?>
                                             </select>
 
@@ -397,41 +399,8 @@
                                         </button>
                                         <input type="submit" value="Submit">
                                     </form>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-            <!-- /page content -->
-
-             <!-- page content -->
-             <div class="right_col someclassMax" role="main">
-                <div class="">
-                    <div class="page-title">
-                        <div class="title_left">
-                            <h3>Course
-                                <!-- <small>Some examples to get you started</small> -->
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-
-                    <div class="row">
-
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Course Data
-                                        <!-- <small>Users</small> -->
-                                    </h2>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
+                                    <div class="x_content">
                                     <!-- <button role="button"><a href="/admin/addDepartment"><i class="fa fa-plus"></i> Add
                                             Department</a> </button> -->
                                     <table id="datatable-buttons" class="table table-striped table-bordered"
@@ -458,19 +427,55 @@
                                                 <td><?= $cd->l_name?></td>
                                                 <td><?= $cd->name?></td>
                                                  -->
-                                                 <td><?= $cd['department_id']?></td>
-                                                 <td><?= $cd['level_id']?></td>
-                                                 <td><?= $cd['name']?></td>
+                                                <td><?= $cd['department_id']?></td>
+                                                <td><?= $cd['level_id']?></td>
+                                                <td><?= $cd['name']?></td>
                                                 <td><a href="/admin/editDepartment/<?= $dd['id']?>"><i
-                                                class="fa fa-edit"></i></a> | <a
-                                                onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
-                                                class="fa fa-trash"></i></a></td>
+                                                            class="fa fa-edit"></i></a> | <a
+                                                        onClick="javascript: ConfirmDelete(<?= $dd['id']?>)"><i
+                                                            class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php }}?>
-                                           
+
                                         </tbody>
                                     </table>
                                 </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- page content -->
+            <div class="right_col someclassMax" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Course
+                                <!-- <small>Some examples to get you started</small> -->
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Course Data
+                                        <!-- <small>Users</small> -->
+                                    </h2>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                               
                             </div>
                         </div>
 
@@ -553,4 +558,5 @@
 <script src="../../assets/backend/vendors/jszip/dist/jszip.min.js"></script>
 <script src="../../assets/backend/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="../../assets/backend/vendors/pdfmake/build/vfs_fonts.js"></script>
+
 </html>
