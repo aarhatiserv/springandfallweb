@@ -159,7 +159,7 @@ public function getCoursesClickCountry($country){
     $cmodel = new CourseModel();
     $dataCourse = $cmodel->findAll();
     // $dataCollege = $model->where( 'country', $country )->findAll();
-    $dataCollege = $model->where( 'names', $country )->findAll();
+    $dataCollege = $model->where( 'country', $country )->findAll();
     $dataDepartment = $dmodel->where( 'name', $course )->findAll();
     $dataLevel = $lmodel->where( 'name', $level )->findAll();
 
