@@ -89,7 +89,7 @@ function getCollegeInConsultation(country) {
                                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                             <div class="apply px-5">
                                                 
-                                                <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.id +`)">Apply now</button>
+                                                <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@ function getCollegeWithCountryAndCoursesInConsultation() {
                                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                       <div class="apply px-5">
                                           
-                                          <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.id +`)">Apply now</button>
+                                          <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
                                       </div>
                                   </div>
                               </div>

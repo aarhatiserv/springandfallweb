@@ -14,7 +14,7 @@ class CareerguideModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id', 'firstname', 'lastname', 'user_type', 'requested_for', 'email', 'phone', 'address_1', 'address_2', 'city', 'state', 'pincode', 'highest_qualification', 'highest_qualification_passing_year', 'higher_secondary', 'higher_secondary_passing_year', 'secondary', 'secondary_passing_year', 'college_id', 'image', 'active'];
+	protected $allowedFields        = ['id', 'firstname', 'lastname', 'user_id', 'requested_for', 'email', 'phone', 'address_1', 'address_2', 'city', 'state', 'pincode', 'highest_qualification', 'highest_qualification_passing_year', 'higher_secondary', 'higher_secondary_passing_year', 'secondary', 'secondary_passing_year', 'course_id', 'image', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;
