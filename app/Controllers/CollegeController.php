@@ -369,8 +369,15 @@ public function getCoursesClickCountry($country){
                     $userModel = new UserModel();
                     $userData = $userModel->where( 'id = ', $leadsData[ 0 ][ 'user_id' ] )->findAll();
 
+                    // $collegeModel = new CollegeModel();
+                    // $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
+
+                 
+                    $coursemodel = new CourseModel();
+                    $courseData = $coursemodel->where('id = ',  $leadsData[0]['course_id'])->findAll();
+                   
                     $collegeModel = new CollegeModel();
-                    $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
+                    $collegeData = $collegeModel->where( 'id = ', $courseData[ 0 ][ 'college_id' ] )->findAll();
 
                     $email = \Config\Services::email();
                     $email->setFrom( 'support@springandfall.in', 'Spring and Fall' );
