@@ -110,9 +110,14 @@
                                     <ul class="answer">
                                    
                                     <li><?= $c->l_name?>
-                                <ul>
-                                    <li><?= $c->course_name?></li>
-                                </ul>
+                                    <div class="topic">
+                                    <div class="open">
+                                        <h2 class="question"><?= $c->d_name ?>
+                                        </h2><span class="faq-t"></span>
+                                    </div>
+                                    <ul class="answer">
+                                      <li><?= $c->course_name ?></li>
+                                  </ul>
                                 </li>
                                   
                                     </ul>
