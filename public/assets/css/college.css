@@ -155,7 +155,7 @@
 .open2:hover {
   opacity: 0.7;
 }
-.expanded {
+.expanded2{
   background-color: #f5f5f5;
   transition: all 0.3s ease-in-out;
 }
