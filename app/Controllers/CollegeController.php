@@ -340,19 +340,19 @@ public function getCoursesClickCountry($country){
     public function apply()
  {
         $session = session();
-        $collegeId = $this->request->getVar( 'id' );
+        $courseId = $this->request->getVar( 'id' );
 
         if ( !empty( $session->get( 'token' ) ) ) {
             $data = [
                 'requested_for' => 'career-guide',
-                'user_type' => $session->get( 'userId' ),
-                'college_id' => $collegeId,
+                'user_id' => $session->get( 'userId' ),
+                'course_id' => $courseId,
                 'active' => 1
             ];
             $model = new CareerguideModel();
             $userID = $session->get( 'userId' );
             // $id = $session->get( 'idCareerGuide' );
-            $appliedCollege = $model->where( "college_id = '$collegeId' AND user_type = '$userID'" )->findAll();
+            $appliedCollege = $model->where( "course_id = '$courseId' AND user_id = '$userID'" )->findAll();
             if ( !empty( $appliedCollege ) ) {
                 echo json_encode( [ 'status' => 3, 'message' => 'You Have Already Applied This College' ] );
             } else {
@@ -367,10 +367,10 @@ public function getCoursesClickCountry($country){
                     $leadsData = $model->where( 'id = ', $leadsLastId )->findAll();
 
                     $userModel = new UserModel();
-                    $userData = $userModel->where( 'id = ', $leadsData[ 0 ][ 'user_type' ] )->findAll();
+                    $userData = $userModel->where( 'id = ', $leadsData[ 0 ][ 'user_id' ] )->findAll();
 
                     $collegeModel = new CollegeModel();
-                    $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'college_id' ] )->findAll();
+                    $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
 
                     $email = \Config\Services::email();
                     $email->setFrom( 'support@springandfall.in', 'Spring and Fall' );
@@ -429,6 +429,7 @@ public function getCoursesClickCountry($country){
                 }
             }
         } else {
+            // Change User ID to course id as a guest
             $data = [
                 'firstname' => $session->get( 'careerFirstname' ),
                 'lastname' =>  $session->get( 'careerLastname' ),
@@ -446,8 +447,8 @@ public function getCoursesClickCountry($country){
                 'secondary' => $session->get( 'careerSecondary' ),
                 'secondary_passing_year' => $session->get( 'careerSecondary_passing_year' ),
                 'requested_for' => 'career-guide',
-                'user_type' =>  $session->get( 'careerUserType' ),
-                'college_id' => $collegeId,
+                'user_id' =>  $session->get( 'careerUserType' ),
+                'course_id' => $courseId,
                 'active' => 1
             ];
 
