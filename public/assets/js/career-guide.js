@@ -301,7 +301,7 @@ function getCollegeInCareer(country) {
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                             <div class="apply px-5">
                                 
-                                <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                                <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                             </div>
                         </div>
                     </div>
@@ -383,7 +383,7 @@ function getCourses(course) {
                           <div class="col-md-4 d-flex justify-content-end align-items-center ">
                               <div class="apply px-5">
                                   
-                                  <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                                  <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                               </div>
                           </div>
                       </div>
@@ -442,7 +442,7 @@ function getCourses(course) {
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                             <div class="apply px-5">
                                 
-                                <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                                <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                             </div>
                         </div>
                     </div>
@@ -529,7 +529,7 @@ function getLevel(level) {
                         <div class="col-md-4 d-flex justify-content-end align-items-center ">
                             <div class="apply px-5">
                                 
-                                <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                                <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                             </div>
                         </div>
                     </div>
@@ -589,7 +589,7 @@ function levelAndCountry() {
                       <div class="col-md-4 d-flex justify-content-end align-items-center ">
                           <div class="apply px-5">
                               
-                              <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                              <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                           </div>
                       </div>
                   </div>
@@ -650,7 +650,7 @@ function courseAndLevels() {
                       <div class="col-md-4 d-flex justify-content-end align-items-center ">
                           <div class="apply px-5">
                               
-                              <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                              <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                           </div>
                       </div>
                   </div>
@@ -716,7 +716,7 @@ function countryAndCourseAndLevels() {
                       <div class="col-md-4 d-flex justify-content-end align-items-center ">
                           <div class="apply px-5">
                               
-                              <button class="btn applyNow" onclick="applyForCollegeInConsultation(` + item.course_id +`)">Apply now</button>
+                              <button class="btn applyNow" onclick="applyForCollages(` + item.course_id +`)">Apply now</button>
                           </div>
                       </div>
                   </div>
