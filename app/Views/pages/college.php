@@ -109,12 +109,12 @@
                                     </div>
                                     <ul class="answer">
 
-                                        <div class="topic">
-                                            <div class="open">
-                                                <h2 class="question"><?= $c->l_name ?>
-                                                </h2><span class="faq-t"></span>
+                                        <div class="topic2">
+                                            <div class="open2">
+                                                <h2 class="question2"><?= $c->l_name ?>
+                                                </h2><span class="faq-t2"></span>
                                             </div>
-                                            <ul class="answer">
+                                            <ul class="answer2">
                                                 <li><?= $c->course_name ?></li>
                                             </ul>
                                             </li>
