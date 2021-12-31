@@ -564,7 +564,7 @@ public function getCoursesClickCountry($country){
                     $userData = $userModel->where( 'id = ', $leadsData[ 0 ][ 'user_id' ] )->findAll();
 
                     $coursemodel = new CourseModel();
-                    $courseData = $coursemodel->where('id = ',  $leadsData[0]['course_id']);
+                    $courseData = $coursemodel->where('id = ',  $leadsData[0]['course_id'])->findAll();
                     // $collegeModel = new CollegeModel();
                     // $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
                       // $data.push($data2[$i]);
