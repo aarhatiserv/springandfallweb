@@ -109,7 +109,11 @@
                                     </div>
                                     <ul class="answer">
                                    
-                                    <li><?= $c->l_name?></li>
+                                    <li><?= $c->l_name?>
+                                <ul>
+                                    <li><?= $c->course_name?></li>
+                                </ul>
+                                </li>
                                   
                                     </ul>
                                 </div>

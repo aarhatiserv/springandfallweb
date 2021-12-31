@@ -668,7 +668,7 @@ public function getCoursesClickCountry($country){
         $data[ 'collegeDetails' ] = $model->where( 'id = ', $id )->findAll();
     
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT DISTINCT course.id as course_id, department.id as d_id, department.name as d_name, level.id as l_id, level.name as l_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '".$data[ 'collegeDetails' ][ 0 ][ 'id' ]."'");
+            $query = $db->query("SELECT DISTINCT course.id as course_id, course.name as course_name, department.id as d_id, department.name as d_name, level.id as l_id, level.name as l_name FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.college_id = '".$data[ 'collegeDetails' ][ 0 ][ 'id' ]."'");
             $data['courses'] =  $query->getResult(); 
 
         //  print_r( $data[ 'collegeDetails' ][ 0 ][ 'country' ] );
