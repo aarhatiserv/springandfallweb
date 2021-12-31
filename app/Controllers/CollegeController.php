@@ -565,12 +565,14 @@ public function getCoursesClickCountry($country){
 
                     $coursemodel = new CourseModel();
                     $courseData = $coursemodel->where('id = ',  $leadsData[0]['course_id'])->findAll();
-                    // $collegeModel = new CollegeModel();
-                    // $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
+                   
+                    $collegeModel = new CollegeModel();
+                    $collegeData = $collegeModel->where( 'id = ', $courseData[ 0 ][ 'college_id' ] )->findAll();
                       // $data.push($data2[$i]);
                     //  $db = \Config\Database::connect();
                     //  $query = $db->query("SELECT colleges.id as college_id, colleges.names as college_name, colleges.country as country FROM colleges WHERE colleges.id = '".$courseData[0]['college_id']."'");
-                    //  $collegeData = $query->getResult();
+                    
+                    // $collegeData = $query->getResult();
                     // $db = \Config\Database::connect();
                     // $query = $db->query("SELECT DISTINCT  colleges.id as college_id, colleges.names as college_name, colleges.country as country FROM course INNER JOIN colleges ON course.college_id = colleges.id  WHERE course.id = '".$leadsData[0]['course_id']."'");
                     // $collegeData = $query->getResult(); 
