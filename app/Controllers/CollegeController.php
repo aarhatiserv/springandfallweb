@@ -566,7 +566,7 @@ public function getCoursesClickCountry($country){
                     // $collegeModel = new CollegeModel();
                     // $collegeData = $collegeModel->where( 'id = ', $leadsData[ 0 ][ 'course_id' ] )->findAll();
                     $db = \Config\Database::connect();
-                    $query = $db->query("SELECT DISTINCT  colleges.id as college_id, colleges.names as college_name, colleges.country as country FROM course INNER JOIN colleges ON course.college_id = colleges.id  WHERE course.id = ' $leadsLastId'");
+                    $query = $db->query("SELECT DISTINCT  colleges.id as college_id, colleges.names as college_name, colleges.country as country FROM course INNER JOIN colleges ON course.college_id = colleges.id  WHERE course.id = '".$leadsLastId[0]['id']."'");
                     $collegeData = $query->getResult(); 
 
                     $email = \Config\Services::email();
@@ -574,7 +574,7 @@ public function getCoursesClickCountry($country){
                     $email->setTo( $userData[ 0 ][ 'email' ] );
                     $email->setSubject( 'Spring and Fall College Apply by - ' . $userData[ 0 ][ 'name' ] . '' );
 
-                    $data = [ 'username' => $userData[ 0 ][ 'name' ], 'phone' => $userData[ 0 ][ 'phone' ], 'email' =>$userData[ 0 ][ 'email' ], 'collegeName' =>$collegeData[ 0 ][ 'college_name' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
+                    $data = [ 'username' => $userData[ 0 ][ 'name' ], 'phone' => $userData[ 0 ][ 'phone' ], 'email' =>$userData[ 0 ][ 'email' ], 'collegeName' =>$collegeData[ 0 ][ 'college_name' ], 'country' =>$collegeData[ 0 ][0][ 'country' ] ];
                     $body = view( 'templates/emailForApplyColleges', $data );
                     $email->setMessage( $body );
 
