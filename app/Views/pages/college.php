@@ -95,35 +95,35 @@
                         <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                             <div class="container" id="collegeCourses">
                                 <!-- <ul class="list-group list-group-flush " id="collegeCourses"> -->
-                               
-                                    <?php 
+
+                                <?php 
                                 
                                   foreach($courses as $c){ 
                                      
 
                                       ?>
-                                  <div class="topic">
+                                <div class="topic">
                                     <div class="open">
                                         <h2 class="question"><?= $c->d_name ?>
                                         </h2><span class="faq-t"></span>
                                     </div>
                                     <ul class="answer">
-                                   
-                                    <li><?= $c->l_name?>
-                                    <div class="topic">
-                                    <div class="open">
-                                        <h2 class="question"><?= $c->d_name ?>
-                                        </h2><span class="faq-t"></span>
-                                    </div>
-                                    <ul class="answer">
-                                      <li><?= $c->course_name ?></li>
-                                  </ul>
-                                </li>
-                                  
+
+                                        <div class="topic">
+                                            <div class="open">
+                                                <h2 class="question"><?= $c->l_name ?>
+                                                </h2><span class="faq-t"></span>
+                                            </div>
+                                            <ul class="answer">
+                                                <li><?= $c->course_name ?></li>
+                                            </ul>
+                                            </li>
+                                        </div>
+
                                     </ul>
                                 </div>
-                                   
-                              <?php } ?>
+
+                                <?php } ?>
 
 
                                 <!-- </ul> -->
