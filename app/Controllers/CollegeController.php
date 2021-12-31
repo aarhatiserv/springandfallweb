@@ -193,7 +193,7 @@ public function getCoursesClickCountry($country){
         $session->set( 'careerHigherSecondary_passing_year', $this->request->getVar( 'higherSecondaryYear' ) );
         $session->set( 'careerSecondary', $this->request->getVar( 'secondary' ) );
         $session->set( 'careerSecondary_passing_year', $this->request->getVar( 'secondaryPassingYear' ) );
-        $session->set( 'careerUserType', 'guest' );
+        // $session->set( 'careerUserType', 'guest' );
 
         // register guest to parmanent
         $userModelGuest = new UserModel();
@@ -344,6 +344,21 @@ public function getCoursesClickCountry($country){
 
         if ( !empty( $session->get( 'token' ) ) ) {
             $data = [
+                'firstname' => $session->get( 'careerFirstname' ),
+                'lastname' =>  $session->get( 'careerLastname' ),
+                'email' => $session->get( 'careerEmail' ),
+                'phone' => $session->get( 'careerPhone' ),
+                'address_1' => $session->get( 'careerAddress_1' ),
+                'address_2' => $session->get( 'careerAddress_2' ),
+                'city' => $session->get( 'careerCity' ),
+                'state' => $session->get( 'careerState' ),
+                'pincode' => $session->get( 'careerPincode' ),
+                'highest_qualification' => $session->get( 'careerHighest_qualification' ),
+                'highest_qualification_passing_year' => $session->get( 'careerHighest_qualification_passing_year' ),
+                'higher_secondary' => $session->get( 'careerHigherSecondary' ),
+                'higher_secondary_passing_year' => $session->get( 'careerHigherSecondary_passing_year' ),
+                'secondary' => $session->get( 'careerSecondary' ),
+                'secondary_passing_year' => $session->get( 'careerSecondary_passing_year' ),
                 'requested_for' => 'career-guide',
                 'user_id' => $session->get( 'userId' ),
                 'course_id' => $courseId,
@@ -437,103 +452,102 @@ public function getCoursesClickCountry($country){
             }
         } else {
             // Change User ID to course id as a guest
-            $data = [
-                'firstname' => $session->get( 'careerFirstname' ),
-                'lastname' =>  $session->get( 'careerLastname' ),
-                'email' => $session->get( 'careerEmail' ),
-                'phone' => $session->get( 'careerPhone' ),
-                'address_1' => $session->get( 'careerAddress_1' ),
-                'address_2' => $session->get( 'careerAddress_2' ),
-                'city' => $session->get( 'careerCity' ),
-                'state' => $session->get( 'careerState' ),
-                'pincode' => $session->get( 'careerPincode' ),
-                'highest_qualification' => $session->get( 'careerHighest_qualification' ),
-                'highest_qualification_passing_year' => $session->get( 'careerHighest_qualification_passing_year' ),
-                'higher_secondary' => $session->get( 'careerHigherSecondary' ),
-                'higher_secondary_passing_year' => $session->get( 'careerHigherSecondary_passing_year' ),
-                'secondary' => $session->get( 'careerSecondary' ),
-                'secondary_passing_year' => $session->get( 'careerSecondary_passing_year' ),
-                'requested_for' => 'career-guide',
-                'user_id' =>  $session->get( 'careerUserType' ),
-                'course_id' => $courseId,
-                'active' => 1
-            ];
+            // $data = [
+            //     'firstname' => $session->get( 'careerFirstname' ),
+            //     'lastname' =>  $session->get( 'careerLastname' ),
+            //     'email' => $session->get( 'careerEmail' ),
+            //     'phone' => $session->get( 'careerPhone' ),
+            //     'address_1' => $session->get( 'careerAddress_1' ),
+            //     'address_2' => $session->get( 'careerAddress_2' ),
+            //     'city' => $session->get( 'careerCity' ),
+            //     'state' => $session->get( 'careerState' ),
+            //     'pincode' => $session->get( 'careerPincode' ),
+            //     'highest_qualification' => $session->get( 'careerHighest_qualification' ),
+            //     'highest_qualification_passing_year' => $session->get( 'careerHighest_qualification_passing_year' ),
+            //     'higher_secondary' => $session->get( 'careerHigherSecondary' ),
+            //     'higher_secondary_passing_year' => $session->get( 'careerHigherSecondary_passing_year' ),
+            //     'secondary' => $session->get( 'careerSecondary' ),
+            //     'secondary_passing_year' => $session->get( 'careerSecondary_passing_year' ),
+            //     'requested_for' => 'career-guide',
+            //     'user_id' =>  $session->get( 'careerUserType' ),
+            //     'course_id' => $courseId,
+            //     'active' => 1
+            // ];
 
-            $model = new CareerguideModel();
-            // $id = $session->get( 'idCareerGuide' );
-            if ( $model->insert( $data ) ) {
-                $response = [
-                    'status' => 200,
-                    'messages' => 'Successfully Career Details Added',
-                    'data' => [],
-                ];
+            // $model = new CareerguideModel();
+            // // $id = $session->get( 'idCareerGuide' );
+            // if ( $model->insert( $data ) ) {
+            //     $response = [
+            //         'status' => 200,
+            //         'messages' => 'Successfully Career Details Added',
+            //         'data' => [],
+            //     ];
 
-                $collegeModel = new CollegeModel();
-                $collegeData = $collegeModel->where( 'id = ', $collegeId )->findAll();
+            //     $collegeModel = new CollegeModel();
+            //     $collegeData = $collegeModel->where( 'id = ', $collegeId )->findAll();
 
-                // mail sening code
+            //     // mail sening code
 
-                $email = \Config\Services::email();
-                $email->setFrom( 'support@springandfall.in', 'Spring and Fall' );
-                $email->setTo( $session->get( 'careerEmail' ) );
-                $email->setSubject( 'Spring and Fall College Apply by - ' . $session->get( 'careerFirstname' ) . '' );
-                // $email->setMessage( '<p>Name :' . $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ) . '<br> Contact no :' . $session->get( 'careerPhone' ) . '<br> email :' . $session->get( 'careerEmail' ) . ' </p>' );
-                $data = [ 'username' => $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ), 'phone' => $session->get( 'careerPhone' ), 'email' =>$session->get( 'careerEmail' ), 'collegeName' =>$collegeData[ 0 ][ 'names' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
-                $body = view( 'templates/emailForApplyColleges', $data );
-                $email->setMessage( $body );
+            //     $email = \Config\Services::email();
+            //     $email->setFrom( 'support@springandfall.in', 'Spring and Fall' );
+            //     $email->setTo( $session->get( 'careerEmail' ) );
+            //     $email->setSubject( 'Spring and Fall College Apply by - ' . $session->get( 'careerFirstname' ) . '' );
+            //     // $email->setMessage( '<p>Name :' . $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ) . '<br> Contact no :' . $session->get( 'careerPhone' ) . '<br> email :' . $session->get( 'careerEmail' ) . ' </p>' );
+            //     $data = [ 'username' => $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ), 'phone' => $session->get( 'careerPhone' ), 'email' =>$session->get( 'careerEmail' ), 'collegeName' =>$collegeData[ 0 ][ 'names' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
+            //     $body = view( 'templates/emailForApplyColleges', $data );
+            //     $email->setMessage( $body );
 
-                if ( $email->send() ) {
-                    // --------------------------------------------------
-                    $email1 = \Config\Services::email();
-                    $email1->setFrom( 'support@springandfall.in', 'Spring and Fall' );
-                    $email1->setTo( 'springnfall.20@gmail.com' );
-                    $email1->setSubject( 'Spring and Fall College Apply by - ' . $session->get( 'careerFirstname' ) . '' );
-                    // $email->setMessage( '<p>Name :' . $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ) . '<br> Contact no :' . $session->get( 'careerPhone' ) . '<br> email :' . $session->get( 'careerEmail' ) . ' </p>' );
-                    $data1 = [ 'username' => $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ), 'phone' => $session->get( 'careerPhone' ), 'email' =>$session->get( 'careerEmail' ), 'collegeName' =>$collegeData[ 0 ][ 'names' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
-                    $body = view( 'templates/emailForApplyColleges', $data1 );
+            //     if ( $email->send() ) {
+            //         // --------------------------------------------------
+            //         $email1 = \Config\Services::email();
+            //         $email1->setFrom( 'support@springandfall.in', 'Spring and Fall' );
+            //         $email1->setTo( 'springnfall.20@gmail.com' );
+            //         $email1->setSubject( 'Spring and Fall College Apply by - ' . $session->get( 'careerFirstname' ) . '' );
+            //         // $email->setMessage( '<p>Name :' . $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ) . '<br> Contact no :' . $session->get( 'careerPhone' ) . '<br> email :' . $session->get( 'careerEmail' ) . ' </p>' );
+            //         $data1 = [ 'username' => $session->get( 'careerFirstname' ).$session->get( 'careerLastname' ), 'phone' => $session->get( 'careerPhone' ), 'email' =>$session->get( 'careerEmail' ), 'collegeName' =>$collegeData[ 0 ][ 'names' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
+            //         $body = view( 'templates/emailForApplyColleges', $data1 );
 
-                    if ( $email1->send() ) {
-                        $response = [
-                            'status' => 200,
-                            'error' => false,
-                            'messages' => 'Please check your email inbox',
-                            'data' => []
-                        ];
-                        // echo json_encode( [ 'status' => 1, 'message' => 'Email send to your emailID and Please Verify Your Email' ] );
-                    } else {
-                        $response = [
-                            'status' => 200,
-                            'error' => true,
-                            'messages' => 'something went wrong',
-                            'data' => []
-                        ];
-                        // echo json_encode( [ 'status' => 1, 'message' => 'Email Not send to your emailID' ] );
-                    }
+            //         if ( $email1->send() ) {
+            //             $response = [
+            //                 'status' => 200,
+            //                 'error' => false,
+            //                 'messages' => 'Please check your email inbox',
+            //                 'data' => []
+            //             ];
+            //             // echo json_encode( [ 'status' => 1, 'message' => 'Email send to your emailID and Please Verify Your Email' ] );
+            //         } else {
+            //             $response = [
+            //                 'status' => 200,
+            //                 'error' => true,
+            //                 'messages' => 'something went wrong',
+            //                 'data' => []
+            //             ];
+            //             // echo json_encode( [ 'status' => 1, 'message' => 'Email Not send to your emailID' ] );
+            //         }
 
-                    // --------------------------------------------------
+            //         // --------------------------------------------------
 
-                    echo json_encode( [ 'status' => 1, 'message' => "Your Query submitted, We'll callback soon.!!" ] );
+            //         echo json_encode( [ 'status' => 1, 'message' => "Your Query submitted, We'll callback soon.!!" ] );
 
-                } else {
-                    $data = $email->printDebugger( [ 'headers' ] );
-                    // print_r( $data );
-                    echo json_encode( [ 'status' => 2, 'message' => 'Your Query Submitted, but mail not send' ] );
+            //     } else {
+            //         $data = $email->printDebugger( [ 'headers' ] );
+            //         // print_r( $data );
+            //         echo json_encode( [ 'status' => 2, 'message' => 'Your Query Submitted, but mail not send' ] );
 
-                }
+            //     }
 
-            } else {
+            // } else {
 
-                $response = [
-                    'status' => 500,
-                    'error' => true,
-                    'messages' => 'Failed to add Hot Courses',
-                    'data' => [],
-                ];
-                echo json_encode( [ 'status' => 2, 'message' => 'please try again later' ] );
-            }
+            //     $response = [
+            //         'status' => 500,
+            //         'error' => true,
+            //         'messages' => 'Failed to add Hot Courses',
+            //         'data' => [],
+            //     ];
+            //     echo json_encode( [ 'status' => 2, 'message' => 'please try again later' ] );
+            // }
+            echo json_encode( [ 'status' => 2, 'message' => 'Please signin or signup, then you can apply college' ] );
         }
-        //  echo json_encode( [ 'status' => 1, 'message' => 'call'.$this->firstname ] );
-        // }
     }
 
     public function applyForCollegeInConsultation() {
