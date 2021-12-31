@@ -582,7 +582,7 @@ public function getCoursesClickCountry($country){
                     $email->setTo( $userData[ 0 ][ 'email' ] );
                     $email->setSubject( 'Spring and Fall College Apply by - ' . $userData[ 0 ][ 'name' ] . '' );
 
-                    $data = [ 'username' => $userData[ 0 ][ 'name' ], 'phone' => $userData[ 0 ][ 'phone' ], 'email' =>$userData[ 0 ][ 'email' ], 'collegeName' =>$collegeData[ 0 ][0][ 'college_name' ], 'country' =>$collegeData[ 0 ][0][ 'country' ] ];
+                    $data = [ 'username' => $userData[ 0 ][ 'name' ], 'phone' => $userData[ 0 ][ 'phone' ], 'email' =>$userData[ 0 ][ 'email' ], 'collegeName' =>$collegeData[ 0 ][ 'names' ], 'country' =>$collegeData[ 0 ][ 'country' ] ];
                     $body = view( 'templates/emailForApplyColleges', $data );
                     $email->setMessage( $body );
 
