@@ -46,10 +46,8 @@
             <div class="col-md-6 mt-1 pl-4">
                 <h1 class="career-guide-text mt-3">CAREER GUIDE</h1>
                 <p class="pb-3 pt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-                    Ut enim ad minim veniam,<br> quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat.
+                Know where you belong.
+                Click to know all the potential universities and college that you can go with your own chosen courses.
                 </p>
                 <button class="btn col-6 get-started flot-right" id="getStarted" role="button">Get Started</button>
             </div>
