@@ -51,7 +51,7 @@ class CollegeController extends Controller
         for($i = 0; $i<count($dataCollege); $i++){
             // $data.push($data2[$i]);
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE department.name = '".$dataDepartment[$i]['id']."'");
+            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.department_id = '".$dataDepartment[$i]['id']."'");
             array_push($data, $query->getResult()); 
         }
         // getCoursesClickCountry($data);
@@ -79,7 +79,7 @@ public function getCoursesClickCountry($country){
     for($i = 0; $i<count($dataCourse); $i++){
         // $data.push($data2[$i]);
         $db = \Config\Database::connect();
-        $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE department.name = '".$dataDepartment[$i]['name']."'");
+        $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.department_id = '".$dataDepartment[$i]['id']."'");
         array_push($data, $query->getResult()); 
     }
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
@@ -99,7 +99,7 @@ public function getCoursesClickCountry($country){
     for($i = 0; $i<count($dataCourse); $i++){
         // $data.push($data2[$i]);
         $db = \Config\Database::connect();
-        $query = $db->query("SELECT DISTINCT  course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE level.name = '".$dataLevel[$i]['name']."'");
+        $query = $db->query("SELECT DISTINCT  course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.level_id = '".$dataLevel[$i]['id']."'");
         array_push($data, $query->getResult()); 
     }
         echo json_encode( [ 'status' => 1, 'data' => $data ] );
@@ -119,7 +119,7 @@ public function getCoursesClickCountry($country){
     for($i = 0; $i<count($dataCollege); $i++){
         // $data.push($data2[$i]);
         $db = \Config\Database::connect();
-        $query = $db->query("SELECT DISTINCT  course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE level.name = '".$dataLevel[$i]['name']."'");
+        $query = $db->query("SELECT DISTINCT  course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.level_id = '".$dataLevel[$i]['id']."'");
         array_push($data, $query->getResult()); 
     }
 
@@ -142,7 +142,7 @@ public function getCoursesClickCountry($country){
         for($i = 0; $i<count($dataCollege); $i++){
             // $data.push($data2[$i]);
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE level.name = '".$dataLevel[$i]['name']."' AND department.name = '".$dataDepartment[$i]['name']."'");
+            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.level_id = '".$dataLevel[$i]['id']."' AND course.department_id = '".$dataDepartment[$i]['id']."'");
             array_push($data, $query->getResult()); 
         }
     
