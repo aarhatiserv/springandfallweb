@@ -216,7 +216,7 @@ class CollegeController extends Controller
             "country" => "required",
             "address" => "required",
             "about" => "required",
-            "offers" => "required",
+            // "offers" => "required",
             // "course" => "required",
             // "level" => "required",
             // "file" => "required",
@@ -238,9 +238,9 @@ class CollegeController extends Controller
             "about" => [
                 "required" => "About is required",
             ],
-            "offers" => [
-                "required" => "Offers is required",
-            ],
+            // "offers" => [
+            //     "required" => "Offers is required",
+            // ],
             // "course" => [
             //     "required" => "Course is required",
             // ],
