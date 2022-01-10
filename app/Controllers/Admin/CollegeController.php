@@ -160,6 +160,16 @@ class CollegeController extends Controller
             $substring_index6 = stripos($email, "<script>");
             $substring_index7 = stripos($about, "<script>");
             $substring_index8 = stripos($offers, "<script>");
+
+            $substring_index9 = stripos($collegeName, "<table>");
+            $substring_index10 = stripos($country, "<table>");
+            $substring_index11 = stripos($countryRank, "<table>");
+            $substring_index12 = stripos($globalRank, "<table>");
+            $substring_index13 = stripos($address, "<table>");
+            $substring_index14 = stripos($url, "<table>");
+            $substring_index15 = stripos($email, "<table>");
+            $substring_index16 = stripos($about, "<table>");
+            $substring_index17 = stripos($offers, "<table>");
  
             if(($substring_index !== false)
             || ($substring_index1 !== false)
@@ -170,6 +180,15 @@ class CollegeController extends Controller
             ||($substring_index6 !== false)
             ||($substring_index7 !== false)
             ||($substring_index8 !== false)
+            || ($substring_index9 !== false)
+            ||($substring_index10 !== false)
+            ||($substring_index11 !== false)
+            ||($substring_index12 !== false)
+            ||($substring_index13 !== false)
+            ||($substring_index14 !== false)
+            ||($substring_index15 !== false)
+            ||($substring_index16 !== false)
+            ||($substring_index17 !== false)
             ) {
                 return redirect()->to('https://springandfall.in/admin/colleges');
             }else{
@@ -327,7 +346,57 @@ class CollegeController extends Controller
             //  {  
             //     $ml .= $ml1.",";  
             //  }  
+            $collegeName =  $this->request->getVar("collegeName"); 
+            $country = $this->request->getVar("country");
+            $countryRank = $this->request->getVar("countryRank");
+            $globalRank = $this->request->getVar("globalRank");
+            $address = $this->request->getVar("address");
+            $url = $this->request->getVar("url");
+            $email = $this->request->getVar("email");
+            $about = $this->request->getVar("about");
+            $offers = $this->request->getVar("offers");
 
+            $substring_index = stripos($collegeName, "<script>");
+            $substring_index1 = stripos($country, "<script>");
+            $substring_index2 = stripos($countryRank, "<script>");
+            $substring_index3 = stripos($globalRank, "<script>");
+            $substring_index4 = stripos($address, "<script>");
+            $substring_index5 = stripos($url, "<script>");
+            $substring_index6 = stripos($email, "<script>");
+            $substring_index7 = stripos($about, "<script>");
+            $substring_index8 = stripos($offers, "<script>");
+
+            $substring_index9 = stripos($collegeName, "<table>");
+            $substring_index10 = stripos($country, "<table>");
+            $substring_index11 = stripos($countryRank, "<table>");
+            $substring_index12 = stripos($globalRank, "<table>");
+            $substring_index13 = stripos($address, "<table>");
+            $substring_index14 = stripos($url, "<table>");
+            $substring_index15 = stripos($email, "<table>");
+            $substring_index16 = stripos($about, "<table>");
+            $substring_index17 = stripos($offers, "<table>");
+ 
+            if(($substring_index !== false)
+            || ($substring_index1 !== false)
+            ||($substring_index2 !== false)
+            ||($substring_index3 !== false)
+            ||($substring_index4 !== false)
+            ||($substring_index5 !== false)
+            ||($substring_index6 !== false)
+            ||($substring_index7 !== false)
+            ||($substring_index8 !== false)
+            || ($substring_index9 !== false)
+            ||($substring_index10 !== false)
+            ||($substring_index11 !== false)
+            ||($substring_index12 !== false)
+            ||($substring_index13 !== false)
+            ||($substring_index14 !== false)
+            ||($substring_index15 !== false)
+            ||($substring_index16 !== false)
+            ||($substring_index17 !== false)
+            ) {
+                return redirect()->to('https://springandfall.in/admin/colleges');
+            }else{
             $model = new CollegeModel();
 
             $id = $this->request->getVar("id");
@@ -368,6 +437,7 @@ class CollegeController extends Controller
                 ];
             }
         }
+    }
     }
 
     public function deleteCollege($id)
