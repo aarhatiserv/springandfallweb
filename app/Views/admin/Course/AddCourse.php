@@ -305,7 +305,7 @@
                                 <div class="x_content">
                                 <?php if(empty($courseDetailsById)) {?>
                                     <form action="/admin/addCourse" method="POST">
-                                    <input type="hidden" name="id" value="<?= $college_id?>">
+                                       <input type="hidden" name="id" value="<?= $college_id?>">
                                         <?php }else{ ?>
 
                                             <form action="/admin/editCourse" method="POST">
