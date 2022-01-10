@@ -421,38 +421,17 @@
                                         <br>
 
                                         <div>
-                                            <label for="offers" style="margin-right:255px">Offers</label><label
+                                            <label for="offers" style="margin-right:255px">Offers</label>
+                                            <!-- <label
                                                 for="course" style="margin-right:242px">Courses</label> <label
-                                                for="level">Levels</label><br>
+                                                for="level">Levels</label> -->
+                                                <br>
                                             <input type="text" id="offers" name="offers" placeholder="Offers..."
                                                 style="margin-right:50px" value="<?= $collegeDatabyId[0]['offers']?>"
                                                 required />
 
 
-                                            <select id="course" name="course[]" style="margin-right:50px" multiple required>
-                                                <option value="<?= $collegeDatabyId[0]['courses']?>" selected>
-                                                    <?= $collegeDatabyId[0]['courses']?>
-                                                </option>
-                                                
-                                                <option value="Engineering">Engineering</option>
-                                                <option value="Management">Management</option>
-                                                <option value="Medical">Medical</option>
-                                                <option value="Design">Design</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-
-
-                                            <select id="level" name="level[]" style="margin-right:50px" multiple required>
-                                                <option value="<?= $collegeDatabyId[0]['levels']?>" selected>
-                                                    <?= $collegeDatabyId[0]['levels']?>
-                                                </option>
-                                                
-                                                <option value="Undergraduate">Under Graduate</option>
-                                                <option value="PostGraduate">Post Graduate</option>
-                                                <option value="Certification">Certification</option>
-                                                <option value="Diploma">Diploma</option>
-                                                <option value="ExecutiveCourse">Executive Course</option>
-                                            </select>
+                                           
                                         </div>
                                         <br>
                                         <div>
