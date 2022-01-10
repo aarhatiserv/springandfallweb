@@ -428,7 +428,7 @@
                                                 <br>
                                             <input type="text" id="offers" name="offers" placeholder="Offers..."
                                                 style="margin-right:50px" value="<?= $collegeDatabyId[0]['offers']?>"
-                                                required />
+                                                 />
 
 
                                            
