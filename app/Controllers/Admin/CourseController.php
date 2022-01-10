@@ -89,7 +89,7 @@ class CourseController extends Controller
             
             $data = [
                 "name" => $course,
-                "college_id" => $id,
+                // "college_id" => $id,
                 "department_id" => $department_id,
                 "level_id" => $level_id,
                 "active"=>1
