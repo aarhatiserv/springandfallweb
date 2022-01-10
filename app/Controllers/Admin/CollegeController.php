@@ -175,8 +175,8 @@ class CollegeController extends Controller
                         'data' => [],
                     ];
 
-                    return redirect()->to('https://springandfall.in/admin/colleges');
-                    // return redirect()->to('http://localhost:8080/admin/colleges');
+                    // return redirect()->to('https://springandfall.in/admin/colleges');
+                    return redirect()->to('http://localhost:8080/admin/colleges');
 
                 } else {
 
@@ -317,8 +317,8 @@ class CollegeController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                return redirect()->to('https://springandfall.in/admin/colleges');
-                // return redirect()->to('http://localhost:8080/admin/colleges');
+                // return redirect()->to('https://springandfall.in/admin/colleges');
+                return redirect()->to('http://localhost:8080/admin/colleges');
             } else {
 
                 $response = [
@@ -335,6 +335,9 @@ class CollegeController extends Controller
     {
         $session = session();
 		if(!empty($session->get('username'))){
+
+            $cmodel = new CourseModel();
+            $cmodel->where('college_id = ', $id)->delete();
 
             $model = new CollegeModel();
             $model->where('id = ', $id)->delete();
