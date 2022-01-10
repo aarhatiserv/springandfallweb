@@ -337,6 +337,10 @@ class CollegeController extends Controller
         $session = session();
 		if(!empty($session->get('username'))){
 
+
+            $cmodel = new CourseModel();
+            $cmodel->where('college_id = ', $id)->delete();
+
             $model = new CollegeModel();
             $model->where('id = ', $id)->delete();
             return redirect()->to('https://springandfall.in/admin/colleges');
