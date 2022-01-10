@@ -141,6 +141,43 @@ class CollegeController extends Controller
             //     $ms .= $ms1.",";  
             //  }  
 
+            $collegeName =  $this->request->getVar("collegeName"); 
+            $country = $this->request->getVar("country");
+            $countryRank = $this->request->getVar("countryRank");
+            $globalRank = $this->request->getVar("globalRank");
+            $address = $this->request->getVar("address");
+            $url = $this->request->getVar("url");
+            $email = $this->request->getVar("email");
+            $about = $this->request->getVar("about");
+            $offers = $this->request->getVar("offers");
+
+            $substring_index = stripos($collegeName, "<script>");
+            $substring_index1 = stripos($country, "<script>");
+            $substring_index2 = stripos($countryRank, "<script>");
+            $substring_index3 = stripos($globalRank, "<script>");
+            $substring_index4 = stripos($address, "<script>");
+            $substring_index5 = stripos($url, "<script>");
+            $substring_index6 = stripos($email, "<script>");
+            $substring_index7 = stripos($about, "<script>");
+            $substring_index8 = stripos($offers, "<script>");
+ 
+            if(($substring_index !== false)
+            || ($substring_index1 !== false)
+            ||($substring_index2 !== false)
+            ||($substring_index3 !== false)
+            ||($substring_index4 !== false)
+            ||($substring_index5 !== false)
+            ||($substring_index6 !== false)
+            ||($substring_index7 !== false)
+            ||($substring_index8 !== false)
+            ) {
+                return redirect()->to('https://springandfall.in/admin/colleges');
+            }else{
+
+            
+           
+         
+
             $model = new CollegeModel();
             $data = [
                 "names" => $this->request->getVar("collegeName"),
@@ -190,6 +227,7 @@ class CollegeController extends Controller
                 }
             // }
         }
+    }
     }
 
     public function editCollege($id)
