@@ -21,17 +21,17 @@ class CollegeController extends Controller
     public function getColleges( $country )
  {
         
+     $db = \Config\Database::connect();
             $model = new CollegeModel();
             $data2 = $model->where( 'country = ', $country )->findAll();
-            // $data = array();
-            // for($i = 0; $i<count($data2); $i++){
-            //     // $data.push($data2[$i]);
-            //     $db = \Config\Database::connect();
-            //     $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
-            //     array_push($data, $query->getResult()); 
-            // }
+            $data = array();
+            for($i = 0; $i<count($data2); $i++){
+                // $data.push($data2[$i]);
+                $query = $db->query("SELECT DISTINCT  department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.college_id = '".$data2[$i]['id']."'");
+                array_push($data, $query->getResult()); 
+            }
 
-            echo json_encode( [ 'status' => 1, 'data' => $data2] );
+            echo json_encode( [ 'status' => 1, 'data' => $data] );
     }
 
     public function getCollegesWithCourses( $country, $course )
