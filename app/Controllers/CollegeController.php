@@ -20,8 +20,7 @@ class CollegeController extends Controller
 
     public function getColleges( $country )
  {
-        if ( !empty( $country ) ) {
-
+        
             $model = new CollegeModel();
             $data2 = $model->where( 'country = ', $country )->findAll();
             $data = array();
@@ -33,10 +32,6 @@ class CollegeController extends Controller
             }
 
             echo json_encode( [ 'status' => 1, 'data' => $data] );
-        } else {
-            return redirect()->to( 'https://springandfall.in/university-or-college-selection' );
-            // return redirect()->to( 'http://localhost:8080/consultation' );
-        }
     }
 
     public function getCollegesWithCourses( $country, $course )
