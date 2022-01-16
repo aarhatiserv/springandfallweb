@@ -106,7 +106,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                                 alt="education_spring" width="640" height="360" title="education_spring">
                                 <p class="card-title">EDUCATION <br>
                                 CONSULTATION</p>
-                                <a class="text-decoration-none" href="consultation"> <p class="card-text zoom ">University/ College Selection</p></a>
+                                <a class="text-decoration-none" href="<?= base_url() ?>/university-or-college-selection"> <p class="card-text zoom ">University/ College Selection</p></a>
                         </div>
                     
                 </div>
