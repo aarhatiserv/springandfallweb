@@ -23,10 +23,10 @@ class Pages extends Controller
         $pagesModel = new PagesModel();
         $pages_data = $pagesModel->where('name', $page)->findAll();
         // print_r($pages_data[0]['id']);
-        
+
         $sectionModel = new SectionsModel();
         $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
-        
+
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
 
@@ -66,9 +66,9 @@ class Pages extends Controller
         $pagesModel = new PagesModel();
         $pages_data = $pagesModel->where('name', $page)->find();
 
-        if($pages_data){
-        $sectionModel = new SectionsModel();
-        $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
+        if ($pages_data) {
+            $sectionModel = new SectionsModel();
+            $data['sectionData'] = $sectionModel->where('pages_id', $pages_data[0]['id'])->findAll();
         }
         $reviewModel = new ReviewModel();
         $data['review'] = $reviewModel->findAll();
@@ -78,12 +78,11 @@ class Pages extends Controller
 
         $userModel = new UserModel();
         $data['userDetails'] = $userModel->where('id', $session->get('userId'))->findAll();
-        
+
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
         echo view('templates/footer', $data);
-    
-}
+    }
 
     public function testdata()
     {
@@ -128,7 +127,7 @@ class Pages extends Controller
             $email = \Config\Services::email();
             $email->setFrom('support@springandfall.in', 'Spring and Fall');
             $email->setTo('aarhatiserv@gmail.com');
-            // $email->setCC('r3ddy03@gmail.com');
+            $email->setCC('r3ddy03@gmail.com');
             // $email->setBCC('them@their-example.com');
             // $tdata = $this->request->getRawInput();
 
@@ -147,7 +146,6 @@ class Pages extends Controller
                 $data = $email->printDebugger(['headers']);
                 // print_r($data);
                 echo json_encode(["status" => 2, "message" => "please try again later"]);
-                
             }
             // var_dump($request->getRawInput());
         } else {
@@ -156,7 +154,7 @@ class Pages extends Controller
     }
 
 
-// For flaf-section routes send to consultation page
+    // For flaf-section routes send to consultation page
 
     // public function flag($flag)
     // {
@@ -170,7 +168,8 @@ class Pages extends Controller
     // }
 
 
-    public function subscribe(){
+    public function subscribe()
+    {
         // print_r($this->request->getVar('email'));
         $data = [
             "email" => $this->request->getVar('email'),
@@ -195,16 +194,12 @@ class Pages extends Controller
 
             if ($email->send()) {
 
-                echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);          
-              } else {
+                echo json_encode(["status" => 1, "message" => "Subscribe Successful"]);
+            } else {
                 $data = $email->printDebugger(['headers']);
                 // print_r($data);
                 echo json_encode(["status" => 2, "message" => "Your Query Submitted, but mail not send"]);
-                
             }
-
-            
-
         } else {
 
             $response = [
@@ -215,7 +210,5 @@ class Pages extends Controller
             ];
             echo json_encode(["status" => 2, "message" => "please try again later"]);
         }
-       
     }
-
 }
