@@ -63,6 +63,7 @@
                                 class="form-control  border border-primary  mt-0" required>
                                 <!-- <select  name="service" class="text-uppercase" id="service" required> -->
                                 <option value="">Interested services</option>
+                                <option value="EDUCATION LOAN">EDUCATION LOAN</option>
                                 <option value="collage selection">UNIVERSITY / COLLAGE SELECTION</option>
                                 <option value="VISA CONSULTATION">VISA CONSULTATION</option>
                                 <option value="OVERSEASE INSURANCE">OVERSEASE INSURANCE</option>
@@ -77,9 +78,10 @@
                                 class="form-control  border border-primary" name="message" id="msg"
                                 placeholder="Your Message" rows="3" required></textarea>
                         </div>
-                        <div class="col mb-4" >
+                        <div class="col mb-4">
                             <input class="form-check-input p-3" name="terms" type="checkbox" id="terms">
-                            <label class="form-check-label font-weight-bold" for="terms" style="margin-top:-8px !important; margin-left:20px !important;">
+                            <label class="form-check-label font-weight-bold" for="terms"
+                                style="margin-top:-8px !important; margin-left:20px !important;">
                                 I accept <a href="privacy-policy">terms & conditions</a>
                             </label>
                             <div style="visibility:hidden; color:red; text-align:left" id="agree_chk_error">

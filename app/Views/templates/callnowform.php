@@ -63,6 +63,7 @@
                                 class="form-control  border border-primary  mt-0" required>
                                 <!-- <select  name="service" class="text-uppercase" id="service" required> -->
                                 <option value="">Interested services</option>
+                                <option value="EDUCATION LOAN">EDUCATION LOAN</option>
                                 <option value="collage selection">UNIVERSITY / COLLAGE SELECTION</option>
                                 <option value="VISA CONSULTATION">VISA CONSULTATION</option>
                                 <option value="OVERSEASE INSURANCE">OVERSEASE INSURANCE</option>
