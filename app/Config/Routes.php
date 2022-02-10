@@ -51,11 +51,11 @@ $routes->post('setNewPassword', 'User::setNewPassword');
 $routes->group("admin", function ($routes) {
 
 	//Admin Dshboard Routes
-    $routes->get('/', 'Admin/AdminController::login');
-    $routes->get('login', 'Admin/AdminController::login');
-    $routes->post('login', 'Admin/AdminController::loginPost');
+	$routes->get('/', 'Admin/AdminController::login');
+	$routes->get('login', 'Admin/AdminController::login');
+	$routes->post('login', 'Admin/AdminController::loginPost');
 	$routes->get('logout', 'Admin/AdminController::logout');
-    $routes->get('home', 'Admin/AdminController::home');
+	$routes->get('home', 'Admin/AdminController::home');
 	$routes->get('home2', 'Admin/AdminController::home2');
 	$routes->get('home3', 'Admin/AdminController::home3');
 	$routes->get('addAdmin', 'Admin/AdminController::admin');
@@ -71,7 +71,7 @@ $routes->group("admin", function ($routes) {
 	$routes->get("editDepartment/(:any)", "Admin\DepartmentController::editDepartment/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('editDepartment', 'Admin/DepartmentController::editDepartmentPost');
 	$routes->get("deleteDepartment/(:any)", "Admin\DepartmentController::deleteDepartment/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-	
+
 	// Admin Department Routes
 	$routes->get('level', 'Admin/LevelController::level');
 	$routes->get('addLevel', 'Admin/LevelController::addLevel');
@@ -80,7 +80,7 @@ $routes->group("admin", function ($routes) {
 	$routes->post('editLevel', 'Admin/LevelController::editLevelPost');
 	$routes->get("deleteLevel/(:any)", "Admin\LevelController::deleteLevel/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
-    // Admin Course Routes
+	// Admin Course Routes
 	$routes->get("addCourse/(:any)", "Admin\CourseController::addCourse/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('addCourse', 'Admin/CourseController::addCoursePost');
 	$routes->get("editCourse/(:any)/(:any)", "Admin\CourseController::editCourse/$1/$2"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
@@ -90,6 +90,8 @@ $routes->group("admin", function ($routes) {
 	// Admin Colleges Routes
 	$routes->get('colleges', 'Admin/CollegeController::colleges');
 	$routes->get('addColleges', 'Admin/CollegeController::addColleges');
+	$routes->get('AddCsv', 'Admin/CollegeController::AddCsv');
+	$routes->post('import-csv', 'Admin/CollegeController::importCsvToDb');
 	$routes->post('addColleges', 'Admin/CollegeController::addCollegesPost');
 	$routes->get("editCollege/(:any)", "Admin\CollegeController::editCollege/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('editCollege', 'Admin/CollegeController::editCollegePost');
@@ -110,7 +112,7 @@ $routes->group("admin", function ($routes) {
 	$routes->get("editPages/(:any)", "Admin\PagesController::editPages/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 	$routes->post('editPages', 'Admin/PagesController::editPagesPost');
 	$routes->get("deletePages/(:any)", "Admin\PagesController::deletePages/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-	
+
 	//Admin Sections Routes
 	$routes->get('sections', 'Admin/SectionsController::sections');
 	$routes->get('allPagesInEdit', 'Admin/SectionsController::allPagesInEdit');
@@ -120,35 +122,34 @@ $routes->group("admin", function ($routes) {
 	$routes->post('editSections', 'Admin/SectionsController::editSectionsPost');
 	$routes->get("deleteSections/(:any)", "Admin\SectionsController::deleteSections/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
-    // Admin Colleges Routes
-    $routes->get('hotCourses', 'Admin/HotCoursesController::hotCourses');
-    $routes->get('addHotCourses', 'Admin/HotCoursesController::addHotCourses');
-    $routes->post('addHotCourses', 'Admin/HotCoursesController::addHotCoursesPost');
-    $routes->get("editHotCourses/(:any)", "Admin\HotCoursesController::editHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
-    $routes->post('editHotCourses', 'Admin/HotCoursesController::editHotCoursesPost');
-    $routes->get("deleteHotCourses/(:any)", "Admin\HotCoursesController::deleteHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	// Admin Colleges Routes
+	$routes->get('hotCourses', 'Admin/HotCoursesController::hotCourses');
+	$routes->get('addHotCourses', 'Admin/HotCoursesController::addHotCourses');
+	$routes->post('addHotCourses', 'Admin/HotCoursesController::addHotCoursesPost');
+	$routes->get("editHotCourses/(:any)", "Admin\HotCoursesController::editHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	$routes->post('editHotCourses', 'Admin/HotCoursesController::editHotCoursesPost');
+	$routes->get("deleteHotCourses/(:any)", "Admin\HotCoursesController::deleteHotCourses/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
-     // Admin Subscribe Routes
-	 $routes->get('subscribe', 'Admin/SubscribeController::getSubscribe');
-	 $routes->get("deleteSubscribe/(:any)", "Admin\SubscribeController::deleteSubscribe/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
+	// Admin Subscribe Routes
+	$routes->get('subscribe', 'Admin/SubscribeController::getSubscribe');
+	$routes->get("deleteSubscribe/(:any)", "Admin\SubscribeController::deleteSubscribe/$1"); // subfolder me '/' nehi '\' ata he Like 'Admin/CollegeController::editCollege/$1' nehi 'Admin\CollegeController::editCollege/$1' ata he
 
-     // Admin User Routes
-	 $routes->get('user', 'Admin/UserController::getUserDetails');
-	 $routes->get('deleteUser/(:any)', 'Admin\UserController::deleteUser/$1');
-	 $routes->get('editUser/(:any)', 'Admin\UserController::editUser/$1');
-	 $routes->post('editUser', 'Admin/UserController::editUserPost');
+	// Admin User Routes
+	$routes->get('user', 'Admin/UserController::getUserDetails');
+	$routes->get('deleteUser/(:any)', 'Admin\UserController::deleteUser/$1');
+	$routes->get('editUser/(:any)', 'Admin\UserController::editUser/$1');
+	$routes->post('editUser', 'Admin/UserController::editUserPost');
 
-	 $routes->post('allUserData', 'Admin/UserController::getAllUserDetails');
-	 $routes->post('todayData', 'Admin/UserController::getTodayUserDetails');
-	 $routes->post('PreviousData', 'Admin/UserController::getPreviousDayUserDetails');
-	 $routes->post('lastTwoDaysData', 'Admin/UserController::getLastTwoDaysDataUserDetails');
-	 $routes->post('lastThreeDaysData', 'Admin/UserController::getLastThreeDaysDataUserDetails');
-	 $routes->post('lastFourDaysData', 'Admin/UserController::getLastFourDaysDataUserDetails');
-	 $routes->post('lastFiveDaysData', 'Admin/UserController::getLastFiveDaysDataUserDetails');
-	 $routes->post('lastSixDaysData', 'Admin/UserController::getLastSixDaysDataUserDetails');
-	 $routes->post('lastSevenDaysData', 'Admin/UserController::getLastSevenDaysDataUserDetails');
-
-	});
+	$routes->post('allUserData', 'Admin/UserController::getAllUserDetails');
+	$routes->post('todayData', 'Admin/UserController::getTodayUserDetails');
+	$routes->post('PreviousData', 'Admin/UserController::getPreviousDayUserDetails');
+	$routes->post('lastTwoDaysData', 'Admin/UserController::getLastTwoDaysDataUserDetails');
+	$routes->post('lastThreeDaysData', 'Admin/UserController::getLastThreeDaysDataUserDetails');
+	$routes->post('lastFourDaysData', 'Admin/UserController::getLastFourDaysDataUserDetails');
+	$routes->post('lastFiveDaysData', 'Admin/UserController::getLastFiveDaysDataUserDetails');
+	$routes->post('lastSixDaysData', 'Admin/UserController::getLastSixDaysDataUserDetails');
+	$routes->post('lastSevenDaysData', 'Admin/UserController::getLastSevenDaysDataUserDetails');
+});
 
 // auth routes
 
@@ -170,7 +171,7 @@ $routes->group("api", function ($routes) {
 	$routes->get("test/(:any)", "CollegeController::getCoursesClickCountry/$1");
 
 
-	$routes->post("careerGuide", "CollegeController::careerGuidePost");	
+	$routes->post("careerGuide", "CollegeController::careerGuidePost");
 	// $routes->post("careerGuide/imageUpload", "CollegeController::careerGuideImagePost");
 	$routes->POST("apply", "CollegeController::apply");
 	$routes->POST("applyForCollegeInConsultation", "CollegeController::applyForCollegeInConsultation");

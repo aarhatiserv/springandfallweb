@@ -13,8 +13,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -202,7 +202,7 @@
             </div>
             <!-- /page content -->
             <!-- ------------------------------------------Start Footer------------------------ -->
-            <?= $this->include('admin/layout/footer')?>
+            <?= $this->include('admin/layout/footer') ?>
             <!-- ------------------------------------------Start Footer------------------------ -->
 
         </div>
@@ -249,4 +249,5 @@ fileBg.addEventListener('change', (e) => {
     // document.getElementById("image").value = fileName2;
 });
 </script>
+
 </html>

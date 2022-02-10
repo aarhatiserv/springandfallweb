@@ -13,8 +13,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 
 </head>
 
@@ -58,7 +58,10 @@
                                 <div class="x_content">
                                     <button role="button"><a href="/admin/addColleges"><i class="fa fa-plus"></i> Add
                                             Colleges</a> </button>
-                                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
+                                    <button role="button"><a href="/admin/AddCsv"><i class="fa fa-plus"></i> Add
+                                            in BULK</a> </button>
+                                    <table id="datatable-buttons" class="table table-striped table-bordered"
+                                        style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>College Name</th>
@@ -79,34 +82,44 @@
 
 
                                         <tbody>
-                                            <?php 
-                                               foreach($collegeData as $cd){
-                                              
-                                                ?>
-                                                
+                                            <?php
+                                            foreach ($collegeData as $cd) {
+
+                                            ?>
+
                                             <tr>
-                                                <td><?= $cd['names']?></td>
-                                                <td><?= $cd['country']?></td>
+                                                <td><?= $cd['names'] ?></td>
+                                                <td><?= $cd['country'] ?></td>
                                                 <?php /*
                                                 <td><?= $cd['country_rank']?></td>
                                                 <td><?= $cd['global_rank']?></td>
                                                 <td><?= $cd['address']?></td>
                                                 <td><?= $cd['email']?></td>
                                                 */ ?>
-                                               
-                                                <td><a href="<?= $cd['website']?>" target="_blank"><?= $cd['website']?></a></td>
+
+                                                <td><a href="<?= $cd['website'] ?>"
+                                                        target="_blank"><?= $cd['website'] ?></a></td>
                                                 <?php /*
                                                 
                                                 <td><?= $cd['about']?></td>
                                                 <td><?= $cd['offers']?></td>
                                                 <td><?= $cd['courses']?></td>
                                                 <td><?= $cd['levels']?></td>
-                                                <td><a href="../uploads/CollegesImage/<?= $cd['image']?>"target="_blank"><img src="../uploads/CollegesImage/<?= $cd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
-                                                   */ ?>
-                                                <td><a href="/admin/editCollege/<?= $cd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $cd['id']?>)"><i class="fa fa-trash"></i></a> | <a href="/admin/addCourse/<?= $cd['id']?>"><i class="fa fa-plus"></i>Add Course</a></td>
+                                                <td><a href="../uploads/CollegesImage/<?= $cd['image']?>"
+                                                        target="_blank"><img
+                                                            src="../uploads/CollegesImage/<?= $cd['image']?>"
+                                                            alt="image" heiht="360" width="640"
+                                                            style="height:100px; width:100px" /></a></td>
+                                                */ ?>
+                                                <td><a href="/admin/editCollege/<?= $cd['id'] ?>"><i
+                                                            class="fa fa-edit"></i></a> | <a
+                                                        onClick="javascript: ConfirmDelete(<?= $cd['id'] ?>)"><i
+                                                            class="fa fa-trash"></i></a> | <a
+                                                        href="/admin/addCourse/<?= $cd['id'] ?>"><i
+                                                            class="fa fa-plus"></i>Add Course</a></td>
                                             </tr>
                                             <?php
-                                               }
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
@@ -114,13 +127,13 @@
                             </div>
                         </div>
 
-                      
+
                     </div>
                 </div>
             </div>
             <!-- /page content -->
             <!-- ------------------------------------------Start Footer------------------------ -->
-            <?= $this->include('admin/layout/footer')?>
+            <?= $this->include('admin/layout/footer') ?>
             <!-- ------------------------------------------Start Footer------------------------ -->
 
         </div>
@@ -129,11 +142,11 @@
 
 </body>
 <script type="text/javascript">
-      function ConfirmDelete(id)
-      {
-        var conf = confirm('Are you sure want to delete this record?');
-            if (conf)
-                 location.href='/admin/deleteCollege/'+id;
-      }
-  </script>
+function ConfirmDelete(id) {
+    var conf = confirm('Are you sure want to delete this record?');
+    if (conf)
+        location.href = '/admin/deleteCollege/' + id;
+}
+</script>
+
 </html>
