@@ -3,7 +3,8 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6 p-3">
-                <img class="img-fluid" src="assets/images/globe_services.png"  alt="globe_services" title="globe_services"  width="437" height="437" />
+                <img class="img-fluid" src="assets/images/globe_services.png" alt="globe_services"
+                    title="globe_services" width="437" height="437" />
             </div>
             <div class="col-md-6 p-3">
                 <h1 class="pt-5 overseas-tagline">
@@ -24,7 +25,8 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="o-label" for="destination">Destination</label>
-                    <input type="text" name="destination" class="form-control mb-2 mr-sm-2" id="destination" placeholder="Canada">
+                    <input type="text" name="destination" class="form-control mb-2 mr-sm-2" id="destination"
+                        placeholder="Canada">
                 </div>
                 <div class="form-group col-md-4">
                     <label class="o-label" for="age">Age</label>
@@ -59,27 +61,42 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-4">
-                <img class="img-fluid" src="assets/images/overseas-aside.png" alt="student Travel insurance"   title="student Travel insurance"  width="" height=""/>
+                <img class="img-fluid" src="assets/images/overseas-aside.png" alt="student Travel insurance"
+                    title="student Travel insurance" width="" height="" />
             </div>
             <div class="col-md-8 ">
                 <div class="paragraph my-3 mx-5">
                     <p class="lead font-weight-bold text-secondary international">International Student insurance</p>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eveniet animi id facere
-                        consequatur voluptas nam enim. Iusto, assumenda corporis, quasi sunt quisquam nihil ducimus
-                        voluptatem magni aliquam sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                        eveniet animi id facere consequatur voluptas nam enim. Iusto, assumenda corporis, quasi sunt
-                        quisquam nihil ducimus voluptatem magni aliquam sit amet?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eveniet animi id facere
-                        consequatur voluptas nam enim. Iusto, assumenda corporis, quasi sunt quisquam nihil ducimus
-                        voluptatem magni aliquam sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                        eveniet animi id facere consequatur voluptas nam enim. Iusto, assumenda corporis, quasi sunt
-                        quisquam nihil ducimus voluptatem magni aliquam sit amet?</p>
+                    <p>International student health insurance is for students want to study abroad or who are studying
+                        in a countries other than their own.It offers protection on a daily or monthly basis (with a
+                        monthly payment option) that fulfills many school and government standards, and it is generally
+                        available to students on J1 and F1 visas (like those on OPT).</p>
+                    <p>There are three forms of international student insurance: -</p>
+                    <p>1. Health Insurance for Students Studying Abroad -Student health insurance is designed
+                        specifically for students studying outside of their native country, and International student
+                        health plans offer a unique blend of advantages such as sports, mental health, and emergency
+                        medical evacuation to give travel medical insurance while away from home. These plans also
+                        provide coverage for the duration of a student's studies, allowing them to continue with the
+                        same plan throughout their school.</p>
+                    <p>2. Medical Insurance for Foreign Traveling Students - Travel medical insurance is intended to
+                        accompany you on your trip overseas, and International Students' travel medical plans are
+                        normally offered for fewer than two years and can be used as a stand-alone plan or as a
+                        complement to existing major medical insurance. Additional trip coverage will be deemed
+                        secondary insurance if you already have a fixed insurance solution, making it an ideal for
+                        adding further benefits like emergency transportation. Additional out-of-pocket expenses that
+                        your primary insurance may not cover can also be covered by travel choices.</p>
+                    <p>3. Major Medical Insurance for Overseas Traveling Students - International medical insurance is a
+                        long-term alternative that is available to students. International medical insurance, which is a
+                        yearly renewable and extensive option, is designed primarily to provide coverage for expatriates
+                        and anyone staying outside their home country for at least 12 months. These plans will most
+                        probably be your only coverage, and they will include a variety of coverage levels and
+                        deductibles for people as well as their entire families.</p>
                 </div>
             </div>
         </div>
 
-        <div class="row my-5">
+        <!-- <div class="row my-5">
             <p class="text-center col-12 health">HEALTH INSURANCE PLANS</p>
             <div class="container">
                 <div class="com-md-10">
@@ -89,10 +106,10 @@
                         ducimus, quibusdam asperiores accusantium?</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- health insurance table -->
-        <table class="table">
+        <!-- <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -121,7 +138,7 @@
                     <td>@twitter</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </section>
 
@@ -130,43 +147,36 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card bg-light ">
-                    <div class="card-title">
-                        <p class="health">INSURANCE TERMS</p>
+                    <div class="card-title my-3">
+                        <p class="health">HEALTH INSURANCE</p>
                     </div>
                     <div class="card-body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi atque officia praesentium
-                        similique
-                        ipsum iusto necessitatibus repellat perspiciatis dolorem! Esse repellendus sed animi adipisci
-                        est
-                        porro saepe delectus officia consequuntur.
+                        International student health plans offer a unique blend of advantages such as sports, mental
+                        health, and emergency medical evacuation to give travel medical insurance while away from home.
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card bg-light ">
-                    <div class="card-title">
-                    <p class="health">INSURANCE TERMS</p>
+                    <div class="card-title my-3">
+                        <p class="health">TRAVEL INSURANCE</p>
                     </div>
                     <div class="card-body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi atque officia praesentium
-                        similique
-                        ipsum iusto necessitatibus repellat perspiciatis dolorem! Esse repellendus sed animi adipisci
-                        est
-                        porro saepe delectus officia consequuntur.
+                        International Students travel medical plans are normally offered for fewer than two years and
+                        can be used as a stand-alone plan or as a complement to existing major medical insurance.
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card bg-light ">
-                    <div class="card-title">
-                    <p class="health">INSURANCE TERMS</p>
+                    <div class="card-title my-3">
+                        <p class="health">MAJOR MEDICAL INSURANCE</p>
                     </div>
-                    <div class="card-body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi atque officia praesentium
-                        similique
-                        ipsum iusto necessitatibus repellat perspiciatis dolorem! Esse repellendus sed animi adipisci
-                        est
-                        porro saepe delectus officia consequuntur.
+                    <div class="card-body mt-n4">
+                        International medical insurance is a long-term alternative that is available to students.
+                        International medical insurance, which is a yearly renewable and extensive option.
+
                     </div>
                 </div>
             </div>
@@ -176,9 +186,9 @@
 
 <section id="emergency-notice" class="my-5">
     <div class="jumbotron">
-    <p class="health text-center">IN CASE OF EMERGENCY</P>
-        <p class="text-center">call 911</p>
-        <div class="container">
+        <p class="health text-center">IN CASE OF EMERGENCY</P>
+        <!-- <p class="text-center">call 911</p> -->
+        <!-- <div class="container">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea distinctio quia laborum nobis. Explicabo,
                 consequatur officiis. Optio dicta corporis eligendi error, deserunt ex, autem, incidunt placeat
                 accusantium
@@ -191,7 +201,10 @@
                 consequatur officiis. Optio dicta corporis eligendi error, deserunt ex, autem, incidunt placeat
                 accusantium
                 repellendus sunt ratione.</p>
-        </div>
+        </div> -->
+        <div class="conatainer text-center my-5"><button class=" btn mr-3 contact-now text-uppercase"
+                data-toggle="modal" data-target="#contactNowForm" style="font-size: 14px;">Contact Now
+            </button></div>
     </div>
 </section>
 
