@@ -1,29 +1,31 @@
-<section id="latest-courses">
+<section id="popular-courses">
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-md-12">
-                <div class="lastest-courses-carousel">
+                <div class="popular-courses-carousel">
                     <?php
                     if (!empty($hotCourses)) {
                         foreach ($hotCourses as $h) { ?>
 
 
                     <div class="col-md-3">
-                        <div class="carousel-course-item">
-                            <div class="card mb-3 border-0 bg-light" style="max-width: 540px;">
+                        <div class="carousel-populr-course-item">
+                            <div class="card p-3 border-1 bg-light" style="max-width: 540px;">
                                 <div class="row no-gutters">
-                                    <div class="col-12 col-md-4">
+                                    <div class="col-12 col-md-5 d-flex align-item-center">
 
                                         <img class="img-fluid course-thumbnail"
                                             src="uploads/HotCoursesImage/<?php echo $h['image'] ?>"
-                                            alt="university-logo" width="640" height="360" title="university-logo">
+                                            alt="university-logo" width="640" height="auto" title="university-logo">
                                     </div>
-                                    <div class="col-12 col-md-8">
+                                    <div class="col-12 col-md-7">
                                         <div class="card-body p-1">
                                             <p class="text-dark course-text"><?php echo $h['name'] ?></p>
 
-
+                                            <button class="btn btn-block"
+                                                style="background-color: var(--background); color:#fff;">VIEW COURSE
+                                                DETAILS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +36,7 @@
                     <?php  }
                     } else { ?>
                     <div class="col-md-3">
-                        <div class="carousel-course-item">
+                        <div class="carousel-populr-course-item">
                             <div class="card mb-3 border-0 bg-light" style="max-width: 540px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
@@ -47,7 +49,7 @@
                                                 Regional
                                                 Undergraduate Scholarship 2021-22</p>
 
-
+                                            <button class="btn btn-block">VIEW COURSE DETAILS</button>
                                         </div>
                                     </div>
                                 </div>

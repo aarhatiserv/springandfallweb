@@ -21,6 +21,13 @@ $session = session();
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
+    <style>
+    :root {
+        --text-color: #b6b6b6;
+        --background: #114694;
+        --font-weight: 600;
+    }
+    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css" />
 
@@ -42,6 +49,8 @@ $session = session();
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?= base_url() ?>/assets/css/indexv2.css" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'"
         href="<?= base_url() ?>/assets/css/latest-courses.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'"
+        href="<?= base_url() ?>/assets/css/popular-courses.css" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="<?= base_url() ?>/assets/css/about.css" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'"
         href="<?= base_url() ?>/assets/css/career-guide.css" />
@@ -72,14 +81,17 @@ $session = session();
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/emicalculator/css/widget.css" />
     <!-- EMI CALCULATOR CSS -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153171991-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153171991-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-153171991-2');
-</script>
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-153171991-2');
+    </script>
 
     <!-- uikit ends -->
     <title><?= esc($title) ?> | Spring and Fall</title>

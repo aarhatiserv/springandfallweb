@@ -1,8 +1,8 @@
-<?php $session = session(); 
-if(empty($session->get('token'))){ ?>
+<?php $session = session();
+if (empty($session->get('token'))) { ?>
 <script>
-    setInterval(function(){ 
-        $('#loginForm').modal();
+setInterval(function() {
+    $('#loginForm').modal();
 }, 300000);
 </script>
 <?php }
@@ -21,7 +21,8 @@ if(empty($session->get('token'))){ ?>
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
-            <img src="<?=base_url()?>/assets/images/logo/logo1.png" alt="logo" width="206" height="115" title="logo" /><br>
+            <img src="<?= base_url() ?>/assets/images/logo/logo1.png" alt="logo" width="206" height="115"
+                title="logo" /><br>
             <div class="social-icons-fa p-2 mr-3 pb-4">
                 <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
                         class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
@@ -36,15 +37,16 @@ if(empty($session->get('token'))){ ?>
             </div>
         </div>
         <div class="col-sm-12 col-lg-3  colMargins colText" style="margin-left:86px">
-            <a href="<?=base_url()?>/about" rel="noopener" class="anchor">ABOUT US</a><br />
-            <a href="<?=base_url()?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
-            <a href="<?=base_url()?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
-            <a href="<?=base_url()?>/university-or-college-selection" rel="noopener" class="anchor">CONSULTATION</a><br />
+            <a href="<?= base_url() ?>/about" rel="noopener" class="anchor">ABOUT US</a><br />
+            <a href="<?= base_url() ?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
+            <a href="<?= base_url() ?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
+            <a href="<?= base_url() ?>/university-or-college-selection" rel="noopener"
+                class="anchor">CONSULTATION</a><br />
             <!-- <a href="">EVENTS</a> -->
         </div>
         <div class="col-sm-12 col-lg-3  colMargins colText2" style="margin-left:-57px">
             <a href="https://blog.springandfall.in/" rel="noopener" class="anchor">BLOG</a><br />
-            <a href="<?=base_url()?>/terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a><br />
+            <a href="<?= base_url() ?>/terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a><br />
             <!-- <a href="#" onclick="comingSoon()">VIDEO</a><br />
                <a href="#" onclick="comingSoon()">CAREER</a><br />
                <a href="#" onclick="comingSoon()">AFFILIATE PROGRAM</a> -->
@@ -53,11 +55,12 @@ if(empty($session->get('token'))){ ?>
             <div class="row">
                 <div class="col-sm-12 col-lg-12" id="subscribe-area">
                     <p class="subscribe pt-2 pb-2">Subscribe to our news letter</p>
-                    <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail" placeholder="Email Id">
+                    <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail"
+                        placeholder="Email Id">
                     <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
                     <div class="appPlay pt-2">
-                        <img src="<?=base_url()?>/assets/images/mobilestores.png" alt="mobilestores" width="180" height="100"
-                            title="mobilestores" />
+                        <img src="<?= base_url() ?>/assets/images/mobilestores.png" alt="mobilestores" width="180"
+                            height="100" title="mobilestores" />
                     </div><br>
                     <p class="mb-0 pb-2 credit">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
                 </div>
@@ -76,41 +79,41 @@ if(empty($session->get('token'))){ ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js">
 </script>
 <!-- vanila titlt -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/vanilla-tilt.min.js"></script>
-<script type="text/javascript" src="<?=base_url()?>/assets/js/scrollpopup.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/vanilla-tilt.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/scrollpopup.js"></script>
 <!-- vanila titlt ends -->
 <!-- axios -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- owl js -->
-<script type="text/javascript" src="<?=base_url()?>/assets/plugins/dist/owl.carousel.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/plugins/dist/owl.carousel.js"></script>
 <!-- owl js -->
 <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- relax -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 <!-- relax ends-->
 <!-- slick js -->
-<script type="text/javascript" src="<?=base_url()?>/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/slick/slick.min.js"></script>
 <!-- costom js section -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/counter-section.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/counter-section.js"></script>
 <!-- loan approve -->
-<!-- <script src="<?=base_url()?>/assets/js/creative-steps.js"></script> -->
+<!-- <script src="<?= base_url() ?>/assets/js/creative-steps.js"></script> -->
 <!-- career guide js -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/career-guide.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/career-guide.js"></script>
 <!-- consultation js -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/consultation.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/consultation.js"></script>
 <!-- about parallax -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/about-parallax.js"></script>
-<script type="text/javascript" src="<?=base_url()?>/assets/js/college-parallax.js"></script>
-<script type="text/javascript" src="<?=base_url()?>/assets/js/college.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/about-parallax.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/college-parallax.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/college.js"></script>
 
 <!-- profile js -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/profile.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/profile.js"></script>
 <!-- new Pasword -->
-<script type="text/javascript" src="<?=base_url()?>/assets/js/newPassword.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/newPassword.js"></script>
 
 <!-- Add consultation click apply and show ligin modal for sweetalert By Nazim 20-Dec-2021 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" />
 
 <?php
 if (url_is('about')) {
@@ -212,6 +215,25 @@ $(document).ready(function() {
 
     // latest course carousel
     $('.lastest-courses-carousel').slick({
+        centerMode: true,
+        centerPadding: '40px',
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                centerMode: false,
+                /* set centerMode to false to show complete slide instead of 3 */
+                slidesToScroll: 1
+            }
+        }]
+    });
+
+    $('.popular-courses-carousel').slick({
         centerMode: true,
         centerPadding: '40px',
         dots: true,
@@ -443,10 +465,10 @@ $(document).ready(() => {
 
 <!-- subscribe -->
 <script>
-    $(document).ready(function () {
-        $("#subscribe").click(function () {
-            var email = $("#subscribeEmail").val();
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+$(document).ready(function() {
+    $("#subscribe").click(function() {
+        var email = $("#subscribeEmail").val();
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
 
             let formData = new FormData();
             formData.append('email', email);
@@ -476,17 +498,16 @@ $(document).ready(() => {
                     }
                 }
             })
-        }else{
+        } else {
             swal("Opps.!!", "Please Enter a Valid Email", "error");
         }
-        
-        })
-    });
+
+    })
+});
 </script>
 <!-- subscribe -->
 
 <script type="text/javascript">
-
 var idleTime = 0;
 $(document).ready(function() {
     //Increment the idle time counter every minute.

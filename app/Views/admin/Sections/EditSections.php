@@ -41,8 +41,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
     <style>
     input.disabled:hover {
         cursor: not-allowed;
@@ -55,7 +55,7 @@
     <div class="container body">
         <div class="main_container">
             <!-- ------------------------------------------Start Left Nav------------------------ -->
-            <?php $session = session();?>
+            <?php $session = session(); ?>
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0; text-align: center">
@@ -73,7 +73,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2><?= strtoupper($session->get('username'));?></h2>
+                            <h2><?= strtoupper($session->get('username')); ?></h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -93,9 +93,8 @@
                                         <li><a href="/admin/sections">Sections</a></li>
                                         <li><a href="/admin/reviews">Reviews</a></li>
                                         <li><a href="/admin/hotCourses">Hot Courses</a></li>
-                                        <?php 
-                              if(($session->get('adminTypes') === 'superadmin' ))
-                              {?>
+                                        <?php
+                                        if (($session->get('adminTypes') === 'superadmin')) { ?>
                                         <li><a href="/admin/addAdmin">Add Admin</a></li>
                                         <?php } ?>
 
@@ -223,7 +222,7 @@
             <!-- ------------------------------------------Start Left Nav------------------------ -->
 
             <!-- ------------------------------------------Start header------------------------ -->
-            <?php $session = session();?>
+            <?php $session = session(); ?>
 
             <!-- top navigation -->
             <div class="top_nav">
@@ -238,7 +237,7 @@
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                     aria-expanded="false">
                                     <img src="../../assets/backend/production/images/img.jpg"
-                                        alt=""><?= $session->get('username');?>
+                                        alt=""><?= $session->get('username'); ?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -363,8 +362,8 @@
                                 </div>
                                 <div class="x_content">
                                     <form action="/admin/editSections" method="POST" enctype="multipart/form-data">
-                                        <?php 
-                                        foreach($sectionsData as $sectionsData){ ?>
+                                        <?php
+                                        foreach ($sectionsData as $sectionsData) { ?>
 
                                         <input type="hidden" name="id" value="<?= $sectionsData->sid ?>" />
                                         <div>
@@ -376,7 +375,7 @@
 
                                             <input type="text" id="name" name="name" placeholder="Name..."
                                                 style="margin-right:50px" value="<?= $sectionsData->section_name ?>"
-                                                class="disabled" disabled required />
+                                                class="disabled" />
 
                                             <input type="text" id="title" name="title" placeholder="Title..."
                                                 style="margin-right:50px" value="<?= $sectionsData->title ?>"
@@ -430,7 +429,7 @@
             </div>
             <!-- /page content -->
             <!-- ------------------------------------------Start Footer------------------------ -->
-            <?= $this->include('admin/layout/footer')?>
+            <?= $this->include('admin/layout/footer') ?>
             <!-- ------------------------------------------Start Footer------------------------ -->
 
         </div>

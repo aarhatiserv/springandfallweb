@@ -1,8 +1,14 @@
-#latest-courses {
+#popular-courses {
     padding-top: 40px;
-    background-color: #021E48;
+    background-color: #ffffff;
     padding-left: 10px;
     padding-right: 10px
+}
+
+.carousel-populr-course-item {
+    background: #fff;
+    filter: drop-shadow(0px 3px 1.5px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
 }
 
 .course-text {
@@ -11,7 +17,7 @@
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
     color: #021E48 !important
 }
 
