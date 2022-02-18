@@ -155,20 +155,20 @@ function getCollegeWithCourse(courses) {
 // getCollegeWithCourse in consultation And // getCollegeWithCountry in consultation
 
 function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
-  $("#collegeListContainer").html("Please wait...");
-  $("#collegeListContainer").prop("disabled", true);
+  $(".collegeWithCourse").html("Please wait...");
+  $(".collegeWithCourse").prop("disabled", true);
 
   $.ajax({
     url: "/api2/college/" + country + "/" + courses,
     type: "GET",
     success: function (res) {
-      let collegeData = res;
+      let collegeData = JSON.parse(res);
       let dt = [];
       console.log("res", collegeData);
       if (collegeData.status !== undefined) {
         if (collegeData.data.length == 0) {
-          $("#collegeListContainer").html("No Record Found");
-          $("#collegeListContainer").prop("disabled", false);
+          $(".collegeWithCourse").html("No Record Found");
+          $(".collegeWithCourse").prop("disabled", false);
         } else {
           collegeData.data.map((item2) =>
             item2.map((item) =>
@@ -177,33 +177,35 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
                           <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
                   item.country +
                   `/logo/` +
-                  item.image +
-                  `" class="mr-3" alt="..."
+                  item.image
+                  ? item.image
+                  : "https://via.placeholder.com/100" +
+                      `" class="mr-3" alt="..."
                               title="hrl" width="" height="" />
                           <div class="media-body py-3">
                               <div class="row">
                                   <div class="col-md-8">
                                   <a href="/college/` +
-                  item.country +
-                  `/` +
-                  item.college_id +
-                  `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                  item.college_name +
-                  `</p></a>
+                      item.country +
+                      `/` +
+                      item.college_id +
+                      `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                      item.college_name +
+                      `</p></a>
                                       <p>` +
-                  item.country +
-                  ` </p>
+                      item.country +
+                      ` </p>
                                       <p>` +
-                  item.d_name +
-                  ` </p>
+                      item.d_name +
+                      ` </p>
                                       
                                     </div>
                                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                       <div class="apply px-5">
                                           
                                           <button class="btn applyNow" onclick="applyForCollegeInConsultation(` +
-                  item.course_id +
-                  `)">Apply now</button>
+                      item.course_id +
+                      `)">Apply now</button>
                                       </div>
                                   </div>
                               </div>
@@ -213,8 +215,8 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
             )
           );
           // $("#listColleges").html(dt);
-          $("#collegeListContainer").html(dt);
-          $("#collegeListContainer").prop("disabled", false);
+          $(".collegeWithCourse").html(dt);
+          $(".collegeWithCourse").prop("disabled", false);
         }
       }
     },
@@ -229,3 +231,5 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
     },
   });
 }
+
+getCollegeWithCountryAndCoursesInConsultation("USA", "Engineering");

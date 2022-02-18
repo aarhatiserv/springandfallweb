@@ -68,8 +68,8 @@ border-radius: 5px;" />
                                     <label for="inputState" class="h4 mr-2" style="color: var(--background);">COUNTRIES
                                     </label>
 
-                                    <select class="form-control mt-0">
-                                        <option value="">choose</option>
+                                    <select class="form-control mt-0" name="country" id="countrySelection">
+
                                         <?php
                                         $db = \Config\Database::connect();
                                         $sql  = "SELECT `country` FROM `colleges` GROUP by country";
@@ -77,7 +77,9 @@ border-radius: 5px;" />
                                         $results = $query->getResultArray();
                                         foreach ($results as $row) {
                                         ?>
-                                        echo "<option value="<?= $row['country'] ?>"><?= $row['country'] ?></option>";
+                                        echo "<option value="<?= $row['country'] ?>"
+                                            <?= $row['country'] == 'USA' ? 'selected' : '' ?>><?= $row['country'] ?>
+                                        </option>";
                                         <?php
                                         }
 
@@ -102,13 +104,28 @@ border-radius: 5px;" />
                 </div>
             </div>
         </div>
-        <div id="collegeListContainer"></div>
+        <div id="collegeListContainer">
+            <ul class="list-unstyled collegeWithCourse" id="listCollegeWithCourse">
+                <!-- <div id="loading" class="hide">
+                            <div id="loading-content">
+                                <img src="assets/images/Spinner.gif" alt="Loading"/>
+                            </div>
+                        </div> -->
+            </ul>
+        </div>
     </div>
 </section>
 
 <script>
 // Add active class to the current button (highlight it)
 var header = document.getElementById("universityTab");
+var countrySelection = document.getElementById("countrySelection");
+var course_country = '';
+countrySelection.addEventListener('change', function(e) {
+    course_country = e.target.value;
+    console.log(course_country);
+    getCollegeWithCountryAndCoursesInConsultation(course_country, currentVal);
+});
 
 var btns = header.getElementsByClassName("clgBtn");
 for (var i = 0; i < btns.length; i++) {
@@ -118,9 +135,10 @@ for (var i = 0; i < btns.length; i++) {
         current[0].className = current[0].className.replace(" activeClgBtn", "");
         this.className += " activeClgBtn";
         // getCollegeInfo(currentVal);
-        getCollegeWithCountryAndCoursesInConsultation('USA', currentVal);
+        getCollegeWithCountryAndCoursesInConsultation(course_country ? course_country : 'USA', currentVal);
     });
 }
+
 
 function getCollegeInfo(branch) {
 

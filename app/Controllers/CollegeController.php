@@ -59,7 +59,7 @@ class CollegeController extends Controller
         $model = new CollegeModel();
         $dmodel = new DepartmentModel();
 
-        $dataCollege = $model->where('country', $country)->findAll();
+        $dataCollege = $model->where('country', $country)->findAll(10);
         $dataDepartment = $dmodel->where('name', $course)->findAll();
         // print_r($dataDepartment);
         // exit;
