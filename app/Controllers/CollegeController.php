@@ -35,6 +35,25 @@ class CollegeController extends Controller
         echo json_encode(['status' => 1, 'data' => $data]);
     }
 
+    // convert latin sting
+    // public  function convert_from_latin1_to_utf8_recursively($dat)
+    // {
+    //     if (is_string($dat)) {
+    //         return utf8_encode($dat);
+    //     } elseif (is_array($dat)) {
+    //         $ret = [];
+    //         foreach ($dat as $i => $d) $ret[$i] = self::convert_from_latin1_to_utf8_recursively($d);
+
+    //         return $ret;
+    //     } elseif (is_object($dat)) {
+    //         foreach ($dat as $i => $d) $dat->$i = self::convert_from_latin1_to_utf8_recursively($d);
+
+    //         return $dat;
+    //     } else {
+    //         return $dat;
+    //     }
+    // }
+
     public function getCollegesWithCourses($country, $course)
     {
         $model = new CollegeModel();
@@ -51,7 +70,9 @@ class CollegeController extends Controller
             array_push($data, $query->getResult());
         }
         // getCoursesClickCountry($data);
-        echo json_encode(['status' => 1, 'data' => $data]);
+        header('Content-Type: application/json');
+        $cdata =  utf8_encode(to);
+        echo json_encode(['status' => 1, 'data' => $cdata]);
     }
 
     public function getCoursesClickCountry($country)

@@ -40,7 +40,92 @@ border-radius: 5px;" />
 <hr class="my-5">
 
 
+<!-- backup might come here -->
 
+<section id="unversities">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <p style="font-size: 1.5rem; color: var(--background);"><i class="fa fa-check"
+                        aria-hidden="true"></i></i>
+                </p>
+                <h3 class="text-dark" style="font-weight: var(--font-weight);">CHOOSE YOUR PREFERRED</h3>
+                <h3 style="font-weight: var(--font-weight);">UNIVERSITY</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class=" p-3 mb-0 bg-white rounded  text-center"
+                    style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);">
+                    <!-- <h4 style="color: var(--background);">COUNTRIES</h4> -->
+                    <div class="col-md-4 mx-auto">
+                        <form class="form-inline">
 
+                            <div class="form-group">
+                                <div class="form-group mb-2">
+                                    <label for="inputState" class="h4 mr-2" style="color: var(--background);">COUNTRIES
+                                    </label>
+
+                                    <select class="form-control mt-0">
+                                        <option value="">choose</option>
+                                        <?php
+                                        $db = \Config\Database::connect();
+                                        $sql  = "SELECT `country` FROM `colleges` GROUP by country";
+                                        $query   = $db->query($sql);
+                                        $results = $query->getResultArray();
+                                        foreach ($results as $row) {
+                                        ?>
+                                        echo "<option value="<?= $row['country'] ?>"><?= $row['country'] ?></option>";
+                                        <?php
+                                        }
+
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="p-2 d-flex justify-content-around align-items-center"
+                    style="background-color:  #EAEAEA; border-radius: 0px 0px 5px 5px; font-family:'Poppins'"
+                    id="universityTab">
+                    <p class="clgBtn mb-0 my-auto activeClgBtn">Engineering</p>
+                    <p class="clgBtn mb-0 my-auto">Management</p>
+                    <p class="clgBtn mb-0 my-auto">Medical</p>
+                    <p class="clgBtn mb-0 my-auto">Design</p>
+                    <p class="clgBtn mb-0 my-auto">Other</p>
+                </div>
+            </div>
+        </div>
+        <div id="collegeListContainer"></div>
+    </div>
+</section>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("universityTab");
+
+var btns = header.getElementsByClassName("clgBtn");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(e) {
+        var current = document.getElementsByClassName("activeClgBtn");
+        var currentVal = e.target.innerHTML;
+        current[0].className = current[0].className.replace(" activeClgBtn", "");
+        this.className += " activeClgBtn";
+        // getCollegeInfo(currentVal);
+        getCollegeWithCountryAndCoursesInConsultation('USA', currentVal);
+    });
+}
+
+function getCollegeInfo(branch) {
+
+    // document.getElementById("collegeListContainer").innerHTML = `<h3>${branch}</h3>`;
+}
+</script>
 
 <?= $this->include('templates/calltoaction') ?>
