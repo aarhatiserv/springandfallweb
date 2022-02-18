@@ -61,18 +61,19 @@ class CollegeController extends Controller
 
         $dataCollege = $model->where('country', $country)->findAll();
         $dataDepartment = $dmodel->where('name', $course)->findAll();
-
+        // print_r($dataDepartment);
+        // exit;
         $data = array();
         for ($i = 0; $i < count($dataCollege); $i++) {
             // $data.push($data2[$i]);
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.department_id = '" . $dataDepartment[$i]['id'] . "'");
+            $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.department_id = '" . $dataDepartment[0]['id'] . "'");
             array_push($data, $query->getResult());
         }
         // getCoursesClickCountry($data);
         header('Content-Type: application/json');
-        $cdata =  utf8_encode(to);
-        echo json_encode(['status' => 1, 'data' => $cdata]);
+        // $cdata =  utf8_encode($data);
+        echo json_encode(['status' => 1, 'data' => $data]);
     }
 
     public function getCoursesClickCountry($country)
