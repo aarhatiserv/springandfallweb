@@ -73,7 +73,7 @@ class CollegeController extends Controller
         // getCoursesClickCountry($data);
         header('Content-Type: application/json');
         // $cdata =  utf8_encode($data);
-        echo json_encode(['status' => 1, 'data' => $data]);
+        echo json_encode(['status' => 1, 'data' => $data[0]]);
     }
 
     public function getCoursesClickCountry($country)

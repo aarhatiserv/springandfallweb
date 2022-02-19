@@ -170,51 +170,48 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
           $(".collegeWithCourse").html("No Record Found");
           $(".collegeWithCourse").prop("disabled", false);
         } else {
-          collegeData.data.map((item2) =>
-            item2.map((item) =>
-              dt.push(
-                `  <li class="media my-4 bg-light">
+          collegeData.data.map((item) =>
+            dt.push(
+              `  <li class="media my-4 bg-light">
                           <img class="p-3 image" style="max-width: 20%; height: 167px;" src="uploads/CollegesImage/` +
-                  item.country +
-                  `/logo/` +
-                  item.image
-                  ? item.image
-                  : "https://via.placeholder.com/100" +
-                      `" class="mr-3" alt="..."
+                item.country +
+                `/logo/` +
+                item.image +
+                `" class="mr-3" alt="..."
                               title="hrl" width="" height="" />
                           <div class="media-body py-3">
                               <div class="row">
                                   <div class="col-md-8">
                                   <a href="/college/` +
-                      item.country +
-                      `/` +
-                      item.college_id +
-                      `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                      item.college_name +
-                      `</p></a>
+                item.country +
+                `/` +
+                item.college_id +
+                `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
+                item.college_name +
+                `</p></a>
                                       <p>` +
-                      item.country +
-                      ` </p>
+                item.country +
+                ` </p>
                                       <p>` +
-                      item.d_name +
-                      ` </p>
+                item.d_name +
+                ` </p>
                                       
                                     </div>
                                   <div class="col-md-4 d-flex justify-content-end align-items-center ">
                                       <div class="apply px-5">
                                           
                                           <button class="btn applyNow" onclick="applyForCollegeInConsultation(` +
-                      item.course_id +
-                      `)">Apply now</button>
+                item.course_id +
+                `)">Apply now</button>
                                       </div>
                                   </div>
                               </div>
                           </div>
                       </li>`
-              )
             )
           );
           // $("#listColleges").html(dt);
+          console.log("fuck", dt);
           $(".collegeWithCourse").html(dt);
           $(".collegeWithCourse").prop("disabled", false);
         }
