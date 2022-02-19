@@ -121,24 +121,26 @@ border-radius: 5px;" />
 var header = document.getElementById("universityTab");
 var countrySelection = document.getElementById("countrySelection");
 var course_country = '';
-countrySelection.addEventListener('change', function(e) {
-    course_country = e.target.value;
-    console.log(course_country);
-    getCollegeWithCountryAndCoursesInConsultation(course_country, currentVal);
-});
+
 
 var btns = header.getElementsByClassName("clgBtn");
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function(e) {
         var current = document.getElementsByClassName("activeClgBtn");
-        var currentVal = e.target.innerHTML;
+        let currentVal = e.target.innerHTML;
         current[0].className = current[0].className.replace(" activeClgBtn", "");
         this.className += " activeClgBtn";
         // getCollegeInfo(currentVal);
         getCollegeWithCountryAndCoursesInConsultation(course_country ? course_country : 'USA', currentVal);
     });
 }
-
+countrySelection.addEventListener('change', function(e) {
+    course_country = e.target.value;
+    let current = document.getElementsByClassName("activeClgBtn");
+    let branch = current[0].innerHTML;
+    console.log(`${course_country} - ${branch}`);
+    getCollegeWithCountryAndCoursesInConsultation(course_country, branch);
+});
 
 function getCollegeInfo(branch) {
 
