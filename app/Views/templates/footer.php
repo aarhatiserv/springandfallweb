@@ -36,17 +36,30 @@ setInterval(function() {
                 <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
             </div>
         </div>
-        <div class="col-sm-12 col-lg-3  colMargins colText" style="margin-left:86px">
-            <a href="<?= base_url() ?>/about" rel="noopener" class="anchor">ABOUT US</a><br />
-            <a href="<?= base_url() ?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a><br />
-            <a href="<?= base_url() ?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a><br />
-            <a href="<?= base_url() ?>/university-or-college-selection" rel="noopener"
-                class="anchor">CONSULTATION</a><br />
+
+        <div class="col-12 col-sm-12 col-lg-3  colMargins text-center" style="margin-left:86px">
+            <div class="col-md-12">
+                <a href="<?= base_url() ?>/about" rel="noopener" class="anchor">ABOUT US</a>
+            </div>
+            <div class="col-md-12">
+                <a href="<?= base_url() ?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a>
+            </div>
+            <div class="col-md-12">
+                <a href="<?= base_url() ?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a>
+            </div>
+            <div class="col-md-12">
+                <a href="<?= base_url() ?>/university-or-college-selection" rel="noopener"
+                    class="anchor">CONSULTATION</a>
+            </div>
             <!-- <a href="">EVENTS</a> -->
         </div>
-        <div class="col-sm-12 col-lg-3  colMargins colText2" style="margin-left:-57px">
-            <a href="https://blog.springandfall.in/" rel="noopener" class="anchor">BLOG</a><br />
-            <a href="<?= base_url() ?>/terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a><br />
+        <div class="col-12 col-sm-12 col-lg-3  colMargins text-center" style="margin-left:-57px">
+            <div class="col-md-12">
+                <a href="https://blog.springandfall.in/" rel="noopener" class="anchor">BLOG</a>
+            </div>
+            <div class="col-md-12">
+                <a href="<?= base_url() ?>/terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a>
+            </div>
             <!-- <a href="#" onclick="comingSoon()">VIDEO</a><br />
                <a href="#" onclick="comingSoon()">CAREER</a><br />
                <a href="#" onclick="comingSoon()">AFFILIATE PROGRAM</a> -->
@@ -58,10 +71,10 @@ setInterval(function() {
                     <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail"
                         placeholder="Email Id">
                     <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
-                    <div class="appPlay pt-2">
+                    <!-- <div class="appPlay pt-2">
                         <img src="<?= base_url() ?>/assets/images/mobilestores.png" alt="mobilestores" width="180"
                             height="100" title="mobilestores" />
-                    </div><br>
+                    </div><br> -->
                     <p class="mb-0 pb-2 credit">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
                 </div>
             </div>

@@ -77,9 +77,9 @@ border-radius: 5px;" />
                                         $results = $query->getResultArray();
                                         foreach ($results as $row) {
                                         ?>
-                                        echo "<option value="<?= $row['country'] ?>"
-                                            <?= $row['country'] == 'USA' ? 'selected' : '' ?>><?= $row['country'] ?>
-                                        </option>";
+                                        <option value="<?= $row['country'] ?>">
+                                            <?= $row['country'] ?>
+                                        </option>
                                         <?php
                                         }
 
