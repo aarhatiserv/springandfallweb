@@ -18,71 +18,74 @@ setInterval(function() {
 <?= $this->include('templates/login') ?>
 
 <!--Footer Start-->
-<div class="container-fluid footer">
-    <div class="row">
-        <div class="col-lg-2 col-sm-6 col-xs-12 firstCol text-center">
-            <img src="<?= base_url() ?>/assets/images/logo/logo1.png" alt="logo" width="206" height="115"
-                title="logo" /><br>
-            <div class="social-icons-fa p-2 mr-3 pb-4">
-                <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
-                        class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3 text-center">
+                <img src="<?= base_url() ?>/assets/images/logo/logo1.png" alt="logo" width="206" height="115"
+                    title="logo" />
+                <div class="social-icons-fa my-3 pb-4">
+                    <a href="http://www.facebook.com/springnfall/" target="_blank" rel="noopener"><i
+                            class="fa fa-facebook-square ml-4 mt-2 fa-2x" title="facebook"></i></a>
 
-                <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i
-                        class="fa fa-instagram ml-4 mt-2 fa-2x" title="instagram"></i></a><br />
-                <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"
-                        title="twitter"></i></a>
-                <a href="#" target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"
-                        title="linkedin"></i></a>
-                <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-12 col-lg-3  colMargins text-center" style="margin-left:86px">
-            <div class="col-md-12">
-                <a href="<?= base_url() ?>/about" rel="noopener" class="anchor">ABOUT US</a>
-            </div>
-            <div class="col-md-12">
-                <a href="<?= base_url() ?>/career-guide" rel="noopener" class="anchor">CAREER GUIDE</a>
-            </div>
-            <div class="col-md-12">
-                <a href="<?= base_url() ?>/financial-aid" rel="noopener" class="anchor">FINANICAIL AID</a>
-            </div>
-            <div class="col-md-12">
-                <a href="<?= base_url() ?>/university-or-college-selection" rel="noopener"
-                    class="anchor">CONSULTATION</a>
-            </div>
-            <!-- <a href="">EVENTS</a> -->
-        </div>
-        <div class="col-12 col-sm-12 col-lg-3  colMargins text-center" style="margin-left:-57px">
-            <div class="col-md-12">
-                <a href="https://blog.springandfall.in/" rel="noopener" class="anchor">BLOG</a>
-            </div>
-            <div class="col-md-12">
-                <a href="<?= base_url() ?>/terms-and-condtion" rel="noopener" class="anchor">TERMS & CONDTION</a>
-            </div>
-            <!-- <a href="#" onclick="comingSoon()">VIDEO</a><br />
-               <a href="#" onclick="comingSoon()">CAREER</a><br />
-               <a href="#" onclick="comingSoon()">AFFILIATE PROGRAM</a> -->
-        </div>
-        <div class="col-lg-4 colMargins" style="margin-left:-30px">
-            <div class="row">
-                <div class="col-sm-12 col-lg-12" id="subscribe-area">
-                    <p class="subscribe pt-2 pb-2">Subscribe to our news letter</p>
-                    <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail"
-                        placeholder="Email Id">
-                    <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
-                    <!-- <div class="appPlay pt-2">
-                        <img src="<?= base_url() ?>/assets/images/mobilestores.png" alt="mobilestores" width="180"
-                            height="100" title="mobilestores" />
-                    </div><br> -->
-                    <p class="mb-0 pb-2 credit">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
+                    <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i
+                            class="fa fa-instagram ml-4 mt-2 fa-2x" title="instagram"></i></a><br />
+                    <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"
+                            title="twitter"></i></a>
+                    <a href="#" target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"
+                            title="linkedin"></i></a>
+                    <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-6 col-md-6 text-md-left ml-md-0">
+                        <ul class="list-unstyled d-flex h-100 flex-column justify-content-around py-4 my-auto">
+                            <li> <a href="<?= base_url() ?>/about" rel="noopener" class="anchor">ABOUT US</a></li>
+                            <li> <a href="<?= base_url() ?>/career-guide" rel="noopener" class="anchor">CAREER
+                                    GUIDE</a></li>
+                            <li><a href="<?= base_url() ?>/financial-aid" rel="noopener" class="anchor">FINANICAIL
+                                    AID</a></li>
+                            <li><a href="<?= base_url() ?>/university-or-college-selection" rel="noopener"
+                                    class="anchor">CONSULTATION</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-6 text-md-left text-right ">
+                        <ul class="list-unstyled d-flex  flex-column align-items-md-start align-items-end  py-4 my-3">
+                            <li class="py-5"> <a href="https://blog.springandfall.in/" rel="noopener"
+                                    class="anchor">BLOG</a>
+                            </li>
+                            <li class="py-5"> <a href="<?= base_url() ?>/terms-and-condtion" rel="noopener"
+                                    class="anchor">TERMS
+                                    &
+                                    CONDTION</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex flex-column h-100  justify-content-around">
+
+                <div class="py-4" id="subscribe-area">
+                    <p class="subscribe pt-2  text-center">Subscribe to our news letter</p>
+                    <div class="d-flex flex-inline justify-content-around">
+                        <input class="text-center" type="email" id="subscribeEmail" name="subscribeEmail"
+                            placeholder="Email Id">
+                        <button type="button" id="subscribe" class="mt-1 ml-2">Subscribe</button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
         </div>
+
     </div>
-</div>
-</div>
-</div>
+    <hr>
+    <p class="mb-0 pb-2 credit sticky-bottom text-center">DESIGNED AND DEVELOPED BY | © AARHAT ISERV LLP</p>
+</footer>
 <!--End of Footer-->
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
