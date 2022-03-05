@@ -155,9 +155,9 @@ function getCollegeWithCourse(courses) {
 // getCollegeWithCourse in consultation And // getCollegeWithCountry in consultation
 
 function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
-  const spinner = `<div class="spinner-border text-info text-center" role="status">
+  const spinner = `<div class="col-12 text-center my-5"> <div class="spinner-border text-info text-center" role="status">
   <span class="sr-only">Loading...</span>
-</div>`;
+</div></did>`;
   $(".collegeWithCourse").html(spinner);
   $(".collegeWithCourse").prop("disabled", true);
 
@@ -170,7 +170,12 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
       console.log("res", collegeData);
       if (collegeData.status !== undefined) {
         if (collegeData.data.length == 0) {
-          $(".collegeWithCourse").html("No Record Found");
+          const alert = `<div class="col-12 my-5">
+                          <div class="bg-info text-light p-5 " role="alert" >
+                            No <strong>Records</strong> found. Try another.
+                          </div>
+                        </div>`;
+          $(".collegeWithCourse").html(alert);
           $(".collegeWithCourse").prop("disabled", false);
         } else {
           collegeData.data.map((item) =>
