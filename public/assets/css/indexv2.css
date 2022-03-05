@@ -219,7 +219,7 @@ h3 {
 
 .card-deck img {
     text-align: center;
-    transform: translateZ(20px);
+    /* transform: translateZ(20px); */
     margin-bottom: 10px !important;
     height: 100px;
     width: 100px

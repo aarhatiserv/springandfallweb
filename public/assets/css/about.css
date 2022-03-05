@@ -40,7 +40,7 @@
 }
 
 #mission {
-    height: 70vh;
+    min-height: 70vh;
     font-family: 'Poppins';
     background: #020024;
     background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(0, 100, 162, 1) 0%, rgba(156, 189, 204, 1) 100%);
@@ -81,7 +81,7 @@
 }
 
 #vission {
-    height: 70vh;
+    min-height: 70vh;
     font-family: 'Poppins';
     background: #020024;
     background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(242, 31, 124, 0.989233193277311) 0%, rgba(255, 170, 211, 0.9668242296918768) 100%);
@@ -89,7 +89,7 @@
 }
 
 #values {
-    height: 70vh;
+    min-height: 70vh;
     font-family: 'Poppins';
     background: #020024;
     background: linear-gradient(148deg, rgba(2, 0, 36, 1) 0%, rgba(18, 136, 46, 0.989233193277311) 0%, rgba(103, 218, 94, 0.9668242296918768) 100%);

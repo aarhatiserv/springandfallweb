@@ -3,15 +3,19 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\API\ResponseTrait;
 use App\Models\CollegeModel;
 use App\Models\CourseModel;
 use App\Models\LevelModel;
 use App\Models\DepartmentModel;
 use App\Models\CareerguideModel;
 use App\Models\UserModel;
+
 use \Firebase\JWT\JWT;
 
-class CollegeController extends Controller
+
+class CollegeController extends ResourceController
 {
     public function index()
     {
@@ -61,8 +65,10 @@ class CollegeController extends Controller
 
         $dataCollege = $model->where('country', $country)->findAll(10);
         $dataDepartment = $dmodel->where('name', $course)->findAll();
-        // print_r($dataDepartment);
-        // exit;
+        echo '<pre>';
+        print_r($dataCollege);
+        echo count($dataCollege);
+        exit;
         $data = array();
         for ($i = 0; $i < count($dataCollege); $i++) {
             // $data.push($data2[$i]);
@@ -70,10 +76,20 @@ class CollegeController extends Controller
             $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id WHERE course.department_id = '" . $dataDepartment[0]['id'] . "'");
             array_push($data, $query->getResult());
         }
+
+        // new setup
+        // $db = \Config\Database::connect();
+        // $query = $db->query("select course.id as collid,course.names as course_name, colleges.country as country_name ,`college_id`,`department_id`,`level_id`,colleges.names as cname from course,colleges where course.college_id = colleges.id and `department_id` in (select department.id from department where department.name = '" . $course . "')
+        // and college_id in (select colleges.id from colleges where country = '" . $country . "') LIMIT 10");
         // getCoursesClickCountry($data);
-        header('Content-Type: application/json');
+        // header('Content-Type: application/json');
         // $cdata =  utf8_encode($data);
-        echo json_encode(['status' => 1, 'data' => $data[0]]);
+
+        // $data = $query->getResultArray(); // new one 
+        // var_dump($data);
+        // exit;
+        echo json_encode(['status' => 1, 'data' =>  mb_convert_encoding($data, 'UTF-8')]);
+        // return $this->respond(mb_convert_encoding($data, 'UTF-8'));
     }
 
     public function getCoursesClickCountry($country)
@@ -163,6 +179,7 @@ class CollegeController extends Controller
             $query = $db->query("SELECT DISTINCT course.id as course_id, department.name as d_name, colleges.id as college_id, colleges.names as college_name, colleges.country as country, colleges.image as image FROM course INNER JOIN department ON course.department_id = department.id INNER JOIN colleges ON course.college_id = colleges.id INNER JOIN level ON course.level_id = level.id WHERE course.level_id = '" . $dataLevel[$i]['id'] . "' AND course.department_id = '" . $dataDepartment[$i]['id'] . "'");
             array_push($data, $query->getResult());
         }
+
 
         echo json_encode(['status' => 1, 'data' => $data]);
     }

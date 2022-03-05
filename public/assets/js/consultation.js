@@ -187,13 +187,13 @@ function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
                 `/` +
                 item.college_id +
                 `"><p class="mt-0 mb-1 media-heading pb-2 h5_2_P">` +
-                item.college_name +
+                item.cname +
                 `</p></a>
                                       <p>` +
-                item.country +
+                item.country_name +
                 ` </p>
                                       <p>` +
-                item.d_name +
+                item.course_name +
                 ` </p>
                                       
                                     </div>

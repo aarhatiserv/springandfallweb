@@ -51,7 +51,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
-                <div class="col-md-12 description rellax">
+                <div class="col-md-12 description p-3 ">
                     <p class="mission"><?= $sectionData[$i]['discription'] ?> </p>
                 </div>
             </div>
@@ -75,7 +75,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
-                <div class="col-md-12 description rellax">
+                <div class="col-md-12 description p-3 ">
                     <p class="mission"><?= $sectionData[$i]['discription'] ?></p>
                 </div>
             </div>
@@ -97,7 +97,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <h1 class="col-12 text-center text-uppercase "><?= $sectionData[$i]['title'] ?></h1>
             </div>
             <div class="container p-5">
-                <div class="col-md-12 description rellax">
+                <div class="col-md-12 description p-3 ">
                     <p class="mission"><?= $sectionData[$i]['discription'] ?>
                     </p>
                 </div>

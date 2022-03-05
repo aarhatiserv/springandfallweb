@@ -60,8 +60,8 @@ border-radius: 5px;" />
                 <div class=" p-3 mb-0 bg-white rounded  text-center"
                     style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);">
                     <!-- <h4 style="color: var(--background);">COUNTRIES</h4> -->
-                    <div class="col-md-4 mx-auto">
-                        <form class="form-inline">
+                    <div class="col-12 col-md-4 mx-md-auto">
+                        <form class="form-md-inline">
 
                             <div class="form-group">
                                 <div class="form-group mb-2">
@@ -93,7 +93,7 @@ border-radius: 5px;" />
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="p-2 d-flex justify-content-around align-items-center"
+                <div class="nav sticky-top p-2 d-flex justify-content-around align-items-center "
                     style="background-color:  #EAEAEA; border-radius: 0px 0px 5px 5px; font-family:'Poppins'"
                     id="universityTab">
                     <p class="clgBtn mb-0 my-auto activeClgBtn">Engineering</p>
