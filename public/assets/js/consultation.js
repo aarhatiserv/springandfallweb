@@ -155,7 +155,10 @@ function getCollegeWithCourse(courses) {
 // getCollegeWithCourse in consultation And // getCollegeWithCountry in consultation
 
 function getCollegeWithCountryAndCoursesInConsultation(country, courses) {
-  $(".collegeWithCourse").html("Please wait...");
+  const spinner = `<div class="spinner-border text-info text-center" role="status">
+  <span class="sr-only">Loading...</span>
+</div>`;
+  $(".collegeWithCourse").html(spinner);
   $(".collegeWithCourse").prop("disabled", true);
 
   $.ajax({
