@@ -100,7 +100,7 @@ border-radius: 5px;" />
                     <p class="clgBtn mb-0 my-auto">Management</p>
                     <p class="clgBtn mb-0 my-auto">Medical</p>
                     <p class="clgBtn mb-0 my-auto">Design</p>
-                    <p class="clgBtn mb-0 my-auto">Other</p>
+                    <!-- <p class="clgBtn mb-0 my-auto">Other</p> -->
                 </div>
             </div>
         </div>
