@@ -187,8 +187,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
                     officia animi est consequatur!</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/university-or-college-selection">Scholarship</a>
-                    <a class="quick-btn ml-3" href="/university-or-college-selection">Education</a>
+                    <a class="quick-btn " href="/scholarship">Scholarship</a>
+                    <a class="quick-btn ml-3" href="/financial-aid">Education</a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -206,8 +206,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
                     officia animi est consequatur!</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/university-or-college-selection">Prepration</a>
-                    <a class="ml-3 quick-btn " href="/university-or-college-selection">Application</a>
+                    <a class="quick-btn " href="/visa-consultation">Prepration</a>
+                    <a class="ml-3 quick-btn " href="/visa-consultation">Application</a>
                 </div>
             </div>
         </div>
@@ -219,8 +219,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
                     officia animi est consequatur!</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/university-or-college-selection">Scrolarships</a>
-                    <a class="quick-btn ml-3" href="/university-or-college-selection">Education Loans</a>
+                    <a class="quick-btn " href="/scholarship">Scrolarships</a>
+                    <a class="quick-btn ml-3" href="/financial-aid">Education Loans</a>
                 </div>
             </div>
             <div class="col-md-6">
