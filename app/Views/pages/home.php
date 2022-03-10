@@ -1,21 +1,21 @@
 <!--Start of Jumbotron-->
-<?php 
+<?php
 
-for( $i = 0; $i < count($sectionData); $i++){
-    if($sectionData[$i]['section_name'] === 'hero_banner'){
-    ?>
+for ($i = 0; $i < count($sectionData); $i++) {
+    if ($sectionData[$i]['section_name'] === 'hero_banner') {
+?>
 <div class="container mb-4 admin " id="hero-banner">
     <div class="container" style="background-color:  rgba(150, 242, 242, 0.6);">
         <div class="row">
             <div class="col-lg-6 col-md-6 text-center text-center-sm  detailsAdmin">
 
-                <h3 class="banner-h3"><?= $sectionData[$i]['title']?></h3>
-                <p class="pb-2"><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
-                    style="font-size: 14px;">Contact Now
+                <h3 class="banner-h3"><?= $sectionData[$i]['title'] ?></h3>
+                <p class="pb-2"><?= $sectionData[$i]['discription'] ?></p>
+                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal"
+                    data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                 </button>
                 <?php $session = session();
-                if (!$session->get('token')) : ?>
+                        if (!$session->get('token')) : ?>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;
             font-style: normal;
             font-weight: bold;
@@ -28,7 +28,7 @@ for( $i = 0; $i < count($sectionData); $i++){
                 <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6 text-center text-center-sm mx-auto">
-                <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image']?>"
+                <img class="img-fluid text-center" src="assets/images/<?= $sectionData[$i]['image'] ?>"
                     alt="jumbotronimg" width="640" height="360" title="jumbotronimg" />
             </div>
         </div>
@@ -38,10 +38,10 @@ for( $i = 0; $i < count($sectionData); $i++){
 
 
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
-                <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title']?></h3>
-                <p class="pb-2"><?= $sectionData[$i]['discription']?></p>
-                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal" data-target="#contactNowForm"
-                    style="font-size: 14px;">Contact Now
+                <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title'] ?></h3>
+                <p class="pb-2"><?= $sectionData[$i]['discription'] ?></p>
+                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal"
+                    data-target="#contactNowForm" style="font-size: 14px;">Contact Now
                 </button>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;
              font-style: normal;
@@ -63,10 +63,9 @@ for( $i = 0; $i < count($sectionData); $i++){
     </div>
 </div>
 </div>
-<?php 
-    }
-        elseif($sectionData[$i]['section_name'] === 'make_your_career_world_best'){
-?>
+<?php
+    } elseif ($sectionData[$i]['section_name'] === 'make_your_career_world_best') {
+    ?>
 <!--Make your Career Best-->
 <section class="my-5">
     <div class="container makeCareer">
@@ -86,11 +85,12 @@ for( $i = 0; $i < count($sectionData); $i++){
         </div>
     </div>
 </section>
-<?php }}?>
+<?php }
+} ?>
 
 <!--We are best in-->
 <!--We are best in-->
-<div class="container-fluid bestIn my-4">
+<!-- <div class="container-fluid bestIn my-4">
     <div class="row bestInRow">
         <div class="container-fluid">
             <div class="row">
@@ -149,7 +149,88 @@ for( $i = 0; $i < count($sectionData); $i++){
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<section class="we-are-best-in">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-5 my-5">
+                <h3 class="text-center display-5 font-weight-bold ">WE ARE BEST IN</h3>
+                <p class="text-center offset-md-4 col-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Inventore, magni.
+                    Sed
+                    veniam vitae at odit
+                    quod reprehenderit quasi eaque officia.</p>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-6">
+                <img class="img-fluid p-2" src="/assets/images/best-in-education.png" alt="best education consultency">
+            </div>
+            <div class="col-md-6 content">
+                <h5 class="content-title">EDUCATION CONSULTENCY</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
+                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
+                    officia animi est consequatur!</p>
+                <div class="d-flex">
+                    <a class="quick-btn " href="/university-or-college-selection">University/College
+                        Selection</a>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+
+            <div class="col-md-6 content">
+                <h5 class="content-title">FINANCE AID</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
+                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
+                    officia animi est consequatur!</p>
+                <div class="d-flex">
+                    <a class="quick-btn " href="/university-or-college-selection">Scholarship</a>
+                    <a class="quick-btn ml-3" href="/university-or-college-selection">Education</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid p-2" src="/assets/images/best-in-finance.png" alt="best education consultency">
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-md-6">
+                <img class="img-fluid p-2" src="/assets/images/best-in-visa-consultency.png"
+                    alt="best education consultency">
+            </div>
+            <div class="col-md-6 content">
+                <h5 class="content-title">VISA CONSULTENCY</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
+                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
+                    officia animi est consequatur!</p>
+                <div class="d-flex">
+                    <a class="quick-btn " href="/university-or-college-selection">Prepration</a>
+                    <a class="ml-3 quick-btn " href="/university-or-college-selection">Application</a>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+
+            <div class="col-md-6 content">
+                <h5 class="content-title">OVERSEASE INSURANCE</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
+                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
+                    officia animi est consequatur!</p>
+                <div class="d-flex">
+                    <a class="quick-btn " href="/university-or-college-selection">Scrolarships</a>
+                    <a class="quick-btn ml-3" href="/university-or-college-selection">Education Loans</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid p-2" src="/assets/images/best-in-oversease-insurance.png"
+                    alt="best education consultency">
+            </div>
+        </div>
+    </div>
+    <div class="container"></div>
+</section>
 
 
 

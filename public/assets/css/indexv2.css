@@ -177,9 +177,56 @@ h3 {
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
-    color: #114694
+    color: #114694;
 }
 
+
+/* we-are-best-in section */
+.we-are-best-in {
+    position: relative;
+    background-image: url("/assets/images/we-are-best-in-bg.svg");
+    background-color: #fff;
+    fill: #fff;
+    min-height: 700px;
+    height: auto;
+    width: 100%;
+    padding-top: 5%;
+
+
+}
+
+.we-are-best-in h3 {
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    font-size: 2.1rem;
+}
+
+.we-are-best-in .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.we-are-best-in .content-title {
+    color: #595959;
+
+}
+
+.we-are-best-in .quick-btn {
+    display: inline !important;
+    background: #6988F3 !important;
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+
+}
+
+
+
+/* we-are-best-in sectionends */
+/* 
 .bestIn h3 {
     font-family: Poppins;
     font-style: bold !important;
@@ -190,9 +237,9 @@ h3 {
     text-align: center;
     color: #114694;
     text-shadow: 0 4px 4px rgba(0, 0, 0, .25)
-}
+} */
 
-.bestIn .card {
+/* .bestIn .card {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     width: 300px;
@@ -211,7 +258,7 @@ h3 {
     background-color: #fff;
     margin-top: 3%;
     margin-bottom: 5%
-}
+} */
 
 .card-deck {
     margin: 30px
@@ -236,7 +283,7 @@ h3 {
     color: #114694
 }
 
-.bestIn .card-text {
+/* .bestIn .card-text {
     font-family: Poppins;
     font-style: normal;
     font-weight: 400;
@@ -245,7 +292,7 @@ h3 {
     text-align: center;
     letter-spacing: .1em;
     color: #555
-}
+} */
 
 #whySp {
     padding: 5% 0;
@@ -535,7 +582,7 @@ select {
 }
 
 @media only screen and (max-width:600px) {
-    .bestInRow {
+    /* .bestInRow {
         background-color: #f1f1f1;
         background-size: auto;
         height: auto;
@@ -546,19 +593,19 @@ select {
 
     .bestInRow .row {
         display: block
-    }
+    } */
 
     .card-deck .card {
         margin: 15px auto
     }
 
-    .bestIn .card {
+    /* .bestIn .card {
         align-items: center;
         width: 90% !important;
         margin: 20px auto !important;
         transform-style: preserve-3d;
         transform: perspective(1000px)
-    }
+    } */
 
     .careerCol {
         max-height: 90vh !important;

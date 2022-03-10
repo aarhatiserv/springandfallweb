@@ -30,10 +30,10 @@ setInterval(function() {
 
                     <a href="http://www.instagram.com/_springandfall_" target="_blank" rel="noopener"><i
                             class="fa fa-instagram ml-4 mt-2 fa-2x" title="instagram"></i></a><br />
-                    <a href="#" target="_blank" rel="noopener"><i class="fa fa-twitter ml-4 mt-2 fa-2x"
-                            title="twitter"></i></a>
-                    <a href="#" target="_blank" rel="noopener"><i class="fa fa-linkedin-square ml-4 mt-2 fa-2x"
-                            title="linkedin"></i></a>
+                    <a href="https://twitter.com/spring_n_fall" target="_blank" rel="noopener"><i
+                            class="fa fa-twitter ml-4 mt-2 fa-2x" title="twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/springandfall/" target="_blank" rel="noopener"><i
+                            class="fa fa-linkedin-square ml-4 mt-2 fa-2x" title="linkedin"></i></a>
                     <!--<i class="fa fa-youtube ml-4 mt-2 fa-2x" aria-hidden="true"></i>-->
                 </div>
             </div>
