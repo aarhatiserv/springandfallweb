@@ -185,12 +185,15 @@ h3 {
 .we-are-best-in {
     position: relative;
     background-image: url("/assets/images/we-are-best-in-bg.svg");
+
     background-color: #fff;
+    background-repeat: no-repeat;
     fill: #fff;
     min-height: 700px;
     height: auto;
     width: 100%;
     padding-top: 5%;
+    padding-bottom: 20%;
 
 
 }
@@ -223,6 +226,16 @@ h3 {
 
 }
 
+/* .email-container {
+    margin: 350px auto;
+}
+
+.email-container .email-box {
+    background-image: url("/assets/images/news-letter.svg") !important;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    height: 100vh;
+} */
 
 
 /* we-are-best-in sectionends */

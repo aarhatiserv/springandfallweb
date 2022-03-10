@@ -229,7 +229,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
             </div>
         </div>
     </div>
-    <div class="container"></div>
+
 </section>
 
 
