@@ -149,7 +149,7 @@ class Pages extends Controller
             // exit;
 
             $email->setSubject('Spring and Fall Callback requested by - ' . $this->request->getVar('name') . '');
-            $email->setMessage('<p>Name :' .  $this->request->getVar("name") . '<br> Contact no :' . $this->request->getVar("phone") . '<br> email :' . $this->request->getVar("email") . '<br> Service :' . $this->request->getVar("service") . '<br> country: ' . $this->request->getVar("country") . ' <br> message: ' . $this->request->getVar("message") . ' </p>');
+            $email->setMessage('<p>Name :' .  $this->request->getVar("name") . '<br> Contact no :' . $this->request->getVar("phone") . '<br> Date :' . $this->request->getVar("date") . '<br> email :' . $this->request->getVar("email") . '<br> Service :' . $this->request->getVar("service") . '<br> country: ' . $this->request->getVar("country") . ' <br> message: ' . $this->request->getVar("message") . ' </p>');
             $model->save($data);
 
             if ($email->send()) {
