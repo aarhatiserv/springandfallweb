@@ -88,7 +88,7 @@ setInterval(function() {
 </footer>
 <!--End of Footer-->
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -122,8 +122,7 @@ setInterval(function() {
 <script type="text/javascript" src="<?= base_url() ?>/assets/js/college-parallax.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/assets/js/college.js"></script>
 
-<!-- profile js -->
-<script type="text/javascript" src="<?= base_url() ?>/assets/js/profile.js"></script>
+
 <!-- new Pasword -->
 <script type="text/javascript" src="<?= base_url() ?>/assets/js/newPassword.js"></script>
 
@@ -331,6 +330,7 @@ $(document).ready(function() {
 function comingSoon() {
     swal("Coming soon..!!");
 }
+
 $(document).ready(() => {
 
     $("#signup").validate({
@@ -417,36 +417,25 @@ $(document).ready(() => {
         }
     })
 
-    $("#queryForm").validate({
-        submitHandler: function(form, event) {
-            event.preventDefault();
-            // console.log(event); // for debugginh purpose
-            var formData = $("#queryForm").serialize();
-            $.ajax({
-                url: "/home/callback",
-                method: "POST",
-                data: formData + "&action=callback",
-                beforeSend: function() {
-                    $('#callBackQuery').val("Please wait");
-                    $('#callBackQuery').prop("disabled", true);
-
-                },
-                success: function(data) {
-                    $('#callBackQuery').val("Call Now");
-                    $('#callBackQuery').prop("disabled", false);
-                    var res = JSON.parse(data);
-                    if (res.status === 1) {
-                        swal("Thank you!", res.message, "success");
-                        window.location.reload();
-                    } else if (res.status === 2) {
-                        swal("Opps.!!", res.message, "error");
-                    } else {
-                        swal("Opps.!!", "Something went wrong.!!", "error");
-                    }
-                }
-            })
+    $("#callBackQuery").on("click", () => {
+        let name = $("#bname").val();
+        let phone = $("#bphone").val();
+        let email = $("#bemail").val();
+        let date = $("#bdate").val();
+        let formData = {
+            name: name,
+            phone: phone,
+            email: email,
+            date: date
         }
-    });
+        // console.log("data", formData);
+        // formData = JSON.stringify(data);
+        axios.post("/home/callback", formData).then((res) => {
+            console.log("response ", res);
+        })
+    })
+
+
 
     // $("#subscribe").click({
     //         // console.log(event); // for debugginh purpose

@@ -39,7 +39,7 @@
         </div>
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
-                <div class="card-body">
+                <div class="card-body" id="pdetails">
                     <div class="row gutters" id="personalProfileDetails" style="display:flex">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-2 text-primary">Personal Details</h6>
@@ -67,8 +67,8 @@
                             </div>
                         </div>
 
-                    
-                    
+
+
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mt-3 mb-2 text-primary">EDUCATIONAL Details</h6>
                         </div>
@@ -158,4 +158,8 @@
         </div>
     </div>
 </div>
+
+
+<!-- profile js -->
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/profile.js"></script>
 <!-- ---------------------------------------------------------NEW----------------------------------- -->

@@ -183,9 +183,10 @@ h3 {
 
 /* we-are-best-in section */
 .we-are-best-in {
+    font-family: 'PT Sans', sans-serif;
     position: relative;
-    background-image: url("/assets/images/we-are-best-in-bg.svg");
-
+    background-image: url("/assets/images/we-are-best-in-bg-900.svg");
+    background-size: cover;
     background-color: #fff;
     background-repeat: no-repeat;
     fill: #fff;
@@ -193,9 +194,8 @@ h3 {
     height: auto;
     width: 100%;
     padding-top: 5%;
-    padding-bottom: 20%;
-
-
+    padding-bottom: 30%;
+    margin-bottom: 5%;
 }
 
 .we-are-best-in h3 {
@@ -216,7 +216,7 @@ h3 {
 
 }
 
-.we-are-best-in .quick-btn {
+.quick-btn {
     display: inline !important;
     background: #6988F3 !important;
     color: #fff !important;

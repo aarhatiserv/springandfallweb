@@ -98,30 +98,42 @@ class Pages extends Controller
 
     public function callback()
     {
-        if ($this->request->getMethod() === 'post') {
+        // print_r($_POST);
+        // exit;
+        if ($this->request->getMethod() == "post") {
             // echo json_encode(["name" => "John "]);
-            // echo json_encode(["vars" => $this->request->getVar('first_name')]);
-            $fname = $this->request->getVar('fullname');
-            // $lname = $this->request->getVar('last_name');
-            $cemail = $this->request->getVar('email');
-            $mobile = $this->request->getVar('phone');
-            $service = $this->request->getVar('service');
-            $country = $this->request->getVar('country');
-            $message = $this->request->getVar('message');
+
+            // $fname = $this->request->getVar('name');
+            // // $lname = $this->request->getVar('last_name');
+            // $cemail = $this->request->getVar('email');
+            // $mobile = $this->request->getVar('phone');
+            // $service = $this->request->getVar('service');
+            // $country = $this->request->getVar('country');
+            // $message = $this->request->getVar('message');
+            // $date = $this->request->getVar('date');
+            $data = [
+                "name" => $this->request->getVar("name"),
+                "email" => $this->request->getVar("email"),
+                "phone" => $this->request->getVar("phone"),
+                "date" => $this->request->getVar("date"),
+                "service" => $this->request->getVar("country"),
+                "service" => $this->request->getVar("message"),
+            ];
 
             // model
             $model =  new ContactNowModel();
 
             // saving users in database
-            $model->save([
-                'name' => $fname,
-                'email' => $cemail,
-                'phone' =>  $mobile,
-                'service' => $service,
-                'country' => $country,
-                'message' => $message,
-                'active' => 1
-            ]);
+            // $model->save([
+            //     'name' => $fname,
+            //     'email' => $cemail,
+            //     'phone' =>  $mobile,
+            //     'date' =>  $date,
+            //     'service' => $service,
+            //     'country' => $country,
+            //     'message' => $message,
+            //     'active' => 1
+            // ]);
             // mail sening code  
 
             $email = \Config\Services::email();
@@ -136,16 +148,18 @@ class Pages extends Controller
             // 
             // exit;
 
-            $email->setSubject('Spring and Fall Callback requested by - ' . $this->request->getVar('fullname') . '');
-            $email->setMessage('<p>Name :' . $fname . '<br> Contact no :' . $mobile . '<br> email :' . $cemail . '<br> Service :' . $service . '<br> country: ' . $country . ' <br> message: ' . $message . ' </p>');
+            $email->setSubject('Spring and Fall Callback requested by - ' . $this->request->getVar('name') . '');
+            $email->setMessage('<p>Name :' .  $this->request->getVar("name") . '<br> Contact no :' . $this->request->getVar("phone") . '<br> email :' . $this->request->getVar("email") . '<br> Service :' . $this->request->getVar("service") . '<br> country: ' . $this->request->getVar("country") . ' <br> message: ' . $this->request->getVar("message") . ' </p>');
 
-            if ($email->send()) {
+            if ($model->save($data)) {
+                if ($email->send()) {
 
-                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-            } else {
-                $data = $email->printDebugger(['headers']);
-                // print_r($data);
-                echo json_encode(["status" => 2, "message" => "please try again later"]);
+                    echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+                } else {
+                    // $data = $email->printDebugger(['headers']);
+                    // print_r($data);
+                    echo json_encode(["status" => 2, "message" => "please try again later"]);
+                }
             }
             // var_dump($request->getRawInput());
         } else {

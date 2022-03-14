@@ -11,8 +11,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
 
                 <h3 class="banner-h3"><?= $sectionData[$i]['title'] ?></h3>
                 <p class="pb-2"><?= $sectionData[$i]['discription'] ?></p>
-                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal"
-                    data-target="#contactNowForm" style="font-size: 14px;">Contact Now
+                <button type="button" class="quick-btn btn border-0" data-toggle="modal" data-target="#bookCall">
+                    GET FREE CALL
                 </button>
                 <?php $session = session();
                         if (!$session->get('token')) : ?>
@@ -20,7 +20,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
             font-style: normal;
             font-weight: bold;
             font-size: 14px;
-            line-height: 32px;
+            line-height: 30px;
             color: #114694;
             width: 148px;
             margin-bottom: 7px;">Sign Up
@@ -40,8 +40,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
             <div class="col-lg-6 col-md-6 text-center text-center-sm detailsAdmin">
                 <h3 class="animate__animated animate__fadeInDown "><?= $sectionData[$i]['title'] ?></h3>
                 <p class="pb-2"><?= $sectionData[$i]['discription'] ?></p>
-                <button class=" btn mr-1 mb-1 contact-now text-uppercase" data-toggle="modal"
-                    data-target="#contactNowForm" style="font-size: 14px;">Contact Now
+                <button type="button" class="quick-btn btn border-0" data-toggle="modal" data-target="#bookCall">
+                    Book My Call
                 </button>
                 <button class="btn signUp text-uppercase" type="button" data-toggle="modal" data-target="#SignUp" style="font-family: 'PT Sans' ;
              font-style: normal;
@@ -156,11 +156,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
         <div class="row">
             <div class="col-md-12 py-5 my-5">
                 <h3 class="text-center display-5 font-weight-bold ">WE ARE BEST IN</h3>
-                <p class="text-center offset-md-4 col-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore, magni.
-                    Sed
-                    veniam vitae at odit
-                    quod reprehenderit quasi eaque officia.</p>
+                <p class="text-center offset-md-4 col-4">Providing you with the best profile, to help you fulfill your
+                    dream of studying abroad.</p>
             </div>
         </div>
 
@@ -170,31 +167,95 @@ for ($i = 0; $i < count($sectionData); $i++) {
             </div>
             <div class="col-md-6 content">
                 <h5 class="content-title">EDUCATION CONSULTENCY</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
-                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
-                    officia animi est consequatur!</p>
+                <p>We know how overwhelming it can be to apply for the best colleges to study abroad. So, we are here to
+                    help you through the whole process starting from applying for loans to selecting your college to get
+                    your visa done. Book your Call for a Free Consultation with our Study Abroad Expert.</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/university-or-college-selection">University/College
-                        Selection</a>
+                    <a class="quick-btn " href="/university-or-college-selection">Yes, I want my Free call.</a>
+
                 </div>
             </div>
         </div>
         <div class="row my-5">
 
             <div class="col-md-6 content">
-                <h5 class="content-title">FINANCE AID</h5>
+                <h5 class="content-title">FINANCIAL AID</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
                     quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
                     officia animi est consequatur!</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/scholarship">Scholarship</a>
-                    <a class="quick-btn ml-3" href="/financial-aid">Education</a>
+
+                    <button type="button" class="quick-btn btn border-0" data-toggle="modal" data-target="#bookCall">
+                        Book My Call
+                    </button>
+                    <!-- <a class="quick-btn ml-3" href="/financial-aid">Education</a> -->
                 </div>
             </div>
             <div class="col-md-6">
                 <img class="img-fluid p-2" src="/assets/images/best-in-finance.png" alt="best education consultency">
             </div>
         </div>
+        <!-- Modal  -->
+        <!-- <div class="modal fade " id="bookCall" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-light" style="border-radius: 25px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book Your free call</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <from class="form">
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text bg-white border-0 " id="basic-addon0"><i
+                                            class="fa fa-user" aria-hidden="true"></i></span>
+                                </div>
+                                <input class="form-control border-0 " type="text" id="bname" name="bname"
+                                    placeholder="Jhon Doe" required aria-label="bname" aria-describedby="basic-addon0">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text bg-white border-0 " id="basic-addon1"><i
+                                            class="fa fa-phone" aria-hidden="true"></i></span>
+                                </div>
+                                <input class="form-control border-0 " type="tel" id="phone" name="phone"
+                                    placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required
+                                    aria-label="phone" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text bg-white border-0 " id="basic-addon2"><i
+                                            class="fa fa-envelope" aria-hidden="true"></i></span>
+                                </div>
+                                <input class="form-control border-0 " type="email" id="bemail" name="bemail"
+                                    placeholder="john@domain.com" required aria-label="bemail"
+                                    aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text bg-white border-0 " id="basic-addon3"><i
+                                            class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input class="form-control border-0 " type="date" id="bdate" name="bdate"
+                                    placeholder="10/10/2022" required aria-label="bdate"
+                                    aria-describedby="basic-addon3">
+                            </div>
+                        </from>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center border-0">
+                        <button type="button" class="btn btn-outline-secondary p-2" style="border-radius: 10px;"
+                            data-dismiss="modal">No, i am
+                            Okay</button>
+                        <button type="button" class="quick-btn btn border-0 ml-3">Book My Call</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <div class="row my-5">
             <div class="col-md-6">
                 <img class="img-fluid p-2" src="/assets/images/best-in-visa-consultency.png"
@@ -202,12 +263,11 @@ for ($i = 0; $i < count($sectionData); $i++) {
             </div>
             <div class="col-md-6 content">
                 <h5 class="content-title">VISA CONSULTENCY</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
-                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
-                    officia animi est consequatur!</p>
+                <p>Don’t let your dream of studying abroad wait for a Visa. Let us help you get your student visa today.
+                    No matter what the country is. </p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/visa-consultation">Prepration</a>
-                    <a class="ml-3 quick-btn " href="/visa-consultation">Application</a>
+                    <a class="quick-btn " href="/visa-consultation">Book Your Call</a>
+                    <a class="ml-3 quick-btn " href="/visa-consultation">Know more</a>
                 </div>
             </div>
         </div>
@@ -215,12 +275,11 @@ for ($i = 0; $i < count($sectionData); $i++) {
 
             <div class="col-md-6 content">
                 <h5 class="content-title">OVERSEASE INSURANCE</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam quam inventore, fuga labore
-                    quibusdam repellat voluptatibus ullam. Possimus laborum alias in quia aliquid error, aspernatur
-                    officia animi est consequatur!</p>
+                <p>Get access to your unique blend of international travel insurance, medical insurance, and major
+                    medical insurance with us and put extra security on studying abroad.</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/scholarship">Scrolarships</a>
-                    <a class="quick-btn ml-3" href="/financial-aid">Education Loans</a>
+                    <a class="quick-btn " href="/scholarship">Know More</a>
+                    <!-- <a class="quick-btn ml-3" href="/financial-aid">Education Loans</a> -->
                 </div>
             </div>
             <div class="col-md-6">
@@ -298,6 +357,8 @@ for ($i = 0; $i < count($sectionData); $i++) {
 <!-- counter -->
 <?= $this->include('templates/counter') ?>
 <!-- counter ends -->
+
+
 
 <!-- callnow modal -->
 
