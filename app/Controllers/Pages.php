@@ -150,17 +150,17 @@ class Pages extends Controller
 
             $email->setSubject('Spring and Fall Callback requested by - ' . $this->request->getVar('name') . '');
             $email->setMessage('<p>Name :' .  $this->request->getVar("name") . '<br> Contact no :' . $this->request->getVar("phone") . '<br> email :' . $this->request->getVar("email") . '<br> Service :' . $this->request->getVar("service") . '<br> country: ' . $this->request->getVar("country") . ' <br> message: ' . $this->request->getVar("message") . ' </p>');
+            $model->save($data);
 
-            if ($model->save($data)) {
-                if ($email->send()) {
+            if ($email->send()) {
 
-                    echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
-                } else {
-                    // $data = $email->printDebugger(['headers']);
-                    // print_r($data);
-                    echo json_encode(["status" => 2, "message" => "please try again later"]);
-                }
+                echo json_encode(["status" => 1, "message" => "Your Query submitted, We'll callback soon.!!"]);
+            } else {
+                // $data = $email->printDebugger(['headers']);
+                // print_r($data);
+                echo json_encode(["status" => 2, "message" => "please try again later"]);
             }
+
             // var_dump($request->getRawInput());
         } else {
             echo json_encode(["name" => "Sins "]);

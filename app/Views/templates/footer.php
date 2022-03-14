@@ -430,7 +430,12 @@ $(document).ready(() => {
         }
         // console.log("data", formData);
         // formData = JSON.stringify(data);
-        axios.post("/home/callback", formData).then((res) => {
+        axios.post("/home/callback", formData, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then((reponse) => {
+            var res = reponse.data;
             console.log("response ", res);
             if (res.status === 1) {
                 swal("Thank you!", res.message, "success");
