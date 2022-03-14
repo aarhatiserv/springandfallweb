@@ -432,6 +432,14 @@ $(document).ready(() => {
         // formData = JSON.stringify(data);
         axios.post("/home/callback", formData).then((res) => {
             console.log("response ", res);
+            if (res.status === 1) {
+                swal("Thank you!", res.message, "success");
+                window.location.reload();
+            } else if (res.status === 2) {
+                swal("Opps.!!", res.message, "error");
+            } else {
+                swal("Opps.!!", "Something went wrong.!!", "error");
+            }
         })
     })
 
