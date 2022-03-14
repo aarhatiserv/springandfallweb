@@ -171,7 +171,10 @@ for ($i = 0; $i < count($sectionData); $i++) {
                     help you through the whole process starting from applying for loans to selecting your college to get
                     your visa done. Book your Call for a Free Consultation with our Study Abroad Expert.</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/university-or-college-selection">Yes, I want my Free call.</a>
+                    <button type="button" class="quick-btn btn border-0" data-toggle="modal" data-target="#bookCall">
+                        Yes, I want my Free call.
+                    </button>
+                    <!-- <a class="quick-btn " href="/university-or-college-selection">Yes, I want my Free call.</a> -->
 
                 </div>
             </div>
@@ -266,7 +269,10 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <p>Don’t let your dream of studying abroad wait for a Visa. Let us help you get your student visa today.
                     No matter what the country is. </p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/visa-consultation">Book Your Call</a>
+                    <button type="button" class="quick-btn btn border-0" data-toggle="modal" data-target="#bookCall">
+                        Book Your Call
+                    </button>
+                    <!-- <a class="quick-btn " href="/visa-consultation">Book Your Call</a> -->
                     <a class="ml-3 quick-btn " href="/visa-consultation">Know more</a>
                 </div>
             </div>
