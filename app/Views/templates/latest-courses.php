@@ -22,6 +22,7 @@
                                     <div class="col-12 col-md-8">
                                         <div class="card-body p-1">
                                             <p class="text-dark course-text"><?php echo $h['name'] ?></p>
+                                            <p class="text-dark course-text"><?php echo $h['title'] ?></p>
 
 
                                         </div>

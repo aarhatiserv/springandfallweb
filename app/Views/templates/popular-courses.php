@@ -20,12 +20,13 @@
                                             alt="university-logo" width="640" height="auto" title="university-logo">
                                     </div>
                                     <div class="col-12 col-md-7">
-                                        <div class="card-body p-1">
+                                        <div class="card-body p-1" id="pcourseContent">
                                             <p class="text-dark course-text"><?php echo $h['name'] ?></p>
+                                            <p class="text-dark my-1"><?php echo $h['title'] ?></p>
 
-                                            <button class="btn btn-block"
-                                                style="background-color: var(--background); color:#fff;">VIEW COURSE
-                                                DETAILS</button>
+                                            <hr>
+                                            <p class="text-dark"><?php echo $h['city'] . ' - ' . $h['country'] ?></p>
+
                                         </div>
                                     </div>
                                 </div>

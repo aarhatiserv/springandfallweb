@@ -14,33 +14,29 @@ class HotCoursesController extends Controller
     public function hotCourses()
     {
         $session = session();
-		if(!empty($session->get('username'))){
+        if (!empty($session->get('username'))) {
 
             $model = new HotCoursesModel();
             $data['hCourseData'] = $model->findAll();
             echo view('admin/layout/stylesheet');
             echo view('admin/HotCourses/HotCourses', $data);
             echo view('admin/layout/script');
-            
-		}else{
+        } else {
             return redirect()->to('https://springandfall.in/admin/login');
-			// return redirect()->to('http://localhost:8080/admin/login');
-		}
-
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
     }
     public function addHotCourses()
     {
         $session = session();
-		if(!empty($session->get('username'))){
+        if (!empty($session->get('username'))) {
             echo view('admin/layout/stylesheet');
             echo view('admin/HotCourses/AddHotCourses');
             echo view('admin/layout/script');
-            
-		}else{
+        } else {
             return redirect()->to('https://springandfall.in/admin/login');
-			// return redirect()->to('http://localhost:8080/admin/login');
-		}
-
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
     }
 
     public function addHotCoursesPost()
@@ -89,6 +85,8 @@ class HotCoursesController extends Controller
                 "name" => $this->request->getVar("name"),
                 "title" => $this->request->getVar("title"),
                 "discription" => $this->request->getVar("discription"),
+                "city" => $this->request->getVar("city"),
+                "country" => $this->request->getVar("country"),
                 "image" => $file_name,
                 "active" => 1,
             ];
@@ -100,7 +98,7 @@ class HotCoursesController extends Controller
                     'data' => [],
                 ];
 
-                return redirect()->to('https://springandfall.in/admin/hotCourses');
+                return redirect()->to('/admin/hotCourses');
                 // return redirect()->to('http://localhost:8080/admin/hotCourses');
 
             } else {
@@ -112,23 +110,20 @@ class HotCoursesController extends Controller
                     'data' => [],
                 ];
             }
-
         }
     }
 
     public function editHotCourses($id)
     {
         $session = session();
-		if(!empty($session->get('username'))){
+        if (!empty($session->get('username'))) {
             $model = new HotCoursesModel();
             $data['hCoursesDatabyId'] = $model->where('id = ', $id)->findAll();
             echo view('admin/HotCourses/EditHotCourses', $data);
-            
-		}else{
-            return redirect()->to('https://springandfall.in/admin/login');
-			// return redirect()->to('http://localhost:8080/admin/login');
-		}
-
+        } else {
+            return redirect()->to('/admin/login');
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
     }
 
     public function editHotCoursesPost()
@@ -178,6 +173,8 @@ class HotCoursesController extends Controller
                 "name" => $this->request->getVar("name"),
                 "title" => $this->request->getVar("title"),
                 "discription" => $this->request->getVar("discription"),
+                "city" => $this->request->getVar("city"),
+                "country" => $this->request->getVar("country"),
                 "image" => $file_name,
                 "active" => 1,
             ];
@@ -190,7 +187,7 @@ class HotCoursesController extends Controller
                 ];
 
                 // return redirect()->to('/admin/colleges');
-                return redirect()->to('https://springandfall.in/admin/hotCourses');
+                return redirect()->to('/admin/hotCourses');
                 // return redirect()->to('http://localhost:8080/admin/hotCourses');
             } else {
 
@@ -207,18 +204,16 @@ class HotCoursesController extends Controller
     public function deleteHotCourses($id)
     {
         $session = session();
-		if(!empty($session->get('username'))){
+        if (!empty($session->get('username'))) {
 
             $model = new HotCoursesModel();
             $model->where('id = ', $id)->delete();
             return redirect()->to('https://springandfall.in/admin/hotCourses');
             // return redirect()->to('http://localhost:8080/admin/hotCourses');
-            
-		}else{
-            return redirect()->to('https://springandfall.in/admin/login');
-			// return redirect()->to('http://localhost:8080/admin/login');
-		}
-        
-    }
 
+        } else {
+            return redirect()->to('https://springandfall.in/admin/login');
+            // return redirect()->to('http://localhost:8080/admin/login');
+        }
+    }
 }

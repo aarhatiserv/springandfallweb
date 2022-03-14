@@ -14,7 +14,7 @@ class HotcoursesModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id', 'name', 'title', 'discription', 'image', 'active'];
+	protected $allowedFields        = ['id', 'name', 'title', 'discription', 'city', 'country', 'image', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;

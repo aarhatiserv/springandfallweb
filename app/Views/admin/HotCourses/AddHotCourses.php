@@ -13,19 +13,19 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 </head>
 
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
             <!-- ------------------------------------------Start Left Nav------------------------ -->
-            <?=$this->include('admin/layout/left_nav')?>
+            <?= $this->include('admin/layout/left_nav') ?>
             <!-- ------------------------------------------Start Left Nav------------------------ -->
 
             <!-- ------------------------------------------Start header------------------------ -->
-            <?=$this->include('admin/layout/header')?>
+            <?= $this->include('admin/layout/header') ?>
             <!-- ------------------------------------------End header-------------------------- -->
 
 
@@ -59,9 +59,8 @@
                                             <label for="discription">Discription</label>
                                             <br>
 
-                                            <input type="text" id="name" name="name"
-                                                placeholder="Name..." style="margin-right:50px"
-                                                required />
+                                            <input type="text" id="name" name="name" placeholder="Name..."
+                                                style="margin-right:50px" required />
 
                                             <input type="text" id="title" name="title" placeholder="Title..."
                                                 style="margin-right:50px" required />
@@ -69,6 +68,30 @@
                                             <textarea name="discription" id="discription" rows="6" cols="70"
                                                 placeholder="Enter discription Here..." required>
 </textarea>
+                                        </div>
+                                        <div>
+                                            <label for="city">City</label>
+                                            <input type="text" id="city" name="city" placeholder="Title..."
+                                                style="margin-right:50px" required />
+                                        </div>
+                                        <div>
+                                            <label for="country">Country </label>
+                                            <select name="country" id="country" style="border-radius: 10px;"
+                                                class="form-control  border border-primary mt-0" required>
+                                                <option>Interested countries</option>
+                                                <option value="UK">USA</option>
+                                                <option value="UK">UK</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="New Zealand">New Zealand</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Russia">Russia</option>
+                                                <option value="Ireland">Ireland</option>
+                                                <option value="France">France</option>
+                                                <option value="Italy">Italy</option>
+                                                <option value="Phillipines">Phillipines</option>
+                                            </select>
                                         </div>
 
                                         <div class="file-input">
@@ -96,7 +119,7 @@
             </div>
             <!-- /page content -->
             <!-- ------------------------------------------Start Footer------------------------ -->
-            <?=$this->include('admin/layout/footer')?>
+            <?= $this->include('admin/layout/footer') ?>
             <!-- ------------------------------------------Start Footer------------------------ -->
 
         </div>

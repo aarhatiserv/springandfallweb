@@ -13,8 +13,8 @@
     <style>
     .someclassMax {
         min-height: 670px !important;
-        }
-</style>
+    }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -57,11 +57,13 @@
                                 <div class="x_content">
                                     <button role="button"><a href="/admin/addHotCourses"><i class="fa fa-plus"></i> Add
                                             Hot Course</a> </button>
-                                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width: 100%;">
+                                    <table id="datatable-buttons" class="table table-striped table-bordered"
+                                        style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Title</th>
+                                                <th>City</th>
                                                 <th>Discription</th>
                                                 <th>Image</th>
                                                 <th>Action</th>
@@ -70,20 +72,28 @@
 
 
                                         <tbody>
-                                            <?php 
-                                               foreach($hCourseData as $rcd){
-                                              
-                                                ?>
-                                                
+                                            <?php
+                                            foreach ($hCourseData as $rcd) {
+
+                                            ?>
+
                                             <tr>
-                                                <td><?= $rcd['name']?></td>
-                                                <td><?= $rcd['title']?></td>
-                                                <td><?= $rcd['discription']?></td>                                              
-                                                <td><a href="../uploads/HotCoursesImage/<?= $rcd['image']?>"target="_blank"><img src="../uploads/HotCoursesImage/<?= $rcd['image']?>" alt="image" heiht="360" width="640" style="height:100px; width:100px"/></a></td>
-                                                <td><a href="/admin/editHotCourses/<?= $rcd['id']?>"><i class="fa fa-edit"></i></a> | <a onClick="javascript: ConfirmDelete(<?= $rcd['id']?>)"><i class="fa fa-trash"></i></a></td>
+                                                <td><?= $rcd['name'] ?></td>
+                                                <td><?= $rcd['title'] ?></td>
+                                                <td><?= $rcd['city'] ?></td>
+                                                <td><?= $rcd['discription'] ?></td>
+                                                <td><a href="../uploads/HotCoursesImage/<?= $rcd['image'] ?>"
+                                                        target="_blank"><img
+                                                            src="../uploads/HotCoursesImage/<?= $rcd['image'] ?>"
+                                                            alt="image" heiht="360" width="640"
+                                                            style="height:100px; width:100px" /></a></td>
+                                                <td><a href="/admin/editHotCourses/<?= $rcd['id'] ?>"><i
+                                                            class="fa fa-edit"></i></a> | <a
+                                                        onClick="javascript: ConfirmDelete(<?= $rcd['id'] ?>)"><i
+                                                            class="fa fa-trash"></i></a></td>
                                             </tr>
                                             <?php
-                                               }
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
@@ -91,13 +101,13 @@
                             </div>
                         </div>
 
-                      
+
                     </div>
                 </div>
             </div>
             <!-- /page content -->
             <!-- ------------------------------------------Start Footer------------------------ -->
-            <?= $this->include('admin/layout/footer')?>
+            <?= $this->include('admin/layout/footer') ?>
             <!-- ------------------------------------------Start Footer------------------------ -->
 
         </div>
@@ -106,11 +116,11 @@
 
 </body>
 <script type="text/javascript">
-      function ConfirmDelete(id)
-      {
-        var conf = confirm('Are you sure want to delete this record?');
-            if (conf)
-                 location.href='/admin/deleteHotCourses/'+id;
-      }
-  </script>
+function ConfirmDelete(id) {
+    var conf = confirm('Are you sure want to delete this record?');
+    if (conf)
+        location.href = '/admin/deleteHotCourses/' + id;
+}
+</script>
+
 </html>
