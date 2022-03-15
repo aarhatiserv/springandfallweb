@@ -186,8 +186,14 @@ $routes->get("api2/countryAndCourseAndLevel/(:any)/(:any)/(:any)", "CollegeContr
 
 // for hit college name and show details of colleges
 $routes->get('college/(:any)/(:any)', 'CollegeController::getCollegeDetails/$1/$2');
+
+// for home landing page
+$routes->get('welcome', 'Pages::welcome');
+
 // main work
 $routes->get('(:any)', 'Pages::view/$1');
+
+
 
 // admin routes
 

@@ -181,6 +181,11 @@ class Pages extends Controller
 
     // }
 
+    public function welcome()
+    {
+        echo view('welcome');
+    }
+
 
     public function subscribe()
     {
