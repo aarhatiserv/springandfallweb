@@ -284,7 +284,7 @@ for ($i = 0; $i < count($sectionData); $i++) {
                 <p>Get access to your unique blend of international travel insurance, medical insurance, and major
                     medical insurance with us and put extra security on studying abroad.</p>
                 <div class="d-flex">
-                    <a class="quick-btn " href="/scholarship">Know More</a>
+                    <a class="quick-btn " href="/overseas-insurance">Know More</a>
                     <!-- <a class="quick-btn ml-3" href="/financial-aid">Education Loans</a> -->
                 </div>
             </div>

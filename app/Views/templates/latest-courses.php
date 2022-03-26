@@ -23,7 +23,8 @@
                                         <div class="card-body p-1">
                                             <p class="text-dark course-text"><?php echo $h['name'] ?></p>
                                             <p class="text-dark course-text"><?php echo $h['title'] ?></p>
-
+                                            <hr>
+                                            <p class="text-dark"><?php echo $h['city'] . ' - ' . $h['country'] ?></p>
 
                                         </div>
                                     </div>
